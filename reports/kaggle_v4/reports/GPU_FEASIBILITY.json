@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "batch_size": 16,
+  "measured_batches": 6,
+  "losses": [
+    0.7333406805992126,
+    0.6596839427947998,
+    0.5369504690170288,
+    0.555396556854248,
+    0.4867703318595886,
+    0.46818169951438904
+  ],
+  "step_seconds": [
+    0.13978189099998417,
+    0.12068413899987718,
+    0.11319885400007479,
+    0.10511842899995827,
+    0.10500341500005561,
+    0.10467985099990074
+  ],
+  "images_per_second": 139.4403198764726,
+  "epoch_train_seconds_estimate": 700.4358573368378,
+  "estimate_limitations": "Small-batch training estimate excludes full validation, EMA comparison and checkpoint I/O; not A10 inference evidence.",
+  "peak_allocated_gb": 1.236401081085205,
+  "peak_reserved_gb": 2.01953125,
+  "code_sha256": "3f2956de847c3169c7a2ce139a04915617f89152d454662e203277c0c5bc9d12",
+  "parity_report_sha256": "6ee75e93bb505a3b0f683cea09836bf9772c67af797406a36a95ee0cc48b9eab"
+}

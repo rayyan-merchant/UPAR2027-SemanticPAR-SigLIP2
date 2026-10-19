@@ -1,0 +1,23 @@
+{
+  "train_csv": "/kaggle/input/upar2027-official-private/official_data/annotations/task1/train/gt.csv",
+  "val_csv": "/kaggle/input/upar2027-official-private/official_data/annotations/task1/val/gt.csv",
+  "data_root": "/kaggle/input/upar2027-official-private/official_data",
+  "output": "/kaggle/working/runs/siglip2",
+  "foundation": "google/siglip2-base-patch16-naflex",
+  "max_patches": 256,
+  "epochs": 12,
+  "warmup_epochs": 1,
+  "batch_size": 16,
+  "accumulate": 4,
+  "lr_backbone": 1e-05,
+  "lr_head": 0.0001,
+  "workers": 4,
+  "seed": 2027,
+  "ema_decay": 0.9995,
+  "resume": null,
+  "data_report": "/kaggle/working/reports/data/data_audit.json",
+  "parity_report": "/kaggle/working/reports/PRETRAINED_PARITY.json",
+  "feasibility_report": "/kaggle/working/reports/GPU_FEASIBILITY.json",
+  "scorer_evidence": null,
+  "max_hours": 9.0
+}

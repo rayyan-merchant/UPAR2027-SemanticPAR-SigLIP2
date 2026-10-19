@@ -7,7 +7,7 @@
   ],
   "docker_image": "gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
   "machine_shape_requested": "NvidiaTeslaT4",
-  "status_last_verified": "RUNNING",
+  "status_last_verified": "COMPLETE",
   "wrapper_sha256": "292aa290c34afafb059440862e8fc454b888f357d48558b501f13392d5d9c905",
   "source_commit": "bc987db",
   "source_files": {
@@ -116,5 +116,6 @@
       "matches_source_commit": true
     }
   },
-  "all_sources_match_commit": true
+  "all_sources_match_commit": true,
+  "outcome": "12 epochs completed; GPU FP32/FP16 parity and feasibility passed; candidate created, not submitted."
 }

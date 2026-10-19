@@ -8,7 +8,8 @@ import torch
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--submission-dir',required=True)
-    ap.add_argument('--images-dir',required=True)
+    ap.add_argument('--images-dir')
+    ap.add_argument('--samples-json',help='Explicit image paths; avoids inventory scans absent from the official API')
     ap.add_argument('--n',type=int,default=1000)
     ap.add_argument('--batch-size',type=int,default=32)
     ap.add_argument('--assumed-hidden-n',type=int,default=33407)
@@ -18,9 +19,16 @@ def main():
     import run
     from upar.attributes import ATTRIBUTES
     from PIL import Image
-    images=list(Path(args.images_dir).rglob('*.jpg'))+list(Path(args.images_dir).rglob('*.png'))
+    discovery_start=time.perf_counter()
+    if args.samples_json:
+        images=[Path(name) for name in json.loads(Path(args.samples_json).read_text())]
+    elif args.images_dir:
+        images=list(Path(args.images_dir).rglob('*.jpg'))+list(Path(args.images_dir).rglob('*.png'))
+    else:
+        ap.error('Provide --samples-json or --images-dir')
     if not images:raise FileNotFoundError('No images available for benchmark')
     images=(images*(args.n//len(images)+1))[:args.n]
+    discovery_sec=time.perf_counter()-discovery_start
     sample=lambda i,path:{'index':i,'image_path':str(path.resolve()),
                           'image':path.name,'attribute_names':ATTRIBUTES}
     start=time.perf_counter();run.load_model()
@@ -52,6 +60,8 @@ def main():
     result={'gpu':torch.cuda.get_device_name() if torch.cuda.is_available() else 'CPU',
             'load_s':load_sec,'warmup_s':warm_sec,'images':total,'elapsed_s':sec,'images_per_s':ips,
             'measured_total_s':measured_total,'serialization_included':True,
+            'sample_discovery_s':discovery_sec,'explicit_sample_paths':bool(args.samples_json),
+            'submission_api_total_s':load_sec+warm_sec+sec,
             'hypothetical_hidden_images':args.assumed_hidden_n,
             'projected_runtime_s':est,'hypothetical_under_300s':est<300,
             'limitation':'Hypothetical workload only. Hidden workload unknown. Hardware differs from official A10 unless explicitly matched. This does not certify the official 300s limit.'}

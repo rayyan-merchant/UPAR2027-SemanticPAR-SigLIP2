@@ -1,0 +1,814 @@
+{
+  "schema": 1,
+  "foundation": "google/siglip2-base-patch16-naflex",
+  "resolved_revision": "b53b807d3a2d5e2b3911292f2d69e5341cdc064c",
+  "attributes": [
+    "Age-Young",
+    "Age-Adult",
+    "Age-Old",
+    "Gender-Female",
+    "Hair-Length-Short",
+    "Hair-Length-Long",
+    "Hair-Length-Bald",
+    "UpperBody-Length-Short",
+    "UpperBody-Color-Black",
+    "UpperBody-Color-Blue",
+    "UpperBody-Color-Brown",
+    "UpperBody-Color-Green",
+    "UpperBody-Color-Grey",
+    "UpperBody-Color-Orange",
+    "UpperBody-Color-Pink",
+    "UpperBody-Color-Purple",
+    "UpperBody-Color-Red",
+    "UpperBody-Color-White",
+    "UpperBody-Color-Yellow",
+    "UpperBody-Color-Other",
+    "LowerBody-Length-Short",
+    "LowerBody-Color-Black",
+    "LowerBody-Color-Blue",
+    "LowerBody-Color-Brown",
+    "LowerBody-Color-Green",
+    "LowerBody-Color-Grey",
+    "LowerBody-Color-Orange",
+    "LowerBody-Color-Pink",
+    "LowerBody-Color-Purple",
+    "LowerBody-Color-Red",
+    "LowerBody-Color-White",
+    "LowerBody-Color-Yellow",
+    "LowerBody-Color-Other",
+    "LowerBody-Type-Trousers&Shorts",
+    "LowerBody-Type-Skirt&Dress",
+    "Accessory-Backpack",
+    "Accessory-Bag",
+    "Accessory-Glasses-Normal",
+    "Accessory-Glasses-Sun",
+    "Accessory-Hat"
+  ],
+  "prompts": [
+    "this is a photo of a young person.",
+    "this is a photo of an adult person.",
+    "this is a photo of an older person.",
+    "this is a photo of a female-presenting person.",
+    "this is a photo of a person with short hair.",
+    "this is a photo of a person with long hair.",
+    "this is a photo of a bald person.",
+    "this is a photo of a person wearing a short-sleeved top.",
+    "this is a photo of a person wearing black upper body clothing.",
+    "this is a photo of a person wearing blue upper body clothing.",
+    "this is a photo of a person wearing brown upper body clothing.",
+    "this is a photo of a person wearing green upper body clothing.",
+    "this is a photo of a person wearing grey upper body clothing.",
+    "this is a photo of a person wearing orange upper body clothing.",
+    "this is a photo of a person wearing pink upper body clothing.",
+    "this is a photo of a person wearing purple upper body clothing.",
+    "this is a photo of a person wearing red upper body clothing.",
+    "this is a photo of a person wearing white upper body clothing.",
+    "this is a photo of a person wearing yellow upper body clothing.",
+    "this is a photo of a person wearing other upper body clothing.",
+    "this is a photo of a person wearing shorts or a short skirt.",
+    "this is a photo of a person wearing black lower body clothing.",
+    "this is a photo of a person wearing blue lower body clothing.",
+    "this is a photo of a person wearing brown lower body clothing.",
+    "this is a photo of a person wearing green lower body clothing.",
+    "this is a photo of a person wearing grey lower body clothing.",
+    "this is a photo of a person wearing orange lower body clothing.",
+    "this is a photo of a person wearing pink lower body clothing.",
+    "this is a photo of a person wearing purple lower body clothing.",
+    "this is a photo of a person wearing red lower body clothing.",
+    "this is a photo of a person wearing white lower body clothing.",
+    "this is a photo of a person wearing yellow lower body clothing.",
+    "this is a photo of a person wearing other lower body clothing.",
+    "this is a photo of a person wearing trousers or shorts.",
+    "this is a photo of a person wearing a skirt or dress.",
+    "this is a photo of a person carrying a backpack.",
+    "this is a photo of a person carrying a handbag or shoulder bag.",
+    "this is a photo of a person wearing eyeglasses.",
+    "this is a photo of a person wearing sunglasses.",
+    "this is a photo of a person wearing a hat."
+  ],
+  "vision_config": {
+    "hidden_size": 768,
+    "intermediate_size": 3072,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "patch_size": 16,
+    "num_patches": 256,
+    "layer_norm_eps": 1e-06
+  },
+  "code_sha256": "3f2956de847c3169c7a2ce139a04915617f89152d454662e203277c0c5bc9d12",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.57.1",
+  "device": "cuda",
+  "max_patches": 256,
+  "tolerances": {
+    "fp32": {
+      "max_abs": 0.002,
+      "mean_abs": 0.0002,
+      "relative_l2": 0.0002
+    },
+    "fp16": {
+      "max_abs": 0.08,
+      "mean_abs": 0.008,
+      "relative_l2": 0.008
+    }
+  },
+  "text_errors": {
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "relative_l2": 0.0
+  },
+  "query_shape": [
+    40,
+    768
+  ],
+  "distinct_aspect_ratios": 4,
+  "images": [
+    {
+      "image": "/kaggle/input/upar2027-official-private/official_data/Market1501/bounding_box_test/0001_c1s1_001051_03.jpg",
+      "image_sha256": "8ab5277bd7f35dff26d34d293aee4c269d625c80fc71e86d126eb023cbe5a68e",
+      "pixel_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "mask_equal": true,
+      "shape_equal": true,
+      "stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "amp_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "amp_stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "passed": true
+    },
+    {
+      "image": "/kaggle/input/upar2027-official-private/official_data/PA100k/release_data/release_data/000001.jpg",
+      "image_sha256": "9e4087b616bdf65efac15b6fad97930266400f8d5cd2e228fad5027e46fd2844",
+      "pixel_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "mask_equal": true,
+      "shape_equal": true,
+      "stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "amp_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "amp_stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "passed": true
+    },
+    {
+      "image": "/kaggle/input/upar2027-official-private/official_data/PA100k/release_data/release_data/000002.jpg",
+      "image_sha256": "caf228bda14f96bc3677739949b3282702379157565e167c1add904350124472",
+      "pixel_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "mask_equal": true,
+      "shape_equal": true,
+      "stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "amp_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "amp_stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "passed": true
+    },
+    {
+      "image": "/kaggle/input/upar2027-official-private/official_data/PETA/images/00001.png",
+      "image_sha256": "d980f2fd200904fe90b039fe2374a47c265fce687993dc139fe0d15ee0396789",
+      "pixel_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "mask_equal": true,
+      "shape_equal": true,
+      "stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "amp_errors": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "relative_l2": 0.0
+      },
+      "amp_stages": {
+        "embeddings": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_0": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_1": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_2": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_3": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_4": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_5": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_6": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_7": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_8": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_9": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_10": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "block_11": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "final": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "end_to_end": {
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      },
+      "passed": true
+    }
+  ],
+  "mixed_precision_checked": true,
+  "passed": true,
+  "prepared_sha256": "55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832"
+}
