@@ -62,12 +62,25 @@ def check(images, foundation, output, max_patches=256, device='cpu'):
         p=reference['pixel_values'].to(device); m=mask[None].to(device); s=shape[None]
         # Record every native block vs corresponding HF hidden-state output.
         with torch.inference_mode():
-            ref=hf.vision_model(pixel_values=p,attention_mask=m,spatial_shapes=s.to(device),output_hidden_states=True)
+            # The internal HF transformer does not run the public wrapper's
+            # hidden-state capture decorator. Use explicit hooks for diagnostics.
+            reference_stages={}
+            def capture(name):
+                def hook(module, inputs, output):
+                    reference_stages[name]=(output[0] if isinstance(output,(tuple,list)) else output).detach()
+                return hook
+            handles=[hf.vision_model.embeddings.register_forward_hook(capture('embeddings'))]
+            handles.extend(block.register_forward_hook(capture(f'block_{index}'))
+                           for index,block in enumerate(hf.vision_model.encoder.layers))
+            try:
+                ref=hf.vision_model(pixel_values=p,attention_mask=m,spatial_shapes=s.to(device))
+            finally:
+                for handle in handles:handle.remove()
             x=native.vision_model.embeddings(p,s)
-            stages={'embeddings':errors(ref.hidden_states[0],x)}
+            stages={'embeddings':errors(reference_stages['embeddings'],x)}
             for index,block in enumerate(native.vision_model.encoder.layers):
                 x=block(x,m)
-                stages[f'block_{index}']=errors(ref.hidden_states[index+1],x)
+                stages[f'block_{index}']=errors(reference_stages[f'block_{index}'],x)
             last=native.vision_model.post_layernorm(x)
             stages['final']=errors(ref.last_hidden_state,last)
             own=native.vision_model(px[None].to(device),m,s)

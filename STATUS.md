@@ -49,9 +49,17 @@ and GPU execution; passing small-model tests is not pretrained parity evidence.
   It reruns data/tests/pretrained parity/inference/training feasibility before
   permitting the single main training run. CLI still reports QUEUED; GPU allocation
   and gate outcomes are pending. Source/metadata receipt: reports/kaggle_v2_receipt.json.
-- Real foundation checkpoint download/parity is in progress locally. A bounded
-  direct HTTPS download is transferring after hub/Xet stalled. No
-  pretrained numerical parity pass has been claimed.
+- Real foundation checkpoint (1,500,985,224 bytes) downloaded and SHA256 verified.
+  Resolved revision: `b53b807d3a2d5e2b3911292f2d69e5341cdc064c`.
+- **CPU FP32 pretrained parity PASSED on four real pedestrian images, four aspect
+  ratios.** Preprocessing, patch embeddings, all 12 vision blocks, final outputs
+  and text initialization: observed maximum/mean absolute and relative L2 errors
+  all zero. Query shape 40x768. Native prepared checkpoint SHA256:
+  `296fef18ede62067df0334a3317795d5326cebfe7e977ed12a3b98712a9fa2c0`.
+  Reports: reports/PRETRAINED_PARITY.json and .md. GPU AMP parity remains pending.
+- Initial real-weight diagnostic failed because HF's internal transformer does
+  not expose hidden_states through the wrapper's capture decorator. Explicit
+  reference hooks corrected diagnostics; subsequent real-weight check passed.
 - No verified evidence of main training starting yet. No trained checkpoint, model score, final
   calibration, A10 timing or competition submission exists yet.
 

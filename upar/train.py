@@ -226,6 +226,8 @@ def main():
             with torch.autocast('cuda',dtype=torch.float16):
                 logits=model(patches,mask,shapes)
                 loss=loss_weighted(logits,y,v,wp,wn)
+            if not torch.isfinite(loss):
+                raise FloatingPointError(f'Nonfinite training loss at epoch {epoch}, batch {k}; last completed checkpoint retained')
             group_size=min(args.accumulate,len(train_ld)-(k//args.accumulate)*args.accumulate)
             scaler.scale(loss/group_size).backward()
             train_loss+=loss.item();n+=1

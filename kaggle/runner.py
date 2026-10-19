@@ -27,6 +27,10 @@ def main():
     os.environ['HF_HOME']=str(base/'hf-cache')
     run('-m','pip','install','-q','transformers==4.57.1','tokenizers>=0.22,<0.23',
         'huggingface_hub>=0.34,<1','hf_xet','safetensors','sentencepiece','pytest','Pillow>=10')
+    (base/'requirements-executed.txt').write_text(subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True))
+    source_hashes={str(path.relative_to(code)):hashlib.sha256(path.read_bytes()).hexdigest()
+                   for path in code.rglob('*.py')}
+    (base/'source_hashes.json').write_text(json.dumps(source_hashes,indent=2))
     import torch
     torch.set_num_threads(4)
     if not torch.cuda.is_available():raise RuntimeError('Kaggle did not allocate a CUDA GPU')
