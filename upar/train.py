@@ -202,6 +202,14 @@ def main():
         optimizer.load_state_dict(ck['optimizer']);scaler.load_state_dict(ck['scaler'])
         if ema_model is not None:ema_model.load_state_dict(ck['ema_state_dict'],strict=True)
         best=ck['best_score'];step=ck['step'];restore_rng(ck['rng'],generator)
+        # A hard stop can occur after best.pt was atomically written but before
+        # last.pt. Never overwrite that newer best using an older resume score.
+        historical_best=out/'best.pt'
+        if historical_best.exists():
+            previous=torch.load(historical_best,map_location='cpu',weights_only=False)
+            if previous.get('attributes')!=ATTRIBUTES:raise ValueError('Existing best has different attributes')
+            best=max(best,float(previous['metrics']['macro']['Challenge_Avg']))
+            del previous
     run_started=time.monotonic()
     with open(out/'training_config.json','w') as f: json.dump(vars(args),f,indent=2)
     with open(out/'prevalence.json','w') as f:json.dump(dict(zip(ATTRIBUTES,prevalence.tolist())),f,indent=2)

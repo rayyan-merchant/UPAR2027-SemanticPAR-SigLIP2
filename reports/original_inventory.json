@@ -1,0 +1,22 @@
+{
+  "scope": "Physical extracted image files, including unannotated images; no decode claim for unused files",
+  "counts": {
+    "PA100k": 100000,
+    "Market1501": 61295,
+    "PETA": 19000
+  },
+  "by_extension": {
+    "PA100k": {
+      ".jpg": 100000
+    },
+    "Market1501": {
+      ".jpg": 61295
+    },
+    "PETA": {
+      ".bmp": 2476,
+      ".jpg": 9552,
+      ".png": 5697,
+      ".jpeg": 1275
+    }
+  }
+}

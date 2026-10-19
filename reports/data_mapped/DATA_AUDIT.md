@@ -31,6 +31,14 @@ Image dimensions, byte and decoded-pixel hashes: image_manifest.json.
 Exact byte/pixel duplicates only; near duplicates and shared identities need separate review.
 Duplicate findings require review; original splits have not been changed.
 
+## Full extracted inventory
+
+Independent filesystem count (including unannotated images): PA100k 100,000;
+Market1501 61,295; PETA 19,000. PETA includes 2,476 BMPs, which explain the
+earlier 16,524 count excluding BMP. See `../original_inventory.json` for formats.
+Unused images were counted, not exhaustively decoded; full decoding applies to
+the 131,076 annotated paths only.
+
 ## Reviewed exact-pixel leakage
 
 Same decoded RGB image, distinct JPEG bytes; visually inspected original MIT source image.

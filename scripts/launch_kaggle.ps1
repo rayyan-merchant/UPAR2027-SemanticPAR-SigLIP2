@@ -4,6 +4,7 @@ param(
 )
 $ErrorActionPreference='Stop'
 $env:PYTHONIOENCODING='utf-8'
+$env:PYTHONUTF8='1'
 $resolvedKernel=(Resolve-Path -LiteralPath $KernelDirectory).Path
 $metadata=Get-Content -LiteralPath (Join-Path $resolvedKernel 'kernel-metadata.json') -Raw | ConvertFrom-Json
 if ($metadata.is_private -ne $true) { throw 'Kernel must be private' }

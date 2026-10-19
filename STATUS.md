@@ -9,6 +9,8 @@
 - Original data and local starter on D: remain unchanged.
 - Both official CSVs match the exact ordered 40-attribute vocabulary: 97,669 train,
   33,407 validation, no invalid-label cells in this release.
+- Full extracted file inventory: PA100k 100,000; Market1501 61,295; PETA 19,000.
+  The earlier 16,524 PETA count excluded 2,476 BMP files.
 - Full read-only audit decoded and hashed all 131,076 annotated images.
 - Resolved missing 15,631 PETA canonical paths through the official mapping.
 - No annotation path overlap; no cross-split byte duplicates. One decoded-pixel
@@ -45,7 +47,8 @@ and GPU execution; passing small-model tests is not pretrained parity evidence.
   torch 2.11.0+cu128/CUDA 12.8. No training occurred. Quota after failure: 29.99h.
 - Private kernel version 2 was successfully pushed with the ready data source.
   It reruns data/tests/pretrained parity/inference/training feasibility before
-  permitting the single main training run. Gate outcomes are still pending.
+  permitting the single main training run. CLI still reports QUEUED; GPU allocation
+  and gate outcomes are pending. Source/metadata receipt: reports/kaggle_v2_receipt.json.
 - Real foundation checkpoint download/parity is in progress locally. A bounded
   direct HTTPS download is transferring after hub/Xet stalled. No
   pretrained numerical parity pass has been claimed.
