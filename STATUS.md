@@ -89,8 +89,11 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   local image copies at both batch sizes. No training is invoked.
 - Candidate ZIP downloaded (358,029,220 bytes), SHA256
   `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`.
-  Best epoch7 EMA weights and validation predictions are preserved locally;
-  complete last.pt resume-state download is ongoing.
+  Best epoch7 EMA weights, validation predictions and complete last.pt are
+  preserved locally. Resume backup loaded successfully: schema2, epoch12,
+  18,324 steps, 85 optimizer parameter states, EMA and all RNG/sampler states.
+  Last checkpoint SHA256:
+  `64d23096ce17db94f667055c65dfddbf3861844c4e8867e64186ed2eb9259f74`.
 - **Actual trained offline verification PASSED on Python3.11.16/torch2.4.1+cpu**,
   and separately Python3.12/torch2.4.1. Two real images, 35-sample chunked batch,
   finite 40 probabilities, correct ordering, exact original metadata/ZIP CRC,
@@ -118,9 +121,9 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 
 ## Next actions
 
-Finish preserving the complete resume checkpoint. Retrieve trained GPU API and
-explicit-sample timing results, choose a measured inference batch setting, and
-complete submission/account access checks before CodaBench upload.
+Retrieve version2 storage-staging and local-image batch timing results, choose
+a measured inference batch setting, and upload the verified candidate through
+the authenticated CodaBench account. Record actual evaluation status and score.
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`
 preserves the initial failed path audit. `reports/tests.xml` records local checks.
