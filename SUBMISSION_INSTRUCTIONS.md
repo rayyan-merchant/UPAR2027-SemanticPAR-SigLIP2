@@ -1,5 +1,13 @@
 # Competition submission and recovery
 
+## Current restriction (2026-10-20)
+
+Submission1003877 is Finished at Challenge_Avg .770450. Its server file exactly
+matches the preserved ZIP. **Do not upload again automatically.** User requested
+generalization diagnosis and findings before new GPU consumption. See
+GENERALIZATION_DIAGNOSIS.md and STATUS.md; earlier upload directions below are
+historical recovery instructions, not authorization for another submission.
+
 ## Verified package
 
 The submission file is `UPAR2027_SemanticPAR_SigLIP2.zip` in the sibling

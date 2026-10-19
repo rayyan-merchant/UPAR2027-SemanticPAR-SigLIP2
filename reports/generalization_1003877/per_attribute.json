@@ -1,0 +1,242 @@
+[
+  {
+    "attribute": "Age-Young",
+    "evaluations": 2,
+    "mA": 0.497935575725218,
+    "F1": 0.0
+  },
+  {
+    "attribute": "Age-Adult",
+    "evaluations": 2,
+    "mA": 0.5837180201001455,
+    "F1": 0.9022159801986592
+  },
+  {
+    "attribute": "Age-Old",
+    "evaluations": 2,
+    "mA": 0.6929319270254575,
+    "F1": 0.46120716421088115
+  },
+  {
+    "attribute": "Gender-Female",
+    "evaluations": 2,
+    "mA": 0.8884037783542997,
+    "F1": 0.8680738908218779
+  },
+  {
+    "attribute": "Hair-Length-Short",
+    "evaluations": 2,
+    "mA": 0.7688738276809256,
+    "F1": 0.8220704958134539
+  },
+  {
+    "attribute": "Hair-Length-Long",
+    "evaluations": 2,
+    "mA": 0.8632626183999539,
+    "F1": 0.8135442896670231
+  },
+  {
+    "attribute": "Hair-Length-Bald",
+    "evaluations": 2,
+    "mA": 0.7314126677939401,
+    "F1": 0.4847645911254147
+  },
+  {
+    "attribute": "UpperBody-Length-Short",
+    "evaluations": 2,
+    "mA": 0.8783803272143645,
+    "F1": 0.8282435609649293
+  },
+  {
+    "attribute": "UpperBody-Color-Black",
+    "evaluations": 2,
+    "mA": 0.8249001600453114,
+    "F1": 0.7839407200778901
+  },
+  {
+    "attribute": "UpperBody-Color-Blue",
+    "evaluations": 2,
+    "mA": 0.7948082297505941,
+    "F1": 0.6499547021749474
+  },
+  {
+    "attribute": "UpperBody-Color-Brown",
+    "evaluations": 2,
+    "mA": 0.7446172088655978,
+    "F1": 0.5325979867209252
+  },
+  {
+    "attribute": "UpperBody-Color-Green",
+    "evaluations": 2,
+    "mA": 0.7505420723554834,
+    "F1": 0.5534066300183241
+  },
+  {
+    "attribute": "UpperBody-Color-Grey",
+    "evaluations": 2,
+    "mA": 0.7814227803398044,
+    "F1": 0.5491016984790786
+  },
+  {
+    "attribute": "UpperBody-Color-Orange",
+    "evaluations": 2,
+    "mA": 0.9341787091672098,
+    "F1": 0.7884156729131175
+  },
+  {
+    "attribute": "UpperBody-Color-Pink",
+    "evaluations": 2,
+    "mA": 0.8593345845245375,
+    "F1": 0.6321548821548821
+  },
+  {
+    "attribute": "UpperBody-Color-Purple",
+    "evaluations": 2,
+    "mA": 0.79006513103468,
+    "F1": 0.5405172413793105
+  },
+  {
+    "attribute": "UpperBody-Color-Red",
+    "evaluations": 2,
+    "mA": 0.9541106753324329,
+    "F1": 0.8628131808278867
+  },
+  {
+    "attribute": "UpperBody-Color-White",
+    "evaluations": 2,
+    "mA": 0.8283750839490923,
+    "F1": 0.6439132463611403
+  },
+  {
+    "attribute": "UpperBody-Color-Yellow",
+    "evaluations": 2,
+    "mA": 0.9677244191792989,
+    "F1": 0.8218017614569338
+  },
+  {
+    "attribute": "UpperBody-Color-Other",
+    "evaluations": 2,
+    "mA": 0.553898514755127,
+    "F1": 0.19065656565656564
+  },
+  {
+    "attribute": "LowerBody-Length-Short",
+    "evaluations": 2,
+    "mA": 0.8883951741742264,
+    "F1": 0.7587501513867021
+  },
+  {
+    "attribute": "LowerBody-Color-Black",
+    "evaluations": 2,
+    "mA": 0.7971807417805616,
+    "F1": 0.7123963944770775
+  },
+  {
+    "attribute": "LowerBody-Color-Blue",
+    "evaluations": 2,
+    "mA": 0.7912182113871861,
+    "F1": 0.7263955393938106
+  },
+  {
+    "attribute": "LowerBody-Color-Brown",
+    "evaluations": 2,
+    "mA": 0.7648904566212178,
+    "F1": 0.5192466686120026
+  },
+  {
+    "attribute": "LowerBody-Color-Green",
+    "evaluations": 2,
+    "mA": 0.7056210993447364,
+    "F1": 0.3473080983260443
+  },
+  {
+    "attribute": "LowerBody-Color-Grey",
+    "evaluations": 2,
+    "mA": 0.7115909290599234,
+    "F1": 0.44864265832542605
+  },
+  {
+    "attribute": "LowerBody-Color-Orange",
+    "evaluations": 2,
+    "mA": 0.7210364248214901,
+    "F1": 0.43243243243243246
+  },
+  {
+    "attribute": "LowerBody-Color-Pink",
+    "evaluations": 2,
+    "mA": 0.8728026133905438,
+    "F1": 0.602405247813411
+  },
+  {
+    "attribute": "LowerBody-Color-Purple",
+    "evaluations": 2,
+    "mA": 0.7286834711335409,
+    "F1": 0.5566265060240964
+  },
+  {
+    "attribute": "LowerBody-Color-Red",
+    "evaluations": 2,
+    "mA": 0.8749578154918095,
+    "F1": 0.5266272189349113
+  },
+  {
+    "attribute": "LowerBody-Color-White",
+    "evaluations": 2,
+    "mA": 0.7966212011270596,
+    "F1": 0.5082854306340315
+  },
+  {
+    "attribute": "LowerBody-Color-Yellow",
+    "evaluations": 2,
+    "mA": 0.7492347392774515,
+    "F1": 0.5
+  },
+  {
+    "attribute": "LowerBody-Color-Other",
+    "evaluations": 2,
+    "mA": 0.5332132631962934,
+    "F1": 0.12237855057074595
+  },
+  {
+    "attribute": "LowerBody-Type-Trousers&Shorts",
+    "evaluations": 2,
+    "mA": 0.7751900272940624,
+    "F1": 0.9814881926060296
+  },
+  {
+    "attribute": "LowerBody-Type-Skirt&Dress",
+    "evaluations": 2,
+    "mA": 0.897999467545433,
+    "F1": 0.6436916954196105
+  },
+  {
+    "attribute": "Accessory-Backpack",
+    "evaluations": 2,
+    "mA": 0.7701489193193986,
+    "F1": 0.49097980405566866
+  },
+  {
+    "attribute": "Accessory-Bag",
+    "evaluations": 2,
+    "mA": 0.6766615478267519,
+    "F1": 0.40416657104428194
+  },
+  {
+    "attribute": "Accessory-Glasses-Normal",
+    "evaluations": 2,
+    "mA": 0.7340312206730331,
+    "F1": 0.4829160476828871
+  },
+  {
+    "attribute": "Accessory-Glasses-Sun",
+    "evaluations": 2,
+    "mA": 0.6786943132697103,
+    "F1": 0.18273896217385877
+  },
+  {
+    "attribute": "Accessory-Hat",
+    "evaluations": 2,
+    "mA": 0.788829431068434,
+    "F1": 0.6521630788398975
+  }
+]

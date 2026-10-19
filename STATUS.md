@@ -1,4 +1,43 @@
-# Status — 2026-10-19
+# Status — 2026-10-20
+
+## Current decision: diagnose generalization; preserve submission
+
+- CodaBench submission **1003877 Finished**: official Challenge_Avg **0.770450**,
+  mA .773647, instance F1 .767279, precision .741799, recall .807915.
+  Scoring report: all29,248 images processed through predict_batch in109.91s,
+  scorer exitCode0. Public aggregate results only were inspected.
+- Server-downloaded Submission File SHA256 exactly equals the retained final ZIP:
+  `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`.
+  Independent best/model/calibration/log/prediction/archive copies and hashes are
+  retained in outputs/preserved_1003877. Accepted artifacts remain unchanged.
+- **No new training, interpolation model, calibration deployment or upload.**
+  Earlier automatic follow-up is PAUSED for this diagnosis request.
+- Completed CPU diagnosis in GENERALIZATION_DIAGNOSIS.md and aggregate evidence
+  reports/generalization_1003877/. Disjoint five-fold calibration score .863482
+  versus .864952 fitted: .147point optimism; known-domain OOF gain .730point.
+  This is calibration-only cross-validation; the fixed checkpoint used all val.
+- Calibration raises known-domain FP32,706→39,303 and lowers FN28,096→25,272.
+  Local F1 convention differs from the official per-domain aggregate relationship;
+  measured alternative-definition sensitivity .19point, joint zero-support
+  scenario1.04points. Private exact scorer remains unverified.
+- Actual48-image validation-versus-ZIP audit passed: preprocessing/model FP32/
+  threshold offsets/padding all zero measured error; all33,407 annotation rows
+  align with stored predictions. CPU-vs-stored GPU AMP mean probability error
+  .000350,max .015984; one calibrated decision differs among1,920 cells.
+- Fresh-foundation PA-held-out six-epoch diagnostic split prepared, not run:
+  train18,668; source selection11,634; separate calibration11,785; target9,986.
+  No cross-partition decoded-pixel overlap. Current PAR weights cannot initialize
+  this run because they saw PA. Estimate .5–1GPUhour,1.25h running cap, uncertain
+  queue/setup. Quota check26.01h remaining; no allocation claimed.
+- Next: report findings first, then use one source-held-out diagnostic to test
+  the protocol hypothesis before any model/loss/threshold/interpolation change.
+  C: storage is tight; only the explicitly approved verified358MB duplicate
+  candidate-chunk folder was removed. Preserve canonical ZIP/checkpoints/data.
+- Full local suite now22passed in53.52s. Restricted pytest discovery to tests/
+  after an initial unrestricted run collected a stale extracted offline script.
+
+The remaining historical notes below record earlier stages; their pending-upload
+and active-monitor wording is superseded by the current decision above.
 
 ## Completed and verified
 
@@ -73,10 +112,8 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 - Initial real-weight diagnostic failed because HF's internal transformer does
   not expose hidden_states through the wrapper's capture decorator. Explicit
   reference hooks corrected diagnostics; subsequent real-weight check passed.
-- User-approved quiet follow-up is ACTIVE every 15 minutes (automation
-  `finish-upar-kaggle-submission`). It checks outputs and continues evaluation,
-  calibration and packaging; notifications are limited to meaningful results,
-  failures or required user action.
+- Earlier user-approved quiet follow-up `finish-upar-kaggle-submission` is now
+  PAUSED because the current request forbids automatic resubmission.
 - **Actual training completed 12 epochs. Best checkpoint: epoch 7 EMA.**
   Validation Challenge_Avg 0.856185; duplicate-excluded 0.856180. Global calibration
   reached 0.864952 on its own fit rows (in-sample, provisional scorer).
@@ -105,9 +142,9 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   calibration input SHA256 and the exact two excluded duplicate paths.
 - User signed in to CodaBench; authenticated account `rayyanmerchant` and
   competition upload interface verified, 0/3 daily and 0/50 total submissions
-  used. Verified ZIP upload completed; **CodaBench submission1003877 is Preparing**.
-  Page date2026-10-20 03:36, daily1/3 and total1/50 used. No completed evaluation,
-  official score or actual A10 wall-time result exists yet. See TRAINING_RESULTS.md.
+  used before upload. **CodaBench submission1003877 is Finished**, score.770450.
+  Page date2026-10-20 03:36; last observed daily1/3 and total1/50 used.
+  Official scoring report records109.91s inference; see TRAINING_RESULTS.md.
 
 ## Blockers and limitations
 
@@ -118,14 +155,16 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 - Kaggle GPU parity, feasibility, training and target Python3.11/torch2.4.1
   CPU and GPU trained-package verification passed; final T4 timing is recorded.
 - Target Python3.11/torch2.4.1 CPU inference passed. Kaggle GPU runtime uses
-  Python3.13/torch2.11; official CUDA12.1/A10 execution remains unmeasured.
+  Python3.13/torch2.11; the actual official run finished and reported109.91s
+  inference, without a separate hardware/container attestation in the archive.
 - Exact duplicate checks do not exclude near-duplicate/person-identity leakage.
-- Kaggle measurements cannot certify the A10 300-second evaluation wall limit.
+- Kaggle measurements alone cannot certify A10 latency; the accepted official
+  run now supplies actual workload timing evidence.
 
 ## Next actions
 
-Monitor the existing CodaBench submission1003877 through evaluation without
-creating a duplicate. Record terminal status, runtime acceptance and official score.
+Use the diagnosis and prepared PA-held-out plan before new GPU expenditure.
+No automatic upload, full all-domain retraining or hidden-score tuning.
 Submission ZIP: outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip (same verified SHA256).
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`

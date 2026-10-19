@@ -1,0 +1,98 @@
+{
+  "groups": {
+    "other_backbone": {
+      "elements": 788736,
+      "base_sq": 91799.07997247206,
+      "delta_sq": 0.0008074426604642339,
+      "max_abs": 0.006741046905517578,
+      "relative_l2": 9.378571231526473e-05
+    },
+    "block_00": {
+      "elements": 7087872,
+      "base_sq": 31359.690215956005,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_01": {
+      "elements": 7087872,
+      "base_sq": 10240.69201443944,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_02": {
+      "elements": 7087872,
+      "base_sq": 9997.687428003572,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_03": {
+      "elements": 7087872,
+      "base_sq": 11575.754148440985,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_04": {
+      "elements": 7087872,
+      "base_sq": 13068.975143270578,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_05": {
+      "elements": 7087872,
+      "base_sq": 15909.651102946878,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_06": {
+      "elements": 7087872,
+      "base_sq": 16224.288470948315,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_07": {
+      "elements": 7087872,
+      "base_sq": 18910.5006780417,
+      "delta_sq": 0.0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "block_08": {
+      "elements": 7087872,
+      "base_sq": 48446.090920523005,
+      "delta_sq": 2.6708283750534596,
+      "max_abs": 0.003831366077065468,
+      "relative_l2": 0.007424951494120369
+    },
+    "block_09": {
+      "elements": 7087872,
+      "base_sq": 93902.65605749912,
+      "delta_sq": 3.267086257497142,
+      "max_abs": 0.004487968981266022,
+      "relative_l2": 0.005898496990228013
+    },
+    "block_10": {
+      "elements": 7087872,
+      "base_sq": 184478.1421887537,
+      "delta_sq": 4.464183622892119,
+      "max_abs": 0.0056577399373054504,
+      "relative_l2": 0.004919246290186425
+    },
+    "block_11": {
+      "elements": 7087872,
+      "base_sq": 143018.61219918964,
+      "delta_sq": 7.568716833642171,
+      "max_abs": 0.00826612114906311,
+      "relative_l2": 0.0072746959918665805
+    }
+  },
+  "interpretation": "Parameter movement only; no evidence that interpolation improves held-out-domain predictions. Foundation PAR classifier is untrained, so full-model zero-shot/finetuned interpolation is not a valid WiSE-FT baseline here.",
+  "modified_model_created": false,
+  "GPU_used": false
+}

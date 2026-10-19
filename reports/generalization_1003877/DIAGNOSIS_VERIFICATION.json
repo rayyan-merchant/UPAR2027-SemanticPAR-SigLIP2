@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-20",
+  "pytest_command": "work/ml-env/Scripts/python.exe -X utf8 -m pytest -q",
+  "tests_passed": 22,
+  "elapsed_seconds": 53.52,
+  "initial_collection_issue": "Unrestricted pytest collected an ignored old extracted offline_test.py and polluted imports; pytest.ini now confines discovery to tests/. Fresh full rerun passed.",
+  "actual_48_image_inference_parity_passed": true,
+  "uploaded_zip_post_analysis_hashes": {
+    "outputs\\submission\\UPAR2027_SemanticPAR_SigLIP2.zip": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308",
+    "outputs\\preserved_1003877\\scored_submission.zip": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308",
+    "outputs\\diagnosis_1003877\\server_submission_1003877.zip": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308"
+  },
+  "new_GPU_jobs": 0,
+  "new_submissions": 0,
+  "accepted_calibration_modified": false,
+  "LODO": "prepared_not_executed"
+}

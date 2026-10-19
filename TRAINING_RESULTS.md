@@ -1,6 +1,22 @@
 # Actual training results — Kaggle version 4
 
-The single selected model completed 12 epochs. Best validation checkpoint: EMA, epoch 7. No CodaBench submission has occurred.
+The single selected model completed 12 epochs. Best validation checkpoint: EMA, epoch 7. CodaBench submission1003877 is Finished, official Challenge_Avg .770450. The same-dataset validation score did not predict unseen-domain performance; see GENERALIZATION_DIAGNOSIS.md. No further training or resubmission has been started.
+
+## Official score and diagnosis (2026-10-20)
+
+Official scoring archive: mA .773647, instance F1 .767279, precision .741799,
+recall .807915, label F1 .583226. All29,248 images processed in109.91s,
+scorer exitCode0. Server ZIP checksum matches the accepted candidate exactly.
+Raw-to-official gap8.573points; calibrated-to-official gap9.450points.
+Disjoint calibration folds on allowed validation predictions achieve .863482;
+fit optimism only.147point. This does not isolate model-selection optimism or
+unseen-domain shift. Local scoring convention is also inconsistent with the
+official per-domain P/R/F1 relationship; exact private scorer remains unavailable.
+The detailed CPU audit and prepared, unexecuted true-LODO design are documented
+in GENERALIZATION_DIAGNOSIS.md. Original checkpoint/calibration remain preserved.
+
+Historical timing/pending statements below describe earlier stages and are
+superseded by the completed official evaluation and diagnosis above.
 
 ## Verified gates
 
@@ -57,11 +73,12 @@ was retained, with the identical previously verified archive hash.
 The hypothetical33407-image projection at batch32 is175.746s; this is an estimate
 on T4/torch2.11, not certification of the actual A10/torch2.4.1 workload or300s
 limit. No hidden test images, counts or metadata were used for this estimate.
-CodaBench upload is now in progress; no score or completed submission is claimed.
+The subsequent CodaBench evaluation finished at.770450; see the current receipt.
 
 ## Official submission receipt
 
 CodaBench accepted the identical verified archive as submission **1003877**,
 account rayyanmerchant, page-displayed date2026-10-20 03:36. Current status:
-**Preparing**. Upload is complete, but no valid terminal evaluation, hidden-domain
-score or official runtime acceptance is claimed. See reports/CODABENCH_SUBMISSION_RECEIPT.json.
+**Finished**, official Challenge_Avg **.770450**, reported inference109.91s.
+Server file SHA256 exactly matches the retained ZIP. Preserve this accepted
+submission; no automatic replacement. See reports/CODABENCH_SUBMISSION_RECEIPT.json.
