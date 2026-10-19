@@ -33,6 +33,9 @@ kaggle kernels logs rayyannmerchant/upar2027-siglip2-semanticpar
 ```
 
 The CLI sends an embedded source snapshot, with a private dataset attached.
+Prefer `scripts/launch_kaggle.ps1 -KernelDirectory C:/absolute/staging/kernel`:
+it checks dataset accessibility before allocating GPU time. Kaggle can accept a
+kernel while omitting an unavailable data source, so inspect the returned text.
 `NvidiaTeslaT4` requests Kaggle's T4 x2 configuration; the current training code
 uses GPU 0 only. GPU assignment is established by the actual hardware report.
 Quota is a ceiling, not a guarantee of allocation. The script does not run CPU

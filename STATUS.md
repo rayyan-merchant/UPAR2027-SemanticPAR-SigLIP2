@@ -37,15 +37,19 @@ and GPU execution; passing small-model tests is not pretrained parity evidence.
 
 - Private Kaggle official-data archive prepared: 702,089,736 bytes, 131,076 images.
   SHA256: `4d4eb2c66c16fc132fe3249e88847f526dbb9f7882071397cd1033a52a606097`.
-- Kaggle CLI confirmed successful private upload and dataset creation accepted
-  for `rayyannmerchant/upar2027-official-private`. Dataset status/files currently
-  return 403 and it is not listed/attachable yet; processing is not verified.
-- Private GPU kernel version 1 was accepted, but Kaggle omitted the not-yet-valid
-  data source. CLI reports RUNNING. Its missing-data gate prevents training.
+- Kaggle CLI confirmed successful private upload. Dataset
+  `rayyannmerchant/upar2027-official-private` now reports ready; its image files
+  are accessible through CLI. Kaggle expands the ZIP into `official_data/`.
+- Private kernel version 1 failed its missing-data gate while the data source
+  was still processing. Actual hardware: two Tesla T4 GPUs, 15.6GB each,
+  torch 2.11.0+cu128/CUDA 12.8. No training occurred. Quota after failure: 29.99h.
+- Private kernel version 2 was successfully pushed with the ready data source.
+  It reruns data/tests/pretrained parity/inference/training feasibility before
+  permitting the single main training run. Gate outcomes are still pending.
 - Real foundation checkpoint download/parity is in progress locally. A bounded
   direct HTTPS download is transferring after hub/Xet stalled. No
   pretrained numerical parity pass has been claimed.
-- Main training has NOT started. No trained checkpoint, model score, final
+- No verified evidence of main training starting yet. No trained checkpoint, model score, final
   calibration, A10 timing or competition submission exists yet.
 
 ## Blockers and limitations

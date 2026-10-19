@@ -20,6 +20,10 @@ def main():
     code=base/'upar_code';code.mkdir(exist_ok=True)
     # Bootstrap has already unpacked the embedded source into this directory.
     os.chdir(code);sys.path.insert(0,str(code))
+    archives=list(Path('/kaggle/input').rglob('official_data.zip'))
+    mounted_train=list(Path('/kaggle/input').glob('**/annotations/task1/train/gt.csv'))
+    if len(archives)!=1 and len(mounted_train)!=1:
+        raise RuntimeError('Official private data source is not attached; refusing setup/training')
     os.environ['HF_HOME']=str(base/'hf-cache')
     run('-m','pip','install','-q','transformers==4.57.1','tokenizers>=0.22,<0.23',
         'huggingface_hub>=0.34,<1','hf_xet','safetensors','sentencepiece','pytest','Pillow>=10')
@@ -30,15 +34,16 @@ def main():
         'gpu_count':torch.cuda.device_count(),'gpu':torch.cuda.get_device_name(),
         'vram_bytes':torch.cuda.get_device_properties(0).total_memory},indent=2))
     data=base/'official_data'
-    candidates=list(Path('/kaggle/input').rglob('official_data.zip'))
-    if len(candidates)!=1:raise RuntimeError(f'Expected one private official-data archive, found {len(candidates)}')
-    if not data.exists():
+    if len(archives)==1 and not data.exists():
         data.mkdir()
-        with zipfile.ZipFile(candidates[0]) as archive:
+        with zipfile.ZipFile(archives[0]) as archive:
             for entry in archive.infolist():
                 target=(data/entry.filename).resolve()
                 if not target.is_relative_to(data):raise ValueError('Unsafe archive path')
             archive.extractall(data)
+    elif len(mounted_train)==1:
+        # Some Kaggle dataset ingestion paths expand uploaded ZIPs automatically.
+        data=mounted_train[0].parents[3]
     reports=base/'reports';reports.mkdir(exist_ok=True)
     train=data/'annotations/task1/train/gt.csv';val=data/'annotations/task1/val/gt.csv'
     from upar.inspect_data import audit
@@ -116,7 +121,8 @@ def main():
     # Keep weights, reports and config, release large cache/extracted data from saved outputs.
     # Never delete source datasets. These are derived copies under /kaggle/working.
     import shutil
-    shutil.rmtree(data);shutil.rmtree(base/'hf-cache',ignore_errors=True)
+    if data.resolve().is_relative_to(base):shutil.rmtree(data)
+    shutil.rmtree(base/'hf-cache',ignore_errors=True)
 
 
 if __name__=='__main__':main()
