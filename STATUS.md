@@ -105,8 +105,9 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   calibration input SHA256 and the exact two excluded duplicate paths.
 - User signed in to CodaBench; authenticated account `rayyanmerchant` and
   competition upload interface verified, 0/3 daily and 0/50 total submissions
-  used. Verified ZIP upload is in progress (last observed27%); no submissionID or
-  completed evaluation exists yet. Actual A10 wall time is not yet verified. See TRAINING_RESULTS.md.
+  used. Verified ZIP upload completed; **CodaBench submission1003877 is Preparing**.
+  Page date2026-10-20 03:36, daily1/3 and total1/50 used. No completed evaluation,
+  official score or actual A10 wall-time result exists yet. See TRAINING_RESULTS.md.
 
 ## Blockers and limitations
 
@@ -123,8 +124,8 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 
 ## Next actions
 
-Monitor the existing CodaBench upload without creating a duplicate. Record
-actual submissionID, evaluation status, runtime acceptance and score.
+Monitor the existing CodaBench submission1003877 through evaluation without
+creating a duplicate. Record terminal status, runtime acceptance and official score.
 Submission ZIP: outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip (same verified SHA256).
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`

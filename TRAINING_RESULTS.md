@@ -58,3 +58,10 @@ The hypothetical33407-image projection at batch32 is175.746s; this is an estimat
 on T4/torch2.11, not certification of the actual A10/torch2.4.1 workload or300s
 limit. No hidden test images, counts or metadata were used for this estimate.
 CodaBench upload is now in progress; no score or completed submission is claimed.
+
+## Official submission receipt
+
+CodaBench accepted the identical verified archive as submission **1003877**,
+account rayyanmerchant, page-displayed date2026-10-20 03:36. Current status:
+**Preparing**. Upload is complete, but no valid terminal evaluation, hidden-domain
+score or official runtime acceptance is claimed. See reports/CODABENCH_SUBMISSION_RECEIPT.json.

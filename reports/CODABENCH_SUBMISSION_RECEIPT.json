@@ -5,10 +5,13 @@
   "file": "UPAR2027_SemanticPAR_SigLIP2.zip",
   "bytes": 358029220,
   "sha256": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308",
-  "status": "upload in progress",
-  "last_observed_upload_percent": 27,
-  "submission_id": null,
+  "status": "Preparing",
+  "last_observed_upload_percent": 100,
+  "submission_id": 1003877,
   "score": null,
-  "screenshot": "outputs/submission/upload_in_progress.jpg",
-  "note": "One existing upload; do not create a duplicate. Upload selection/transfer is not a valid evaluated submission."
+  "screenshot": "outputs/submission/codabench_1003877_preparing.jpg",
+  "note": "Upload accepted and submission created; evaluation is pending, no valid score or official runtime result claimed.",
+  "page_displayed_date": "2026-10-20 03:36",
+  "daily_submissions_used": 1,
+  "total_submissions_used": 1
 }
