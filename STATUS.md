@@ -32,8 +32,7 @@ position-cache invalidation, head-only freeze, partial accumulation scaling,
 AMP-skipped-step EMA, raw/EMA checkpoint selection, full epoch-boundary resume,
 batch chunking/empty input/nonfinite rejection, calibration ordering/provenance,
 benchmark serialization/cold-start reporting, data/parity/GPU training gates.
-Real pretrained CPU parity passed on the earlier code as recorded below;
-a repeat on the corrected source is in progress. GPU parity and feasibility
+Real pretrained CPU parity passed again on the corrected source as recorded below. GPU parity and feasibility
 still require actual Kaggle outputs; small-model tests alone do not establish them.
 
 ## Current execution
@@ -58,14 +57,17 @@ still require actual Kaggle outputs; small-model tests alone do not establish th
 - Corrected native AMP position casting: preserve FP32 positional embeddings and
   residual sums like Hugging Face. New CPU BF16 regression failed before the fix
   and passed afterward; full local suite now 20 passed. Added AMP layer diagnostics.
-  Corrected GPU rerun is being prepared; GPU AMP remains unverified.
+  **Current private kernel version 4: RUNNING** per CLI. All 26 submitted source
+  files match commit `bc987db`, including original metadata and attached private
+  data source (reports/kaggle_v4_receipt.json). GPU AMP remains unverified.
+  Quota immediately before version 4: 29.82 GPU hours remaining.
 - Real foundation checkpoint (1,500,985,224 bytes) downloaded and SHA256 verified.
   Resolved revision: `b53b807d3a2d5e2b3911292f2d69e5341cdc064c`.
 - **CPU FP32 pretrained parity PASSED on four real pedestrian images, four aspect
   ratios.** Preprocessing, patch embeddings, all 12 vision blocks, final outputs
   and text initialization: observed maximum/mean absolute and relative L2 errors
   all zero. Query shape 40x768. Native prepared checkpoint SHA256:
-  `296fef18ede62067df0334a3317795d5326cebfe7e977ed12a3b98712a9fa2c0`.
+  `dc60844b23b36dc74d7321fa4095d6ecd9b63a072c0282a8c70403bfe1ade2b8`.
   Reports: reports/PRETRAINED_PARITY.json and .md. GPU AMP parity failed on the original code and is pending on corrected code.
 - Initial real-weight diagnostic failed because HF's internal transformer does
   not expose hidden_states through the wrapper's capture decorator. Explicit
@@ -91,7 +93,7 @@ still require actual Kaggle outputs; small-model tests alone do not establish th
 
 ## Next actions
 
-Launch and monitor the corrected private CLI-only GPU pipeline; inspect actual parity and
+Monitor the corrected private CLI-only GPU pipeline; inspect actual parity and
 throughput evidence; train the single selected architecture only after gates pass,
 evaluate raw/EMA weights, calibrate using duplicate-excluded validation, then
 benchmark and inspect candidate ZIP before any CodaBench upload.

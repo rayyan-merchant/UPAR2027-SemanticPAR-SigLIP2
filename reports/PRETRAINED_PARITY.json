@@ -95,7 +95,7 @@
     "num_patches": 256,
     "layer_norm_eps": 1e-06
   },
-  "code_sha256": "474cc07c53c77209eda2ad80c696195ac06263b33689952c3e77c60fb2ebfc49",
+  "code_sha256": "3f2956de847c3169c7a2ce139a04915617f89152d454662e203277c0c5bc9d12",
   "torch": "2.4.1+cpu",
   "transformers": "4.57.1",
   "device": "cpu",
@@ -211,6 +211,7 @@
         }
       },
       "amp_errors": null,
+      "amp_stages": null,
       "passed": true
     },
     {
@@ -301,6 +302,7 @@
         }
       },
       "amp_errors": null,
+      "amp_stages": null,
       "passed": true
     },
     {
@@ -391,6 +393,7 @@
         }
       },
       "amp_errors": null,
+      "amp_stages": null,
       "passed": true
     },
     {
@@ -481,10 +484,11 @@
         }
       },
       "amp_errors": null,
+      "amp_stages": null,
       "passed": true
     }
   ],
   "mixed_precision_checked": false,
   "passed": true,
-  "prepared_sha256": "296fef18ede62067df0334a3317795d5326cebfe7e977ed12a3b98712a9fa2c0"
+  "prepared_sha256": "dc60844b23b36dc74d7321fa4095d6ecd9b63a072c0282a8c70403bfe1ade2b8"
 }
