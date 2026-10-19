@@ -32,8 +32,8 @@ position-cache invalidation, head-only freeze, partial accumulation scaling,
 AMP-skipped-step EMA, raw/EMA checkpoint selection, full epoch-boundary resume,
 batch chunking/empty input/nonfinite rejection, calibration ordering/provenance,
 benchmark serialization/cold-start reporting, data/parity/GPU training gates.
-New pretrained-layer parity and GPU feasibility tools still need actual weights
-and GPU execution; passing small-model tests is not pretrained parity evidence.
+Real pretrained CPU parity passed as recorded below. GPU parity and feasibility
+still require actual Kaggle outputs; small-model tests alone do not establish them.
 
 ## Current execution
 
@@ -64,6 +64,10 @@ and GPU execution; passing small-model tests is not pretrained parity evidence.
 - Initial real-weight diagnostic failed because HF's internal transformer does
   not expose hidden_states through the wrapper's capture decorator. Explicit
   reference hooks corrected diagnostics; subsequent real-weight check passed.
+- User-approved quiet follow-up is ACTIVE every 15 minutes (automation
+  `finish-upar-kaggle-submission`). It checks outputs and continues evaluation,
+  calibration and packaging; notifications are limited to meaningful results,
+  failures or required user action.
 - No verified evidence of main training starting yet. No trained checkpoint, model score, final
   calibration, A10 timing or competition submission exists yet.
 
@@ -81,8 +85,8 @@ and GPU execution; passing small-model tests is not pretrained parity evidence.
 
 ## Next actions
 
-Finish private upload, launch the CLI-only GPU pipeline, inspect actual parity and
-throughput evidence, train the single selected architecture only after gates pass,
+Monitor the running private CLI-only GPU pipeline and inspect actual parity and
+throughput evidence; train the single selected architecture only after gates pass,
 evaluate raw/EMA weights, calibrate using duplicate-excluded validation, then
 benchmark and inspect candidate ZIP before any CodaBench upload.
 
