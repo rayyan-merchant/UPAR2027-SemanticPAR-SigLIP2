@@ -2,7 +2,7 @@
   "kernel": "rayyannmerchant/upar2027-trained-inference-verification",
   "version": 1,
   "source_commit": "a9cd617",
-  "status_last_verified": "RUNNING",
+  "status_last_verified": "COMPLETE",
   "is_private": true,
   "dataset_sources": [
     "rayyannmerchant/upar2027-official-private"
@@ -78,5 +78,6 @@
     }
   },
   "all_sources_match_commit": true,
-  "training_executed": false
+  "training_executed": false,
+  "outcome": "Trained GPU offline API passed. Benchmark batch comparison confounded by cold/warm mounted image access; second local-staging verification started."
 }

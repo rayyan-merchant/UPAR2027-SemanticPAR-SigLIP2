@@ -33,3 +33,15 @@ The trained candidate ZIP was downloaded and its ZIP CRC, exact original metadat
 Measured trained inference on Tesla T4: 2,000 images in 13.4243 seconds after warmup (148.984 images/s), with decoding, preprocessing and serialization in the timed loop. Model load 1.4863 seconds; warmup 1.0693 seconds. Full process measured 211.6601 seconds. The remaining startup overhead has not been separately attributed; the benchmark enumerates the dataset before inference. Its hypothetical 33,407-image projection was 422.4679 seconds, above 300. Do not certify the official A10 time limit from this run. Separate discovery/setup from supplied-sample inference in the next verification benchmark.
 
 Raw evidence is retained under reports/kaggle_v4/.
+
+## Trained GPU verification follow-up
+
+Inference-only version1 passed blocked-network/optional-dependency CUDA API checks
+on six real images across the official domains, 35-sample batching and original
+metadata; single/batch maximum probability difference0.001139 (tolerance0.002).
+An explicit-path batch32 pass took253.237s for2000images, followed by batch64
+13.864s on the same mounted images. This order/cache confound prevents attributing
+the difference to batch size. Version2 measures staging from the private input
+mount separately, then compares identical derived local image copies. No model
+training or architecture change is involved. Its outcomes are pending.
+User subsequently signed in; account rayyanmerchant and available competition upload interface were verified. Final timing checks remain before upload.

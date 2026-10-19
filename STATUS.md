@@ -81,9 +81,12 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   Validation Challenge_Avg 0.856185; duplicate-excluded 0.856180. Global calibration
   reached 0.864952 on its own fit rows (in-sample, provisional scorer).
 - Private inference-only kernel `rayyannmerchant/upar2027-trained-inference-verification`
-  version 1 was pushed with the completed training kernel and official private
-  data attached. It runs trained offline API checks and explicit-path batch32/64
-  benchmarks; no training is invoked. Outcomes pending.
+  version 1 COMPLETE: trained offline CUDA API passed on six real images and
+  35-sample batches, single/batch probability max difference 0.001139.
+  Explicit-path batch32 took253.24s/2000 images; subsequent batch64 took13.86s.
+  The comparison is confounded by cold/warm mounted image access. Version2
+  is QUEUED to measure storage staging separately and benchmark identical
+  local image copies at both batch sizes. No training is invoked.
 - Candidate ZIP downloaded (358,029,220 bytes), SHA256
   `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`.
   Best epoch7 EMA weights and validation predictions are preserved locally;
@@ -95,7 +98,10 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   3.28e-7. Report: reports/kaggle_v4/TRAINED_OFFLINE_PY311_TORCH241.json.
 - Independently recomputed saved-prediction and calibrated scores and verified
   calibration input SHA256 and the exact two excluded duplicate paths.
-- No CodaBench submission or verified A10 300-second result exists. See TRAINING_RESULTS.md.
+- User signed in to CodaBench; authenticated account `rayyanmerchant` and
+  competition upload interface verified, 0/3 daily and 0/50 total submissions
+  used. Upload awaits final timing checks. No CodaBench submission or verified
+  A10 300-second result exists. See TRAINING_RESULTS.md.
 
 ## Blockers and limitations
 
