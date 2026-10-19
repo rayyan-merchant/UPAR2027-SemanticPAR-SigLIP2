@@ -87,15 +87,30 @@ def check(images, foundation, output, max_patches=256, device='cpu'):
             stages['end_to_end']=errors(ref.last_hidden_state,own)
         ok=preprocess_ok and all(all(v[k] <= limits['fp32'][k] for k in v) for v in stages.values())
         mixed=None
+        mixed_stages=None
         if torch.device(device).type=='cuda':
             with torch.inference_mode(), torch.autocast('cuda',dtype=torch.float16):
-                mixed_ref=hf.vision_model(pixel_values=p,attention_mask=m,spatial_shapes=s.to(device)).last_hidden_state
+                reference_stages.clear()
+                handles=[hf.vision_model.embeddings.register_forward_hook(capture('embeddings'))]
+                handles.extend(block.register_forward_hook(capture(f'block_{index}'))
+                               for index,block in enumerate(hf.vision_model.encoder.layers))
+                try:
+                    mixed_ref=hf.vision_model(pixel_values=p,attention_mask=m,spatial_shapes=s.to(device)).last_hidden_state
+                finally:
+                    for handle in handles:handle.remove()
+                x=native.vision_model.embeddings(p,s)
+                mixed_stages={'embeddings':errors(reference_stages['embeddings'],x)}
+                for index,block in enumerate(native.vision_model.encoder.layers):
+                    x=block(x,m)
+                    mixed_stages[f'block_{index}']=errors(reference_stages[f'block_{index}'],x)
+                mixed_stages['final']=errors(mixed_ref,native.vision_model.post_layernorm(x))
                 mixed_own=native.vision_model(px[None].to(device),m,s)
             mixed=errors(mixed_ref,mixed_own)
-            ok=ok and all(mixed[k] <= limits['fp16'][k] for k in mixed)
+            mixed_stages['end_to_end']=mixed
+            ok=ok and all(all(v[k] <= limits['fp16'][k] for k in v) for v in mixed_stages.values())
         records.append({'image':str(name),'image_sha256':hashlib.sha256(Path(name).read_bytes()).hexdigest(),
                         'pixel_errors':diff,'mask_equal':same_mask,'shape_equal':same_shape,
-                        'stages':stages,'amp_errors':mixed,'passed':ok})
+                        'stages':stages,'amp_errors':mixed,'amp_stages':mixed_stages,'passed':ok})
     aspect_diversity=len(set(aspects))>=3
     result={'schema':1,'foundation':foundation,'resolved_revision':getattr(hf.config,'_commit_hash',None),
             'attributes':ATTRIBUTES,'prompts':PROMPTS,'vision_config':native.cfg.as_dict(),

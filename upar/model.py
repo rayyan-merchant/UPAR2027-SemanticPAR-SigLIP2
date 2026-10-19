@@ -49,7 +49,7 @@ class VisionEmbeddings(nn.Module):
         return super()._load_from_state_dict(*args, **kwargs)
 
     def forward(self, pixels, spatial_shapes):
-        patches = self.patch_embedding(pixels)
+        patches = self.patch_embedding(pixels.to(dtype=self.patch_embedding.weight.dtype))
         pos = self.position_embedding.weight.reshape(self.grid_side, self.grid_side, -1)
         pos = pos.permute(2, 0, 1).unsqueeze(0)
         pieces = []
@@ -58,7 +58,7 @@ class VisionEmbeddings(nn.Module):
             if h * w > pixels.size(1):
                 raise ValueError("spatial_shapes exceed patch count")
             cache_ok = not self.training and not torch.is_grad_enabled()
-            key = (h, w, pixels.size(1), str(pos.device), str(patches.dtype))
+            key = (h, w, pixels.size(1), str(pos.device), str(pos.dtype))
             interp = self._eval_pos_cache.get(key) if cache_ok else None
             if interp is None:
                 interp = F.interpolate(pos.float(), size=(h, w), mode="bilinear",
@@ -66,7 +66,10 @@ class VisionEmbeddings(nn.Module):
                 interp = interp.flatten(2).transpose(1, 2).reshape(h*w, -1)
                 if h * w < pixels.size(1):
                     interp = torch.cat([interp, interp[:1].expand(pixels.size(1)-h*w, -1)], dim=0)
-                interp = interp.to(dtype=patches.dtype)
+                # HF preserves the position-table dtype. With FP32 weights and
+                # autocast, this keeps the embedding sum/residual stream FP32.
+                # Casting to the linear output dtype silently changes AMP math.
+                interp = interp.to(dtype=pos.dtype)
                 if cache_ok:
                     if len(self._eval_pos_cache) >= 64:
                         self._eval_pos_cache.clear()

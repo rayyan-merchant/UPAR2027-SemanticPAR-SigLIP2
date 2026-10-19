@@ -16,7 +16,7 @@
 - No annotation path overlap; no cross-split byte duplicates. One decoded-pixel
   group crosses splits: MIT PETA 08572 (train), 08573 and 08574 (validation),
   with identical labels. Official splits retained; calibration excludes two rows.
-- 19 automated tests passed locally under torch 2.4.1+cpu, Python 3.12.14,
+- 20 automated tests passed locally under torch 2.4.1+cpu, Python 3.12.14,
   Transformers 4.57.1. Includes native/installed-HF processor parity, backward and
   padding masks, NaN masking, sampler probabilities, known metric examples,
   random-weight native/HF vision equivalence, one-step Adam resume equivalence,
@@ -32,7 +32,8 @@ position-cache invalidation, head-only freeze, partial accumulation scaling,
 AMP-skipped-step EMA, raw/EMA checkpoint selection, full epoch-boundary resume,
 batch chunking/empty input/nonfinite rejection, calibration ordering/provenance,
 benchmark serialization/cold-start reporting, data/parity/GPU training gates.
-Real pretrained CPU parity passed as recorded below. GPU parity and feasibility
+Real pretrained CPU parity passed on the earlier code as recorded below;
+a repeat on the corrected source is in progress. GPU parity and feasibility
 still require actual Kaggle outputs; small-model tests alone do not establish them.
 
 ## Current execution
@@ -49,10 +50,15 @@ still require actual Kaggle outputs; small-model tests alone do not establish th
   It reruns data/tests/pretrained parity/inference/training feasibility before
   permitting main training. Its diagnostic source was superseded by version 3
   after the local real-weight check exposed and resolved the hook issue.
-- **Current private kernel version 3: RUNNING** per CLI. All 26 submitted source
-  files match Git commit `9c5a0e0`, including original metadata bytes. Receipt:
-  reports/kaggle_v3_receipt.json. GPU gate results/training artifacts are not yet
-  available through CLI; live log streaming currently returns server error 500.
+- **Private kernel version 3 ended ERROR at the AMP parity gate.** Source
+  matched commit `9c5a0e0`. Its full data audit and 19 tests passed. GPU FP32
+  preprocessing and all vision stages matched exactly on four real images. AMP
+  errors exceeded unchanged tolerances (max 0.662–5.659; relative L2 0.0126–0.0430).
+  Training and feasibility never started. Evidence: reports/kaggle_v3/.
+- Corrected native AMP position casting: preserve FP32 positional embeddings and
+  residual sums like Hugging Face. New CPU BF16 regression failed before the fix
+  and passed afterward; full local suite now 20 passed. Added AMP layer diagnostics.
+  Corrected GPU rerun is being prepared; GPU AMP remains unverified.
 - Real foundation checkpoint (1,500,985,224 bytes) downloaded and SHA256 verified.
   Resolved revision: `b53b807d3a2d5e2b3911292f2d69e5341cdc064c`.
 - **CPU FP32 pretrained parity PASSED on four real pedestrian images, four aspect
@@ -60,7 +66,7 @@ still require actual Kaggle outputs; small-model tests alone do not establish th
   and text initialization: observed maximum/mean absolute and relative L2 errors
   all zero. Query shape 40x768. Native prepared checkpoint SHA256:
   `296fef18ede62067df0334a3317795d5326cebfe7e977ed12a3b98712a9fa2c0`.
-  Reports: reports/PRETRAINED_PARITY.json and .md. GPU AMP parity remains pending.
+  Reports: reports/PRETRAINED_PARITY.json and .md. GPU AMP parity failed on the original code and is pending on corrected code.
 - Initial real-weight diagnostic failed because HF's internal transformer does
   not expose hidden_states through the wrapper's capture decorator. Explicit
   reference hooks corrected diagnostics; subsequent real-weight check passed.
@@ -85,7 +91,7 @@ still require actual Kaggle outputs; small-model tests alone do not establish th
 
 ## Next actions
 
-Monitor the running private CLI-only GPU pipeline and inspect actual parity and
+Launch and monitor the corrected private CLI-only GPU pipeline; inspect actual parity and
 throughput evidence; train the single selected architecture only after gates pass,
 evaluate raw/EMA weights, calibrate using duplicate-excluded validation, then
 benchmark and inspect candidate ZIP before any CodaBench upload.

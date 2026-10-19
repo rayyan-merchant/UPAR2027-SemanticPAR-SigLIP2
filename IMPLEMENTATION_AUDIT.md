@@ -1,4 +1,4 @@
-# Implementation audit — 2026-10-19
+# Implementation audit â€” 2026-10-19
 
 Inspected the complete starter README, all 12 Python modules, tests, requirements,
 submission template, local official README and Track 1 sample API and metadata,
@@ -65,3 +65,18 @@ D: starter is the implementation source. Original data and starter stay read-onl
 
 Fix status and actual test results are tracked in STATUS.md. This audit establishes
 findings; it does not certify pretrained parity, official scoring or training.
+
+## GPU execution follow-up — 2026-10-19
+
+Kaggle version 3 passed the complete data audit and 19 tests, then stopped at
+the mixed-precision pretrained parity gate before training. GPU FP32
+preprocessing and every vision stage matched exactly on four real images.
+AMP final-feature maximum absolute errors ranged 0.662–5.659, mean absolute
+0.0134–0.0181, relative L2 0.0126–0.0430, exceeding unchanged tolerances.
+Inspection found native positional embeddings cast to the autocast linear-output
+dtype while Hugging Face preserves FP32 position weights and residual sums.
+A CPU BF16 regression reproduced the embedding dtype mismatch before the fix.
+Preserving position-table dtype fixes the regression; the full 20-test suite
+passes locally. GPU confirmation remains required; no tolerance was relaxed.
+AMP diagnostics now record every vision layer to localize any remaining error.
+Raw GPU evidence is retained in reports/kaggle_v3/.

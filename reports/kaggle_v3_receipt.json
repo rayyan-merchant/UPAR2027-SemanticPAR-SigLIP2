@@ -7,7 +7,7 @@
   ],
   "docker_image": "gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
   "machine_shape_requested": "NvidiaTeslaT4",
-  "status_last_verified": "RUNNING",
+  "status_last_verified": "ERROR",
   "wrapper_sha256": "da6456a4df09a9ab1527871dcc71d149756b5525264d8721cfe1721d06f1eb3b",
   "source_commit": "9c5a0e0",
   "source_files": {
@@ -116,5 +116,6 @@
       "matches_source_commit": true
     }
   },
-  "all_sources_match_commit": true
+  "all_sources_match_commit": true,
+  "outcome": "Stopped at GPU AMP parity gate before feasibility or training; all FP32 stages matched exactly."
 }
