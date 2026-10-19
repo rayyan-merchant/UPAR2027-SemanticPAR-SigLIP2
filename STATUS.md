@@ -85,8 +85,10 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   35-sample batches, single/batch probability max difference 0.001139.
   Explicit-path batch32 took253.24s/2000 images; subsequent batch64 took13.86s.
   The comparison is confounded by cold/warm mounted image access. Version2
-  is QUEUED to measure storage staging separately and benchmark identical
-  local image copies at both batch sizes. No training is invoked.
+  COMPLETE: storage staging measured separately; batch32 local-file inference
+  2000 images/10.263s (194.868 images/s), batch64 10.909s. Original batch32
+  retained. Staging2100images/19.51MB took194.272s, supporting the storage
+  bottleneck explanation. No training was invoked.
 - Candidate ZIP downloaded (358,029,220 bytes), SHA256
   `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`.
   Best epoch7 EMA weights, validation predictions and complete last.pt are
@@ -103,8 +105,8 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   calibration input SHA256 and the exact two excluded duplicate paths.
 - User signed in to CodaBench; authenticated account `rayyanmerchant` and
   competition upload interface verified, 0/3 daily and 0/50 total submissions
-  used. Upload awaits final timing checks. No CodaBench submission or verified
-  A10 300-second result exists. See TRAINING_RESULTS.md.
+  used. Verified ZIP upload is in progress (last observed5%); no submissionID or
+  completed evaluation exists yet. Actual A10 wall time is not yet verified. See TRAINING_RESULTS.md.
 
 ## Blockers and limitations
 
@@ -113,7 +115,7 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   but exact invalid/empty-class edge behavior cannot yet be differentially tested.
   Local scores remain provisional. Do not mark exact scorer equivalence passed.
 - Kaggle GPU parity, feasibility, training and target Python3.11/torch2.4.1
-  CPU trained-package verification passed. Final GPU timing checks remain.
+  CPU and GPU trained-package verification passed; final T4 timing is recorded.
 - Target Python3.11/torch2.4.1 CPU inference passed. Kaggle GPU runtime uses
   Python3.13/torch2.11; official CUDA12.1/A10 execution remains unmeasured.
 - Exact duplicate checks do not exclude near-duplicate/person-identity leakage.
@@ -121,9 +123,9 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 
 ## Next actions
 
-Retrieve version2 storage-staging and local-image batch timing results, choose
-a measured inference batch setting, and upload the verified candidate through
-the authenticated CodaBench account. Record actual evaluation status and score.
+Monitor the existing CodaBench upload without creating a duplicate. Record
+actual submissionID, evaluation status, runtime acceptance and score.
+Submission ZIP: outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip (same verified SHA256).
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`
 preserves the initial failed path audit. `reports/tests.xml` records local checks.

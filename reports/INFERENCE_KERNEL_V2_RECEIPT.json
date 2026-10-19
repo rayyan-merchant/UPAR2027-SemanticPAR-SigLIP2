@@ -1,7 +1,7 @@
 {
   "kernel": "rayyannmerchant/upar2027-trained-inference-verification",
   "version": 2,
-  "status_last_verified": "QUEUED",
+  "status_last_verified": "COMPLETE",
   "source_commit": "a9cd617",
   "is_private": true,
   "dataset_sources": [
@@ -79,5 +79,6 @@
   },
   "all_sources_match_commit": true,
   "training_executed": false,
-  "purpose": "Separate mounted image staging cost from local-storage supplied-sample inference timing."
+  "purpose": "Separate mounted image staging cost from local-storage supplied-sample inference timing.",
+  "outcome": "Trained CUDA offline API passed; local-file batch32 faster than64; retained original batch32 package."
 }

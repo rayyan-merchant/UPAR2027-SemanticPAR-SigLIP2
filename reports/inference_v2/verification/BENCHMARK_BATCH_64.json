@@ -1,0 +1,17 @@
+{
+  "gpu": "Tesla T4",
+  "load_s": 1.45916017899998,
+  "warmup_s": 1.2326479949999793,
+  "images": 2000,
+  "elapsed_s": 10.909009122999976,
+  "images_per_s": 183.33470780433268,
+  "measured_total_s": 15.483867842000052,
+  "serialization_included": true,
+  "sample_discovery_s": 0.003910739999980706,
+  "explicit_sample_paths": true,
+  "submission_api_total_s": 13.600817296999935,
+  "hypothetical_hidden_images": 33407,
+  "projected_runtime_s": 186.79349260503017,
+  "hypothetical_under_300s": true,
+  "limitation": "Hypothetical workload only. Hidden workload unknown. Hardware differs from official A10 unless explicitly matched. This does not certify the official 300s limit."
+}

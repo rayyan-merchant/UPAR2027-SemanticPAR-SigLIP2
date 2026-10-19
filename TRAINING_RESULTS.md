@@ -45,3 +45,16 @@ the difference to batch size. Version2 measures staging from the private input
 mount separately, then compares identical derived local image copies. No model
 training or architecture change is involved. Its outcomes are pending.
 User subsequently signed in; account rayyanmerchant and available competition upload interface were verified. Final timing checks remain before upload.
+
+## Final local-storage measurements
+
+Inference-only version2 completed successfully. Staging2100 official images
+(19,513,905 bytes) from the private Kaggle mount into local working storage took
+194.272s, reported separately. On the same staged sample list, batch32 processed
+2000images in10.2633s (194.868 images/s), complete benchmark process14.5758s;
+batch64 took10.9090s (183.335 images/s), complete process15.4839s. Original batch32
+was retained, with the identical previously verified archive hash.
+The hypothetical33407-image projection at batch32 is175.746s; this is an estimate
+on T4/torch2.11, not certification of the actual A10/torch2.4.1 workload or300s
+limit. No hidden test images, counts or metadata were used for this estimate.
+CodaBench upload is now in progress; no score or completed submission is claimed.
