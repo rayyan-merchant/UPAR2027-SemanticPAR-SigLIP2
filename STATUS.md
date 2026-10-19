@@ -47,8 +47,12 @@ and GPU execution; passing small-model tests is not pretrained parity evidence.
   torch 2.11.0+cu128/CUDA 12.8. No training occurred. Quota after failure: 29.99h.
 - Private kernel version 2 was successfully pushed with the ready data source.
   It reruns data/tests/pretrained parity/inference/training feasibility before
-  permitting the single main training run. CLI still reports QUEUED; GPU allocation
-  and gate outcomes are pending. Source/metadata receipt: reports/kaggle_v2_receipt.json.
+  permitting main training. Its diagnostic source was superseded by version 3
+  after the local real-weight check exposed and resolved the hook issue.
+- **Current private kernel version 3: RUNNING** per CLI. All 26 submitted source
+  files match Git commit `9c5a0e0`, including original metadata bytes. Receipt:
+  reports/kaggle_v3_receipt.json. GPU gate results/training artifacts are not yet
+  available through CLI; live log streaming currently returns server error 500.
 - Real foundation checkpoint (1,500,985,224 bytes) downloaded and SHA256 verified.
   Resolved revision: `b53b807d3a2d5e2b3911292f2d69e5341cdc064c`.
 - **CPU FP32 pretrained parity PASSED on four real pedestrian images, four aspect
