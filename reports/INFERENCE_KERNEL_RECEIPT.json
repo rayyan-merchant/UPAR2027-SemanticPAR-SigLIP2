@@ -1,0 +1,82 @@
+{
+  "kernel": "rayyannmerchant/upar2027-trained-inference-verification",
+  "version": 1,
+  "source_commit": "a9cd617",
+  "status_last_verified": "RUNNING",
+  "is_private": true,
+  "dataset_sources": [
+    "rayyannmerchant/upar2027-official-private"
+  ],
+  "kernel_sources": [
+    "rayyannmerchant/upar2027-siglip2-semanticpar"
+  ],
+  "wrapper_sha256": "46a6e6b73925ca5907d924e5c437f3e09fbf2ae54f24d92f1aa647747d83d34c",
+  "source_files": {
+    "upar/attributes.py": {
+      "sha256": "f79b9295073167df67b92c3b07de3cdfc0b65f95bddc7c8df13a379535278694",
+      "matches_source_commit": true
+    },
+    "upar/benchmark.py": {
+      "sha256": "30ec3d3b9537daa26f072fac927dbd874b734128c14613a5416e8582cdb984fc",
+      "matches_source_commit": true
+    },
+    "upar/calibrate.py": {
+      "sha256": "9020a85a9e27e2b48aa422ba6a35a01651f0a0e023c563b204f10284d7f0af83",
+      "matches_source_commit": true
+    },
+    "upar/checkpoint.py": {
+      "sha256": "c12512a58e7ea1f6826627629d9a19e61cf2dd4780c2db8216fd665586149f1f",
+      "matches_source_commit": true
+    },
+    "upar/data.py": {
+      "sha256": "7f60fce1660aeb562adce8ef937b5a146064b489db95ca2dad3d4b20db0cf6b6",
+      "matches_source_commit": true
+    },
+    "upar/feasibility.py": {
+      "sha256": "33dde8d5c37c4a5eb35fa082deabd2b578e3abc6ff637ea7ab01c90822682a08",
+      "matches_source_commit": true
+    },
+    "upar/inspect_data.py": {
+      "sha256": "1789452b93efc329a1dd74d093f0b3c92e54f6d9beebae258db62f62e6093835",
+      "matches_source_commit": true
+    },
+    "upar/metrics.py": {
+      "sha256": "b687c20b164f94d22042c6ae3577a516fd445f5b79da6ae9317b9a9ab04e027e",
+      "matches_source_commit": true
+    },
+    "upar/model.py": {
+      "sha256": "2174db0b5a1da8a0c4375dbb17ca044f417fd3173da02e4128200d528954da61",
+      "matches_source_commit": true
+    },
+    "upar/package.py": {
+      "sha256": "89784ece36cec4d9bd67d2ed32fc44ea224aa12142309f34ff4c73f47ff49aec",
+      "matches_source_commit": true
+    },
+    "upar/parity.py": {
+      "sha256": "0467152be450a7ff899e7fce52ba56e41554b45c60dcd8c1ba36958fb8b273a3",
+      "matches_source_commit": true
+    },
+    "upar/preprocess.py": {
+      "sha256": "6962932ef6a1b9901df24452984c69e49de5598915a94f5afea97020f0590656",
+      "matches_source_commit": true
+    },
+    "upar/train.py": {
+      "sha256": "8dd3da4ada440f5eac842ff838aaa84eda3b88ee2fcd61603e453dd32e99b6a2",
+      "matches_source_commit": true
+    },
+    "upar/__init__.py": {
+      "sha256": "ae41d7aa72e1b7a2d59a8e30b5f4dc36ddf9eedeef93cf8a4cc48b4c3c4ffc46",
+      "matches_source_commit": true
+    },
+    "submission_template/metadata.yaml": {
+      "sha256": "98765a3b379d670b9b06bc8ae7fd797a02437451b8ca9f183e978430fa74d3f5",
+      "matches_source_commit": true
+    },
+    "scripts/verify_trained_submission.py": {
+      "sha256": "2c424b8c9372c2d81bd7462c3ec15ab0962183967ba462309efc745253330e1d",
+      "matches_source_commit": true
+    }
+  },
+  "all_sources_match_commit": true,
+  "training_executed": false
+}

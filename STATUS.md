@@ -84,9 +84,18 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   version 1 was pushed with the completed training kernel and official private
   data attached. It runs trained offline API checks and explicit-path batch32/64
   benchmarks; no training is invoked. Outcomes pending.
-- Trained candidate ZIP and resume checkpoints exist on Kaggle; local downloads
-  and final trained offline/package verification are underway. No CodaBench
-  submission or verified A10 300-second result exists. See TRAINING_RESULTS.md.
+- Candidate ZIP downloaded (358,029,220 bytes), SHA256
+  `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`.
+  Best epoch7 EMA weights and validation predictions are preserved locally;
+  complete last.pt resume-state download is ongoing.
+- **Actual trained offline verification PASSED on Python3.11.16/torch2.4.1+cpu**,
+  and separately Python3.12/torch2.4.1. Two real images, 35-sample chunked batch,
+  finite 40 probabilities, correct ordering, exact original metadata/ZIP CRC,
+  blocked sockets and optional HF/timm/requests imports. Single/batch max error
+  3.28e-7. Report: reports/kaggle_v4/TRAINED_OFFLINE_PY311_TORCH241.json.
+- Independently recomputed saved-prediction and calibrated scores and verified
+  calibration input SHA256 and the exact two excluded duplicate paths.
+- No CodaBench submission or verified A10 300-second result exists. See TRAINING_RESULTS.md.
 
 ## Blockers and limitations
 
@@ -94,18 +103,18 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   is not exposed (403 on program API). Published metric formulas are verified,
   but exact invalid/empty-class edge behavior cannot yet be differentially tested.
   Local scores remain provisional. Do not mark exact scorer equivalence passed.
-- Kaggle GPU parity, feasibility and all 12 training epochs passed. Local
-  target-version trained-package verification and final timing checks remain.
-- Local tests used Python 3.12; Kaggle used Python 3.13/torch 2.11. A Python
-  3.11 target-version inference environment is being prepared.
+- Kaggle GPU parity, feasibility, training and target Python3.11/torch2.4.1
+  CPU trained-package verification passed. Final GPU timing checks remain.
+- Target Python3.11/torch2.4.1 CPU inference passed. Kaggle GPU runtime uses
+  Python3.13/torch2.11; official CUDA12.1/A10 execution remains unmeasured.
 - Exact duplicate checks do not exclude near-duplicate/person-identity leakage.
 - Kaggle measurements cannot certify the A10 300-second evaluation wall limit.
 
 ## Next actions
 
-Finish retrieving the trained candidate and resumable checkpoints. Verify the
-trained package offline under target torch 2.4.1, separate benchmark setup cost
-from the supplied-sample API workload, and verify the ZIP before CodaBench upload.
+Finish preserving the complete resume checkpoint. Retrieve trained GPU API and
+explicit-sample timing results, choose a measured inference batch setting, and
+complete submission/account access checks before CodaBench upload.
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`
 preserves the initial failed path audit. `reports/tests.xml` records local checks.

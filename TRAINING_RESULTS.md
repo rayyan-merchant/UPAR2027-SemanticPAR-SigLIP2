@@ -28,7 +28,7 @@ Calibration excluded two known duplicate validation rows. The same validation sp
 
 ## Candidate and timing
 
-A trained candidate ZIP was created on Kaggle. Local artifact downloads and final trained offline/package verification are underway. No final submission is claimed.
+The trained candidate ZIP was downloaded and its ZIP CRC, exact original metadata, trained epoch7 EMA checkpoint, semantic query shape and offline API passed on Python3.11.16/torch2.4.1+cpu and Python3.12/torch2.4.1. Network and optional HF/timm/requests imports were blocked. Two real images and a 35-image chunked batch returned finite ordered probabilities. Single/batch maximum absolute difference was 3.28e-7. Archive SHA256: `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`; best checkpoint SHA256: `18a48956eac97d16709e355d57e747a9944c872f844e20645d1dc5aae86ae0d6`. Independent recomputation reproduced both validation scores and the calibration prediction hash. Final GPU timing verification is pending; no CodaBench submission is claimed.
 
 Measured trained inference on Tesla T4: 2,000 images in 13.4243 seconds after warmup (148.984 images/s), with decoding, preprocessing and serialization in the timed loop. Model load 1.4863 seconds; warmup 1.0693 seconds. Full process measured 211.6601 seconds. The remaining startup overhead has not been separately attributed; the benchmark enumerates the dataset before inference. Its hypothetical 33,407-image projection was 422.4679 seconds, above 300. Do not certify the official A10 time limit from this run. Separate discovery/setup from supplied-sample inference in the next verification benchmark.
 
