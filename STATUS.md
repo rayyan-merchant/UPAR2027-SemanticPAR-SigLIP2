@@ -105,7 +105,7 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
   calibration input SHA256 and the exact two excluded duplicate paths.
 - User signed in to CodaBench; authenticated account `rayyanmerchant` and
   competition upload interface verified, 0/3 daily and 0/50 total submissions
-  used. Verified ZIP upload is in progress (last observed5%); no submissionID or
+  used. Verified ZIP upload is in progress (last observed27%); no submissionID or
   completed evaluation exists yet. Actual A10 wall time is not yet verified. See TRAINING_RESULTS.md.
 
 ## Blockers and limitations

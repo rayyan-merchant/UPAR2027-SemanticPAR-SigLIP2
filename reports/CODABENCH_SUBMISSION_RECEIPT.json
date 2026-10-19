@@ -1,0 +1,14 @@
+{
+  "competition_id": 18180,
+  "competition_url": "https://www.codabench.org/competitions/18180/#/participate-tab",
+  "account": "rayyanmerchant",
+  "file": "UPAR2027_SemanticPAR_SigLIP2.zip",
+  "bytes": 358029220,
+  "sha256": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308",
+  "status": "upload in progress",
+  "last_observed_upload_percent": 27,
+  "submission_id": null,
+  "score": null,
+  "screenshot": "outputs/submission/upload_in_progress.jpg",
+  "note": "One existing upload; do not create a duplicate. Upload selection/transfer is not a valid evaluated submission."
+}
