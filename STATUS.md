@@ -80,6 +80,10 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 - **Actual training completed 12 epochs. Best checkpoint: epoch 7 EMA.**
   Validation Challenge_Avg 0.856185; duplicate-excluded 0.856180. Global calibration
   reached 0.864952 on its own fit rows (in-sample, provisional scorer).
+- Private inference-only kernel `rayyannmerchant/upar2027-trained-inference-verification`
+  version 1 was pushed with the completed training kernel and official private
+  data attached. It runs trained offline API checks and explicit-path batch32/64
+  benchmarks; no training is invoked. Outcomes pending.
 - Trained candidate ZIP and resume checkpoints exist on Kaggle; local downloads
   and final trained offline/package verification are underway. No CodaBench
   submission or verified A10 300-second result exists. See TRAINING_RESULTS.md.
