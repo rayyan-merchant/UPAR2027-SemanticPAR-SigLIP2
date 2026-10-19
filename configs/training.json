@@ -1,0 +1,22 @@
+{
+  "foundation": "google/siglip2-base-patch16-naflex",
+  "epochs": 12,
+  "warmup_epochs": 1,
+  "batch_size": 16,
+  "accumulate": 4,
+  "effective_batch_size": 64,
+  "max_patches": 256,
+  "lr_backbone": 0.00001,
+  "lr_head": 0.0001,
+  "optimizer": "AdamW",
+  "weight_decay": 0.01,
+  "layer_lr_decay": 0.85,
+  "schedule": "5 percent warmup then cosine",
+  "gradient_clip": 1.0,
+  "ema_decay": 0.9995,
+  "seed": 2027,
+  "sampling": "per-image domain_count^-0.5",
+  "loss": "valid-label exponential weighted BCEWithLogits",
+  "max_hours_per_session": 9.0,
+  "note": "Recorded recipe; CLI training_config.json is the authoritative executed configuration."
+}

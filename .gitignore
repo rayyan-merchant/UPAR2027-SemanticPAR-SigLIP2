@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+runs/
+data/
+*.zip
+*.pt
+*.safetensors
+.ipynb_checkpoints/
+reports/**/image_manifest.json
+reports/foundation_native.pt
+reports/data/data_audit.json
