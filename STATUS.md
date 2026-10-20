@@ -1,3 +1,8 @@
+> Private threefold archive/resource-safe kernel v1 successfully pushed, verified QUEUED.
+> Actual slug rayyannmerchant/upar2027-threefold-archives-resource-safe; runtime source e994492.
+> Do not duplicate queued/running job. GPU throughput gates and fold results remain pending.
+> Timeout21600s; original submission1003877 preserved; no final retraining/resubmission.
+
 > New authorization supersedes PA-only deferral: execute all3 six-epoch folds.
 > Complete archive union131076 benchmarked on Kaggle CPU in34.42s; supplement79003.
 > GPU execution is resource-gated: solo/concurrent source benchmarks first,6h cap,
