@@ -7,6 +7,7 @@ https://docs.pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_
 """
 from __future__ import annotations
 import argparse
+import os
 import hashlib
 import json
 import time
@@ -109,7 +110,7 @@ def evaluate_fold(fold, data_root, workers=4):
         calibration = UPARDataset(split / 'source_calibration.csv', data_root, 256, augment=False)
         if any(row[3] == config['held_out_domain'] for row in calibration.rows):
             raise ValueError('Held-out domain present in calibration')
-        cal_loader = DataLoader(calibration, batch_size=32, num_workers=workers, shuffle=False, pin_memory=True)
+        cal_loader = DataLoader(calibration, batch_size=32, num_workers=workers, shuffle=False, pin_memory=True, timeout=int(os.environ.get('UPAR_IO_TIMEOUT','0')) if workers else 0)
         p, y, v, d = predict(model, cal_loader, torch.device('cuda'))
         thresholds = fit_fast(p, y, v, np.asarray(d))
         np.savez_compressed(fold / 'source_calibration_predictions.npz', prob=p, y=y, valid=v, domains=d)
@@ -143,7 +144,7 @@ def evaluate_fold(fold, data_root, workers=4):
         target = UPARDataset(split / 'sealed_target_evaluation.csv', data_root, 256, augment=False)
         if any(row[3] != config['held_out_domain'] for row in target.rows):
             raise ValueError('Target contains a source domain')
-        target_loader = DataLoader(target, batch_size=32, num_workers=workers, shuffle=False, pin_memory=True)
+        target_loader = DataLoader(target, batch_size=32, num_workers=workers, shuffle=False, pin_memory=True, timeout=int(os.environ.get('UPAR_IO_TIMEOUT','0')) if workers else 0)
         p, y, v, d = predict(model, target_loader, torch.device('cuda'))
         tmp = fold / 'target_predictions.tmp.npz'
         np.savez_compressed(tmp, prob=p, y=y, valid=v, domains=d)

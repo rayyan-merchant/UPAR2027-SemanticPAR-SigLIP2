@@ -5,7 +5,7 @@ FOLDS=['PA100k','PETA','Market1501']
 NATIVE='55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832'
 
 def env_for(gpu):
-    return dict(os.environ,CUDA_VISIBLE_DEVICES=str(gpu),OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='2',UPAR_TORCH_THREADS='2',TOKENIZERS_PARALLELISM='false')
+    return dict(os.environ,CUDA_VISIBLE_DEVICES=str(gpu),OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='2',UPAR_TORCH_THREADS='2',UPAR_IO_TIMEOUT='30',TOKENIZERS_PARALLELISM='false')
 
 def snapshot():
     import psutil
@@ -133,7 +133,7 @@ def main():
             except Exception as e:write_json(bench/'PARALLEL_FALLBACK.json',{'error':str(e),'action':'sequential','target_metrics_used':False})
         from resource_policy import decide,next_fold,committed_history
         plan=json.loads((code/'reports/lodo/RESOURCE_AUTHORIZATION.json').read_text())
-        decision=decide(expected,baseline,parallel,stable,(time.monotonic()-started)/3600,plan['quota_remaining_hours'])
+        decision=decide(expected,baseline,parallel,stable,(time.monotonic()-started)/3600,plan['quota_remaining_hours'],plan.get('max_session_hours',6),plan.get('reserve_final_training_hours',8))
         mode=decision['mode'];budget=decision['session_cap_hours'];projected=decision['projected_session_hours']
         solo_cost=decision['solo_fold_projected_hours'];parallel_cost=decision['concurrent_fold_projected_hours']
         write_json(suite/'RESOURCE_DECISION.json',decision)

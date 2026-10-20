@@ -17,6 +17,9 @@ def main():
     original=suite/'original_evidence';gates=suite/'gates'
     expected_native='55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832'
     write_json(suite/args.held/'AFFINITY.json',{'CUDA_VISIBLE_DEVICES':os.environ.get('CUDA_VISIBLE_DEVICES'),'visible_gpu_count':torch.cuda.device_count(),'visible_gpu_name':torch.cuda.get_device_name(),'seed':2027,'workers':2,'torch_threads':2})
+    experiment=json.loads((code/'reports/lodo/RESOURCE_AUTHORIZATION.json').read_text())
+    sampling_alpha=experiment.get('domain_sampling_alpha',.5)
+    record_exposure=experiment.get('record_sampling_exposure',False)
     results = []
     for held in [args.held]:
         fold = suite / held; split = fold / 'splits'; trained = fold / 'training'
@@ -27,6 +30,8 @@ def main():
             'foundation_native_sha256': expected_native, 'model_code_sha256': code_digest(),
             'split_hashes': expected[held]['partitions'], 'selection_metric': 'legacy provisional source macro Challenge_Avg; raw/EMA',
             'dataloader_workers': 2, 'source_only_calibration': True, 'production_model_changed': False}
+        if record_exposure:
+            config.update(domain_sampling_alpha=sampling_alpha,record_sampling_exposure=True,baseline_commit='4b60ffc',development_comparison=True)
         if (fold / 'FOLD_CONFIG.json').exists() and json.loads((fold / 'FOLD_CONFIG.json').read_text()) != config:
             raise ValueError('Recovery configuration differs from locked fold')
         write_json(fold / 'FOLD_CONFIG.json', config)
@@ -38,7 +43,7 @@ def main():
         wp, wn, prevalence = label_weights(source_ds)
         yy = np.stack([r[1] for r in source_ds.rows]); vv = np.stack([r[2] for r in source_ds.rows])
         from collections import Counter
-        counts = Counter(r[3] for r in source_ds.rows); mass = {k: v**.5 / sum(x**.5 for x in counts.values()) for k, v in counts.items()}
+        counts = Counter(r[3] for r in source_ds.rows); mass = {k: v**sampling_alpha / sum(x**sampling_alpha for x in counts.values()) for k, v in counts.items()}
         attrs = __import__('upar.attributes', fromlist=['ATTRIBUTES']).ATTRIBUTES
         supervision = {'attributes': attrs, 'valid_positives': ((yy == 1) & vv).sum(0).tolist(),
            'valid_negatives': ((yy == 0) & vv).sum(0).tolist(), 'valid_counts': vv.sum(0).tolist(),
@@ -60,6 +65,7 @@ def main():
             '--epochs', '6', '--workers', '2', '--batch-size', '16', '--accumulate', '4',
             '--data-report', str(fold / 'DATA_GATE.json'), '--parity-report', str(gates / 'PRETRAINED_PARITY.json'),
             '--feasibility-report', str(fold / 'GPU_FEASIBILITY.json'), '--max-hours', '3.5']
+        if record_exposure: command += ['--domain-sampling-alpha',str(sampling_alpha),'--record-sampling-exposure']
         if (trained / 'last.pt').exists():
             resume_state = torch.load(trained / 'last.pt', map_location='cpu', weights_only=False, mmap=True)
             if resume_state['schema'] != 2 or resume_state['config']['epochs'] != 6:
@@ -80,6 +86,15 @@ def main():
                 log.write(line); print(held, line.rstrip(), flush=True)
             if process.wait() != 0:
                 raise RuntimeError('Training failed; per-fold best/last and logs retained: ' + held)
+        if record_exposure:
+            rows = committed_history(trained / 'history.jsonl')
+            if len(rows) != 6: raise ValueError('Need all six source epochs before target inference')
+            for row in rows:
+                e = row['sampling_exposure']
+                if set(e['draws']) != set(counts) or sum(e['draws'].values()) != sum(counts.values()):
+                    raise ValueError('Invalid source-domain exposure')
+                if any(abs(x-.5)>.03 for x in e['fractions'].values()):
+                    raise ValueError('Unexpected equal-domain sampling imbalance')
         actual_prevalence = json.loads((trained / 'prevalence.json').read_text())
         if any(actual_prevalence[name] != prevalence[j] for j, name in enumerate(attrs)):
             raise ValueError('Training prevalence differs from source-only audit')

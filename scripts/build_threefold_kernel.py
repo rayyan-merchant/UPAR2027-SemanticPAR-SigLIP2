@@ -9,6 +9,7 @@ import hashlib
 
 parser = argparse.ArgumentParser(); parser.add_argument('--output', required=True)
 parser.add_argument('--recovery-source', help='Explicit earlier LODO kernel for interruption recovery, never all-domain training')
+parser.add_argument('--experiment', choices=['baseline','equal-domain'], default='baseline')
 args = parser.parse_args(); root = Path(__file__).resolve().parents[1]
 buf = io.BytesIO(); hashes = {}
 with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as archive:
@@ -17,7 +18,10 @@ with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as archive:
             relative = path.relative_to(root).as_posix(); archive.write(path, relative)
             hashes[relative] = hashlib.sha256(path.read_bytes()).hexdigest()
     for name in ['reports/lodo/EXPECTED_SPLITS.json', 'reports/lodo/THREEFOLD_ARCHIVES.json', 'reports/lodo/RESOURCE_AUTHORIZATION.json', 'submission_template/metadata.yaml', 'pytest.ini']:
-        path = root / name; archive.write(path, name); hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        path = root / name
+        if args.experiment=='equal-domain' and name=='reports/lodo/RESOURCE_AUTHORIZATION.json':
+            path=root/'reports/lodo/equal_domain/RESOURCE_AUTHORIZATION.json'
+        archive.write(path, name); hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
 payload = base64.b64encode(buf.getvalue()).decode('ascii')
 runner = '''import base64,io,zipfile,runpy,subprocess,sys
 from pathlib import Path
@@ -35,10 +39,14 @@ metadata = {'id': 'rayyannmerchant/upar2027-threefold-archives-resource-safe', '
     'code_file': 'run_lodo.py', 'language': 'python', 'kernel_type': 'script', 'is_private': True,
     'enable_gpu': True, 'enable_internet': True, 'docker_image': 'gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f', 'docker_image_pinning_type': 'original', 'machine_shape': 'NvidiaTeslaT4',
     'dataset_sources': ['rayyannmerchant/upar2027-private-paheld-archives','rayyannmerchant/upar2027-private-lodo-supplement'], 'kernel_sources': sources, 'competition_sources': []}
+if args.experiment=='equal-domain':
+    metadata.update(id='rayyannmerchant/upar2027-lodo-equal-domain-comparison',title='UPAR2027 LODO equal domain comparison')
+    if args.recovery_source: raise ValueError('Fresh equal-domain comparison cannot attach baseline recovery weights')
 (out / 'kernel-metadata.json').write_text(json.dumps(metadata, indent=2))
 receipt = {'kernel': metadata['id'], 'source_sha256': hashes, 'code_bytes': len(runner),
            'foundation_source': sources[0], 'fresh_native_foundation_sha256': '55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832',
            'all_domain_PAR_weights_used': False, 'fold_order': ['PA100k','PETA','Market1501'], 'launch_status': 'PREPARED_ONLY_NOT_SUBMITTED',
            'new_competition_submission_authorized': False}
-(root / 'reports/lodo/THREEFOLD_BUILD_RECEIPT.json').write_text(json.dumps(receipt, indent=2))
+receipt_name='reports/lodo/equal_domain/BUILD_RECEIPT.json' if args.experiment=='equal-domain' else 'reports/lodo/THREEFOLD_BUILD_RECEIPT.json'
+(root / receipt_name).write_text(json.dumps(receipt, indent=2))
 print('Prepared bounded threefold LODO kernel:', out, 'bytes:', len(runner))

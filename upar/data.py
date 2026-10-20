@@ -59,10 +59,51 @@ class UPARDataset(Dataset):
                 torch.from_numpy(label.copy()),torch.from_numpy(valid.copy()),domain)
 
 
-def domain_sampler(dataset, alpha=0.5, generator=None):
+class ExposureSampler(WeightedRandomSampler):
+    """Observe exact sampler draws without changing its RNG stream.
+
+    Only complete epochs are committed. Index sets are private resume state;
+    public telemetry contains aggregate counts, never image paths/identities.
+    """
+    def __init__(self, weights, domains, generator):
+        super().__init__(weights, num_samples=len(domains), replacement=True, generator=generator)
+        self.domains = list(domains)
+        self.cumulative = {d: set() for d in sorted(set(domains))}
+        self.counts = {}; self.unique = {}
+
+    def __iter__(self):
+        self.counts = {d: 0 for d in self.cumulative}
+        self.unique = {d: set() for d in self.cumulative}
+        for index in super().__iter__():
+            domain = self.domains[index]
+            self.counts[domain] += 1; self.unique[domain].add(index)
+            self.cumulative[domain].add(index)
+            yield index
+
+    def exposure(self):
+        total = sum(self.counts.values())
+        return {'draws': dict(self.counts),
+                'fractions': {d: n / max(1, total) for d, n in self.counts.items()},
+                'unique_images_epoch': {d: len(v) for d, v in self.unique.items()},
+                'unique_images_cumulative': {d: len(v) for d, v in self.cumulative.items()}}
+
+    def exposure_state(self):
+        return {d: sorted(v) for d, v in self.cumulative.items()}
+
+    def restore_exposure(self, state):
+        if set(state) != set(self.cumulative): raise ValueError('Exposure domains changed')
+        for d, values in state.items():
+            if any(not isinstance(i, int) or not 0 <= i < len(self.domains) or self.domains[i] != d for i in values):
+                raise ValueError('Invalid exposure resume indices')
+        self.cumulative = {d: set(v) for d, v in state.items()}
+
+
+def domain_sampler(dataset, alpha=0.5, generator=None, track_exposure=False):
     from collections import Counter
     freq=Counter(x[3] for x in dataset.rows)
     weights=[freq[r[3]]**(alpha-1) for r in dataset.rows]
+    if track_exposure:
+        return ExposureSampler(weights, [r[3] for r in dataset.rows], generator)
     return WeightedRandomSampler(weights,num_samples=len(dataset),replacement=True,generator=generator)
 
 

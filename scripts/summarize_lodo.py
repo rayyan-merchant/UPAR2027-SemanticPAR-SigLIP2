@@ -34,9 +34,9 @@ def fmt(value):
     return 'unsupported' if value is None else f'{value:.6f}'
 
 
-def summarize(artifacts, report):
+def summarize(artifacts, report, public_directory=None):
     artifacts = Path(artifacts); results = []; checks = []; attribute_rows = []
-    public = ROOT / 'reports/lodo/results'; public.mkdir(parents=True, exist_ok=True)
+    public = Path(public_directory) if public_directory else ROOT / 'reports/lodo/results'; public.mkdir(parents=True, exist_ok=True)
     for held in ORDER:
         fold = artifacts / held
         result = json.loads((fold / 'EVALUATION.json').read_text())
@@ -165,4 +165,5 @@ def summarize(artifacts, report):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--artifacts', required=True)
     parser.add_argument('--report', default=str(ROOT / 'LODO_EVALUATION.md'))
-    args = parser.parse_args(); summarize(args.artifacts, args.report)
+    parser.add_argument('--public-directory', help='Use a separate directory for controlled comparisons; preserve baseline outputs')
+    args = parser.parse_args(); summarize(args.artifacts, args.report, args.public_directory)

@@ -137,6 +137,8 @@ def main():
     ap.add_argument('--workers',type=int,default=4)
     ap.add_argument('--seed',type=int,default=2027)
     ap.add_argument('--ema-decay',type=float,default=0.9995)
+    ap.add_argument('--domain-sampling-alpha', type=float, default=.5)
+    ap.add_argument('--record-sampling-exposure', action='store_true')
     ap.add_argument('--resume',default=None)
     ap.add_argument('--data-report',required=True)
     ap.add_argument('--parity-report',required=True)
@@ -157,10 +159,12 @@ def main():
     duplicate_val=set(data_evidence.get('duplicate_review',{}).get('val_paths',[]))
     calibration_eligible=np.asarray([row[0] not in duplicate_val for row in val_ds.rows])
     generator=torch.Generator().manual_seed(args.seed)
-    train_ld=DataLoader(train_ds,batch_size=args.batch_size,sampler=domain_sampler(train_ds,generator=generator),
+    sampler=domain_sampler(train_ds,alpha=args.domain_sampling_alpha,generator=generator,track_exposure=args.record_sampling_exposure)
+    io_timeout=30 if args.record_sampling_exposure and args.workers else 0
+    train_ld=DataLoader(train_ds,batch_size=args.batch_size,sampler=sampler,timeout=io_timeout,
                         num_workers=args.workers,pin_memory=True,persistent_workers=False)
     val_ld=DataLoader(val_ds,batch_size=args.batch_size*2,shuffle=False,
-                      num_workers=args.workers,pin_memory=True)
+                      num_workers=args.workers,pin_memory=True,timeout=io_timeout)
     wp,wn,prevalence=label_weights(train_ds)
     wp=wp.to(device);wn=wn.to(device)
     model=UPARModel(VisionConfig(**parity['vision_config']))
@@ -171,6 +175,11 @@ def main():
         if ck['max_patches'] != args.max_patches: raise ValueError('max-patches must match checkpoint')
         for key in ['epochs','batch_size','accumulate','lr_backbone','lr_head','ema_decay','warmup_epochs','seed','workers']:
             if ck['config'][key]!=getattr(args,key):raise ValueError(f'Resume config mismatch: {key}')
+        if ck['config'].get('domain_sampling_alpha',.5) != args.domain_sampling_alpha:
+            raise ValueError('Resume sampling alpha changed')
+        if ck['config'].get('record_sampling_exposure',False) != args.record_sampling_exposure:
+            raise ValueError('Resume exposure setting changed')
+        if args.record_sampling_exposure: sampler.restore_exposure(ck['sampler_exposure'])
         model.load_state_dict(ck['state_dict'],strict=True)
         start=ck['epoch']+1
     else:
@@ -221,7 +230,10 @@ def main():
         model.train(); optimizer.zero_grad(set_to_none=True)
         model.freeze_vision_except_last(4 if epoch >= args.warmup_epochs else 0)
         train_loss=0.; n=0; images_epoch=0; successful_updates=0; skipped_updates=0
-        for k,(patches,mask,shapes,y,v,_) in enumerate(train_ld):
+        from collections import Counter
+        consumed_domains=Counter()
+        for k,(patches,mask,shapes,y,v,batch_domains) in enumerate(train_ld):
+            consumed_domains.update(batch_domains)
             patches=patches.to(device,non_blocking=True)
             mask=mask.to(device,non_blocking=True)
             y=y.to(device,non_blocking=True);v=v.to(device,non_blocking=True)
@@ -253,6 +265,13 @@ def main():
                         'elapsed_seconds':elapsed,'training_started':True}
                     temporary=out/'progress.tmp.json';temporary.write_text(json.dumps(progress));temporary.replace(out/'progress.json')
                     print('PROGRESS '+json.dumps(progress),flush=True)
+        exposure=sampler.exposure() if args.record_sampling_exposure else None
+        if exposure is not None:
+            if exposure['draws'] != dict(consumed_domains) or sum(consumed_domains.values()) != images_epoch:
+                raise ValueError('Sampler exposure differs from consumed batches')
+            temporary=out/'sampling_exposure.tmp.json'
+            temporary.write_text(json.dumps({'epoch':epoch+1,**exposure}));temporary.replace(out/'sampling_exposure.json')
+            print('SAMPLING_EXPOSURE '+json.dumps({'epoch':epoch+1,**exposure}),flush=True)
         train_seconds=time.time()-t0
         alternatives=[]
         for kind,candidate in [('raw',model),('ema',ema_model)]:
@@ -272,7 +291,7 @@ def main():
                                 'images_processed_epoch':images_epoch,'images_processed_cumulative':(epoch+1)*len(train_ds),
                                 'optimizer_updates_attempted_cumulative':step,'optimizer_updates_successful_epoch':successful_updates,
                                 'amp_skipped_updates_epoch':skipped_updates,'training_seconds':train_seconds,
-                                'epoch_seconds':time.time()-t0})+'\n')
+                                'epoch_seconds':time.time()-t0, 'sampling_exposure':exposure})+'\n')
         if cur>best:
             best=cur
             save_checkpoint(out/'best.pt',scoring_model,epoch,report,args.max_patches,args.foundation,
@@ -294,7 +313,8 @@ def main():
             (out/'qualitative_predictions.json').write_text(json.dumps({'attributes':ATTRIBUTES,'examples':qualitative},indent=2))
         # Keep raw training state separate from inference/best weights.
         atomic_save(training_payload(model,ema_model,optimizer,scaler,generator,epoch,step,best,vars(args),
-                    max_patches=args.max_patches,attributes=ATTRIBUTES),out/'last.pt')
+                    max_patches=args.max_patches,attributes=ATTRIBUTES,
+                    sampler_exposure=sampler.exposure_state() if args.record_sampling_exposure else None),out/'last.pt')
         if time.monotonic()-run_started > args.max_hours*3600:
             print('Stopping at epoch boundary for persistent checkpoint/resume',flush=True)
             break
