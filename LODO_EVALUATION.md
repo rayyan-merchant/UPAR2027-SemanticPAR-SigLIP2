@@ -1,8 +1,14 @@
 # Three-domain LODO evaluation
 
-2026-10-20 — prepared and locally tested; GPU results pending. Accepted CodaBench
+2026-10-20 — **private Kaggle version1 RUNNING**, GPU results pending. Accepted CodaBench
 submission1003877 and its production checkpoint/calibration remain unchanged.
 No replacement submission is part of this diagnostic.
+
+Actual job: [upar2027-three-domain-lodo-diagnosis](https://www.kaggle.com/code/rayyannmerchant/upar2027-three-domain-lodo-diagnosis).
+Submitted runtime source matches commit `a73f6b5`; Kaggle derived the final slug
+from the title. There is one active job, not three parallel runs. Quiet scheduled
+continuation checks status and retrieves results when available; it does not
+authorize another competition submission.
 
 ## Fixed protocol
 
@@ -78,6 +84,12 @@ the all-domain PAR job. No large CPU training is allowed.
 - Public split hashes/configuration and embedded source hashes:
   `reports/lodo/EXPECTED_SPLITS.json`, `EXECUTION_PLAN.json`,
   `KERNEL_BUILD_RECEIPT.json`.
+- CPU source-supervision audit: all40attributes have both positive and negative
+  source-training examples in every fold. PA-held-out lower-orange is especially
+  sparse: only4positives, versus255/259 in the other two source folds. Thus
+  entirely absent training labels do not explain all potential transfer failures;
+  rarity and source diversity still matter. Counts are in
+  `SOURCE_SUPERVISION_PRECOMMIT.json`; no target model outcome was used.
 - AMP/checkpoint API patterns reuse existing tested training code and official
   [PyTorch AMP examples](https://docs.pytorch.org/docs/2.4/notes/amp_examples.html)
   and [general checkpoint guidance](https://docs.pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html).

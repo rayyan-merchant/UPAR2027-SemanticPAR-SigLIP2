@@ -31,7 +31,7 @@ sources = ['rayyannmerchant/upar2027-siglip2-semanticpar']
 if args.recovery_source:
     if 'lodo' not in args.recovery_source: raise ValueError('Recovery must be a LODO kernel')
     sources.append(args.recovery_source)
-metadata = {'id': 'rayyannmerchant/upar2027-three-domain-lodo', 'title': 'UPAR2027 three-domain LODO diagnosis',
+metadata = {'id': 'rayyannmerchant/upar2027-three-domain-lodo-diagnosis', 'title': 'UPAR2027 three-domain LODO diagnosis',
     'code_file': 'run_lodo.py', 'language': 'python', 'kernel_type': 'script', 'is_private': True,
     'enable_gpu': True, 'enable_internet': True, 'machine_shape': 'NvidiaTeslaT4',
     'dataset_sources': ['rayyannmerchant/upar2027-official-private'], 'kernel_sources': sources, 'competition_sources': []}

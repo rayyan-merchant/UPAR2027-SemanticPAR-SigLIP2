@@ -5,6 +5,7 @@ import pytest
 from scripts.prepare_lodo_diagnosis import prepare
 from upar.attributes import ATTRIBUTES
 from upar.lodo import lock_files, verify_lock, convergence
+from scripts.summarize_lodo import aggregate
 
 
 @pytest.mark.parametrize('held', ['PA100k', 'PETA', 'Market1501'])
@@ -52,3 +53,15 @@ def test_convergence_does_not_call_last_epoch_best_converged():
     result = convergence(rows)
     assert result['best_at_final_epoch']
     assert not result['source_selection_plateau_heuristic']
+
+
+def test_consolidation_requires_all_three_and_equal_domain_weight():
+    rows = []
+    for held, value in zip(['PA100k', 'PETA', 'Market1501'], [.6, .8, .7]):
+        score = {'legacy': {'macro': {'Challenge_Avg': value}},
+                 'mean_image_f1_sensitivity': {'macro': {'Challenge_Avg': value - .01}}}
+        rows.append({'held_out_domain': held, 'target_raw': score, 'target_calibrated': score})
+    assert aggregate(rows)['target_raw']['macro'] == pytest.approx(.7)
+    assert aggregate(rows)['target_raw']['worst'] == .6
+    with pytest.raises(ValueError, match='all three'):
+        aggregate(rows[:2])

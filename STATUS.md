@@ -1,6 +1,25 @@
 # Status — 2026-10-20
 
-## Current decision: diagnose generalization; preserve submission
+## Current execution: three-domain LODO; preserve submission
+
+- User authorized all3six-epoch diagnostic folds, sequential PA100k→PETA→Market.
+  **Private Kaggle version1 RUNNING**:
+  rayyannmerchant/upar2027-three-domain-lodo-diagnosis. Actual source commit
+  a73f6b5; returned slug differs from initially requested shorter slug.
+  Do not duplicate an active run or push a new version while it is running.
+- Prepared all3source train/selection/calibration/target splits with zero
+  cross-partition decoded-pixel overlap; PA CSVbytes reused exactly.
+  Original untrained foundation SHA55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832
+  only; never use original PARbest/last as initialization or recovery.
+- Quota26.01GPUhours before launch; estimate3.5–5GPUhours total. ActualGPU
+  staging/training/metrics remain pending evidence.27tests passed locally
+  before launch. LODO_EVALUATION.md and reports/lodo contain protocol/receipts.
+- Automatic follow-up is ACTIVE for this diagnosis only: retrieve actual
+  outputs, verify all3folds, finish report and one evidence-based recommendation.
+  No competition upload, architecture/method change or hidden-score tuning.
+- Preserve all prior canonical artifacts and original D: datasets. Best/last
+  LODO states persist privately in Kaggle outputs; download small diagnostics
+  first to respect C: capacity. No three-fold result is claimed yet.
 
 - CodaBench submission **1003877 Finished**: official Challenge_Avg **0.770450**,
   mA .773647, instance F1 .767279, precision .741799, recall .807915.
@@ -10,8 +29,9 @@
   `76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308`.
   Independent best/model/calibration/log/prediction/archive copies and hashes are
   retained in outputs/preserved_1003877. Accepted artifacts remain unchanged.
-- **No new training, interpolation model, calibration deployment or upload.**
-  Earlier automatic follow-up is PAUSED for this diagnosis request.
+- Earlier diagnosis involved no training/model/threshold/upload changes. New
+  source-held-out training above is now explicitly authorized. Production
+  checkpoint/calibration and accepted submission remain unchanged.
 - Completed CPU diagnosis in GENERALIZATION_DIAGNOSIS.md and aggregate evidence
   reports/generalization_1003877/. Disjoint five-fold calibration score .863482
   versus .864952 fitted: .147point optimism; known-domain OOF gain .730point.
@@ -24,7 +44,7 @@
   threshold offsets/padding all zero measured error; all33,407 annotation rows
   align with stored predictions. CPU-vs-stored GPU AMP mean probability error
   .000350,max .015984; one calibrated decision differs among1,920 cells.
-- Fresh-foundation PA-held-out six-epoch diagnostic split prepared, not run:
+- Initial fresh-foundation PA-held-out six-epoch split, now reused by LODO job:
   train18,668; source selection11,634; separate calibration11,785; target9,986.
   No cross-partition decoded-pixel overlap. Current PAR weights cannot initialize
   this run because they saw PA. Estimate .5–1GPUhour,1.25h running cap, uncertain
@@ -112,8 +132,8 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 - Initial real-weight diagnostic failed because HF's internal transformer does
   not expose hidden_states through the wrapper's capture decorator. Explicit
   reference hooks corrected diagnostics; subsequent real-weight check passed.
-- Earlier user-approved quiet follow-up `finish-upar-kaggle-submission` is now
-  PAUSED because the current request forbids automatic resubmission.
+- Follow-up `finish-upar-kaggle-submission` is repurposed to three-domain LODO
+  diagnosis only; automatic competition resubmission remains prohibited.
 - **Actual training completed 12 epochs. Best checkpoint: epoch 7 EMA.**
   Validation Challenge_Avg 0.856185; duplicate-excluded 0.856180. Global calibration
   reached 0.864952 on its own fit rows (in-sample, provisional scorer).
