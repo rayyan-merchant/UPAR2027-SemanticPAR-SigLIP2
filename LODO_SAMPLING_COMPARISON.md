@@ -1,6 +1,6 @@
 # Equal-domain sampling: single predeclared three-fold comparison
 
-Status: private Kaggle version1 QUEUED; no comparison result yet.
+Status: private Kaggle version1 RUNNING; no comparison result yet.
 Kernel rayyannmerchant/upar2027-lodo-equal-domain-comparison, sourcebe2a8f0.
 Provider timeout10800s. Receipt reports/lodo/equal_domain/KERNEL_SUBMISSION_RECEIPT.json.
 Do not duplicate an active job. Locked baseline: commit4b60ffc,

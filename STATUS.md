@@ -1,5 +1,5 @@
 > Active work: user authorized one equal-domain sampling threefold comparison
-> against locked baseline4b60ffc. Private kernel v1 QUEUED. Hard3h cap,
+> against locked baseline4b60ffc. Private kernel v1 RUNNING. Hard3h cap,
 > >=8GPUh reserve, prelaunch quota12.50h. No all-domain retraining or upload.
 > Baseline LODO report/results remain unchanged. See LODO_SAMPLING_COMPARISON.md
 > and reports/lodo/equal_domain for controls, adoption rule and new receipts.

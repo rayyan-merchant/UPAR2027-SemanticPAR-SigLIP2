@@ -1,8 +1,8 @@
 {
   "kernel": "rayyannmerchant/upar2027-lodo-equal-domain-comparison",
   "version": 1,
-  "status": "QUEUED",
-  "checked_at_utc": "2026-10-20T18:26:07.143730+00:00",
+  "status": "RUNNING",
+  "checked_at_utc": "2026-10-20T18:42:53.099201+00:00",
   "source_commit": "be2a8f0",
   "baseline_commit": "4b60ffc",
   "submitted_script_sha256": "1bbac63bd4d9a3d75d4fcf0e4a47009735d7907570e5c69948e6bb90a2517ec7",
