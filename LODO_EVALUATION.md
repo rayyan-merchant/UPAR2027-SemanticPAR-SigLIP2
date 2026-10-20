@@ -1,3 +1,12 @@
+> 2026-10-20 staging recovery supersedes the earlier automatic three-fold plan.
+> User verified latest log Staged60000/131076 at35703.7s, then clicked Stop.
+> Saved server STATUS independently confirms staging before all training calls.
+> API reports CANCEL_REQUESTED; terminal stop still needs verification.
+> No fold result exists. CPU-only archive probe v2 COMPLETE (900 images/0.601s).
+> PA-only archive-backed runner is prepared, not GPU-tested or launched.
+> Read STAGING_RECOVERY.md for actual measurements, watchdogs and revised budget.
+> Do not restart any GPU training before user review of that schedule.
+
 # Three-domain LODO evaluation
 
 2026-10-20 — **private Kaggle version1 RUNNING**, GPU results pending. Accepted CodaBench

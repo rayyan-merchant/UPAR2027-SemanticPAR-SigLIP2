@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-10-20T12:24:15.702623+00:00",
+  "kernel": "rayyannmerchant/upar2027-three-domain-lodo-diagnosis",
+  "server_status": "CANCEL_REQUESTED",
+  "terminal_cancellation_verified": false,
+  "user_clicked_stop_confirmed": true,
+  "user_log_excerpt": "35703.7s\t1183\tStaged 60000 / 131076",
+  "saved_status": {
+    "phase": "staging_private_official_images",
+    "images_done": 60000,
+    "total_images": 131076,
+    "submitted": false
+  },
+  "saved_status_sha256": "d84503c25f1f1074c1c8daa9bbd6d54f4d5dec320e4abc77502a2e0256d8c75f",
+  "training_started_at_last_saved_progress": false,
+  "basis": "All fold training calls occur strictly after completed staging; server progress still staging.",
+  "available_server_log_files": 0,
+  "local_split_and_receipts_preserved": "D:/UPAR2027/diagnostics/staging-v1-evidence",
+  "gpu_hours_remaining_last_check": 14.01,
+  "production": {
+    "outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip": {
+      "bytes": 358029220,
+      "sha256": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308",
+      "unchanged": true
+    },
+    "outputs/kaggle-v4-artifacts/runs/siglip2/best.pt": {
+      "bytes": 358019343,
+      "sha256": "18a48956eac97d16709e355d57e747a9944c872f844e20645d1dc5aae86ae0d6",
+      "unchanged": true
+    },
+    "outputs/kaggle-v4-artifacts/runs/siglip2/last.pt": {
+      "bytes": 972084825,
+      "sha256": "64d23096ce17db94f667055c65dfddbf3861844c4e8867e64186ed2eb9259f74",
+      "unchanged": true
+    }
+  },
+  "gpu_restarted": false,
+  "new_competition_submission": false,
+  "gpu_reserved_hours_verified": 0.0,
+  "gpu_used_hours_verified": 15.992341111111111,
+  "full_pa_archive_cpu_verification_passed": true,
+  "full_pa_archive_images": 52073,
+  "private_pa_dataset": "rayyannmerchant/upar2027-private-paheld-archives",
+  "archive_upload_complete": true
+}

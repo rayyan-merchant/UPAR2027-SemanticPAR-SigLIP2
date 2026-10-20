@@ -1,0 +1,44 @@
+{
+  "complete": true,
+  "archives": [
+    {
+      "archive": "Market1501_PAheld.upar",
+      "images": 26458,
+      "stream_seconds": 3.090512452999974,
+      "extraction_hash_write_seconds": 6.429896499000051,
+      "archive_bytes": 70744416
+    },
+    {
+      "archive": "PETA_PAheld.upar",
+      "images": 15629,
+      "stream_seconds": 7.5864492309999605,
+      "extraction_hash_write_seconds": 4.663716626999985,
+      "archive_bytes": 209872630
+    },
+    {
+      "archive": "PA100k_PAheld.upar",
+      "images": 9986,
+      "stream_seconds": 2.4327277300000105,
+      "extraction_hash_write_seconds": 2.666862421000019,
+      "archive_bytes": 41181208
+    }
+  ],
+  "images": 52073,
+  "elapsed_seconds": 27.38896089800005,
+  "random_access": {
+    "samples": 1000,
+    "bytes": 6050530,
+    "total_seconds": 0.5148074630019437,
+    "p50_ms": 0.28300799999669835,
+    "p95_ms": 0.8558050000146977
+  },
+  "all_hashes_passed": true,
+  "training_started": false,
+  "model_inference": false,
+  "passed": true,
+  "watchdog": {
+    "max_seconds": 300,
+    "max_idle_seconds": 30,
+    "max_projected_phase_seconds": 300
+  }
+}

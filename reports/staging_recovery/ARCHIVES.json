@@ -1,0 +1,52 @@
+{
+  "archives": [
+    {
+      "archive": "probe_900.upar",
+      "archive_sha256": "a96aa0d12fda3176d0b024a4927d6707060821bf9a77eb8ab8b51e96ecf0959f",
+      "archive_bytes": 6201861,
+      "image_bytes": 5940603,
+      "images": 900,
+      "build_seconds": 27.20300000003772,
+      "format": "ZIP_STORED with .upar extension; verify server retains opaque archive",
+      "data_root_read_only": "D:\\UPAR2027\\official\\data"
+    },
+    {
+      "archive": "Market1501_PAheld.upar",
+      "archive_sha256": "707e083cdefa972462b37f4358d63ce75e95f538c04131cc034ed6008481db72",
+      "archive_bytes": 70744416,
+      "image_bytes": 62077590,
+      "images": 26458,
+      "build_seconds": 156.329000000027,
+      "format": "ZIP_STORED with .upar extension; verify server retains opaque archive",
+      "data_root_read_only": "D:\\UPAR2027\\official\\data"
+    },
+    {
+      "archive": "PETA_PAheld.upar",
+      "archive_sha256": "0c5f2a07f2822c63238448975c51c8c4ee9b42e738ca38175a6470263eb72891",
+      "archive_bytes": 209872630,
+      "image_bytes": 206146296,
+      "images": 15629,
+      "build_seconds": 49.06300000002375,
+      "format": "ZIP_STORED with .upar extension; verify server retains opaque archive",
+      "data_root_read_only": "D:\\UPAR2027\\official\\data"
+    },
+    {
+      "archive": "PA100k_PAheld.upar",
+      "archive_sha256": "c71254af305f4a9e1b39b6addb2e24e141e37b6c037d330677cedea81484fbf6",
+      "archive_bytes": 41181208,
+      "image_bytes": 38145155,
+      "images": 9986,
+      "build_seconds": 35.61000000004424,
+      "format": "ZIP_STORED with .upar extension; verify server retains opaque archive",
+      "data_root_read_only": "D:\\UPAR2027\\official\\data"
+    }
+  ],
+  "selection_images": 52073,
+  "source_manifest_sha256": "427cc48ce6971d0bdd015d684b89d44680d45044de116c4aca7e20897bd9c1db",
+  "source_split_sha256": {
+    "sealed_target_evaluation.csv": "0a024c38b8b4a3e6dd9c126ad14e8c9933f6485cd8f82f44e75850a40042cd3c",
+    "source_calibration.csv": "d7d648fcad7e6f9d8076a21ddd7df1349f22ccf833c68163ff97c193f3e4da20",
+    "source_selection.csv": "c1944cbe502d611bc7a0089ef63063f8025b0e06d5673cbc77a5f720e8475a6a",
+    "source_train.csv": "7462da4ae1009ff492c7d3f78425ed6cb8a481cd7333628b844b7066c15d266f"
+  }
+}
