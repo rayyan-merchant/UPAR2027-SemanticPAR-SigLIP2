@@ -218,7 +218,7 @@ def main():
         # Keep optimizer groups and use LR=0 for vision during head warmup.
         model.train(); optimizer.zero_grad(set_to_none=True)
         model.freeze_vision_except_last(4 if epoch >= args.warmup_epochs else 0)
-        train_loss=0.; n=0
+        train_loss=0.; n=0; images_epoch=0; successful_updates=0; skipped_updates=0
         for k,(patches,mask,shapes,y,v,_) in enumerate(train_ld):
             patches=patches.to(device,non_blocking=True)
             mask=mask.to(device,non_blocking=True)
@@ -231,6 +231,7 @@ def main():
             group_size=min(args.accumulate,len(train_ld)-(k//args.accumulate)*args.accumulate)
             scaler.scale(loss/group_size).backward()
             train_loss+=loss.item();n+=1
+            images_epoch+=len(y)
             if (k+1)%args.accumulate==0 or k+1==len(train_ld):
                 step+=1
                 factor=(step/warm_steps) if step<warm_steps else (.5*(1+math.cos(math.pi*(step-warm_steps)/max(1,total_steps-warm_steps))))
@@ -240,7 +241,10 @@ def main():
                 torch.nn.utils.clip_grad_norm_(model.parameters(),1.0)
                 previous_scale=scaler.get_scale()
                 scaler.step(optimizer);scaler.update();optimizer.zero_grad(set_to_none=True)
-                if scaler.get_scale()>=previous_scale:update_ema()
+                if scaler.get_scale()>=previous_scale:
+                    update_ema();successful_updates+=1
+                else:skipped_updates+=1
+        train_seconds=time.time()-t0
         alternatives=[]
         for kind,candidate in [('raw',model),('ema',ema_model)]:
             if candidate is None:continue
@@ -255,7 +259,11 @@ def main():
         print(f'Epoch {epoch+1}/{args.epochs} loss={train_loss/max(1,n):.5f} val_macro_avg={cur:.5f} time={time.time()-t0:.1f}s',flush=True)
         with open(out/'history.jsonl','a') as f:
             f.write(json.dumps({'epoch':epoch+1,'train_loss':train_loss/max(1,n),'metrics':report,
-                                'validation_candidates':{z[1]:z[7] for z in alternatives},'selected':selected})+'\n')
+                                'validation_candidates':{z[1]:z[7] for z in alternatives},'selected':selected,
+                                'images_processed_epoch':images_epoch,'images_processed_cumulative':(epoch+1)*len(train_ds),
+                                'optimizer_updates_attempted_cumulative':step,'optimizer_updates_successful_epoch':successful_updates,
+                                'amp_skipped_updates_epoch':skipped_updates,'training_seconds':train_seconds,
+                                'epoch_seconds':time.time()-t0})+'\n')
         if cur>best:
             best=cur
             save_checkpoint(out/'best.pt',scoring_model,epoch,report,args.max_patches,args.foundation,
