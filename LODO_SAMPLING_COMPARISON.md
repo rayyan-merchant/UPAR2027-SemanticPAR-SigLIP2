@@ -1,6 +1,9 @@
 # Equal-domain sampling: single predeclared three-fold comparison
 
-Status: prepared; no comparison result yet. Locked baseline: commit4b60ffc,
+Status: private Kaggle version1 QUEUED; no comparison result yet.
+Kernel rayyannmerchant/upar2027-lodo-equal-domain-comparison, sourcebe2a8f0.
+Provider timeout10800s. Receipt reports/lodo/equal_domain/KERNEL_SUBMISSION_RECEIPT.json.
+Do not duplicate an active job. Locked baseline: commit4b60ffc,
 LODO_EVALUATION.md and reports/lodo/results. Baseline files are SHA256-pinned in
 reports/lodo/equal_domain/BASELINE_LOCK.json and must not be overwritten.
 
