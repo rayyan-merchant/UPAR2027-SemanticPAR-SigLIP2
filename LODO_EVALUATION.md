@@ -1,3 +1,9 @@
+> New authorization supersedes PA-only deferral: execute all3 six-epoch folds.
+> Complete archive union131076 benchmarked on Kaggle CPU in34.42s; supplement79003.
+> GPU execution is resource-gated: solo/concurrent source benchmarks first,6h cap,
+> at least8GPUh reserved, explicit affinity and independent states. See LODO_EXECUTION_PLAN.md.
+> No new diagnostic result, final training or competition upload is claimed.
+
 > 2026-10-20 staging recovery supersedes the earlier automatic three-fold plan.
 > User verified latest log Staged60000/131076 at35703.7s, then clicked Stop.
 > Saved server STATUS independently confirms staging before all training calls.

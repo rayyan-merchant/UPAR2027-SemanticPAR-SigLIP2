@@ -1,0 +1,53 @@
+{
+  "complete": true,
+  "archives": [
+    {
+      "archive": "Market1501_PAheld.upar",
+      "images": 26458,
+      "stream_seconds": 0.649679835000029,
+      "extraction_hash_write_seconds": 5.243832923000014,
+      "archive_bytes": 70744416
+    },
+    {
+      "archive": "PETA_PAheld.upar",
+      "images": 15629,
+      "stream_seconds": 1.5917392279999376,
+      "extraction_hash_write_seconds": 3.501715934999993,
+      "archive_bytes": 209872630
+    },
+    {
+      "archive": "PA100k_PAheld.upar",
+      "images": 9986,
+      "stream_seconds": 0.46792573499999435,
+      "extraction_hash_write_seconds": 2.173107873000049,
+      "archive_bytes": 41181208
+    },
+    {
+      "archive": "additional_source_images.upar",
+      "images": 79003,
+      "stream_seconds": 2.71670562099996,
+      "extraction_hash_write_seconds": 17.52813499399997,
+      "archive_bytes": 382529392
+    }
+  ],
+  "images": 131076,
+  "elapsed_seconds": 34.42369580900004,
+  "random_access": {
+    "samples": 1000,
+    "bytes": 4996083,
+    "total_seconds": 0.5460900360003507,
+    "p50_ms": 0.30136700002003636,
+    "p95_ms": 0.7075150000446229
+  },
+  "all_archive_hashes_passed": true,
+  "member_integrity": "ZIP CRC; source SHA verified at packaging; no repeat image SHA/decoding",
+  "path_set_sha256": "fdd0d7435f7099d75890303df60edbbeb7127434b4d91ea174ea407d9c4e9091",
+  "training_started": false,
+  "model_inference": false,
+  "passed": true,
+  "watchdog": {
+    "max_seconds": 120,
+    "max_idle_seconds": 30,
+    "max_projected_phase_seconds": 120
+  }
+}

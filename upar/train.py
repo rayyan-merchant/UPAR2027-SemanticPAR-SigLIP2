@@ -5,6 +5,7 @@ first pretrained initialization; resume from local checkpoint afterwards.
 """
 from __future__ import annotations
 import argparse
+import os
 import copy
 import json
 import math
@@ -143,6 +144,7 @@ def main():
     ap.add_argument('--scorer-evidence')
     ap.add_argument('--max-hours',type=float,default=10.5)
     args=ap.parse_args()
+    torch.set_num_threads(int(os.environ.get("UPAR_TORCH_THREADS", "4")))
     parity=verify_gates(args)
     torch.manual_seed(args.seed);np.random.seed(args.seed);random.seed(args.seed)
     if not torch.cuda.is_available():
@@ -244,6 +246,13 @@ def main():
                 if scaler.get_scale()>=previous_scale:
                     update_ema();successful_updates+=1
                 else:skipped_updates+=1
+                if step%50==0 or k+1==len(train_ld):
+                    elapsed=time.monotonic()-run_started
+                    progress={'epoch':epoch+1,'epochs':args.epochs,'optimizer_updates_attempted':step,
+                        'optimizer_updates_total':total_steps,'images_processed':epoch*len(train_ds)+images_epoch,
+                        'elapsed_seconds':elapsed,'training_started':True}
+                    temporary=out/'progress.tmp.json';temporary.write_text(json.dumps(progress));temporary.replace(out/'progress.json')
+                    print('PROGRESS '+json.dumps(progress),flush=True)
         train_seconds=time.time()-t0
         alternatives=[]
         for kind,candidate in [('raw',model),('ema',ema_model)]:

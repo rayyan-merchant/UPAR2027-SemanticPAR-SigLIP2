@@ -1,0 +1,17 @@
+{
+  "all_fold_union_images": 131076,
+  "fold_union_images": {
+    "PA100k": 52073,
+    "PETA": 122408,
+    "Market1501": 121074
+  },
+  "existing_archive_images": 52073,
+  "supplement_images": 79003,
+  "missing_by_domain": {
+    "PA100k": 79001,
+    "PETA": 2,
+    "Market1501": 0
+  },
+  "duplicate_paths": 0,
+  "required_path_set_sha256": "fdd0d7435f7099d75890303df60edbbeb7127434b4d91ea174ea407d9c4e9091"
+}

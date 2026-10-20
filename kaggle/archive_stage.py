@@ -34,7 +34,7 @@ def worker(archives, dest, q, access_samples):
                     declared.add(name)
                     if z.getinfo(name).file_size!=meta['bytes']:raise ValueError('Member size mismatch')
                     data=z.read(name)
-                    if hashlib.sha256(data).hexdigest()!=meta['sha256']:raise ValueError('Image checksum mismatch')
+                    if item.get('verify_member_sha256',False) and hashlib.sha256(data).hexdigest()!=meta['sha256']:raise ValueError('Image checksum mismatch')
                     target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data);all_names.append(name)
                     if i%50==0 or i==len(manifest):q.put({'phase':'extract_local','files':i,'total_files':len(manifest),
                         'elapsed':time.monotonic()-t,'archive':src.name})
@@ -49,8 +49,8 @@ def worker(archives, dest, q, access_samples):
         times.sort()
         q.put({'complete':True,'archives':records,'images':len(all_names),'elapsed_seconds':time.monotonic()-started,
             'random_access':{'samples':len(times),'bytes':read_bytes,'total_seconds':sum(times),
-                'p50_ms':1000*times[len(times)//2],'p95_ms':1000*times[min(len(times)-1,int(len(times)*.95))]},
-            'all_hashes_passed':True,'training_started':False,'model_inference':False})
+                'p50_ms':1000*times[len(times)//2] if times else None,'p95_ms':1000*times[min(len(times)-1,int(len(times)*.95))] if times else None},
+            'all_archive_hashes_passed':True,'member_integrity':'ZIP CRC; source SHA verified at packaging; no repeat image SHA/decoding', 'path_set_sha256':hashlib.sha256('\n'.join(sorted(all_names)).encode()).hexdigest(),'training_started':False,'model_inference':False})
     except BaseException as e:q.put({'error':type(e).__name__+': '+str(e)})
 
 def stage(archives,dest,report,max_seconds=600,max_idle=45,max_projected=600,access_samples=300):
