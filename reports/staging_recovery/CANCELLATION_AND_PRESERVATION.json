@@ -42,5 +42,9 @@
   "full_pa_archive_images": 52073,
   "private_pa_dataset": "rayyannmerchant/upar2027-private-paheld-archives",
   "archive_upload_complete": true,
-  "cancellation_ack_checked_at_utc": "2026-10-20T12:33:41.030827+00:00"
+  "cancellation_ack_checked_at_utc": "2026-10-20T12:33:41.030827+00:00",
+  "final_server_split_csvs_preserved": 12,
+  "final_server_split_csvs_match_precommit": true,
+  "final_server_completed_folds": [],
+  "final_server_evidence_directory": "D:/UPAR2027/diagnostics/staging-v1-evidence-final"
 }
