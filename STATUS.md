@@ -1,45 +1,33 @@
-> Private threefold archive/resource-safe kernel v1 successfully pushed, verified RUNNING.
-> Actual slug rayyannmerchant/upar2027-threefold-archives-resource-safe; runtime source e994492.
-> Do not duplicate queued/running job. GPU throughput gates and fold results remain pending.
-> Timeout21600s; original submission1003877 preserved; no final retraining/resubmission.
+# Status — three-domain LODO complete, 2026-10-20
 
-> New authorization supersedes PA-only deferral: execute all3 six-epoch folds.
-> Complete archive union131076 benchmarked on Kaggle CPU in34.42s; supplement79003.
-> GPU execution is resource-gated: solo/concurrent source benchmarks first,6h cap,
-> at least8GPUh reserved, explicit affinity and independent states. See LODO_EXECUTION_PLAN.md.
-> No new diagnostic result, final training or competition upload is claimed.
+All three fresh-foundation diagnostic folds completed six epochs; independent
+metric recomputation, source-only threshold refits and split/config/calibration
+locks passed. See LODO_EVALUATION.md for the reviewed analysis and limitations.
 
-> 2026-10-20 staging recovery supersedes the earlier automatic three-fold plan.
-> User verified latest log Staged60000/131076 at35703.7s, then clicked Stop.
-> Saved server STATUS independently confirms staging before all training calls.
-> API now reports CANCEL_ACKNOWLEDGED; cancellation verified, zero GPU reserved.
-> No fold result exists. CPU-only archive probe v2 COMPLETE (900 images/0.601s).
-> PA-only archive-backed runner is prepared, not GPU-tested or launched.
-> Read STAGING_RECOVERY.md for actual measurements, watchdogs and revised budget.
-> Do not restart any GPU training before user review of that schedule.
+| Held out | Raw Challenge_Avg | Source-calibrated target |
+| --- | ---: | ---: |
+| PA100K | .786128 | .797104 |
+| PETA | .769342 | .777228 |
+| Market1501 | .813343 | .817448 |
+| Macro | .789605 | .797260 |
+| Worst | .769342 | .777228 |
 
-# Status — 2026-10-20
+Private kernel rayyannmerchant/upar2027-threefold-archives-resource-safe v1
+COMPLETE, runtime source e994492. Independent parallel processes;1.632h wall,
+131076 images archive-staged32.96s,38 Kaggle tests passed.12.50GPUh remain.
+No active diagnostic compute or download remains. Accepted submission1003877
+and its model/ZIP/calibration are unchanged. No final retraining or upload.
 
-## Current execution: three-domain LODO; preserve submission
+Recommendation D is one controlled equal-domain sampling comparison, not a
+proven improvement or an instruction to deploy. Calibration improved all3
+held-out scores. Representation degradation is unproven; unequal update counts,
+incomplete source convergence and sparse labels limit causal interpretation.
 
-- User authorized all3six-epoch diagnostic folds, sequential PA100k→PETA→Market.
-  **Private Kaggle version1 RUNNING**:
-  rayyannmerchant/upar2027-three-domain-lodo-diagnosis. Actual source commit
-  a73f6b5; returned slug differs from initially requested shorter slug.
-  Do not duplicate an active run or push a new version while it is running.
-- Prepared all3source train/selection/calibration/target splits with zero
-  cross-partition decoded-pixel overlap; PA CSVbytes reused exactly.
-  Original untrained foundation SHA55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832
-  only; never use original PARbest/last as initialization or recovery.
-- Quota26.01GPUhours before launch; estimate3.5–5GPUhours total. ActualGPU
-  staging/training/metrics remain pending evidence.27tests passed locally
-  before launch. LODO_EVALUATION.md and reports/lodo contain protocol/receipts.
-- Automatic follow-up is ACTIVE for this diagnosis only: retrieve actual
-  outputs, verify all3folds, finish report and one evidence-based recommendation.
-  No competition upload, architecture/method change or hidden-score tuning.
-- Preserve all prior canonical artifacts and original D: datasets. Best/last
-  LODO states persist privately in Kaggle outputs; download small diagnostics
-  first to respect C: capacity. No three-fold result is claimed yet.
+Best/last diagnostics remain private in completed Kaggle outputs. Small complete
+artifacts are local under outputs/lodo/threefold-v2-results; public reports are
+reports/lodo/results. All original D: data remain read-only.
+
+## Preserved production evidence and earlier history
 
 - CodaBench submission **1003877 Finished**: official Challenge_Avg **0.770450**,
   mA .773647, instance F1 .767279, precision .741799, recall .807915.

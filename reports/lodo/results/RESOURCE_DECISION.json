@@ -1,0 +1,20 @@
+{
+  "mode": "parallel",
+  "concurrent_stable": true,
+  "source_only": true,
+  "solo_fold_projected_hours": {
+    "PA100k": 0.6367759669416788,
+    "PETA": 1.79026254212099,
+    "Market1501": 1.7662608450075952
+  },
+  "concurrent_fold_projected_hours": {
+    "PA100k": 0.6797500235298896,
+    "PETA": 1.8665617725499644
+  },
+  "projected_session_hours": 2.6287969875569264,
+  "session_cap_hours": 6.0,
+  "final_training_reserve_hours": 8,
+  "quota_remaining_at_submission": 14.132224722222222,
+  "allowed": true,
+  "projection_limitations": "48 source batches;1.5x training margin, raw+EMA validation and300s/fold checkpoints. Market concurrent throughput conservatively adjusted by measured contention; not convergence evidence."
+}

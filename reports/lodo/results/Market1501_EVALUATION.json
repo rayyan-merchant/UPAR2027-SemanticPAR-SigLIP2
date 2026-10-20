@@ -1,0 +1,759 @@
+{
+  "held_out_domain": "Market1501",
+  "best_epoch": 5,
+  "best_weights": "raw",
+  "source": {
+    "raw": {
+      "legacy": {
+        "macro": {
+          "Challenge_Avg": 0.856139377623452,
+          "mA": 0.8381356140470403,
+          "Label_F1": 0.6806414702863559,
+          "Inst_Acc": 0.7923527964150427,
+          "Inst_Prec": 0.867376691700807,
+          "Inst_Rec": 0.8826630709373079,
+          "Inst_F1": 0.8749350697190776
+        },
+        "domains": {
+          "PA100k": {
+            "Challenge_Avg": 0.847360164300168,
+            "mA": 0.8302875715560489,
+            "Label_F1": 0.6566376143923554,
+            "Inst_Acc": 0.7761247756609816,
+            "Inst_Prec": 0.8537711186125309,
+            "Inst_Rec": 0.8768354658839398,
+            "Inst_F1": 0.8651495992830572
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8649185909467362,
+            "mA": 0.8459836565380316,
+            "Label_F1": 0.7046453261803565,
+            "Inst_Acc": 0.8085808171691039,
+            "Inst_Prec": 0.880982264789083,
+            "Inst_Rec": 0.888490675990676,
+            "Inst_F1": 0.8847205401550982
+          }
+        }
+      },
+      "mean_image_f1_sensitivity": {
+        "macro": {
+          "mA": 0.8381356140470403,
+          "Inst_F1": 0.8711863829983959,
+          "Challenge_Avg": 0.8543406579050995,
+          "all_valid_safe_zero_mA": 0.8338108183403149,
+          "harmonic_of_macro_mA_and_mean_image_F1": 0.854341470274043,
+          "harmonic_all_valid_safe_zero_mA_mean_image_F1": 0.8520889422744872
+        },
+        "domains": {
+          "PA100k": {
+            "Challenge_Avg": 0.8455237688441573,
+            "mA": 0.8302875715560489,
+            "Label_F1": 0.6566376143923554,
+            "Inst_Acc": 0.7761247756609816,
+            "Inst_Prec": 0.8537711186125309,
+            "Inst_Rec": 0.8768354658839398,
+            "Inst_F1": 0.8613296031272604,
+            "all_valid_safe_zero_mA": 0.8302875715560489,
+            "zero_positive_attributes": []
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8631575469660417,
+            "mA": 0.8459836565380316,
+            "Label_F1": 0.7046453261803565,
+            "Inst_Acc": 0.8085808171691039,
+            "Inst_Prec": 0.880982264789083,
+            "Inst_Rec": 0.888490675990676,
+            "Inst_F1": 0.8810431628695313,
+            "all_valid_safe_zero_mA": 0.8373340651245809,
+            "zero_positive_attributes": [
+              "LowerBody-Color-Other"
+            ]
+          }
+        }
+      }
+    },
+    "calibrated": {
+      "legacy": {
+        "macro": {
+          "Challenge_Avg": 0.8659203044293691,
+          "mA": 0.8613889489185446,
+          "Label_F1": 0.6570998272766988,
+          "Inst_Acc": 0.7832311539409273,
+          "Inst_Prec": 0.8400815239272881,
+          "Inst_Rec": 0.9032624060573267,
+          "Inst_F1": 0.8705027300705914
+        },
+        "domains": {
+          "PA100k": {
+            "Challenge_Avg": 0.8586559815391128,
+            "mA": 0.8553109635416781,
+            "Label_F1": 0.6334214139710461,
+            "Inst_Acc": 0.7693180218389674,
+            "Inst_Prec": 0.8276172366986252,
+            "Inst_Rec": 0.8994227706376119,
+            "Inst_F1": 0.8620272661859639
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8731846273196254,
+            "mA": 0.867466934295411,
+            "Label_F1": 0.6807782405823514,
+            "Inst_Acc": 0.7971442860428875,
+            "Inst_Prec": 0.852545811155951,
+            "Inst_Rec": 0.9071020414770415,
+            "Inst_F1": 0.8789781939552189
+          }
+        }
+      },
+      "mean_image_f1_sensitivity": {
+        "macro": {
+          "mA": 0.8613889489185446,
+          "Inst_F1": 0.8661399443745894,
+          "Challenge_Avg": 0.8637563423914227,
+          "all_valid_safe_zero_mA": 0.8567846856664254,
+          "harmonic_of_macro_mA_and_mean_image_F1": 0.8637579136276661,
+          "harmonic_all_valid_safe_zero_mA_mean_image_F1": 0.8614369160959199
+        },
+        "domains": {
+          "PA100k": {
+            "Challenge_Avg": 0.8564998934505094,
+            "mA": 0.8553109635416781,
+            "Label_F1": 0.6334214139710461,
+            "Inst_Acc": 0.7693180218389674,
+            "Inst_Prec": 0.8276172366986252,
+            "Inst_Rec": 0.8994227706376119,
+            "Inst_F1": 0.8576921333180407,
+            "all_valid_safe_zero_mA": 0.8553109635416781,
+            "zero_positive_attributes": []
+          },
+          "PETA": {
+            "Challenge_Avg": 0.871012791332336,
+            "mA": 0.867466934295411,
+            "Label_F1": 0.6807782405823514,
+            "Inst_Acc": 0.7971442860428875,
+            "Inst_Prec": 0.852545811155951,
+            "Inst_Rec": 0.9071020414770415,
+            "Inst_F1": 0.8745877554311381,
+            "all_valid_safe_zero_mA": 0.8582584077911726,
+            "zero_positive_attributes": [
+              "LowerBody-Color-Other"
+            ]
+          }
+        }
+      }
+    },
+    "calibration_fit_in_sample": {
+      "legacy": {
+        "macro": {
+          "Challenge_Avg": 0.8718266013603044,
+          "mA": 0.8693026241158707,
+          "Label_F1": 0.6690725656344362,
+          "Inst_Acc": 0.7888011346481403,
+          "Inst_Prec": 0.8445417016533598,
+          "Inst_Rec": 0.9064338739392231,
+          "Inst_F1": 0.8743702381893608
+        },
+        "domains": {
+          "PA100k": {
+            "Challenge_Avg": 0.8589174268849936,
+            "mA": 0.8549733352417348,
+            "Label_F1": 0.6231920925111498,
+            "Inst_Acc": 0.7699007401651681,
+            "Inst_Prec": 0.8292186018508158,
+            "Inst_Rec": 0.8994292193719098,
+            "Inst_F1": 0.8628980762823072
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8847357758356151,
+            "mA": 0.8836319129900065,
+            "Label_F1": 0.7149530387577225,
+            "Inst_Acc": 0.8077015291311126,
+            "Inst_Prec": 0.8598648014559038,
+            "Inst_Rec": 0.9134385285065365,
+            "Inst_F1": 0.8858424000964142
+          }
+        }
+      },
+      "mean_image_f1_sensitivity": {
+        "macro": {
+          "mA": 0.8693026241158707,
+          "Inst_F1": 0.8700403054414053,
+          "Challenge_Avg": 0.8696691214596013,
+          "all_valid_safe_zero_mA": 0.8693026241158707,
+          "harmonic_of_macro_mA_and_mean_image_F1": 0.8696713083478017,
+          "harmonic_all_valid_safe_zero_mA_mean_image_F1": 0.8696713083478017
+        },
+        "domains": {
+          "PA100k": {
+            "Challenge_Avg": 0.8567120694497936,
+            "mA": 0.8549733352417348,
+            "Label_F1": 0.6231920925111498,
+            "Inst_Acc": 0.7699007401651681,
+            "Inst_Prec": 0.8292186018508158,
+            "Inst_Rec": 0.8994292193719098,
+            "Inst_F1": 0.8584578900949065,
+            "all_valid_safe_zero_mA": 0.8549733352417348,
+            "zero_positive_attributes": []
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8826261734694091,
+            "mA": 0.8836319129900065,
+            "Label_F1": 0.7149530387577225,
+            "Inst_Acc": 0.8077015291311126,
+            "Inst_Prec": 0.8598648014559038,
+            "Inst_Rec": 0.9134385285065365,
+            "Inst_F1": 0.8816227207879042,
+            "all_valid_safe_zero_mA": 0.8836319129900065,
+            "zero_positive_attributes": []
+          }
+        }
+      }
+    },
+    "note": "Selection labels chose checkpoint; calibration labels are disjoint. Selection metrics retain checkpoint-selection optimism."
+  },
+  "target_raw": {
+    "legacy": {
+      "macro": {
+        "Challenge_Avg": 0.8133433556327672,
+        "mA": 0.7886807743520695,
+        "Label_F1": 0.5295753446398006,
+        "Inst_Acc": 0.7375086281712239,
+        "Inst_Prec": 0.8502319363101354,
+        "Inst_Rec": 0.8292270854474646,
+        "Inst_F1": 0.8395981579389404
+      },
+      "domains": {
+        "Market1501": {
+          "Challenge_Avg": 0.8133433556327672,
+          "mA": 0.7886807743520695,
+          "Label_F1": 0.5295753446398006,
+          "Inst_Acc": 0.7375086281712239,
+          "Inst_Prec": 0.8502319363101354,
+          "Inst_Rec": 0.8292270854474646,
+          "Inst_F1": 0.8395981579389404
+        }
+      }
+    },
+    "mean_image_f1_sensitivity": {
+      "macro": {
+        "mA": 0.7886807743520695,
+        "Inst_F1": 0.8359710957829841,
+        "Challenge_Avg": 0.811637672387334,
+        "all_valid_safe_zero_mA": 0.744332814232799,
+        "harmonic_of_macro_mA_and_mean_image_F1": 0.811637672387334,
+        "harmonic_all_valid_safe_zero_mA_mean_image_F1": 0.7874950057362203
+      },
+      "domains": {
+        "Market1501": {
+          "Challenge_Avg": 0.811637672387334,
+          "mA": 0.7886807743520695,
+          "Label_F1": 0.5295753446398006,
+          "Inst_Acc": 0.7375086281712239,
+          "Inst_Prec": 0.8502319363101354,
+          "Inst_Rec": 0.8292270854474646,
+          "Inst_F1": 0.8359710957829841,
+          "all_valid_safe_zero_mA": 0.744332814232799,
+          "zero_positive_attributes": [
+            "UpperBody-Color-Brown",
+            "UpperBody-Color-Orange",
+            "UpperBody-Color-Pink",
+            "LowerBody-Color-Orange",
+            "LowerBody-Color-Purple",
+            "LowerBody-Color-Red"
+          ]
+        }
+      }
+    }
+  },
+  "target_calibrated": {
+    "legacy": {
+      "macro": {
+        "Challenge_Avg": 0.817447759296592,
+        "mA": 0.8009696053691956,
+        "Label_F1": 0.5274492166454982,
+        "Inst_Acc": 0.7289145283767962,
+        "Inst_Prec": 0.8212210358537373,
+        "Inst_Rec": 0.8484596389217243,
+        "Inst_F1": 0.8346181567311824
+      },
+      "domains": {
+        "Market1501": {
+          "Challenge_Avg": 0.817447759296592,
+          "mA": 0.8009696053691956,
+          "Label_F1": 0.5274492166454982,
+          "Inst_Acc": 0.7289145283767962,
+          "Inst_Prec": 0.8212210358537373,
+          "Inst_Rec": 0.8484596389217243,
+          "Inst_F1": 0.8346181567311824
+        }
+      }
+    },
+    "mean_image_f1_sensitivity": {
+      "macro": {
+        "mA": 0.8009696053691956,
+        "Inst_F1": 0.8306619765435086,
+        "Challenge_Avg": 0.8155456206201908,
+        "all_valid_safe_zero_mA": 0.7543795783443484,
+        "harmonic_of_macro_mA_and_mean_image_F1": 0.8155456206201908,
+        "harmonic_all_valid_safe_zero_mA_mean_image_F1": 0.790685177532661
+      },
+      "domains": {
+        "Market1501": {
+          "Challenge_Avg": 0.8155456206201908,
+          "mA": 0.8009696053691956,
+          "Label_F1": 0.5274492166454982,
+          "Inst_Acc": 0.7289145283767962,
+          "Inst_Prec": 0.8212210358537373,
+          "Inst_Rec": 0.8484596389217243,
+          "Inst_F1": 0.8306619765435086,
+          "all_valid_safe_zero_mA": 0.7543795783443484,
+          "zero_positive_attributes": [
+            "UpperBody-Color-Brown",
+            "UpperBody-Color-Orange",
+            "UpperBody-Color-Pink",
+            "LowerBody-Color-Orange",
+            "LowerBody-Color-Purple",
+            "LowerBody-Color-Red"
+          ]
+        }
+      }
+    }
+  },
+  "source_minus_target_raw": 0.042796021990684885,
+  "source_minus_target_calibrated": 0.0484725451327771,
+  "calibration_target_gain": 0.004104403663824807,
+  "target_attribute_groups_raw": {
+    "age": {
+      "mA": 0.7690404181506745,
+      "label_F1": 0.48674101269831405,
+      "attributes_with_zero_positive_support": []
+    },
+    "gender": {
+      "mA": 0.9188455404145719,
+      "label_F1": 0.909054054054054,
+      "attributes_with_zero_positive_support": []
+    },
+    "hair": {
+      "mA": 0.7816657959898965,
+      "label_F1": 0.657116827014201,
+      "attributes_with_zero_positive_support": []
+    },
+    "upper_length": {
+      "mA": 0.855445266208209,
+      "label_F1": 0.9579406573645476,
+      "attributes_with_zero_positive_support": []
+    },
+    "upper_colors": {
+      "mA": 0.8536694798408384,
+      "label_F1": 0.5360787409995742,
+      "attributes_with_zero_positive_support": [
+        "UpperBody-Color-Brown",
+        "UpperBody-Color-Orange",
+        "UpperBody-Color-Pink"
+      ]
+    },
+    "lower_length": {
+      "mA": 0.861782168837794,
+      "label_F1": 0.8492768595041322,
+      "attributes_with_zero_positive_support": []
+    },
+    "lower_colors": {
+      "mA": 0.7240797366932897,
+      "label_F1": 0.36857796462071524,
+      "attributes_with_zero_positive_support": [
+        "LowerBody-Color-Orange",
+        "LowerBody-Color-Purple",
+        "LowerBody-Color-Red"
+      ]
+    },
+    "lower_type": {
+      "mA": 0.9052050966812772,
+      "label_F1": 0.8639464579686879,
+      "attributes_with_zero_positive_support": []
+    },
+    "accessories": {
+      "mA": 0.7033603135836735,
+      "label_F1": 0.4902790624301794,
+      "attributes_with_zero_positive_support": []
+    }
+  },
+  "target_attribute_groups_calibrated": {
+    "age": {
+      "mA": 0.7755204117627775,
+      "label_F1": 0.45471452773052157,
+      "attributes_with_zero_positive_support": []
+    },
+    "gender": {
+      "mA": 0.9150587678508244,
+      "label_F1": 0.9045406266595858,
+      "attributes_with_zero_positive_support": []
+    },
+    "hair": {
+      "mA": 0.7967749964526266,
+      "label_F1": 0.6611995423077777,
+      "attributes_with_zero_positive_support": []
+    },
+    "upper_length": {
+      "mA": 0.8404001661424381,
+      "label_F1": 0.9605699138502319,
+      "attributes_with_zero_positive_support": []
+    },
+    "upper_colors": {
+      "mA": 0.8683287951834655,
+      "label_F1": 0.5398866204789864,
+      "attributes_with_zero_positive_support": [
+        "UpperBody-Color-Brown",
+        "UpperBody-Color-Orange",
+        "UpperBody-Color-Pink"
+      ]
+    },
+    "lower_length": {
+      "mA": 0.8777952233726011,
+      "label_F1": 0.8735782586814292,
+      "attributes_with_zero_positive_support": []
+    },
+    "lower_colors": {
+      "mA": 0.7482154708877693,
+      "label_F1": 0.37588455917230473,
+      "attributes_with_zero_positive_support": [
+        "LowerBody-Color-Orange",
+        "LowerBody-Color-Purple",
+        "LowerBody-Color-Red"
+      ]
+    },
+    "lower_type": {
+      "mA": 0.912072877129408,
+      "label_F1": 0.8270978251120416,
+      "attributes_with_zero_positive_support": []
+    },
+    "accessories": {
+      "mA": 0.7019564103281282,
+      "label_F1": 0.4736175700948414,
+      "attributes_with_zero_positive_support": []
+    }
+  },
+  "source_train_supervision": {
+    "attributes": [
+      "Age-Young",
+      "Age-Adult",
+      "Age-Old",
+      "Gender-Female",
+      "Hair-Length-Short",
+      "Hair-Length-Long",
+      "Hair-Length-Bald",
+      "UpperBody-Length-Short",
+      "UpperBody-Color-Black",
+      "UpperBody-Color-Blue",
+      "UpperBody-Color-Brown",
+      "UpperBody-Color-Green",
+      "UpperBody-Color-Grey",
+      "UpperBody-Color-Orange",
+      "UpperBody-Color-Pink",
+      "UpperBody-Color-Purple",
+      "UpperBody-Color-Red",
+      "UpperBody-Color-White",
+      "UpperBody-Color-Yellow",
+      "UpperBody-Color-Other",
+      "LowerBody-Length-Short",
+      "LowerBody-Color-Black",
+      "LowerBody-Color-Blue",
+      "LowerBody-Color-Brown",
+      "LowerBody-Color-Green",
+      "LowerBody-Color-Grey",
+      "LowerBody-Color-Orange",
+      "LowerBody-Color-Pink",
+      "LowerBody-Color-Purple",
+      "LowerBody-Color-Red",
+      "LowerBody-Color-White",
+      "LowerBody-Color-Yellow",
+      "LowerBody-Color-Other",
+      "LowerBody-Type-Trousers&Shorts",
+      "LowerBody-Type-Skirt&Dress",
+      "Accessory-Backpack",
+      "Accessory-Bag",
+      "Accessory-Glasses-Normal",
+      "Accessory-Glasses-Sun",
+      "Accessory-Hat"
+    ],
+    "valid_positives": [
+      4389,
+      81610,
+      1662,
+      39831,
+      55106,
+      22917,
+      1229,
+      47631,
+      27084,
+      5997,
+      3132,
+      1519,
+      13331,
+      613,
+      2330,
+      1462,
+      3233,
+      24448,
+      1334,
+      4440,
+      13882,
+      52099,
+      13812,
+      2655,
+      561,
+      10754,
+      259,
+      826,
+      148,
+      770,
+      3846,
+      291,
+      1843,
+      77874,
+      9824,
+      13304,
+      30541,
+      13038,
+      808,
+      4375
+    ],
+    "valid_negatives": [
+      83280,
+      6059,
+      86007,
+      47838,
+      32563,
+      64752,
+      86440,
+      40038,
+      60585,
+      81672,
+      84537,
+      86150,
+      74338,
+      87056,
+      85339,
+      86207,
+      84436,
+      63221,
+      86335,
+      83229,
+      73787,
+      35570,
+      73857,
+      85014,
+      87108,
+      76915,
+      87410,
+      86843,
+      87521,
+      86899,
+      83823,
+      87378,
+      85826,
+      9795,
+      77845,
+      74365,
+      57128,
+      74631,
+      86861,
+      83294
+    ],
+    "valid_counts": [
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669,
+      87669
+    ],
+    "training_prevalence": [
+      0.05006330629983232,
+      0.9308877710479189,
+      0.01895767032816617,
+      0.45433391506689935,
+      0.6285688213621691,
+      0.26140368887520105,
+      0.014018638287193876,
+      0.5433049310474626,
+      0.3089347431817404,
+      0.06840502344044075,
+      0.035725284878349244,
+      0.01732653503518918,
+      0.15206059154319088,
+      0.006992209332831446,
+      0.026577239389065692,
+      0.016676362226100448,
+      0.036877345469892436,
+      0.2788671023965142,
+      0.015216325040778382,
+      0.05064503986585908,
+      0.15834559536438195,
+      0.5942693540476109,
+      0.15754713752865893,
+      0.030284365054922494,
+      0.006399069226294357,
+      0.122665936648074,
+      0.002954293992175113,
+      0.009421802461531441,
+      0.001688167995528636,
+      0.00878303619295304,
+      0.04386955480272388,
+      0.003319303288505629,
+      0.02102225416053565,
+      0.8882729357013311,
+      0.11205785397346839,
+      0.151752614949412,
+      0.34836715372594645,
+      0.14871847517366457,
+      0.009216484732345527,
+      0.04990361473268772
+    ],
+    "positive_weights": [
+      2.5855460166931152,
+      1.0715564489364624,
+      2.6672348976135254,
+      1.7257574796676636,
+      1.449808120727539,
+      2.0929956436157227,
+      2.68044114112854,
+      1.5788474082946777,
+      1.9958404302597046,
+      2.5385549068450928,
+      2.622884511947632,
+      2.6715891361236572,
+      2.3348307609558105,
+      2.699341297149658,
+      2.646988868713379,
+      2.6733267307281494,
+      2.6198647022247314,
+      2.0567619800567627,
+      2.6772327423095703,
+      2.5840423107147217,
+      2.320202350616455,
+      1.5003983974456787,
+      2.3220555782318115,
+      2.6371943950653076,
+      2.7009429931640625,
+      2.4044809341430664,
+      2.7102630138397217,
+      2.692790985107422,
+      2.7136967182159424,
+      2.694511651992798,
+      2.601609945297241,
+      2.7092740535736084,
+      2.661733865737915,
+      1.118207573890686,
+      2.4301235675811768,
+      2.335549831390381,
+      1.9186711311340332,
+      2.342647075653076,
+      2.6933438777923584,
+      2.585958957672119
+    ],
+    "negative_weights": [
+      1.0513375997543335,
+      2.5367603302001953,
+      1.0191384553909302,
+      1.575123906135559,
+      1.8749252557754517,
+      1.2987518310546875,
+      1.0141173601150513,
+      1.7216875553131104,
+      1.361973524093628,
+      1.0707988739013672,
+      1.036371111869812,
+      1.0174775123596191,
+      1.1642308235168457,
+      1.007016658782959,
+      1.0269335508346558,
+      1.0168161392211914,
+      1.0375657081604004,
+      1.321631669998169,
+      1.0153326988220215,
+      1.051949381828308,
+      1.1715710163116455,
+      1.811706781387329,
+      1.1706359386444092,
+      1.030747652053833,
+      1.0064195394515991,
+      1.1305067539215088,
+      1.0029586553573608,
+      1.009466290473938,
+      1.0016895532608032,
+      1.008821725845337,
+      1.0448460578918457,
+      1.0033248662948608,
+      1.021244764328003,
+      2.4309277534484863,
+      1.1185775995254517,
+      1.163872241973877,
+      1.4167523384094238,
+      1.160346269607544,
+      1.0092591047286987,
+      1.051169753074646
+    ],
+    "domain_counts": {
+      "PA100k": 79001,
+      "PETA": 8668
+    },
+    "expected_sampling_domain_mass": {
+      "PA100k": 0.7511791875980834,
+      "PETA": 0.2488208124019166
+    },
+    "source_train_only": true,
+    "target_domain_absent": true
+  },
+  "convergence": {
+    "completed_epochs": 6,
+    "source_best_epoch": 5,
+    "selection_score_last_three_range": 0.0008959075536765226,
+    "training_loss_last_three_relative_drop": 0.08352391245770839,
+    "best_at_final_epoch": false,
+    "source_selection_plateau_heuristic": true,
+    "interpretation": "Descriptive source-only heuristic, not proof of convergence. Six epochs, small-source updates and EMA lag can limit conclusions; no target-based extension."
+  },
+  "images_processed_training": 526014,
+  "optimizer_updates_attempted": 8220,
+  "optimizer_updates_successful": 8217,
+  "amp_skipped_updates": 3,
+  "training_epoch_seconds_total": 4057.944341659546,
+  "post_training_evaluation_seconds": 112.26789550000012,
+  "target_prediction_sha256": "dbe11f1b72d5d249e7672701a53e6c2ba64131fa334016e9fbf783eb4fae8f94",
+  "lock_sha256": "b6350a1a30ffd3d7de7068c743a54353a362acade690a2c3945c1e3827234626",
+  "target_unique_locked_configuration_evaluations": 1,
+  "scorer_limitations": "Both legacy harmonic-of-mean-P/R and mean-image-F1 plus zero-support/macro-order sensitivities retained. Exact organizer scorer private."
+}

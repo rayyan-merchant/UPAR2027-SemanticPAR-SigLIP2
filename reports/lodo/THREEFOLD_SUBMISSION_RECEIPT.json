@@ -1,8 +1,8 @@
 {
   "kernel": "rayyannmerchant/upar2027-threefold-archives-resource-safe",
   "version": 1,
-  "status": "RUNNING",
-  "checked_at_utc": "2026-10-20T16:17:33.454830+00:00",
+  "status": "COMPLETE",
+  "checked_at_utc": "2026-10-20T18:01:32.900856+00:00",
   "source_commit": "e994492",
   "submitted_script_sha256": "768937f168df26f006ac7ebc50b5c97d852cefbf36d5700cc2f1b9a2204671b9",
   "private": true,
@@ -16,9 +16,18 @@
   "initial_gpu_quota_used_hours": 15.867775277777778,
   "max_session_timeout_seconds": 21600,
   "final_training_gpu_hours_reserved": 8,
-  "solo_and_concurrent_gpu_gates": "PENDING_ACTUAL_MEASUREMENTS",
+  "solo_and_concurrent_gpu_gates": "PASSED_PARALLEL",
   "focused_local_tests_passed": 16,
   "accepted_submission_1003877_changed": false,
   "new_competition_submission_authorized": false,
-  "live_saved_resource_reports_available": false
+  "live_saved_resource_reports_available": false,
+  "all_folds_six_epochs_verified": true,
+  "independent_metrics_and_source_calibration_verified": true,
+  "elapsed_wall_seconds": 5874.516162106,
+  "gpu_staging_seconds": 32.96317868,
+  "kaggle_tests_passed": 38,
+  "gpu_quota_remaining_hours_displayed": 12.5,
+  "gpu_quota_used_hours_displayed": 17.5,
+  "results_directory": "../lodo/threefold-v2-results",
+  "recommendation": "D: test equal-domain sampling; not implemented"
 }

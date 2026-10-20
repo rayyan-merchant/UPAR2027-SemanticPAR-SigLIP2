@@ -1,129 +1,194 @@
-> Private threefold archive/resource-safe kernel v1 successfully pushed, verified RUNNING.
-> Actual slug rayyannmerchant/upar2027-threefold-archives-resource-safe; runtime source e994492.
-> Do not duplicate queued/running job. GPU throughput gates and fold results remain pending.
-> Timeout21600s; original submission1003877 preserved; no final retraining/resubmission.
+# Three-domain LODO evaluation — completed
 
-> New authorization supersedes PA-only deferral: execute all3 six-epoch folds.
-> Complete archive union131076 benchmarked on Kaggle CPU in34.42s; supplement79003.
-> GPU execution is resource-gated: solo/concurrent source benchmarks first,6h cap,
-> at least8GPUh reserved, explicit affinity and independent states. See LODO_EXECUTION_PLAN.md.
-> No new diagnostic result, final training or competition upload is claimed.
+All three six-epoch diagnostics completed from the original foundation. Accepted submission1003877 and the production model/calibration remain unchanged; no competition resubmission occurred.
 
-> 2026-10-20 staging recovery supersedes the earlier automatic three-fold plan.
-> User verified latest log Staged60000/131076 at35703.7s, then clicked Stop.
-> Saved server STATUS independently confirms staging before all training calls.
-> API now reports CANCEL_ACKNOWLEDGED; cancellation verified, zero GPU reserved.
-> No fold result exists. CPU-only archive probe v2 COMPLETE (900 images/0.601s).
-> PA-only archive-backed runner is prepared, not GPU-tested or launched.
-> Read STAGING_RECOVERY.md for actual measurements, watchdogs and revised budget.
-> Do not restart any GPU training before user review of that schedule.
+## Consolidated source-to-target comparison
 
-# Three-domain LODO evaluation
+| Target | Source raw | Source calibrated | Target raw | Target calibrated | Raw gap | Calibrated gap | Target calibration gain |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| PA100k | 0.841522 | 0.850671 | 0.786128 | 0.797104 | 0.055394 | 0.053567 | 0.010976 |
+| PETA | 0.849077 | 0.860265 | 0.769342 | 0.777228 | 0.079735 | 0.083037 | 0.007886 |
+| Market1501 | 0.856139 | 0.865920 | 0.813343 | 0.817448 | 0.042796 | 0.048473 | 0.004104 |
 
-2026-10-20 — **private Kaggle version1 RUNNING**, GPU results pending. Accepted CodaBench
-submission1003877 and its production checkpoint/calibration remain unchanged.
-No replacement submission is part of this diagnostic.
+| Setting | Macro held-out score | Worst-domain score | Macro mean-image-F1 score |
+| --- | --- | --- | --- |
+| target_raw | 0.789605 | 0.769342 | 0.787240 |
+| target_calibrated | 0.797260 | 0.777228 | 0.794709 |
 
-Actual job: [upar2027-three-domain-lodo-diagnosis](https://www.kaggle.com/code/rayyannmerchant/upar2027-three-domain-lodo-diagnosis).
-Submitted runtime source matches commit `a73f6b5`; Kaggle derived the final slug
-from the title. There is one active job, not three parallel runs. Quiet scheduled
-continuation checks status and retrieves results when available; it does not
-authorize another competition submission.
+Macro averages weight the three excluded datasets equally; these are three independently trained models, not a deployable ensemble. Source-selection scores retain checkpoint-selection optimism. Source and target metrics use the same indicated convention.
 
-## Fixed protocol
+## Target metrics
 
-| Order / held out | Source domains | Source train | Selection | Calibration | Target |
-| --- | --- | ---: | ---: | ---: | ---: |
-| 1 / PA100k | Market1501 + PETA | 18,668 | 11,634 | 11,785 | 9,986 |
-| 2 / PETA | PA100k + Market1501 | 89,001 | 13,215 | 13,229 | 6,963 |
-| 3 / Market1501 | PA100k + PETA | 87,669 | 8,445 | 8,502 | 16,458 |
+| Target | Setting | Challenge_Avg | mA | Instance F1 | Precision | Recall | Label F1 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| PA100k | raw | 0.786128 | 0.759461 | 0.814737 | 0.800748 | 0.829223 | 0.528207 |
+| PA100k | calibrated | 0.797104 | 0.786334 | 0.808174 | 0.772357 | 0.847475 | 0.523229 |
+| PETA | raw | 0.769342 | 0.746214 | 0.793949 | 0.802023 | 0.786037 | 0.545401 |
+| PETA | calibrated | 0.777228 | 0.769719 | 0.784886 | 0.767434 | 0.803150 | 0.537806 |
+| Market1501 | raw | 0.813343 | 0.788681 | 0.839598 | 0.850232 | 0.829227 | 0.529575 |
+| Market1501 | calibrated | 0.817448 | 0.800970 | 0.834618 | 0.821221 | 0.848460 | 0.527449 |
 
-PA split CSV bytes were reused exactly after verification. All folds retain the
-official train/validation distinction. Source-selection/calibration allocation
-uses seed2027 SHA256 of decoded pixels; exact duplicates stay together. Remove
-source-validation pixels duplicated in source training. Actual cross-partition
-pixel overlaps are zero in each fold. Pixel independence does not establish
-person-identity or near-duplicate independence.
+## Scorer sensitivity
 
-Each fold starts from the original pretrained native foundation, SHA256
-`55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832`,
-converted from general-purpose SigLIP2 revision
-`b53b807d3a2d5e2b3911292f2d69e5341cdc064c` before any PAR training. This includes
-pretrained text-query initialization and an untrained PAR head. It is not the
-all-domain PAR checkpoint. Existing real-weight GPU FP32/FP16 implementation
-parity is reused only if native code hash and exact torch/CUDA runtime match;
-source-only GPU feasibility reruns for every fold. No pretrained download is
-needed: the private original kernel outputs contain this native foundation.
+| Target | Setting | Mean image F1 / mean domain H | Mean image F1 / H macro | Also safe-zero support mA |
+| --- | --- | --- | --- | --- |
+| PA100k | raw | 0.783551 | 0.783551 | 0.783551 |
+| PA100k | calibrated | 0.794282 | 0.794282 | 0.794282 |
+| PETA | raw | 0.766532 | 0.766532 | 0.766532 |
+| PETA | calibrated | 0.774298 | 0.774298 | 0.774298 |
+| Market1501 | raw | 0.811638 | 0.811638 | 0.787495 |
+| Market1501 | calibrated | 0.815546 | 0.815546 | 0.790685 |
 
-Unchanged architecture/loss/recipe: six epochs maximum; one head-only epoch,
-upper-four-block finetuning, exponentially weighted BCE from that fold's source
-training labels, per-image domain sampling N_domain^-0.5, AdamW, existing
-layer-wise LR decay and warmup/cosine schedule, backbone/head LR1e-5/1e-4,
-AMP/gradient accumulation/clipping, EMA.9995,256patches, batch16×4, seed2027.
+Exact private organizer edge cases remain unavailable; neither alternative is asserted to reproduce them. Calibration and checkpoint choice used the original provisional objective and were fixed before target inference.
 
-Checkpoint selection uses only source-selection raw/EMA provisional
-dataset-macro Challenge_Avg. Global40 thresholds use only disjoint
-source-calibration labels and the original fitting objective/grid/regularizer.
-SHA256-lock checkpoint/configuration/splits/calibration before any target model
-inference. The target's raw and calibrated predictions come from the same fixed
-checkpoint. Interrupted evaluation reuses any atomically saved target
-predictions; it never searches target thresholds or alternate checkpoints.
+## Source supervision
 
-Both legacy harmonic-of-mean-P/R and mean-per-image-F1 conventions, zero-support
-mA sensitivity and macro aggregation-order sensitivity are retained. Exact
-organizer scorer edge cases remain private, so no exact equivalence is claimed.
+| Target excluded | Zero source positives | Zero source negatives | Source positives1–20 |
+| --- | --- | --- | --- |
+| PA100k | none | none | LowerBody-Color-Orange |
+| PETA | none | none | none |
+| Market1501 | none | none | none |
 
-## Resource estimate and recovery
+Support is measured from source training only. A zero-positive source attribute has no supervised positive examples, and sparse target positives make estimates noisy. This separates inadequate supervision from failures despite abundant source labels; it does not identify a causal visual mechanism.
 
-Read-only Kaggle quota check:26.01GPUhours remaining. Previous training kernel
-is complete. Estimate3.5–5GPUhours for all three folds, including setup and
-source/target inference; actual allocation/staging speed is unverified until
-the new job starts. Working disk gate requires8GiB free. Three independent
-best/last states require about4GB, with roughly1GB transient atomic-save space.
+## Attribute groups
 
-Source-size differences matter: expected six-epoch sampled images/attempted
-updates are112,008/1,752;534,006/8,346;526,014/8,220. Total1,172,028images and
-18,318attempted updates. Actual successful updates, skipped AMP steps, per-epoch
-images and timings are recorded rather than inferred from epochs alone.
-Small-source EMA lag/undertraining is a limitation, not an architecture failure.
+| Group | PA100k | PETA | Market1501 | Bottom3 count |
+| --- | --- | --- | --- | --- |
+| age | 0.693444 | 0.670749 | 0.775520 | 3 |
+| gender | 0.911596 | 0.869989 | 0.915059 | 0 |
+| hair | 0.804256 | 0.833757 | 0.796775 | 0 |
+| upper_length | 0.889959 | 0.875832 | 0.840400 | 0 |
+| upper_colors | 0.813412 | 0.796093 | 0.868329 | 0 |
+| lower_length | 0.882467 | 0.870236 | 0.877795 | 0 |
+| lower_colors | 0.759247 | 0.772342 | 0.748215 | 2 |
+| lower_type | 0.868165 | 0.674816 | 0.912073 | 1 |
+| accessories | 0.733598 | 0.697666 | 0.701956 | 3 |
 
-One private Kaggle job stages official images once, verifying every byte hash
-against the prior complete decode audit, then runs PA→PETA→Market sequentially.
-Staging uses allowed official data for integrity only; target images are not
-decoded/analyzed or sent through a model before source locks. Persistent best
-and complete epoch-boundary resume states are separate. Explicit recovery from
-an earlier LODO job verifies the fixed split/configuration and never resumes
-the all-domain PAR job. No large CPU training is allowed.
+The full target raw/calibrated TP/TN/FP/FN, P/R/F1/mA and source/target support are in reports/lodo/results/PER_ATTRIBUTE_TARGET_ERRORS.csv. Group mA omits unsupported target attributes; safe-zero sensitivity above exposes that choice.
 
-## Verified preparation
+## Convergence and compute
 
-- Full local suite:27passed in81.29s, including three synthetic domain-isolation
-  cases, duplicate-group splitting/reuse, changed-threshold lock rejection and
-  convergence-label checks. Existing training math is unchanged; added counters.
-- Per-fold CSVs/receipts are local under `outputs/lodo/splits/`.
-- Public split hashes/configuration and embedded source hashes:
-  `reports/lodo/EXPECTED_SPLITS.json`, `EXECUTION_PLAN.json`,
-  `KERNEL_BUILD_RECEIPT.json`.
-- CPU source-supervision audit: all40attributes have both positive and negative
-  source-training examples in every fold. PA-held-out lower-orange is especially
-  sparse: only4positives, versus255/259 in the other two source folds. Thus
-  entirely absent training labels do not explain all potential transfer failures;
-  rarity and source diversity still matter. Counts are in
-  `SOURCE_SUPERVISION_PRECOMMIT.json`; no target model outcome was used.
-- AMP/checkpoint API patterns reuse existing tested training code and official
-  [PyTorch AMP examples](https://docs.pytorch.org/docs/2.4/notes/amp_examples.html)
-  and [general checkpoint guidance](https://docs.pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html).
+| Target | Best source checkpoint | Sampled images | Attempted updates | Successful updates | AMP skips | Epoch compute hours | Last3 source range | Convergence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| PA100k | 6 raw | 112008 | 1752 | 1752 | 0 | 0.378 | 0.002784 | not established |
+| PETA | 5 ema | 534006 | 8346 | 8344 | 2 | 1.118 | 0.002996 | not established |
+| Market1501 | 5 raw | 526014 | 8220 | 8217 | 3 | 1.127 | 0.000896 | heuristic plateau |
 
-## Results — pending actual execution
+Complete suite elapsed wall time: 1.632hours, including setup/staging/checkpoint I/O. Epoch timers exclude checkpoint save overhead; per-fold post-training evaluation times are retained in EVALUATION.json. A last3 source range below.002 with an earlier best is only a descriptive plateau heuristic. Six epochs and different update counts cannot establish full convergence or rule out EMA lag.
 
-| Held out | Best source score | Target raw | Target calibrated | mA / F1 / P / R / label F1 | Calibration gain | Convergence / compute |
-| --- | --- | --- | --- | --- | --- | --- |
-| PA100k | pending | pending | pending | pending | pending | pending |
-| PETA | pending | pending | pending | pending | pending | pending |
-| Market1501 | pending | pending | pending | pending | pending | pending |
+## Calibration transfer
 
-Macro/worst-domain scores, source-to-target gaps, repeated attribute failures,
-sparse/missing source supervision and the single A–E recommendation must be
-filled from completed artifacts. No result or recommendation is invented before
-those measurements. The initial same-domain .865 versus official .77045 gap
-motivates this protocol; no hidden leaderboard data enter these runs.
+Source-only calibration gains are positive in 3/3 targets; per-fold gains are PA100k:+0.010976, PETA:+0.007886, Market1501:+0.004104. These are untouched target measurements under a fixed checkpoint/threshold lock, not target-fitted offsets.
+
+## Interpretation and evidence ranking
+
+1. **Measured cross-domain transfer weakness is the leading finding.** Source-to-target calibrated gaps are 5.36 points for PA100K, 8.30 for PETA and 4.85 for Market1501. The worst raw held-out score (PETA, .76934) is near the original official .77045, showing that permitted source-domain shifts can produce a gap of comparable scale. This is not evidence that PETA identifies the hidden domain or that the datasets have equivalent difficulty. The hidden gap cannot be decomposed causally from these runs.
+2. **Attribute imbalance and label-distribution/semantic shift contribute plausible, distinct limitations.** All 40 attributes have both positive and negative source examples in every fold. PA-held-out lower-orange has only four positive source examples; its zero target recall is consistent with inadequate rare-label supervision. Other failures persist with substantial supervision: Market-held-out normal glasses has 13,038 source positives but calibrated target recall .129. Such failures cannot be explained by missing source labels alone. Age/accessory groups repeatedly transfer poorly; rare colors and heterogeneous 'Other' categories also fail. Annotation-policy differences versus visual feature shift are not separately identifiable here.
+3. **Calibration is a secondary tradeoff, not the dominant demonstrated cause.** It improves held-out Challenge_Avg on all three targets by .41–1.10 points and macro by .77 points, while increasing FP and reducing FN. Instance-F1 and label-F1 need not improve when the mA-focused objective improves. Some attributes worsen (Market normal glasses recall falls from .206 to .129); there is no universal FP-only or FN-only failure. No target thresholds were refitted.
+4. **Pretrained representation degradation and the best fine-tuning strategy remain untested mechanisms.** There is no frozen-backbone or pretrained/fine-tuned interpolation counterfactual. Source improvement alongside a target gap does not establish that visual representations were damaged. A/B may help, but claiming that these runs prove them would be unsupported. No interpolation was implemented or deployed.
+
+The threefold target macro is .79726 after calibration, still below the roughly .865 known-domain validation score. This is not an apples-to-apples estimate of the hidden-score gap: training domains, examples, updates, six versus twelve epochs, raw/EMA selection and scorer conventions differ. PA's best is at epoch6 and its source score still improves; its smaller update budget and EMA lag are especially important. PETA is not demonstrably converged; Market shows only a descriptive plateau. AMP skipped 0/2/3 updates, under .04% per fold; no infrastructure failure or missing fold is indicated.
+
+| Candidate family | Evidence and decision |
+| --- | --- |
+| A: preserve pretrained representations | No counterfactual measurement; plausible hypothesis only. |
+| B: change fine-tuning | Unequal updates/EMA and incomplete convergence confound the mechanism; not selected now. |
+| C: attribute imbalance | Clear rare-label limitations, but abundant-label transfer failures rule out a complete explanation. Retain current loss for the proposed comparison. |
+| D: domain sampling | Measured 74–75% large-source exposure and repeated transfer gaps; selected as one bounded testable change. No simultaneous augmentation change. |
+| E: calibration stability | Positive aggregate transfer in all3; per-attribute regressions merit reporting, but replacing calibration is lower priority. |
+
+## Error balance and weakest individual attributes
+
+| Target | Setting | TP | TN | FP | FN |
+| --- | --- | --- | --- | --- | --- |
+| PA100k | raw | 54208 | 319705 | 14159 | 11368 |
+| PA100k | calibrated | 55418 | 316458 | 17406 | 10158 |
+| PETA | raw | 35544 | 223770 | 9098 | 10108 |
+| PETA | calibrated | 36351 | 221168 | 11700 | 9301 |
+| Market1501 | raw | 105149 | 511887 | 18982 | 22302 |
+| Market1501 | calibrated | 107612 | 506162 | 24707 | 19839 |
+
+Counts pool valid attribute decisions within a target; they are not instance-average scores.
+
+| Target | Attribute | Source positives | Target positives | mA | Precision | Recall | F1 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| PA100k | LowerBody-Color-Purple | 56 | 5 | 0.4996 | 0.0000 | 0.0000 | 0.0000 |
+| PA100k | LowerBody-Color-Orange | 4 | 65 | 0.5000 | 0.0000 | 0.0000 | 0.0000 |
+| PA100k | LowerBody-Color-Other | 436 | 256 | 0.5414 | 0.4231 | 0.0859 | 0.1429 |
+| PA100k | UpperBody-Color-Other | 956 | 1053 | 0.6107 | 0.7081 | 0.2327 | 0.3503 |
+| PA100k | Accessory-Glasses-Sun | 458 | 96 | 0.6210 | 0.0836 | 0.2708 | 0.1278 |
+| PA100k | UpperBody-Color-Purple | 658 | 143 | 0.6610 | 0.1548 | 0.3497 | 0.2146 |
+| PETA | UpperBody-Color-Other | 5390 | 4 | 0.4738 | 0.0000 | 0.0000 | 0.0000 |
+| PETA | LowerBody-Color-Purple | 130 | 21 | 0.4999 | 0.0000 | 0.0000 | 0.0000 |
+| PETA | LowerBody-Color-Yellow | 435 | 16 | 0.5613 | 0.1111 | 0.1250 | 0.1176 |
+| PETA | Age-Young | 4285 | 237 | 0.5614 | 0.5455 | 0.1266 | 0.2055 |
+| PETA | LowerBody-Color-Pink | 1235 | 17 | 0.6162 | 0.1667 | 0.2353 | 0.1951 |
+| PETA | Accessory-Glasses-Sun | 542 | 267 | 0.6172 | 0.8514 | 0.2360 | 0.3695 |
+| Market1501 | LowerBody-Color-Yellow | 291 | 16 | 0.4951 | 0.0000 | 0.0000 | 0.0000 |
+| Market1501 | Accessory-Glasses-Sun | 808 | 364 | 0.5526 | 0.3478 | 0.1099 | 0.1670 |
+| Market1501 | Accessory-Glasses-Normal | 13038 | 2855 | 0.5611 | 0.8084 | 0.1285 | 0.2218 |
+| Market1501 | Hair-Length-Bald | 1229 | 175 | 0.6189 | 0.1648 | 0.2514 | 0.1991 |
+| Market1501 | LowerBody-Color-Other | 1843 | 987 | 0.6235 | 0.3894 | 0.2746 | 0.3220 |
+| Market1501 | UpperBody-Color-Other | 4440 | 1459 | 0.6387 | 0.6594 | 0.2920 | 0.4048 |
+
+Six weakest supported target attributes per fold by calibrated mA. Sparse target positives have high estimation uncertainty; zero-positive Market color attributes are covered by the separate scorer sensitivity, not ranked as measured positive recall.
+
+## Actual source-only trajectories
+
+| Target excluded | Epoch | Training loss | Selection score | Selected weights | Epoch seconds |
+| --- | --- | --- | --- | --- | --- |
+| PA100k | 1 | 0.373816 | 0.791867 | raw | 186.8 |
+| PA100k | 2 | 0.223183 | 0.820914 | raw | 236.5 |
+| PA100k | 3 | 0.187926 | 0.832830 | raw | 235.1 |
+| PA100k | 4 | 0.171036 | 0.838934 | raw | 233.2 |
+| PA100k | 5 | 0.162454 | 0.838738 | raw | 233.4 |
+| PA100k | 6 | 0.157667 | 0.841522 | raw | 235.1 |
+| PETA | 1 | 0.258061 | 0.831498 | raw | 490.0 |
+| PETA | 2 | 0.165020 | 0.840584 | raw | 707.9 |
+| PETA | 3 | 0.139557 | 0.843531 | raw | 710.7 |
+| PETA | 4 | 0.122470 | 0.846081 | raw | 706.1 |
+| PETA | 5 | 0.113216 | 0.849077 | ema | 706.4 |
+| PETA | 6 | 0.109612 | 0.848233 | ema | 705.3 |
+| Market1501 | 1 | 0.262286 | 0.820309 | raw | 472.3 |
+| Market1501 | 2 | 0.170331 | 0.840845 | raw | 715.6 |
+| Market1501 | 3 | 0.146127 | 0.849732 | raw | 717.5 |
+| Market1501 | 4 | 0.130526 | 0.855407 | raw | 715.5 |
+| Market1501 | 5 | 0.122869 | 0.856139 | raw | 718.5 |
+| Market1501 | 6 | 0.119624 | 0.855243 | raw | 718.6 |
+
+Source/group comparison is in reports/lodo/results/GROUP_SOURCE_TARGET_COMPARISON.csv. Source groups average the two source datasets equally; unsupported attributes can differ across domains, so group gaps are descriptive.
+
+## Staging, concurrency and preservation receipt
+
+GPU-session archive staging verified all131076 paths in **32.96s**, under120s/30s limits; no mounted per-image copy/hash/decode loop. CPU preflight was34.42s. Source-only concurrent probes retained92.8% of PA solo throughput and95.7% of PETA solo throughput. Separate CUDA affinity0/1, workers2 and threads2 were used; Market reusedGPU0 after PA.
+
+| Probe | Training images/s | CPU loader images/s | Peak allocated GiB | Physical GPU |
+| --- | --- | --- | --- | --- |
+| concurrent_PA100k | 138.38 | 340.58 | 1.240 | 0 |
+| concurrent_PETA | 147.05 | 419.68 | 1.240 | 1 |
+| solo_Market1501_Market1501 | 146.91 | 376.96 | 1.240 | 0 |
+| solo_PA100k_PA100k | 149.12 | 424.36 | 1.240 | 0 |
+| solo_PETA_PETA | 153.63 | 429.32 | 1.240 | 1 |
+
+These are48-batch source probes, not epoch throughput or deployment timing. Full six-epoch timings above include validation; startup/checkpoint overhead is included in the1.632-hour suite wall time. Provider quota changed from14.132 to12.50 remaining, consistent with approximately1.63 billed session hours, not twice the wall time.38 Kaggle tests passed, zero failed/skipped. Actual Torch2.11/CUDA12.8 runtime matched reused parity evidence; this is not a new torch2.4 GPU parity test.
+
+Canonical submission1003877 ZIP/best/last/calibration remain preserved. Diagnostic best/last recovery checkpoints remain in the completed private Kaggle kernel outputs; local independent verification checks their server-bound lock but does not claim to rehash undownloaded weights. Small logs/configs/CSV/NPZ are retained privately in outputs/lodo/threefold-v2-results. Public Git contains aggregate metrics, curves, configs and reproducibility receipts, not images, weights, sample predictions or annotation CSVs.
+
+## Single recommended next change
+
+**Recommend D: test equal probability per source domain in the existing sampler.** Change only the domain exposure, from the present square-root domain-size mass to 50/50 in a two-source fold (and one-third each in a later all-domain model). Keep architecture, augmentation, weighted BCE, optimizer, schedule, EMA, preprocessing and seed fixed. This is a recommendation for a controlled comparison, not a demonstrated improvement or an authorization to train/deploy it.
+
+The observed sampler assigns PA100K 73.76% of draws in the PETA-held-out fold and 75.12% in the Market-held-out fold. Both have substantial source-target gaps despite over 8,200 updates. Age and accessories are bottom-three groups in all three targets, including failures with thousands of positive source examples. Domain-balanced exposure directly addresses a measured source imbalance without introducing a new architecture or changing calibration, which already transfers positively in all three folds. The PA-held-out sampler is already near 50/50 and still has a gap: sampling imbalance cannot be the whole explanation, and this experiment does not prove D will outperform A/B/C.
+
+**Highest-value next step:** one predeclared, source-only controlled repeat of the same threefold protocol with equal-domain sampling and the same six-epoch budgets, compared against these locked baselines. Retain a further disjoint diagnostic check set if feasible; the present target results have now been inspected and cannot be described as untouched for later method development. Do not search multiple exponents or choose a fold-specific setting. Judge the fixed proposal on macro/worst-domain transfer, with the same scorer sensitivity and no hidden leaderboard feedback. A single repeat is estimated at 1.6–2.6 GPU-session hours (allow 3 hours), based on this suite and its conservative projection. Oversampling smaller sources may slow data loading or overfit repeated examples; retain the throughput/budget watchdogs.
+
+Only if the controlled comparison supports it should an all-domain candidate be trained from the original foundation. A 12-epoch all-domain run is estimated at 2.3–3.0 session hours plus 0.5–1.0 hours for calibration, packaging and offline verification, from current measured image throughput and validation/checkpoint overhead. Combined planning allowance is roughly 5–7 hours; estimates are not reservations or guarantees. The live quota check after completion reports **12.50 hours remaining**, leaving headroom. No further GPU job, modified model or competition upload was launched during this report.
+
+Leaving the accepted model unchanged has a verified official score and no regression risk. D is more promising as a *next experiment* because it changes a measured exposure skew at low implementation cost; no measured result yet establishes that replacing the accepted model is preferable. Keep submission1003877 as the production baseline until a new candidate has legitimate validation and API evidence.
+
+No A–E change was implemented by this diagnostic. Domain shift, imbalance and feature specialization can coexist. Differences between this six-epoch protocol and the original twelve-epoch all-domain model prevent attributing the original hidden score gap to one training component. No hidden test identities, images, labels or leaderboard search entered the runs.
+
+## Isolation and reproducibility
+
+PA CSV bytes were reused exactly; all folds match precommitted split hashes and have zero cross-partition decoded-pixel overlap. Source train, selection and calibration are disjoint, and held-out training rows are excluded entirely. Native foundation hash55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832, fixed seed2027, same SigLIP2NaFlex semantic head/loss/sampler/optimizer/schedule/AMP/EMA/256patches. All six epochs and source-only model/calibration locks were checked. Independent local recomputation reproduced raw/calibrated legacy and mean-image-F1 metrics, calibration-input hashes and available source-lock files. If weights were not downloaded, their server-side checksum lock remains explicitly marked remote-only in INDEPENDENT_VERIFICATION.json. Pixel independence does not prove identity/near-duplicate independence. Checkpoints/logs remain in private Kaggle outputs and local outputs/lodo where retrieved; large weights and sample-level arrays are not published in Git.

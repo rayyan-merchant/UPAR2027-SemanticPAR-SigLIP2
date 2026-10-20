@@ -1,0 +1,52 @@
+{
+  "held_out_domain": "PETA",
+  "seed": 2027,
+  "epochs_max": 6,
+  "head_only_epochs": 1,
+  "trainable_upper_vision_blocks": 4,
+  "microbatch": 16,
+  "accumulate": 4,
+  "backbone_lr": 1e-05,
+  "head_lr": 0.0001,
+  "ema_decay": 0.9995,
+  "max_patches": 256,
+  "foundation_native_sha256": "55779d993f026e4dd54f320fceebe78640179ff9cb73edc9b2b245694434e832",
+  "model_code_sha256": "3f2956de847c3169c7a2ce139a04915617f89152d454662e203277c0c5bc9d12",
+  "split_hashes": {
+    "source_train": {
+      "rows": 89001,
+      "domains": {
+        "Market1501": 10000,
+        "PA100k": 79001
+      },
+      "sha256": "0333c750ca78d8c206bdd10c5882918db190e35b8a647e8cb049c6ba63264ba1"
+    },
+    "source_selection": {
+      "rows": 13215,
+      "domains": {
+        "Market1501": 8202,
+        "PA100k": 5013
+      },
+      "sha256": "1d425644699662f2ca1a441f37cbd623b0c8966072231803c66675258e2a703c"
+    },
+    "source_calibration": {
+      "rows": 13229,
+      "domains": {
+        "Market1501": 8256,
+        "PA100k": 4973
+      },
+      "sha256": "c6ea5127b3fc11cefa5f81fc558f5fb8b4405f75f1db7a29652c55ba0c61f2fc"
+    },
+    "sealed_target_evaluation": {
+      "rows": 6963,
+      "domains": {
+        "PETA": 6963
+      },
+      "sha256": "5c72262cd9e8ea04406cc002805d00c242101ab9f4dd0cd54380fac82b904da5"
+    }
+  },
+  "selection_metric": "legacy provisional source macro Challenge_Avg; raw/EMA",
+  "dataloader_workers": 2,
+  "source_only_calibration": true,
+  "production_model_changed": false
+}

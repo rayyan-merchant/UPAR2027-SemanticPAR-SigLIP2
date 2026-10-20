@@ -43,3 +43,8 @@ Sources:
 - https://github.com/speckean/UPAR-Challenge-2027
 - https://huggingface.co/google/siglip2-base-patch16-naflex
 - https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels_metadata.md
+
+
+## Completed archive-based threefold diagnostics
+
+Runtime e994492; private kernel upar2027-threefold-archives-resource-safe v1. See LODO_EVALUATION.md and reports/lodo/THREEFOLD_SUBMISSION_RECEIPT.json. Reproduce independent analysis with `python scripts/summarize_lodo.py --artifacts ../lodo/threefold-v2-results/lodo`, then `python scripts/finalize_lodo_report.py --repo . --artifacts ../lodo/threefold-v2-results/lodo`. The second command applies the reviewed recommendation; neither command trains or accesses competition data. Full private artifacts are required; weights remain server-locked and remote-only.

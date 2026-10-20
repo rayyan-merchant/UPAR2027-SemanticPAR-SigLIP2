@@ -1,3 +1,9 @@
+> **Executed successfully:** all three six-epoch folds completed in1.632h.
+> Archive staging32.96s; measured parallel execution selected;38 Kaggle tests passed.
+> Independent recomputation and source-only threshold/split locks passed.12.50GPUh remain.
+> See LODO_EVALUATION.md for results, one recommendation and limitations.
+> The protocol below records the precommitted plan; no new run is authorized by this report.
+
 # Threefold execution plan — archive staging, independent GPU processes
 
 All three diagnostic folds are authorized, six epochs each, original foundation
