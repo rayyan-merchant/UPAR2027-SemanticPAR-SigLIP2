@@ -9,9 +9,9 @@ The retrieved server STATUS.json independently records phase
 `staging_private_official_images`, images_done=60000, total_images=131076.
 The submitted runner calls tests and every training function only after this
 loop finishes. Thus no fold training had begun at this saved staging state.
-User clicked Stop and confirmed DONE. The latest API status is CANCEL_REQUESTED;
-terminal cancellation is still pending verification. Quota API independently reports zero GPU time reserved and used quota stable at15.99234h; resource reservation has been released despite the stale/nonterminal cancellation state. Do not describe it as a
-completed cancellation yet. CLI has no cancel command; SDK cancellation requires
+User clicked Stop and confirmed DONE. The API subsequently reports
+CANCEL_ACKNOWLEDGED: cancellation is now verified. Quota independently reports
+zero GPU time reserved and used quota stable at15.99234h. CLI has no cancel command; SDK cancellation requires
 a session ID, but the owned search API returned sessionId:null. No guessed ID,
 kernel deletion or replacement training run was used.
 
@@ -161,8 +161,8 @@ fresh runtime free-space checks are the operative gates. Kaggle documents up to
 Recommended sequence after user review:
 
 1. Private archive upload/retention and full CPU-only verification are COMPLETE.
-   Original API status remains CANCEL_REQUESTED with zero GPU reserved; continue
-   monitoring terminal status. Source hash/checkpoint gates remain mandatory.
+   Original API status is now CANCEL_ACKNOWLEDGED with zero GPU reserved;
+   cancellation monitoring is complete. Source hash/checkpoint gates remain mandatory.
 2. Run only PA-held-out, maximum six epochs: reserve 1–1.5 GPU hours including
    source raw/EMA selection, calibration, one fixed-target evaluation and recovery
    checkpoint I/O. Historical all-domain feasibility measured139images/s head-step

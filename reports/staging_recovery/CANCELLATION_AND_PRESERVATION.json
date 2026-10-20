@@ -1,8 +1,8 @@
 {
   "checked_at_utc": "2026-10-20T12:24:15.702623+00:00",
   "kernel": "rayyannmerchant/upar2027-three-domain-lodo-diagnosis",
-  "server_status": "CANCEL_REQUESTED",
-  "terminal_cancellation_verified": false,
+  "server_status": "CANCEL_ACKNOWLEDGED",
+  "terminal_cancellation_verified": true,
   "user_clicked_stop_confirmed": true,
   "user_log_excerpt": "35703.7s\t1183\tStaged 60000 / 131076",
   "saved_status": {
@@ -41,5 +41,6 @@
   "full_pa_archive_cpu_verification_passed": true,
   "full_pa_archive_images": 52073,
   "private_pa_dataset": "rayyannmerchant/upar2027-private-paheld-archives",
-  "archive_upload_complete": true
+  "archive_upload_complete": true,
+  "cancellation_ack_checked_at_utc": "2026-10-20T12:33:41.030827+00:00"
 }
