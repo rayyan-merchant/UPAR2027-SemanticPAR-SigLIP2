@@ -1,7 +1,9 @@
 > Active authorized mission: complementary frozen DINO diagnostic. DINOv3 access403;
 > use official DINOv2 ViT-B/14-registers fallback. CPU real pretrained parity passed
 > with zero measured errors; official upstream tensor identity and Python3.11 /
-> torch2.4.1 offline native probe passed. No DINO GPU job launched yet.
+> torch2.4.1 offline native probe passed. Private DINO frozen kernel v1 RUNNING.
+> Actual slug rayyannmerchant/upar2027-dino-frozen-complementarity; source0b22a50.
+> Do not duplicate an active run; GPU gates/cache/LODO scores remain pending.
 > GPU feasibility/parity gate precedes extraction/head training; initial hard2h cap.
 > No all-domain training before promotion and no upload without explicit approval.
 > See DINO_ARCHITECTURE.md, DINO_LODO_RESULTS.md, ENSEMBLE_COMPARISON.md,

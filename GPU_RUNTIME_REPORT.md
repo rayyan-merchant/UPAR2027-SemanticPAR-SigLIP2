@@ -1,3 +1,5 @@
+> Private frozen diagnostic v1 RUNNING: rayyannmerchant/upar2027-dino-frozen-complementarity. Source0b22a50; hard7200s. GPU gates and target scores pending saved evidence. No all-domain training or upload.
+
 # DINO runtime and resource gates — pending GPU evidence
 
 Prelaunch quota10.97GPU-sessionh. Initial frozen diagnostic hard cap2h/provider7200s, including setup/retries; preserve at least8.97h if cap used. Short GPU native/HF FP32 and AMP parity plus real decoded source-image forward/pooling benchmark must pass before full extraction or any head training. Predeclared parity: FP32max_abs<=5e-4,relL2<=1e-5;AMPmax_abs<=.05,relL2<=.005. No tolerance changes after observing outcomes.

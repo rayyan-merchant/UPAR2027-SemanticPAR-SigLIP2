@@ -1,3 +1,5 @@
+> Private frozen diagnostic v1 RUNNING: rayyannmerchant/upar2027-dino-frozen-complementarity. Source0b22a50; hard7200s. GPU gates and target scores pending saved evidence. No all-domain training or upload.
+
 # Final candidate decision — no new candidate yet
 
 Accepted CodaBench1003877 (.770450) and its ZIP/checkpoints/calibration remain the protected fallback. DINOv3 access403; official licensed DINOv2-registers fallback passes CPU/reference and native-target-version engineering gates. GPU parity, extraction, frozen LODO and complementarity results are pending. No final all-domain training or new competition upload has started.
