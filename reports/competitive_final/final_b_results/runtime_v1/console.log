@@ -1,0 +1,44 @@
+[{"stream_name":"stderr","time":342.606622689,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":342.607799298,"data":"  File \"/kaggle/working/b_benchmark_code/benchmark_offline_ensemble.py\", line 46, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":342.607818713,"data":"    if __name__=='__main__':main()\n"}
+,{"stream_name":"stderr","time":342.607822751,"data":"                            ~~~~^^\n"}
+,{"stream_name":"stderr","time":342.607826528,"data":"  File \"/kaggle/working/b_benchmark_code/benchmark_offline_ensemble.py\", line 14, in main\n"}
+,{"stream_name":"stderr","time":342.607830326,"data":"    proc=subprocess.run([sys.executable,__file__,'--child','--package',p.package,'--images',p.images,'--output',p.output],timeout=300,check=True)\n"}
+,{"stream_name":"stderr","time":342.6078345,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 556, in run\n"}
+,{"stream_name":"stderr","time":342.607838702,"data":"    stdout, stderr = process.communicate(input, timeout=timeout)\n"}
+,{"stream_name":"stderr","time":342.607842518,"data":"                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":342.607846814,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 1222, in communicate\n"}
+,{"stream_name":"stderr","time":342.607850605,"data":"    stdout, stderr = self._communicate(input, endtime, timeout)\n"}
+,{"stream_name":"stderr","time":342.607854298,"data":"                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":342.607857875,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 2180, in _communicate\n"}
+,{"stream_name":"stderr","time":342.60786183,"data":"    self.wait(timeout=self._remaining_time(endtime))\n"}
+,{"stream_name":"stderr","time":342.60786532,"data":"    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":342.607869097,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 1280, in wait\n"}
+,{"stream_name":"stderr","time":342.607872613,"data":"    return self._wait(timeout=timeout)\n"}
+,{"stream_name":"stderr","time":342.607876135,"data":"           ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":342.607879694,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 2077, in _wait\n"}
+,{"stream_name":"stderr","time":342.607883484,"data":"    raise TimeoutExpired(self.args, timeout)\n"}
+,{"stream_name":"stderr","time":342.60788753,"data":"subprocess.TimeoutExpired: Command '['/usr/bin/python3', '/kaggle/working/b_benchmark_code/benchmark_offline_ensemble.py', '--child', '--package', '/kaggle/working/b_runtime/package', '--images', '/kaggle/working/b_runtime/images.json', '--output', '/kaggle/working/b_runtime/FULL_WORKLOAD.json']' timed out after 300 seconds\n"}
+,{"stream_name":"stderr","time":343.227846382,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":343.22927126,"data":"  File \"/kaggle/working/b_benchmark_code/benchmark_b_runner.py\", line 87, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":343.22928521,"data":"    else:main()\n"}
+,{"stream_name":"stderr","time":343.229289491,"data":"         ~~~~^^\n"}
+,{"stream_name":"stderr","time":343.229293023,"data":"  File \"/kaggle/working/b_benchmark_code/benchmark_b_runner.py\", line 72, in main\n"}
+,{"stream_name":"stderr","time":343.229297289,"data":"    if proc.returncode:raise RuntimeError('Full workload failed or exceeded300s; inspect console and result')\n"}
+,{"stream_name":"stderr","time":343.229301503,"data":"                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":343.229305912,"data":"RuntimeError: Full workload failed or exceeded300s; inspect console and result\n"}
+,{"stream_name":"stderr","time":343.294951918,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":343.295544869,"data":"  File \"/kaggle/src/script.py\", line 6, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":343.295553928,"data":"    subprocess.run([sys.executable,str(p/'benchmark_b_runner.py')],cwd=p,check=True,timeout=1000)\n"}
+,{"stream_name":"stderr","time":343.295563274,"data":"    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":343.295566205,"data":"  File \"/usr/lib/python3.13/subprocess.py\", line 577, in run\n"}
+,{"stream_name":"stderr","time":343.295568653,"data":"    raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":343.295570954,"data":"                             output=stdout, stderr=stderr)\n"}
+,{"stream_name":"stderr","time":343.295573362,"data":"subprocess.CalledProcessError: Command '['/usr/bin/python3', '/kaggle/working/b_benchmark_code/benchmark_b_runner.py']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":345.891437586,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":345.891475925,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":346.362780876,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":346.362816666,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":347.308527419,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":348.726414138,"data":"[NbConvertApp] Writing 593719 bytes to __results__.html\n"}
+]

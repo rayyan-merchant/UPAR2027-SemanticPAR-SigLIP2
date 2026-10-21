@@ -1,0 +1,9 @@
+# Candidate B acceptance: correctness passed, runtime gate unresolved
+
+Training completed all eight authorized epochs, best epoch 8. Independent partition/mask/order checks, source-only calibration refits, checkpoint integrity, unchanged frozen parameters, offline Python 3.11 / torch 2.4.1 loading and independent timm reference checks passed. See [training report](FINAL_B_TRAINING_REPORT.md) and `reports/competitive_final/final_b_results`.
+
+The exact-payload T4 surrogate hit its 300-second complete-workload timeout. Its last saved progress was 26,624 of 29,248 images at 296.717 seconds. Source archive staging passed in 9.115 seconds; all inference-file hashes matched the sealed local payload. This is an incomplete workload, not a measured full-run time. A linear extrapolation is approximately 326 seconds and is only an estimate. The T4 deployment timing gate failed; official A10 timing remains unverified. No B upload was performed. Fresh primary quota is 6.06 GPU hours remaining (23.94 used of 30).
+
+The sealed ZIP is `UPAR2027_Candidate_B_Finetuned_DINOv3_75_25_v1.zip`, 650,813,407 bytes, with 18 whitelisted entries and passed CRC checks. SHA256: `f4eee47a694e113a7bb7c527f91592b7ff54fd8cbfdf85f70bb699014cf5f086`. It is stored privately under `D:\UPAR2027\diagnostics\competitive-final`. It excludes training images, feature caches, optimizer states and prediction arrays. Original metadata and required license notices are included.
+
+The existing authorization requires deployment gates before an official B entry. Therefore no upload proceeds on the current evidence. An explicitly authorized exploratory official A10 runtime test would be a separate decision with timeout and Force_Last risk. No thresholds or ensemble weights will be tuned using hidden scores. Original 1003877 and Candidate A remain preserved; C is rejected. Historical B LODO advancement remains failed, despite the separately authorized final training run.

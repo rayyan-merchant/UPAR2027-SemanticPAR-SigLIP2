@@ -1,0 +1,493 @@
+{
+  "independent_audit_passed": true,
+  "independent_metadata_metric_calibration_audit_passed": true,
+  "checkpoint_verification_pending": false,
+  "best_epoch": 8,
+  "epochs_completed": 8,
+  "source_selection_score": 0.8400047331760966,
+  "metrics": {
+    "selection": {
+      "dino_raw": {
+        "macro": {
+          "Challenge_Avg": 0.8400047331760966,
+          "mA": 0.8103831413699928,
+          "Inst_F1": 0.871875080279234,
+          "Inst_Prec": 0.8702757792839018,
+          "Inst_Rec": 0.8734846563379609,
+          "Inst_Acc": 0.7836121093323861,
+          "Label_F1": 0.6227602144718678,
+          "mean_image_F1": 0.8674646607008055,
+          "mean_image_Challenge_Avg": 0.8379525072466735,
+          "all_valid_safe_zero_mA": 0.7941883865603891,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8290428560746221
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.852964808717656,
+            "mA": 0.8234369969983276,
+            "Inst_F1": 0.8846890723261905,
+            "Inst_Prec": 0.8850076210539196,
+            "Inst_Rec": 0.8843707528321504,
+            "Inst_Acc": 0.8023053069443248,
+            "Label_F1": 0.5804494418294829,
+            "mean_image_F1": 0.8812286411255649,
+            "mean_image_Challenge_Avg": 0.8513531917214769,
+            "all_valid_safe_zero_mA": 0.7748527325695168,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8246242382053233
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8297994571876536,
+            "mA": 0.799688220181392,
+            "Inst_F1": 0.8622670188082673,
+            "Inst_Prec": 0.8599076551226552,
+            "Inst_Rec": 0.8646393650793652,
+            "Inst_Acc": 0.7689985952935953,
+            "Label_F1": 0.62014757826517,
+            "mean_image_F1": 0.8576050154575386,
+            "mean_image_Challenge_Avg": 0.8276346197303746,
+            "all_valid_safe_zero_mA": 0.799688220181392,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8276346197303746
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8372499336229802,
+            "mA": 0.8080242069302587,
+            "Inst_F1": 0.8686691497032442,
+            "Inst_Prec": 0.8659120616751308,
+            "Inst_Rec": 0.871443851102367,
+            "Inst_Acc": 0.7795324257592386,
+            "Label_F1": 0.6676836233209505,
+            "mean_image_F1": 0.8635603255193129,
+            "mean_image_Challenge_Avg": 0.8348697102881687,
+            "all_valid_safe_zero_mA": 0.8080242069302587,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8348697102881687
+          }
+        }
+      },
+      "dino_calibrated": {
+        "macro": {
+          "Challenge_Avg": 0.8501495028653957,
+          "mA": 0.8370647347656271,
+          "Inst_F1": 0.8636550633662954,
+          "Inst_Prec": 0.8341972659710647,
+          "Inst_Rec": 0.8953194166416253,
+          "Inst_Acc": 0.7695655792642347,
+          "Label_F1": 0.6141091776158806,
+          "mean_image_F1": 0.8590051658872047,
+          "mean_image_Challenge_Avg": 0.8478897998567191,
+          "all_valid_safe_zero_mA": 0.8197033686132856,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.838664882033756
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8609092092554682,
+            "mA": 0.846331484623505,
+            "Inst_F1": 0.875997926601062,
+            "Inst_Prec": 0.8508973201649722,
+            "Inst_Rec": 0.9026244302294877,
+            "Inst_Acc": 0.7879193484800618,
+            "Label_F1": 0.5733542875294919,
+            "mean_image_F1": 0.8723358583296261,
+            "mean_image_Challenge_Avg": 0.8591369413022767,
+            "all_valid_safe_zero_mA": 0.7942473861664806,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8314621878333873
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8464658368530533,
+            "mA": 0.8354116683941587,
+            "Inst_F1": 0.8578164656227407,
+            "Inst_Prec": 0.8291719047619048,
+            "Inst_Rec": 0.8885109523809522,
+            "Inst_Acc": 0.7608392979242979,
+            "Label_F1": 0.619129126474181,
+            "mean_image_F1": 0.8529450908963758,
+            "mean_image_Challenge_Avg": 0.844087338192402,
+            "all_valid_safe_zero_mA": 0.8354116683941587,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.844087338192402
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8430734624876656,
+            "mA": 0.8294510512792174,
+            "Inst_F1": 0.8571507978750833,
+            "Inst_Prec": 0.8225225729863166,
+            "Inst_Rec": 0.8948228673144356,
+            "Inst_Acc": 0.7599380913883443,
+            "Label_F1": 0.649844118843969,
+            "mean_image_F1": 0.851734548435612,
+            "mean_image_Challenge_Avg": 0.8404451200754788,
+            "all_valid_safe_zero_mA": 0.8294510512792174,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8404451200754788
+          }
+        }
+      },
+      "ensemble_raw": {
+        "macro": {
+          "Challenge_Avg": 0.85758842422671,
+          "mA": 0.8327556372941354,
+          "Inst_F1": 0.8839697010246453,
+          "Inst_Prec": 0.878700040678951,
+          "Inst_Rec": 0.8893295899311031,
+          "Inst_Acc": 0.8049930987840884,
+          "Label_F1": 0.6601475903981969,
+          "mean_image_F1": 0.8807748395748516,
+          "mean_image_Challenge_Avg": 0.8560811008397907,
+          "all_valid_safe_zero_mA": 0.816573232232613,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8471990778202448
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8517909334205847,
+            "mA": 0.8235361214275295,
+            "Inst_F1": 0.882053423429688,
+            "Inst_Prec": 0.8809440078069446,
+            "Inst_Rec": 0.8831656368579164,
+            "Inst_Acc": 0.7997491866658737,
+            "Label_F1": 0.5870275216247098,
+            "mean_image_F1": 0.8791913363506373,
+            "mean_image_Challenge_Avg": 0.8504541579140024,
+            "all_valid_safe_zero_mA": 0.7749889062429627,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8238080888553653
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8488557200458496,
+            "mA": 0.8274923029336326,
+            "Inst_F1": 0.8713514513543147,
+            "Inst_Prec": 0.8620847619047618,
+            "Inst_Rec": 0.8808195238095237,
+            "Inst_Acc": 0.7850792568542568,
+            "Label_F1": 0.6632312845806293,
+            "mean_image_F1": 0.8678118460882083,
+            "mean_image_Challenge_Avg": 0.8471726131820694,
+            "all_valid_safe_zero_mA": 0.8274923029336326,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8471726131820694
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8721186192136957,
+            "mA": 0.847238487521244,
+            "Inst_F1": 0.8985042282899331,
+            "Inst_Prec": 0.8930713523251466,
+            "Inst_Rec": 0.904003609125869,
+            "Inst_Acc": 0.8301508528321344,
+            "Label_F1": 0.7301839649892516,
+            "mean_image_F1": 0.8953213362857091,
+            "mean_image_Challenge_Avg": 0.8706165314233001,
+            "all_valid_safe_zero_mA": 0.847238487521244,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8706165314233001
+          }
+        }
+      },
+      "ensemble_calibrated": {
+        "macro": {
+          "Challenge_Avg": 0.8693052410852999,
+          "mA": 0.8606916983650308,
+          "Inst_F1": 0.8782152002009234,
+          "Inst_Prec": 0.8533422723198298,
+          "Inst_Rec": 0.9047289410749415,
+          "Inst_Acc": 0.7947202975234751,
+          "Label_F1": 0.6437207555094201,
+          "mean_image_F1": 0.874474109664015,
+          "mean_image_Challenge_Avg": 0.8674644153626162,
+          "all_valid_safe_zero_mA": 0.8436175343163672,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8583064952325259
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8596673683808421,
+            "mA": 0.8412389614032761,
+            "Inst_F1": 0.8789212537918193,
+            "Inst_Prec": 0.8631445498199714,
+            "Inst_Rec": 0.8952854343582417,
+            "Inst_Acc": 0.7946699856255806,
+            "Label_F1": 0.5824077604534633,
+            "mean_image_F1": 0.8758519254242709,
+            "mean_image_Challenge_Avg": 0.8581965809023278,
+            "all_valid_safe_zero_mA": 0.7900164692572851,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.830722820512057
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8613870217211061,
+            "mA": 0.8574502189079419,
+            "Inst_F1": 0.8653601412835973,
+            "Inst_Prec": 0.8319826673326672,
+            "Inst_Rec": 0.901527619047619,
+            "Inst_Acc": 0.7740566761016761,
+            "Label_F1": 0.6394837496909942,
+            "mean_image_F1": 0.8611924066250227,
+            "mean_image_Challenge_Avg": 0.8593172386300965,
+            "all_valid_safe_zero_mA": 0.8574502189079419,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8593172386300965
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8868613331539515,
+            "mA": 0.8833859147838743,
+            "Inst_F1": 0.8903642055273537,
+            "Inst_Prec": 0.864899599806851,
+            "Inst_Rec": 0.9173737698189638,
+            "Inst_Acc": 0.8154342308431684,
+            "Label_F1": 0.7092707563838029,
+            "mean_image_F1": 0.8863779969427514,
+            "mean_image_Challenge_Avg": 0.8848794265554243,
+            "all_valid_safe_zero_mA": 0.8833859147838743,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8848794265554243
+          }
+        }
+      }
+    },
+    "calibration_in_sample": {
+      "dino_raw": {
+        "macro": {
+          "Challenge_Avg": 0.8421245962114164,
+          "mA": 0.8142332028415392,
+          "Inst_F1": 0.8720540761450937,
+          "Inst_Prec": 0.8701489096601325,
+          "Inst_Rec": 0.8739763359955416,
+          "Inst_Acc": 0.7838997700672126,
+          "Label_F1": 0.6257795908132782,
+          "mean_image_F1": 0.8676993354179752,
+          "mean_image_Challenge_Avg": 0.8400867887350044,
+          "all_valid_safe_zero_mA": 0.792707040119081,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8283578314153992
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8517357315743397,
+            "mA": 0.8222827189410206,
+            "Inst_F1": 0.8833770576532243,
+            "Inst_Prec": 0.8836237632719741,
+            "Inst_Rec": 0.883130489755248,
+            "Inst_Acc": 0.8001370798366689,
+            "Label_F1": 0.5772701859828308,
+            "mean_image_F1": 0.8800397485630385,
+            "mean_image_Challenge_Avg": 0.8501814327641327,
+            "all_valid_safe_zero_mA": 0.7738707994944516,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8235476393898684
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8300428191848568,
+            "mA": 0.7977466964780994,
+            "Inst_F1": 0.8650642374956159,
+            "Inst_Prec": 0.8606437201653809,
+            "Inst_Rec": 0.8695303994040456,
+            "Inst_Acc": 0.7732366215368622,
+            "Label_F1": 0.6234531501932572,
+            "mean_image_F1": 0.8604407823844848,
+            "mean_image_Challenge_Avg": 0.8279085452184118,
+            "all_valid_safe_zero_mA": 0.7977466964780994,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8279085452184118
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8445952378750529,
+            "mA": 0.8226701931054975,
+            "Inst_F1": 0.867720933286441,
+            "Inst_Prec": 0.8661792455430423,
+            "Inst_Rec": 0.8692681188273312,
+            "Inst_Acc": 0.7783256088281066,
+            "Label_F1": 0.6766154362637467,
+            "mean_image_F1": 0.8626174753064022,
+            "mean_image_Challenge_Avg": 0.8421703882224689,
+            "all_valid_safe_zero_mA": 0.8065036243846923,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8336173096379175
+          }
+        }
+      },
+      "dino_calibrated": {
+        "macro": {
+          "Challenge_Avg": 0.8526613204681363,
+          "mA": 0.8404945457317118,
+          "Inst_F1": 0.8652422795968624,
+          "Inst_Prec": 0.8353578501242568,
+          "Inst_Rec": 0.8973831925158575,
+          "Inst_Acc": 0.7718292207939687,
+          "Label_F1": 0.6134443576895628,
+          "mean_image_F1": 0.8606351264247333,
+          "mean_image_Challenge_Avg": 0.8504140234272185,
+          "all_valid_safe_zero_mA": 0.8174247683173602,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.838258329068533
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8595592789752428,
+            "mA": 0.843549574254267,
+            "Inst_F1": 0.8761884357726417,
+            "Inst_Prec": 0.8509905085914515,
+            "Inst_Rec": 0.9029241232789348,
+            "Inst_Acc": 0.7879379051329607,
+            "Label_F1": 0.5704042012206705,
+            "mean_image_F1": 0.8726229273254065,
+            "mean_image_Challenge_Avg": 0.8578399877078852,
+            "all_valid_safe_zero_mA": 0.7918569591992991,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8302804297650261
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8456808454751558,
+            "mA": 0.8306852319619736,
+            "Inst_F1": 0.8612278168076622,
+            "Inst_Prec": 0.8301102071258508,
+            "Inst_Rec": 0.8947692427686411,
+            "Inst_Acc": 0.7657651514149709,
+            "Label_F1": 0.617126937062195,
+            "mean_image_F1": 0.8564731095757443,
+            "mean_image_Challenge_Avg": 0.84338208949455,
+            "all_valid_safe_zero_mA": 0.8306852319619736,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.84338208949455
+          },
+          "PETA": {
+            "Challenge_Avg": 0.85274383695401,
+            "mA": 0.8472488309788945,
+            "Inst_F1": 0.8583105862102834,
+            "Inst_Prec": 0.8249728346554677,
+            "Inst_Rec": 0.8944562114999964,
+            "Inst_Acc": 0.761784605833974,
+            "Label_F1": 0.6528019347858229,
+            "mean_image_F1": 0.8528093423730491,
+            "mean_image_Challenge_Avg": 0.8500199930792205,
+            "all_valid_safe_zero_mA": 0.8297321137908078,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8411124679460232
+          }
+        }
+      },
+      "ensemble_raw": {
+        "macro": {
+          "Challenge_Avg": 0.8585737247653698,
+          "mA": 0.83345011036177,
+          "Inst_F1": 0.8853337897697346,
+          "Inst_Prec": 0.8808440841590195,
+          "Inst_Rec": 0.8898949182544879,
+          "Inst_Acc": 0.8067977286645971,
+          "Label_F1": 0.6591146602742174,
+          "mean_image_F1": 0.8820306522731456,
+          "mean_image_Challenge_Avg": 0.857015757231845,
+          "all_valid_safe_zero_mA": 0.8114972670454108,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.845036276984595
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8505995766350617,
+            "mA": 0.8192486592079677,
+            "Inst_F1": 0.8844454371782482,
+            "Inst_Prec": 0.8835997661402643,
+            "Inst_Rec": 0.8852927285077913,
+            "Inst_Acc": 0.8034659107011622,
+            "Label_F1": 0.590660597860549,
+            "mean_image_F1": 0.8816586211246983,
+            "mean_image_Challenge_Avg": 0.8493086620151178,
+            "all_valid_safe_zero_mA": 0.7713386934989195,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8228173184724507
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8469812808462445,
+            "mA": 0.8224242454370223,
+            "Inst_F1": 0.8730499662656702,
+            "Inst_Prec": 0.8643006912862509,
+            "Inst_Rec": 0.8819781897248803,
+            "Inst_Acc": 0.7874116746559586,
+            "Label_F1": 0.6606291649690114,
+            "mean_image_F1": 0.8693821300210988,
+            "mean_image_Challenge_Avg": 0.845251504724256,
+            "all_valid_safe_zero_mA": 0.8224242454370223,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.845251504724256
+          },
+          "PETA": {
+            "Challenge_Avg": 0.878140316814803,
+            "mA": 0.85867742644032,
+            "Inst_F1": 0.8985059658652856,
+            "Inst_Prec": 0.8946317950505432,
+            "Inst_Rec": 0.9024138365307921,
+            "Inst_Acc": 0.8295156006366704,
+            "Label_F1": 0.7260542179930918,
+            "mean_image_F1": 0.8950512056736397,
+            "mean_image_Challenge_Avg": 0.8764871049561611,
+            "all_valid_safe_zero_mA": 0.8407288622002905,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8670400077570786
+          }
+        }
+      },
+      "ensemble_calibrated": {
+        "macro": {
+          "Challenge_Avg": 0.8718069028870229,
+          "mA": 0.8636081932430156,
+          "Inst_F1": 0.8802898620036922,
+          "Inst_Prec": 0.8556591157737864,
+          "Inst_Rec": 0.9065318532043735,
+          "Inst_Acc": 0.79718183485598,
+          "Label_F1": 0.6504014848515612,
+          "mean_image_F1": 0.8764073568906271,
+          "mean_image_Challenge_Avg": 0.8698934093214902,
+          "all_valid_safe_zero_mA": 0.8399256654978154,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8573907383766778
+        },
+        "domains": {
+          "Market1501": {
+            "Challenge_Avg": 0.8626541895334325,
+            "mA": 0.8444336082858293,
+            "Inst_F1": 0.8816784123846804,
+            "Inst_Prec": 0.8658049850294772,
+            "Inst_Rec": 0.8981447479422576,
+            "Inst_Acc": 0.7982826671233345,
+            "Label_F1": 0.589884918865484,
+            "mean_image_F1": 0.8786403711531181,
+            "mean_image_Challenge_Avg": 0.8611974504310214,
+            "all_valid_safe_zero_mA": 0.7927187000216781,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8334709935399882
+          },
+          "PA100k": {
+            "Challenge_Avg": 0.8655108307916459,
+            "mA": 0.8616475513559788,
+            "Inst_F1": 0.8694089090187729,
+            "Inst_Prec": 0.835664165913865,
+            "Inst_Rec": 0.9059936074978193,
+            "Inst_Acc": 0.7793626088000336,
+            "Label_F1": 0.6473909814334354,
+            "mean_image_F1": 0.865069672147431,
+            "mean_image_Challenge_Avg": 0.8633552206606357,
+            "all_valid_safe_zero_mA": 0.8616475513559788,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8633552206606357
+          },
+          "PETA": {
+            "Challenge_Avg": 0.8872556883359904,
+            "mA": 0.8847434200872392,
+            "Inst_F1": 0.8897822646076233,
+            "Inst_Prec": 0.8655081963780171,
+            "Inst_Rec": 0.9154572041730431,
+            "Inst_Acc": 0.8139002286445719,
+            "Label_F1": 0.7139285542557646,
+            "mean_image_F1": 0.8855120273713321,
+            "mean_image_Challenge_Avg": 0.8851275568728136,
+            "all_valid_safe_zero_mA": 0.8654107451157895,
+            "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8753460009294094
+          }
+        }
+      }
+    }
+  },
+  "attempted_updates": 12216,
+  "successful_updates": 12214,
+  "AMP_skips": 2,
+  "images_drawn": 781352,
+  "domain_draws": {
+    "PA100k": 462524,
+    "PETA": 153861,
+    "Market1501": 164967
+  },
+  "domain_fractions": {
+    "PA100k": 0.5919534345595839,
+    "PETA": 0.19691637059865463,
+    "Market1501": 0.21113019484176146
+  },
+  "unique_training_images_seen": {
+    "Market1501": 10000,
+    "PA100k": 78749,
+    "PETA": 8668
+  },
+  "training_plus_selection_seconds": 4793.101782400001,
+  "runner_seconds": 5026.069967991,
+  "peak_allocated_GiB": 0.7629046440124512,
+  "probe_backward_images_per_second": 198.68293249617417,
+  "checkpoint_sha256_expected": "6e9fab596868099b1b8915349b5c9e935693c3a56836ea229c94037af7761c20",
+  "checkpoint_sha256_rehashed_locally": "6e9fab596868099b1b8915349b5c9e935693c3a56836ea229c94037af7761c20",
+  "source_only_threshold_refits_passed": true,
+  "all_partition_identity_and_pixel_disjointness_passed": true,
+  "frozen_LODO_gate_still_failed": true,
+  "official_A10_runtime_verified": false,
+  "official_upload_ready": false,
+  "scorer_limits": "Exact organizer implementation private; legacy and mean-image-F1 plus unsupported-label sensitivity retained. All-domain source validation is development evidence, not LODO or official-score prediction."
+}

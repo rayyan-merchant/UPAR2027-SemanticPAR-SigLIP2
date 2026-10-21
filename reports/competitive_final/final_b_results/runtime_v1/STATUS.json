@@ -1,0 +1,7 @@
+{
+  "phase": "failed",
+  "error": "RuntimeError: Full workload failed or exceeded300s; inspect console and result",
+  "training": false,
+  "A10_runtime_verified": false,
+  "elapsed_seconds": 340.6758420450001
+}

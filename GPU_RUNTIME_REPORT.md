@@ -27,3 +27,15 @@ Actual archive staging36.855s,wholearchiveSHA/ZIPCRC/exact131076pathunion passed
 Cached head wallPA24.32s,PETA85.78s,Market78.99s;parallel scheduling finishes headphase~110s. Each30epochs,best30/27/25;attempted4380/20880/20550,successful4380/20876/20546,AMPskips0/4/4. These are cached-head timings,not estimates of backpropagation through two backbone blocks. All actualimages/sourceexposure/sourcecurves retained in reports/dino_v3/results.
 
 Fresh quota19.34hused10.66hremaining. TotaldisplayedDINOspending~.31hfrom10.97initial,wellbelow cumulative2hcap. No GPUjob active,no all-domainrun,newZIP or submission. Trainedselectedheads also loaded strictly and inferred on real source-only images under Python3.11.16/torch2.4.1CPU with socketsdisabled,no timm/Transformers import,40orderedfinite probabilities/calibration/serialization verified. This does not certify full exactdeployment runtime;A10benchmark remains gated on a promoted candidate.
+
+
+## Final B completion update
+
+Final all-domain B completed eight epochs, source-selected best epoch 8. Independent audits and offline/reference correctness checks passed; source-selection ensemble Challenge_Avg is 0.869305241. Complete-workload runtime verification is running on T4; official A10 timing and B submission remain unverified. No new official ID or score. See FINAL_B_TRAINING_REPORT.md and CANDIDATE_B_ACCEPTANCE.md. This supersedes earlier pending-training entries without changing historical LODO gate decisions.
+
+
+## Final B runtime and package decision
+
+The exact-payload T4 surrogate hit its 300-second complete-workload timeout. Its last saved progress was 26,624 of 29,248 images at 296.717 seconds. Source archive staging passed in 9.115 seconds; all inference-file hashes matched the sealed local payload. This is an incomplete workload, not a measured full-run time. A linear extrapolation is approximately 326 seconds and is only an estimate. The T4 deployment timing gate failed; official A10 timing remains unverified. No B upload was performed. Fresh primary quota is 6.06 GPU hours remaining (23.94 used of 30).
+
+The sealed ZIP is `UPAR2027_Candidate_B_Finetuned_DINOv3_75_25_v1.zip`, 650,813,407 bytes, with 18 whitelisted entries and passed CRC checks. SHA256: `f4eee47a694e113a7bb7c527f91592b7ff54fd8cbfdf85f70bb699014cf5f086`. It is stored privately under `D:\UPAR2027\diagnostics\competitive-final`. It excludes training images, feature caches, optimizer states and prediction arrays. Original metadata and required license notices are included.

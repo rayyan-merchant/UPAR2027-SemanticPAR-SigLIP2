@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "images": 29248,
+  "elapsed_seconds": 9.114555687999996,
+  "whole_archive_SHA256_and_extraction_CRC": true,
+  "per_image_mounted_copy_hash": false,
+  "labels_accessed": false
+}

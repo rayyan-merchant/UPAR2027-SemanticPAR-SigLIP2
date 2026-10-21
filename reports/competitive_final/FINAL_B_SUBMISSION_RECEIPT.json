@@ -1,6 +1,6 @@
 {
   "kernel": "rayyannmerchant/upar2027-candidate-b-final-all-domain",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "script_sha256": "d7d5da5ef67fa6d6fdba00959b435508858eb2aff0dc6eed404c38b2e5ba88a9",
   "source_hashes": {
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
@@ -111,10 +111,16 @@
   "foundation_sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
   "version": 3,
   "runtime_source_commit": "600f31d",
-  "verified_at_utc": "2026-10-21T16:54:35Z",
-  "observed_cloud_training_started": false,
-  "cloud_backward_gate_observed": false,
+  "verified_at_utc": "2026-10-21T18:51:47.597544+00:00",
+  "observed_cloud_training_started": true,
+  "cloud_backward_gate_observed": true,
   "previous_version_terminal": "ERROR",
   "url": "https://www.kaggle.com/code/rayyannmerchant/upar2027-candidate-b-final-all-domain",
-  "latest_targeted_local_tests_passed": 6
+  "latest_targeted_local_tests_passed": 6,
+  "epochs_completed": 8,
+  "best_epoch": 8,
+  "independent_results_audit_passed": true,
+  "actual_script_elapsed_seconds": 5026.069967991,
+  "best_checkpoint_sha256": "6e9fab596868099b1b8915349b5c9e935693c3a56836ea229c94037af7761c20",
+  "official_upload_performed": false
 }

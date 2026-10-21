@@ -1,3 +1,15 @@
+# Final B complete and packaged; runtime gate blocks upload
+
+Eight epochs completed; best epoch 8. Source-only calibration and independent checkpoint/inference audits passed. Sealed ZIP SHA256 f4eee47a694e113a7bb7c527f91592b7ff54fd8cbfdf85f70bb699014cf5f086. T4 complete-workload probe timed out at 300 seconds; last progress 26,624/29,248 images at 296.717 seconds. A10 timing unverified, no B upload. Fresh quota 6.06 hours. Original 1003877/A preserved, C rejected. See CANDIDATE_B_ACCEPTANCE.md and FINAL_B_TRAINING_REPORT.md. Earlier status entries below are historical.
+
+---
+
+# Final B training complete; deployment runtime verification running
+
+All eight authorized epochs completed; source-selected best epoch 8. Independent source partition, calibration, checkpoint and numerical reference audits passed. New source-selection ensemble Challenge_Avg 0.869305241 is a development result, not an official score. The exact-payload 29,248-image T4 runtime probe is running; A10-equivalent timing remains unverified. No B official upload. Original 1003877 and Candidate A remain preserved; C remains rejected. See FINAL_B_TRAINING_REPORT.md and CANDIDATE_B_ACCEPTANCE.md. Earlier status entries below are historical.
+
+---
+
 # Final B v3: running after source-prediction locator fix
 
 Private rayyannmerchant/upar2027-candidate-b-final-all-domain v3 verified RUNNING at2026-10-21T16:54:35UTC. Runtime600f31d, scriptd7d5da5ef67fa6d6fdba00959b435508858eb2aff0dc6eed404c38b2e5ba88a9. V2passed27cloudtests and metadataaudit, thenfailedbeforestaging/training because inheritedlookuppruned runs/. FixedscopedlookupincludesrunsandrequiresexactoriginalSigLIPpredictionSHA;freshlocalhashmatches,6targetedtests pass. See FINAL_B_RECOVERY.md. Quota7.58hbeforev3; priorfailurescharged. Method/splits/init/scheduleunchanged,noartificialtrainingwallcap. V3cloudbenchmark/epochsnotyetobserved. Original1003877/A preserved,Cstopped,followupupdatedforv3.
