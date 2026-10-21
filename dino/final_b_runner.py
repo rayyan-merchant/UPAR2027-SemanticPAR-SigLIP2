@@ -15,6 +15,17 @@ def load_label_arrays(path):
     with np.load(path) as archive:
         return {name:archive[name] for name in ['y','valid','domains']}
 
+def locate_pinned_siglip_predictions(inputs,expected):
+    """Search metadata including runs/, pruning only bulky image/cache trees."""
+    matches=[]
+    for root,dirs,files in os.walk(inputs):
+        dirs[:]=[d for d in dirs if d not in {'staged_data','archive_cache','official_data','hf-cache','upar_code','submission_candidate'}]
+        if 'best_val_predictions.npz' in files:
+            path=Path(root)/'best_val_predictions.npz'
+            if digest(path)==expected:matches.append(path)
+    if not matches:raise ValueError('Pinned original SigLIP raw source predictions missing')
+    return sorted(matches)[0]
+
 def validate_annotation_alignment(index,labels,parsed,offset):
     stop=offset+len(parsed)
     if index['paths'][offset:stop]!=[r[0] for r in parsed]:raise ValueError('Original path alignment differs')
@@ -104,10 +115,10 @@ def main():
             with (split/(name+'.csv')).open('w',newline='') as f:
                 w=csv.writer(f);w.writerow(header);w.writerows(rows[int(i)] for i in parts[name])
         if set(index['audited_pixel_sha256'][i] for i in selection)&set(index['audited_pixel_sha256'][i] for i in cal):raise ValueError('Pixel split overlap')
-        old=find(inputs,'best_val_predictions.npz');expected='8c7e126392b32dee9dbf6119f60ff55ac10fa0c2afc176f43e42c5df72d2ff65'
-        matches=[p for p in old if digest(p)==expected]
-        if len(matches)!=1:raise ValueError('Pinned original SigLIP raw source predictions missing')
-        shutil.copyfile(matches[0],SUITE/'siglip_validation_predictions.npz')
+        expected='8c7e126392b32dee9dbf6119f60ff55ac10fa0c2afc176f43e42c5df72d2ff65'
+        predictions=locate_pinned_siglip_predictions(inputs,expected)
+        write(SUITE/'SIGLIP_PREDICTION_DISCOVERY.json',{'file':str(predictions),'sha256':expected,'runs_directory_included':True})
+        shutil.copyfile(predictions,SUITE/'siglip_validation_predictions.npz')
         write(SUITE/'INITIALIZATION_RECEIPT.json',{'foundation_sha256':plan['foundation_sha256'],'A_head_sha256':HEAD_HASHES['all_domain'],'A_head_epoch':30,'all_domain_PAR_backbone_loaded':False,'source_training_rows':97669,'source_selection_rows':len(selection),'source_calibration_rows':len(cal),'attributes':ATTRIBUTES,'A_partition_npz_sha256':pinned['PARTITIONS.npz'],'originals_modified':False})
         coverage=json.loads((CODE/'reports/lodo/THREEFOLD_ARCHIVES.json').read_text());chosen=[]
         for item in coverage['archives']:
@@ -121,7 +132,7 @@ def main():
         status('source_backward_feasibility',training_started=False);run_worker(probe=True)
         probe=json.loads((SUITE/'all_domain_PROBE.json').read_text());ips=probe['images_per_second']
         projected=(8*97669/ips*1.35+(8*len(selection)+len(selection)+len(cal))/(ips*2)+600)/3600
-        decision={'measured_backward_images_per_second':ips,'peak_allocated_GiB':probe['peak_allocated_GiB'],'projected_max8_epoch_hours':projected,'quota_remaining_at_launch_hours':7.61,'reserve_hours':2,'artificial_training_wall_time_cap':None,'allowed':projected<5.61,'source_only':True,'extension_rule':'six mandatory; epoch7/8 only if preceding epoch is source best by>=1e-4'}
+        decision={'measured_backward_images_per_second':ips,'peak_allocated_GiB':probe['peak_allocated_GiB'],'projected_max8_epoch_hours':projected,'quota_remaining_at_launch_hours':7.58,'reserve_hours':2,'artificial_training_wall_time_cap':None,'allowed':projected<5.58,'source_only':True,'extension_rule':'six mandatory; epoch7/8 only if preceding epoch is source best by>=1e-4'}
         write(SUITE/'RESOURCE_DECISION.json',decision)
         if not decision['allowed']:raise RuntimeError('Quota reserve conflict; no training launched')
         if time.monotonic()-begin>600:raise TimeoutError('Pretraining setup exceeded600s')

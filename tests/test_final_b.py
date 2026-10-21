@@ -54,3 +54,14 @@ def test_vectorized_annotation_audit_keeps_all_identity_checks():
         else:bad[field][0]='PETA'
         with pytest.raises(ValueError):validate_annotation_alignment(index,bad,rows,0)
     with pytest.raises(ValueError):validate_annotation_alignment({'paths':list(reversed(index['paths']))},labels,rows,0)
+
+def test_prediction_locator_includes_runs_and_requires_exact_hash(tmp_path):
+    import hashlib
+    from dino.final_b_runner import locate_pinned_siglip_predictions
+    path=tmp_path/'original'/'runs'/'siglip2'/'best_val_predictions.npz'
+    path.parent.mkdir(parents=True);path.write_bytes(b'pinned-original-predictions')
+    sha=hashlib.sha256(path.read_bytes()).hexdigest()
+    assert locate_pinned_siglip_predictions(tmp_path,sha)==path
+    with pytest.raises(ValueError):locate_pinned_siglip_predictions(tmp_path,'wrong-sha')
+    path.parent.rename(path.parent.with_name('other_run'))
+    assert locate_pinned_siglip_predictions(tmp_path,sha).parent.name=='other_run'
