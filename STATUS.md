@@ -1,3 +1,12 @@
+> Active authorized mission: complementary frozen DINO diagnostic. DINOv3 access403;
+> use official DINOv2 ViT-B/14-registers fallback. CPU real pretrained parity passed
+> with zero measured errors; official upstream tensor identity and Python3.11 /
+> torch2.4.1 offline native probe passed. No DINO GPU job launched yet.
+> GPU feasibility/parity gate precedes extraction/head training; initial hard2h cap.
+> No all-domain training before promotion and no upload without explicit approval.
+> See DINO_ARCHITECTURE.md, DINO_LODO_RESULTS.md, ENSEMBLE_COMPARISON.md,
+> GPU_RUNTIME_REPORT.md and FINAL_CANDIDATE_DECISION.md. Accepted1003877 preserved.
+
 # Current status — equal-domain comparison complete, October21,2026
 
 Single controlled threefold comparison v1 COMPLETE; all3six epochs and independent

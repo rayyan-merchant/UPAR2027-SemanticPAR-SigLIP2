@@ -1,0 +1,8 @@
+{
+  "source": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_reg4_pretrain.pth",
+  "sha256": "73182a088cf94833c94b1666d1c99e02fe87e2007bff57b564fb6206e25dba71",
+  "bytes": 346393545,
+  "download_seconds": 239.60899999999674,
+  "dinov3_access_http": 403,
+  "fallback": "official DINOv2 ViT-B/14 registers"
+}

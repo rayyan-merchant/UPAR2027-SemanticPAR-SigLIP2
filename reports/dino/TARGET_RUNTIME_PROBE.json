@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "python": "3.11.16 (main, Aug 25 2026, 13:59:19) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.4.1+cpu",
+  "native_pretrained_tokens_and_descriptors_verified": true,
+  "network_blocked": true,
+  "transformers_imported": false,
+  "probabilities": 40,
+  "head_status": "random head shape test only; trained offline API pending promotion",
+  "descriptor_shape": [
+    1,
+    6,
+    768
+  ]
+}
