@@ -1,3 +1,9 @@
+# Final B v3: running after source-prediction locator fix
+
+Private rayyannmerchant/upar2027-candidate-b-final-all-domain v3 verified RUNNING at2026-10-21T16:54:35UTC. Runtime600f31d, scriptd7d5da5ef67fa6d6fdba00959b435508858eb2aff0dc6eed404c38b2e5ba88a9. V2passed27cloudtests and metadataaudit, thenfailedbeforestaging/training because inheritedlookuppruned runs/. FixedscopedlookupincludesrunsandrequiresexactoriginalSigLIPpredictionSHA;freshlocalhashmatches,6targetedtests pass. See FINAL_B_RECOVERY.md. Quota7.58hbeforev3; priorfailurescharged. Method/splits/init/scheduleunchanged,noartificialtrainingwallcap. V3cloudbenchmark/epochsnotyetobserved. Original1003877/A preserved,Cstopped,followupupdatedforv3.
+
+---
+
 # Final B v2: running after tested preflight fix
 
 Private rayyannmerchant/upar2027-candidate-b-final-all-domain v2 verified RUNNING at2026-10-21T16:45:15UTC. Sourcef0e13cc, script31dcd2e19803a3451e217b52d62e3d88e2fc217af1a7e70323fac202c7eda572. V1failed before staging/training despite25cloudtests passing: repeated compressed-NPZ label access per annotation row. Fixed by loading members once and vectorizing the same identity checks; full131076-row audit passed locally in28.44s,8focusedtests passed. See FINAL_B_RECOVERY.md. Remainingquota7.61hbeforev2; no artificial trainingwallcap; six reference plus up to two source-only conditional epochs unchanged. V2cloudgate/epochs notyetobserved. Original1003877/A preserved; C stopped. Follow-up updated forv2.

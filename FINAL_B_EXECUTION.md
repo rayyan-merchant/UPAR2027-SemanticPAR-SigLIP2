@@ -33,3 +33,5 @@ Private version1 submitted once and verified QUEUED at2026-10-21T15:44UTC. Sourc
 
 V1 failed before staging/training after25tests passed. The annotation audit repeatedly decompressed NPZ arrays per row; see FINAL_B_RECOVERY.md. Fixed full131076-row audit passed locally in28.44s;8focusedtests pass. Remainingquota7.61h; planned v2 preserves the method and all original/A artifacts. No training time cap added.
 
+
+Version2 is terminal ERROR before staging/training after27cloudtests: inherited locator excluded runs/. A scoped hash-pinned lookup fix is tested; version3 source600f31d/scriptd7d5da5ef67fa6d6fdba00959b435508858eb2aff0dc6eed404c38b2e5ba88a9 submitted once and verified RUNNING16:54:35UTC. Quota7.58h beforev3. Researchmethod and no-training-wallcap unchanged.

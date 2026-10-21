@@ -1,6 +1,6 @@
 {
   "kernel": "rayyannmerchant/upar2027-candidate-b-final-all-domain",
-  "status": "RUNNING",
+  "status": "ERROR",
   "script_sha256": "31dcd2e19803a3451e217b52d62e3d88e2fc217af1a7e70323fac202c7eda572",
   "source_hashes": {
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
@@ -115,5 +115,8 @@
   "cloud_backward_gate_observed": false,
   "url": "https://www.kaggle.com/code/rayyannmerchant/upar2027-candidate-b-final-all-domain",
   "previous_version_terminal": "ERROR",
-  "focused_local_tests_passed": 8
+  "focused_local_tests_passed": 8,
+  "training_started": false,
+  "cloud_tests_passed": 27,
+  "terminal_reason": "Pinned SigLIP raw validation predictions lookup pruned runs directory"
 }
