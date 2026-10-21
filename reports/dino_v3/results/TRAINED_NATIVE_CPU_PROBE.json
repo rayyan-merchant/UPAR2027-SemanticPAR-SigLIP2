@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "python": "3.11.16",
+  "torch": "2.4.1+cpu",
+  "network_disabled": true,
+  "timm_imported": false,
+  "transformers_imported": false,
+  "trained_heads": [
+    {
+      "held_out": "PA100k",
+      "engineering_input_source_only": true,
+      "trained_head": true,
+      "strict_state_load": true,
+      "output_shape": [
+        1,
+        40
+      ],
+      "finite_probability_range": true,
+      "calibration_shape": [
+        40
+      ],
+      "serialization_bytes": 718,
+      "attributes_exact_order": true
+    },
+    {
+      "held_out": "PETA",
+      "engineering_input_source_only": true,
+      "trained_head": true,
+      "strict_state_load": true,
+      "output_shape": [
+        1,
+        40
+      ],
+      "finite_probability_range": true,
+      "calibration_shape": [
+        40
+      ],
+      "serialization_bytes": 762,
+      "attributes_exact_order": true
+    },
+    {
+      "held_out": "Market1501",
+      "engineering_input_source_only": true,
+      "trained_head": true,
+      "strict_state_load": true,
+      "output_shape": [
+        1,
+        40
+      ],
+      "finite_probability_range": true,
+      "calibration_shape": [
+        40
+      ],
+      "serialization_bytes": 814,
+      "attributes_exact_order": true
+    }
+  ],
+  "GPU_deployment_runtime_certified": false,
+  "final_all_domain_candidate": false
+}

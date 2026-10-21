@@ -1,0 +1,15 @@
+{
+  "files": {
+    "PETA/best.pt": "1d8703ade7f3b563bd4e2b36ad95db6909c8ba4a18d2879548be8081ca276784",
+    "PETA/CONFIG.json": "a7866cc7ec53980a000ab46277e124172ff99069dfbd0625bc34b69e02c17dd1",
+    "PETA/CALIBRATION.json": "42353c10cd76e9ed96fb953b33066b622a9fa16123988dc59d90ceb1b74e4656",
+    "PETA/source_calibration_predictions.npz": "9c68431f161750a2c7b5db93d48147df71625751ceca1d73004e7b46f7203d51",
+    "PETA/source_selection_predictions.npz": "e2764d8cbb0199054ae3c6d9fae5075bbab4b324c4db2d0f9e72554b8ce06a4c",
+    "PETA/splits/source_calibration.csv": "c6ea5127b3fc11cefa5f81fc558f5fb8b4405f75f1db7a29652c55ba0c61f2fc",
+    "PETA/splits/source_selection.csv": "1d425644699662f2ca1a441f37cbd623b0c8966072231803c66675258e2a703c",
+    "PETA/splits/sealed_target_evaluation.csv": "5c72262cd9e8ea04406cc002805d00c242101ab9f4dd0cd54380fac82b904da5",
+    "PETA/splits/source_train.csv": "0333c750ca78d8c206bdd10c5882918db190e35b8a647e8cb049c6ba63264ba1"
+  },
+  "source_only_selection_and_calibration": true,
+  "target_evaluation_count": 1
+}

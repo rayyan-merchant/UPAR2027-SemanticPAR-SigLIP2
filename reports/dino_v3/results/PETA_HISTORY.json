@@ -1,0 +1,602 @@
+[
+  {
+    "epoch": 1,
+    "loss": 0.34023142678813,
+    "source_selection_score": 0.7333272653504928,
+    "draws": {
+      "PA100k": 65591,
+      "Market1501": 23410
+    },
+    "unique_epoch": {
+      "Market1501": 9031,
+      "PA100k": 44658
+    },
+    "unique_cumulative": {
+      "Market1501": 9031,
+      "PA100k": 44658
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 3.1134550550000313
+  },
+  {
+    "epoch": 2,
+    "loss": 0.26133902099026346,
+    "source_selection_score": 0.7631030583130611,
+    "draws": {
+      "PA100k": 65917,
+      "Market1501": 23084
+    },
+    "unique_epoch": {
+      "Market1501": 9004,
+      "PA100k": 44527
+    },
+    "unique_cumulative": {
+      "Market1501": 9884,
+      "PA100k": 63960
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.6026146270000936
+  },
+  {
+    "epoch": 3,
+    "loss": 0.2442686217355317,
+    "source_selection_score": 0.7762142554390961,
+    "draws": {
+      "Market1501": 23386,
+      "PA100k": 65615
+    },
+    "unique_epoch": {
+      "Market1501": 9044,
+      "PA100k": 44499
+    },
+    "unique_cumulative": {
+      "Market1501": 9987,
+      "PA100k": 72398
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5149819480000133
+  },
+  {
+    "epoch": 4,
+    "loss": 0.23476554530447927,
+    "source_selection_score": 0.7848656547508868,
+    "draws": {
+      "PA100k": 65496,
+      "Market1501": 23505
+    },
+    "unique_epoch": {
+      "Market1501": 9082,
+      "PA100k": 44441
+    },
+    "unique_cumulative": {
+      "Market1501": 9998,
+      "PA100k": 76113
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.59620847400015
+  },
+  {
+    "epoch": 5,
+    "loss": 0.22891523423551144,
+    "source_selection_score": 0.789322230180454,
+    "draws": {
+      "PA100k": 65455,
+      "Market1501": 23546
+    },
+    "unique_epoch": {
+      "Market1501": 9023,
+      "PA100k": 44459
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 77735
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.533023940000021
+  },
+  {
+    "epoch": 6,
+    "loss": 0.2261602874716808,
+    "source_selection_score": 0.7923804229972591,
+    "draws": {
+      "PA100k": 65411,
+      "Market1501": 23590
+    },
+    "unique_epoch": {
+      "Market1501": 9049,
+      "PA100k": 44585
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78457
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.4584342559999186
+  },
+  {
+    "epoch": 7,
+    "loss": 0.22254706107765093,
+    "source_selection_score": 0.7932262122822036,
+    "draws": {
+      "PA100k": 65557,
+      "Market1501": 23444
+    },
+    "unique_epoch": {
+      "Market1501": 9006,
+      "PA100k": 44525
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78769
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5569397130000198
+  },
+  {
+    "epoch": 8,
+    "loss": 0.22077560820884404,
+    "source_selection_score": 0.7978173784836777,
+    "draws": {
+      "PA100k": 65587,
+      "Market1501": 23414
+    },
+    "unique_epoch": {
+      "Market1501": 9038,
+      "PA100k": 44559
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78895
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.4645274849999623
+  },
+  {
+    "epoch": 9,
+    "loss": 0.21936880520962435,
+    "source_selection_score": 0.7994949340815416,
+    "draws": {
+      "PA100k": 65709,
+      "Market1501": 23292
+    },
+    "unique_epoch": {
+      "Market1501": 9015,
+      "PA100k": 44616
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78954
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5155587149999974
+  },
+  {
+    "epoch": 10,
+    "loss": 0.21760374005755473,
+    "source_selection_score": 0.7983328029444411,
+    "draws": {
+      "PA100k": 65665,
+      "Market1501": 23336
+    },
+    "unique_epoch": {
+      "Market1501": 9017,
+      "PA100k": 44557
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78982
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.4880447620000723
+  },
+  {
+    "epoch": 11,
+    "loss": 0.21596920229066377,
+    "source_selection_score": 0.800710423245522,
+    "draws": {
+      "Market1501": 23423,
+      "PA100k": 65578
+    },
+    "unique_epoch": {
+      "Market1501": 9034,
+      "PA100k": 44643
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78993
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5412090039999384
+  },
+  {
+    "epoch": 12,
+    "loss": 0.2146957610230679,
+    "source_selection_score": 0.8010738203601366,
+    "draws": {
+      "PA100k": 65639,
+      "Market1501": 23362
+    },
+    "unique_epoch": {
+      "Market1501": 9023,
+      "PA100k": 44661
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78998
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.6305335469999136
+  },
+  {
+    "epoch": 13,
+    "loss": 0.21397368669852443,
+    "source_selection_score": 0.8025455308955101,
+    "draws": {
+      "Market1501": 23505,
+      "PA100k": 65496
+    },
+    "unique_epoch": {
+      "Market1501": 9007,
+      "PA100k": 44468
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 78999
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.531847297000013
+  },
+  {
+    "epoch": 14,
+    "loss": 0.2132674441726386,
+    "source_selection_score": 0.802875856562845,
+    "draws": {
+      "PA100k": 65572,
+      "Market1501": 23429
+    },
+    "unique_epoch": {
+      "Market1501": 8970,
+      "PA100k": 44458
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.553706603000137
+  },
+  {
+    "epoch": 15,
+    "loss": 0.21183065462043915,
+    "source_selection_score": 0.8018887350602406,
+    "draws": {
+      "PA100k": 65673,
+      "Market1501": 23328
+    },
+    "unique_epoch": {
+      "Market1501": 9018,
+      "PA100k": 44542
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5241064009999263
+  },
+  {
+    "epoch": 16,
+    "loss": 0.21138293959799853,
+    "source_selection_score": 0.8026225691765254,
+    "draws": {
+      "PA100k": 65602,
+      "Market1501": 23399
+    },
+    "unique_epoch": {
+      "Market1501": 9057,
+      "PA100k": 44490
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.44482234599991
+  },
+  {
+    "epoch": 17,
+    "loss": 0.2104615634628411,
+    "source_selection_score": 0.8035073184139755,
+    "draws": {
+      "PA100k": 65626,
+      "Market1501": 23375
+    },
+    "unique_epoch": {
+      "Market1501": 9015,
+      "PA100k": 44538
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5648047189999943
+  },
+  {
+    "epoch": 18,
+    "loss": 0.20965930862330842,
+    "source_selection_score": 0.8053108551052102,
+    "draws": {
+      "PA100k": 65570,
+      "Market1501": 23431
+    },
+    "unique_epoch": {
+      "Market1501": 9032,
+      "PA100k": 44504
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 1,
+    "epoch_seconds": 2.6101071799998863
+  },
+  {
+    "epoch": 19,
+    "loss": 0.20906620656793146,
+    "source_selection_score": 0.8051933590910891,
+    "draws": {
+      "PA100k": 65393,
+      "Market1501": 23608
+    },
+    "unique_epoch": {
+      "Market1501": 9074,
+      "PA100k": 44481
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.489306316000011
+  },
+  {
+    "epoch": 20,
+    "loss": 0.2092041621605555,
+    "source_selection_score": 0.8056305517945036,
+    "draws": {
+      "Market1501": 23369,
+      "PA100k": 65632
+    },
+    "unique_epoch": {
+      "Market1501": 9040,
+      "PA100k": 44525
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.578234887000008
+  },
+  {
+    "epoch": 21,
+    "loss": 0.2083274311889177,
+    "source_selection_score": 0.8046111318914515,
+    "draws": {
+      "PA100k": 65486,
+      "Market1501": 23515
+    },
+    "unique_epoch": {
+      "Market1501": 9066,
+      "PA100k": 44400
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 1,
+    "epoch_seconds": 2.6389567949997854
+  },
+  {
+    "epoch": 22,
+    "loss": 0.20842296628003149,
+    "source_selection_score": 0.804557201722519,
+    "draws": {
+      "PA100k": 65466,
+      "Market1501": 23535
+    },
+    "unique_epoch": {
+      "Market1501": 9066,
+      "PA100k": 44438
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.799093373000005
+  },
+  {
+    "epoch": 23,
+    "loss": 0.20753910991994814,
+    "source_selection_score": 0.8057136393237203,
+    "draws": {
+      "Market1501": 23411,
+      "PA100k": 65590
+    },
+    "unique_epoch": {
+      "Market1501": 9065,
+      "PA100k": 44595
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.623027532999913
+  },
+  {
+    "epoch": 24,
+    "loss": 0.20555389606147662,
+    "source_selection_score": 0.8062811879424319,
+    "draws": {
+      "PA100k": 65645,
+      "Market1501": 23356
+    },
+    "unique_epoch": {
+      "Market1501": 9028,
+      "PA100k": 44551
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.490058738000016
+  },
+  {
+    "epoch": 25,
+    "loss": 0.20655132005868973,
+    "source_selection_score": 0.8062276410810716,
+    "draws": {
+      "PA100k": 65719,
+      "Market1501": 23282
+    },
+    "unique_epoch": {
+      "Market1501": 9042,
+      "PA100k": 44657
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 1,
+    "epoch_seconds": 2.633134569000049
+  },
+  {
+    "epoch": 26,
+    "loss": 0.2062236773513857,
+    "source_selection_score": 0.8079975153722097,
+    "draws": {
+      "Market1501": 23385,
+      "PA100k": 65616
+    },
+    "unique_epoch": {
+      "Market1501": 9035,
+      "PA100k": 44574
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.52748717999998
+  },
+  {
+    "epoch": 27,
+    "loss": 0.20454672197329588,
+    "source_selection_score": 0.8081067792923879,
+    "draws": {
+      "PA100k": 65721,
+      "Market1501": 23280
+    },
+    "unique_epoch": {
+      "Market1501": 8977,
+      "PA100k": 44668
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.65971790399999
+  },
+  {
+    "epoch": 28,
+    "loss": 0.2048117284630907,
+    "source_selection_score": 0.805853414329949,
+    "draws": {
+      "Market1501": 23425,
+      "PA100k": 65576
+    },
+    "unique_epoch": {
+      "Market1501": 9001,
+      "PA100k": 44465
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 1,
+    "epoch_seconds": 2.526666157000136
+  },
+  {
+    "epoch": 29,
+    "loss": 0.20436485653379183,
+    "source_selection_score": 0.8075887719657313,
+    "draws": {
+      "PA100k": 65656,
+      "Market1501": 23345
+    },
+    "unique_epoch": {
+      "Market1501": 9051,
+      "PA100k": 44395
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.5264477499999884
+  },
+  {
+    "epoch": 30,
+    "loss": 0.2049897040144123,
+    "source_selection_score": 0.8075007155995038,
+    "draws": {
+      "PA100k": 65627,
+      "Market1501": 23374
+    },
+    "unique_epoch": {
+      "Market1501": 9068,
+      "PA100k": 44621
+    },
+    "unique_cumulative": {
+      "Market1501": 10000,
+      "PA100k": 79001
+    },
+    "updates": 696,
+    "amp_skips": 0,
+    "epoch_seconds": 2.4771826859998782
+  }
+]

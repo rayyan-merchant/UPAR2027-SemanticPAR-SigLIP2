@@ -1,41 +1,37 @@
-> ACTIVE: DINOv3 frozen-threefold v2 RUNNING,sourcecbe514e.
-> Infrastructure-only retry restores original HF4.57.1 reference pin;all19tests required.
-> V1 ERROR before staging/training;failurelogs/XML preserved,no targetresults exist.
-> Quota10.81h atretrylaunch;provider6500/internal6200within original cumulative2hcap.
-> No model/preprocess/test/tolerance changes;no all-domaintraining or upload.
+# Current status: DINOv3 frozen threefold complete and audited
 
-> DINOv3 frozen v1 ERROR before staging/training:18tests passed,inheritedSigLIPHFparity failed.
-> Restore original Transformers4.57.1 reference pin;no model/test/tolerance changes.
-> Retry prepared under reduced cumulative cap;10.81GPUh remain. See reports/dino_v3/FAILED_V1_RECOVERY.md.
-> Accepted1003877 unchanged;no targetresult or newsubmission exists.
+Private upar2027-dinov3-frozen-threefold v2 COMPLETE, runtime source cbe514e.
+19 Kaggle tests passed; all 131,076 descriptors extracted in about250seconds.
+Archive staging36.86s; full runner446.02s; complete script event520.14s.
+Independent raw/calibrated metric recomputation, source-only threshold refits,
+all split/checkpoint/config/calibration locks, source supervision/exposure and
+31 locked baseline reports passed. Three additional hand-computed CPU scorer
+tests and trained native Python3.11/torch2.4.1 offline source-image probes passed.
 
-> ACTIVE: private rayyannmerchant/upar2027-dinov3-frozen-threefold v1 RUNNING.
-> Runtime source8d7a1e7; reported GPU gates passed before launch. No duplicate run.
-> Frozen131076-descriptor cache plus3source-onlyheads/fixedensemble; results pending.
-> Initial post-gate quota10.83h; provider6600s within cumulative2h diagnostic cap.
-> No all-domain training/fine-tuning/upload in this job;1003877 preserved.
+| Held out | SigLIP calibrated | Fixed75/25 ensemble | Delta |
+| --- | ---: | ---: | ---: |
+| PA100K | .797104 | .802375 | +.005271 |
+| PETA | .777228 | .780285 | +.003057 |
+| Market1501 | .817448 | .820231 | +.002783 |
+| Macro | .797260 | .800964 | +.003704 |
+| Worst | .777228 | .780285 | +.003057 |
 
-> DINOv3 short GPU gate COMPLETE: exact FP32/AMP parity,286/288images/s,0.667GiB/GPU.
-> Reported before full extraction;10.83GPUh remain. Frozen3fold job being prepared.
-> All-domain training/upload remain gated; accepted1003877 preserved.
+**Not promoted:** macro .800964 misses the fixed .8023 gate by .001336.
+DINO standalone macro .754043 / worst .724861 is unsuitable. Frozen features
+show useful complementarity; one limited final-two-block experiment is worth
+reviewing, but has not been launched. No all-domain training, new package or upload.
+10.66 GPU hours remain (19.34 used); total displayed DINO spending about .31h.
+Accepted1003877 ZIP,best,last and calibration freshly rehashed unchanged.
+Original square-root sampler retained; equal-domain comparison remains rejected.
 
-> Latest steering: supported public timm DINOv3 route verified. Weights SHA matches
-> 1f9ed8a...926332; native/reference CPU real-image parity0.0; Python3.11/torch2.4.1
-> offline native probe passed;19focused tests passed. GPU benchmark pending.
-> DINOv2 CANCEL_ACKNOWLEDGED; preserve its artifacts/log.10.85GPUh remain.
-> No full DINOv3 extraction before reporting measured GPU gates. No all-domain
-> training before promotion, no competition upload without approval. See DINO_ARCHITECTURE.md.
+Reviewed reports: DINO_LODO_RESULTS.md, ENSEMBLE_COMPARISON.md,
+GPU_RUNTIME_REPORT.md, FINAL_CANDIDATE_DECISION.md; aggregate evidence in
+reports/dino_v3/results. Private arrays, cache and checkpoints are not published.
+No active GPU job. Follow-up stops after report delivery; any next experiment
+needs the reviewed scope/resource decision. Preferred upload Oct22 13:00PKT,
+hard cutoff17:00PKT; no automatic competition upload or email.
 
-> Active authorized mission: complementary frozen DINO diagnostic. DINOv3 access403;
-> use official DINOv2 ViT-B/14-registers fallback. CPU real pretrained parity passed
-> with zero measured errors; official upstream tensor identity and Python3.11 /
-> torch2.4.1 offline native probe passed. Private DINO frozen kernel v1 RUNNING.
-> Actual slug rayyannmerchant/upar2027-dino-frozen-complementarity; source0b22a50.
-> Do not duplicate an active run; GPU gates/cache/LODO scores remain pending.
-> GPU feasibility/parity gate precedes extraction/head training; initial hard2h cap.
-> No all-domain training before promotion and no upload without explicit approval.
-> See DINO_ARCHITECTURE.md, DINO_LODO_RESULTS.md, ENSEMBLE_COMPARISON.md,
-> GPU_RUNTIME_REPORT.md and FINAL_CANDIDATE_DECISION.md. Accepted1003877 preserved.
+## Preserved earlier baseline and sampling-comparison records
 
 # Current status â€” equal-domain comparison complete, October21,2026
 

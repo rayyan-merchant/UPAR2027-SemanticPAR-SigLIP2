@@ -10,8 +10,11 @@ Native torch-only ViT-B/16 matches the downloaded timm1.0.24 reference:12blocks,
 
 RGB bicubic aspect-preserving fit to320x160,centered normalized-zero padding; mean(.485,.456,.406),std(.229,.224,.225) from pretrained config. Six descriptors and40attribute attention/classification head are reused unchanged:CLS,content-overlap patch mean,head[0,.30],upper[.15,.65],lower[.50,1],valid-patch maximum. No detector/pose/segmentation; no target-fitted feature normalization.
 
-Four real source pedestrian crops: CPU torch2.4.1 native/reference tokens and descriptors had max absolute and relative-L2 differences0.0. Python3.11.16/torch2.4.1 native probe also had zero token difference, networking blocked, no timm/Transformers import;40-output shape used a random head and does not certify a trained candidate.19focused tests passed. GPU FP32/AMP parity and throughput remain pending. See reports/dino_v3 for actual receipts.
+Four real source pedestrian crops: CPU torch2.4.1 native/reference tokens and descriptors had max absolute and relative-L2 differences0.0. Python3.11.16/torch2.4.1 native probe also had zero token difference, networking blocked, no timm/Transformers import;40-output shape used a random head and does not certify a trained candidate.19focused tests passed. GPU FP32/AMP parity and throughput subsequently passed; see completed receipts and runtime report. See reports/dino_v3 for actual receipts.
 
 DINOv2 code, weights, reports and canceled-job log remain preserved separately. Its run reached frozen extraction before user-directed cancellation, now CANCEL_ACKNOWLEDGED. No completed DINOv2 result is claimed.
 
 Sources: [Meta issue375](https://github.com/facebookresearch/dinov3/issues/375), [timm model card](https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m), [DINOv3 license](https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md), [timm implementation](https://github.com/huggingface/pytorch-image-models/blob/v1.0.24/timm/models/eva.py).
+
+
+Frozen threefold v2 is complete. GPU FP32/AMP native/timm parity0.0 and19Kaggletests passed;all131076compact descriptors extracted. Three selected trained heads also pass the native Python3.11/torch2.4.1CPU source-image probe without timm/Transformers/network. See DINO_LODO_RESULTS.md,ENSEMBLE_COMPARISON.md andFINAL_CANDIDATE_DECISION.md. Frozenensemble does not meet primarypromotion;no all-domain candidate orupload.

@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "shape": [
+    131076,
+    6,
+    768
+  ],
+  "dtype": "float16",
+  "sha256": "bd7991deafba88f07edd0d53525252b20989a52ac2e355846b4ce8aa62a2285d",
+  "index_sha256": "ce8da15c246c7c7ff4cc7db5055d08d29351f9f5c832e9ea8adeb4bfe7756ac6",
+  "label_sha256": "b54f333d62ae3c4b521108dbe98fd2e347f196bf3d2e6531e412d456c7ed399d",
+  "backbone_sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
+  "native_code_sha256": "f051299143d60bc704a0d5ba0c92ec92c668ac6f905986f9355ef7b4850de34c",
+  "no_global_target_statistics_fit": true
+}

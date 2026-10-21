@@ -1,6 +1,6 @@
 {
   "kernel": "rayyannmerchant/upar2027-dinov3-frozen-threefold",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "script_sha256": "d792d383456f0e2b797e3a3635072b475bd856343dcdb4c7b28eeec04d74a2a7",
   "source_sha256": {
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
@@ -90,5 +90,16 @@
   "prior_version_failure_phase": "pretraining_tests_before_staging",
   "prior_version_training_started": false,
   "reference_dependency_pin": "transformers4.57.1/tokenizers>=.22<.23/hub>=.34<1",
-  "methodology_changed": false
+  "methodology_changed": false,
+  "independent_verification_passed": true,
+  "promotion_criteria_met": false,
+  "runner_elapsed_seconds": 446.019099344,
+  "script_complete_timestamp_seconds": 520.135,
+  "quota_used_displayed_hours": 19.34,
+  "quota_remaining_displayed_hours": 10.66,
+  "new_competition_submissions": 0,
+  "all_domain_training_started": false,
+  "optional_finetuning_started": false,
+  "diagnostic_results_path": "../dino/v3-frozen-v2-results",
+  "report_delivery_date": "2026-10-21"
 }

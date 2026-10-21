@@ -1,0 +1,8 @@
+{
+  "pretrained_only": true,
+  "PAR_weights_loaded": false,
+  "foundation_sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
+  "native_code_sha256": "f051299143d60bc704a0d5ba0c92ec92c668ac6f905986f9355ef7b4850de34c",
+  "gpu_parity_sha256": "7ab2f02f38f18fba716a48d5b7b39dc7ef5f130ffb72a3f6a82fdd6accc9fd4b",
+  "all_folds_fresh_independent_heads": true
+}

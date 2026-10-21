@@ -16,3 +16,14 @@ Predeclared parity tolerances remain FP32max_abs<=5e-4/relL2<=1e-5 andAMPmax_abs
 
 
 Frozen v1 stopped before staging at~76s on an inherited SigLIP HF reference preprocessing test (18passed,1failed). No DINOtraining or targetinference. Restore original Transformers4.57.1 test-reference pin;keep all transforms/tolerances unchanged,recordbefore/afterversions.10.81GPUh remain;retryprovider6500/internal6200within original cumulative2hcap. See reports/dino_v3/FAILED_V1_RECOVERY.md.
+
+
+## Frozen threefold v2 completed
+
+All19Kaggletests passed with Transformers4.57.1 after the baseline reference pin was restored. ENVIRONMENT_BEFORE records5.16.1 in the freshv2base and AFTER4.57.1;the failedv1environment was not logged,so this is strong drift evidence,not a direct measurement ofv1's version. Torch2.11.0cu128/CUDA12.8,Pillow12.3.0,NumPy2.1.3 retained. No preprocessing/model/test/tolerance changes.
+
+Actual archive staging36.855s,wholearchiveSHA/ZIPCRC/exact131076pathunion passed. Two extraction ranges each65538images completed249.932/250.260s (~524images/saggregate). CacheFP16shape131076x6x768,recordedSHA bd7991deafba88f07edd0d53525252b20989a52ac2e355846b4ce8aa62a2285d. Parent entered extraction146.47s,heads410.10s,complete520.14s from scriptstart;runner446.02s. The broader quota increment~.15h also includes setup/export/rounding and should not be confused with runner-only7.43min.
+
+Cached head wallPA24.32s,PETA85.78s,Market78.99s;parallel scheduling finishes headphase~110s. Each30epochs,best30/27/25;attempted4380/20880/20550,successful4380/20876/20546,AMPskips0/4/4. These are cached-head timings,not estimates of backpropagation through two backbone blocks. All actualimages/sourceexposure/sourcecurves retained in reports/dino_v3/results.
+
+Fresh quota19.34hused10.66hremaining. TotaldisplayedDINOspending~.31hfrom10.97initial,wellbelow cumulative2hcap. No GPUjob active,no all-domainrun,newZIP or submission. Trainedselectedheads also loaded strictly and inferred on real source-only images under Python3.11.16/torch2.4.1CPU with socketsdisabled,no timm/Transformers import,40orderedfinite probabilities/calibration/serialization verified. This does not certify full exactdeployment runtime;A10benchmark remains gated on a promoted candidate.
