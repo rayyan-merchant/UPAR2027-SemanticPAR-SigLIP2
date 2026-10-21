@@ -1,0 +1,21 @@
+{
+  "kernel": "rayyannmerchant/upar2027-dinov3-timm-feasibility",
+  "status": "PREPARED_NOT_LAUNCHED",
+  "script_sha256": "6023a24a554ff27ab46f612bee4166b3021bdefefabdfc84112c6c333ec1857f",
+  "source_sha256": {
+    "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
+    "dino/model.py": "12b57901f1b376525ebb8aafb77bfdfdf1388830ac4dd5b86a9c156cdd69c984",
+    "dino/v3_model.py": "f051299143d60bc704a0d5ba0c92ec92c668ac6f905986f9355ef7b4850de34c",
+    "dino/v3_feasibility.py": "ade9a28d0621de03ce476ea913a5910ff11e29d748f594d42a72bedaa6bcf5cb",
+    "kaggle/archive_stage.py": "5a3e1d3a2b713c97303c5ae2cc62cbe748db620d770ede97444131d4514c3d6d",
+    "kaggle/pretraining_watchdog.py": "cac5fc5a5291c69fdce0a53bb27a89e4deaeb2934f13576ad88264ce6c389f6c",
+    "reports/lodo/THREEFOLD_ARCHIVES.json": "67ef657016f8eb4da4f0b4ba5468cfc7001d904c8d0464bc5d0ab8962aa2b79f",
+    "reports/dino_v3/PLAN.json": "490289100cbe5732db67e341dcf78c5382d49c675c33278f35b3d817421644cb"
+  },
+  "full_extraction_allowed": false,
+  "head_training_allowed": false,
+  "hard_job_watchdog_seconds": 600,
+  "provider_timeout_seconds": 900,
+  "gpu_quota_remaining_before_gate_displayed_hours": 10.85,
+  "dino_v2_terminal_status": "CANCEL_ACKNOWLEDGED"
+}

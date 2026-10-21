@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "python": "3.11.16",
+  "torch": "2.4.1+cpu",
+  "network_disabled": true,
+  "timm_imported": false,
+  "transformers_imported": false,
+  "tokens": [
+    1,
+    205,
+    768
+  ],
+  "descriptors": [
+    1,
+    6,
+    768
+  ],
+  "output": [
+    1,
+    40
+  ],
+  "trained_head": false,
+  "max_abs": 0.0
+}

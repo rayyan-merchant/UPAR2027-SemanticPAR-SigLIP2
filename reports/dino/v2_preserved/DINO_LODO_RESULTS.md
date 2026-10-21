@@ -1,0 +1,7 @@
+> Private frozen diagnostic v1 RUNNING: rayyannmerchant/upar2027-dino-frozen-complementarity. Source0b22a50; hard7200s. GPU gates and target scores pending saved evidence. No all-domain training or upload.
+
+# Frozen DINO LODO diagnostic — pending
+
+No DINO target score is available yet. Model is official DINOv2 ViT-B/14-registers fallback, not DINOv3. Exact existing PA100K/PETA/Market folds and split hashes are pinned in reports/dino/PLAN.json. Descriptor extraction is label-independent and may cover all131076allowed annotated images; each head excludes its target entirely from train/frequency/sampling/selection/calibration. No dataset-wide feature normalization is fitted. Original sample paths, audited byte/pixel hashes,domain IDs,labels/valid masks stay with the private FP16 cache.
+
+Source-only early stopping and calibration precede a saved checkpoint/config/calibration/split lock; target inference occurs once afterward. Report raw/calibrated mA,instance-F1,P/R,label-F1,groups,source trajectories,best epoch,compute and support. These already inspected domains are development evaluation, not a new untouched unbiased test. Preserve scorer-convention/zero-support sensitivity. Current SigLIP calibrated referencePA.797104355/PETA.777228370/Market.817447759/macro.797260162/worst.777228370.

@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "reference": "timm1.0.24 hf_hub exact model, only file-source override",
+  "checkpoint_sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
+  "torch": "2.4.1+cpu",
+  "timm": "1.0.24",
+  "native_code_sha256": "f051299143d60bc704a0d5ba0c92ec92c668ac6f905986f9355ef7b4850de34c",
+  "canvas": [
+    320,
+    160
+  ],
+  "grid": [
+    20,
+    10
+  ],
+  "prefix_tokens": 5,
+  "qkv_bias": false,
+  "rope_periods": "FP32 timm default; no BF16 truncation",
+  "pretrained_normalization": {
+    "input_size": [
+      3,
+      256,
+      256
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "crop_pct": 1.0,
+    "crop_mode": "center"
+  },
+  "comparisons": [
+    {
+      "tokens": [
+        1,
+        205,
+        768
+      ],
+      "descriptors": [
+        1,
+        6,
+        768
+      ],
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "descriptor_max_abs": 0.0
+    },
+    {
+      "tokens": [
+        1,
+        205,
+        768
+      ],
+      "descriptors": [
+        1,
+        6,
+        768
+      ],
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "descriptor_max_abs": 0.0
+    },
+    {
+      "tokens": [
+        1,
+        205,
+        768
+      ],
+      "descriptors": [
+        1,
+        6,
+        768
+      ],
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "descriptor_max_abs": 0.0
+    },
+    {
+      "tokens": [
+        1,
+        205,
+        768
+      ],
+      "descriptors": [
+        1,
+        6,
+        768
+      ],
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "descriptor_max_abs": 0.0
+    }
+  ],
+  "gpu_parity_and_throughput_pending": true,
+  "source_only_engineering_images": 4
+}

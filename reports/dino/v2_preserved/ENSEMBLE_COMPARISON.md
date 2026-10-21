@@ -1,0 +1,5 @@
+# Complementarity comparison — predeclared, pending
+
+One fixed combination only: .75 SigLIP2 raw sigmoid probabilities + .25 DINO raw sigmoid probabilities. Do not average logits, fitted offsets or already shifted branch probabilities. Fit a fresh single40threshold vector on the corresponding disjoint source-calibration rows only. Baseline per-fold SigLIP probabilities are reused byte-hash-pinned; no checkpoint modification or inference rerun is necessary. Require exact path/label/valid/domain alignment.
+
+Promote ensemble only if calibrated macro>=.8023,worst>=.7772 and no domain falls>.005 below its locked SigLIP reference. Report other scorer conventions and per-attribute/groups without tuning the weight. Residual error and binary error correlations, disagreement and double-fault are descriptive. If clearly worse/highly redundant, stop. A near-useful result may justify reviewing one final-two-block fine-tune only; no fine-tuning is automatically launched by this diagnostic. Standalone promotion requires independent reviewed generalization and deployment evidence; source-validation superiority alone is insufficient.

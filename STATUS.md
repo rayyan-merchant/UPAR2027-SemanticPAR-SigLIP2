@@ -1,3 +1,10 @@
+> Latest steering: supported public timm DINOv3 route verified. Weights SHA matches
+> 1f9ed8a...926332; native/reference CPU real-image parity0.0; Python3.11/torch2.4.1
+> offline native probe passed;19focused tests passed. GPU benchmark pending.
+> DINOv2 CANCEL_ACKNOWLEDGED; preserve its artifacts/log.10.85GPUh remain.
+> No full DINOv3 extraction before reporting measured GPU gates. No all-domain
+> training before promotion, no competition upload without approval. See DINO_ARCHITECTURE.md.
+
 > Active authorized mission: complementary frozen DINO diagnostic. DINOv3 access403;
 > use official DINOv2 ViT-B/14-registers fallback. CPU real pretrained parity passed
 > with zero measured errors; official upstream tensor identity and Python3.11 /
@@ -9,7 +16,7 @@
 > See DINO_ARCHITECTURE.md, DINO_LODO_RESULTS.md, ENSEMBLE_COMPARISON.md,
 > GPU_RUNTIME_REPORT.md and FINAL_CANDIDATE_DECISION.md. Accepted1003877 preserved.
 
-# Current status — equal-domain comparison complete, October21,2026
+# Current status â€” equal-domain comparison complete, October21,2026
 
 Single controlled threefold comparison v1 COMPLETE; all3six epochs and independent
 metric/calibration/config/split/exposure checks passed. **Retain original sampler.**
@@ -24,7 +31,7 @@ are not claimed complete; human/team fields and exact cutoffs remain unverified.
 
 ## Preserved baseline status and production evidence
 
-# Status — three-domain LODO complete, 2026-10-20
+# Status â€” three-domain LODO complete, 2026-10-20
 
 All three fresh-foundation diagnostic folds completed six epochs; independent
 metric recomputation, source-only threshold refits and split/config/calibration
@@ -70,7 +77,7 @@ reports/lodo/results. All original D: data remain read-only.
   reports/generalization_1003877/. Disjoint five-fold calibration score .863482
   versus .864952 fitted: .147point optimism; known-domain OOF gain .730point.
   This is calibration-only cross-validation; the fixed checkpoint used all val.
-- Calibration raises known-domain FP32,706→39,303 and lowers FN28,096→25,272.
+- Calibration raises known-domain FP32,706â†’39,303 and lowers FN28,096â†’25,272.
   Local F1 convention differs from the official per-domain aggregate relationship;
   measured alternative-definition sensitivity .19point, joint zero-support
   scenario1.04points. Private exact scorer remains unverified.
@@ -81,7 +88,7 @@ reports/lodo/results. All original D: data remain read-only.
 - Initial fresh-foundation PA-held-out six-epoch split, now reused by LODO job:
   train18,668; source selection11,634; separate calibration11,785; target9,986.
   No cross-partition decoded-pixel overlap. Current PAR weights cannot initialize
-  this run because they saw PA. Estimate .5–1GPUhour,1.25h running cap, uncertain
+  this run because they saw PA. Estimate .5â€“1GPUhour,1.25h running cap, uncertain
   queue/setup. Quota check26.01h remaining; no allocation claimed.
 - Next: report findings first, then use one source-held-out diagnostic to test
   the protocol hypothesis before any model/loss/threshold/interpolation change.
@@ -145,7 +152,7 @@ Actual evidence is recorded below and in TRAINING_RESULTS.md.
 - **Private kernel version 3 ended ERROR at the AMP parity gate.** Source
   matched commit `9c5a0e0`. Its full data audit and 19 tests passed. GPU FP32
   preprocessing and all vision stages matched exactly on four real images. AMP
-  errors exceeded unchanged tolerances (max 0.662–5.659; relative L2 0.0126–0.0430).
+  errors exceeded unchanged tolerances (max 0.662â€“5.659; relative L2 0.0126â€“0.0430).
   Training and feasibility never started. Evidence: reports/kaggle_v3/.
 - Corrected native AMP position casting: preserve FP32 positional embeddings and
   residual sums like Hugging Face. New CPU BF16 regression failed before the fix
