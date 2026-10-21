@@ -1,3 +1,8 @@
+> DINOv3 frozen v1 ERROR before staging/training:18tests passed,inheritedSigLIPHFparity failed.
+> Restore original Transformers4.57.1 reference pin;no model/test/tolerance changes.
+> Retry prepared under reduced cumulative cap;10.81GPUh remain. See reports/dino_v3/FAILED_V1_RECOVERY.md.
+> Accepted1003877 unchanged;no targetresult or newsubmission exists.
+
 > ACTIVE: private rayyannmerchant/upar2027-dinov3-frozen-threefold v1 RUNNING.
 > Runtime source8d7a1e7; reported GPU gates passed before launch. No duplicate run.
 > Frozen131076-descriptor cache plus3source-onlyheads/fixedensemble; results pending.

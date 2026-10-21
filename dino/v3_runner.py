@@ -157,7 +157,7 @@ def main():
         # No image files are needed by cached-head folds; retain feature cache privately.
         shutil.rmtree(SUITE/'staged_data');shutil.rmtree(SUITE/'archive_cache')
         status('source_only_frozen_heads',training_started=True,all_domain_training_started=False)
-        jobs([('PA100k',['--head','PA100k'],0),('PETA',['--head','PETA'],1)],min(5400,6300-(time.monotonic()-begin)),
+        jobs([('PA100k',['--head','PA100k'],0),('PETA',['--head','PETA'],1)],min(5400,6200-(time.monotonic()-begin)),
              {h:SUITE/h/'PROGRESS.json' for h in FOLDS}, {'PA100k':('Market1501',['--head','Market1501'],0)})
         results=[json.loads((SUITE/h/'EVALUATION.json').read_text()) for h in FOLDS]
         summary={}

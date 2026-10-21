@@ -13,3 +13,6 @@ Measurements,download/hash/license and parity were reported to the user before f
 Reuse the four opaque archives once in each fresh ephemeral session; wholearchiveSHA/CRC/exactunion,stage120s/idle30s,loaderI/O30s,totalpretraining600s. Never copy/hash individual mounted images. Actual full-extraction rates and independent head timing will replace projections when saved evidence exists. Original square-root sampler/source-only balancedBCE/selection/calibration are retained. Separate optimizer/RNG/checkpoints per head,PA0/PETA1 thenMarket0.
 
 Predeclared parity tolerances remain FP32max_abs<=5e-4/relL2<=1e-5 andAMPmax_abs<=.05/relL2<=.005; no post-result relaxation. Gatecode/weights/runtime hashes pinned before reuse. Short source-only throughput check repeats in the extraction session and stops below75images/s or above12GiB or if projected extraction exceeds1800s. Completed source/target locks must never be refit or reevaluated during recovery.
+
+
+Frozen v1 stopped before staging at~76s on an inherited SigLIP HF reference preprocessing test (18passed,1failed). No DINOtraining or targetinference. Restore original Transformers4.57.1 test-reference pin;keep all transforms/tolerances unchanged,recordbefore/afterversions.10.81GPUh remain;retryprovider6500/internal6200within original cumulative2hcap. See reports/dino_v3/FAILED_V1_RECOVERY.md.

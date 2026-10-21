@@ -1,6 +1,6 @@
 {
   "kernel": "rayyannmerchant/upar2027-dinov3-frozen-threefold",
-  "status": "RUNNING",
+  "status": "ERROR",
   "script_sha256": "f93f79fed3c5a043a01c1e0f847311f631c068a6d0f6d2b4133a93f8ad267711",
   "source_sha256": {
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
@@ -84,5 +84,12 @@
   "competition_upload_allowed": false,
   "version": 1,
   "source_commit": "8d7a1e7c3b251ca08375c103b7671889e1b6f9cb",
-  "actual_url": "https://www.kaggle.com/code/rayyannmerchant/upar2027-dinov3-frozen-threefold"
+  "actual_url": "https://www.kaggle.com/code/rayyannmerchant/upar2027-dinov3-frozen-threefold",
+  "failure_phase": "pretraining_tests_before_staging",
+  "passed_tests": 18,
+  "failed_test": "test_hf_processor_parity_patterned_images",
+  "failure_max_abs": 0.00784318894147873,
+  "training_started": false,
+  "full_extraction_started": false,
+  "quota_remaining_after_failure_displayed_hours": 10.81
 }
