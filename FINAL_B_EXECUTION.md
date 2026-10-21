@@ -27,3 +27,6 @@ Deadline verified previously: October22,2026 12:00UTC/17:00PKT; preferred upload
 ## Launch preparation
 
 Private kernel prepared: rayyannmerchant/upar2027-candidate-b-final-all-domain. Script SHA2561d556df17b058c043a9aeaf5bfc27b39436d7ca9011b9b2ab91797ac2de414ba. Six focused local tests passed. Actual cloud gate, training state and results must be read from saved evidence; preparation is not training completion.
+
+Private version1 submitted once and verified QUEUED at2026-10-21T15:44UTC. Source85b2c61. No cloud throughput/gate/epoch result is claimed yet. Existing follow-up updated for final B and active; it must stay quiet on unchanged state. Provider timeout override omitted as requested.
+

@@ -1,6 +1,6 @@
-# Final B: separately authorized all-domain run prepared
+# Final B: separately authorized all-domain run submitted
 
-See FINAL_B_EXECUTION.md. Research promotion gate remains failed; user separately authorizes exploratory final B. Fresh quota7.78h. Six local tests passed; cloud backward gate must pass before training. No arbitrary training wall-time cap. A/original preserved, C stopped. Official B upload remains conditional on deployment gates.
+Private rayyannmerchant/upar2027-candidate-b-final-all-domain v1 submitted once and verified QUEUED at2026-10-21T15:44UTC. Runtime source85b2c61; see FINAL_B_EXECUTION.md and FINAL_B_SUBMISSION_RECEIPT.json. Actual cloud backward gate/training not yet observed. Follow-up active. Research promotion gate remains failed; user separately authorizes exploratory final B. Fresh quota7.78h. Six local tests passed; cloud backward gate must pass before training. No arbitrary training wall-time cap. A/original preserved, C stopped. Official B upload remains conditional on deployment gates.
 
 ---
 
@@ -258,5 +258,6 @@ Submission ZIP: outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip (same verifi
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`
 preserves the initial failed path audit. `reports/tests.xml` records local checks.
+
 
 
