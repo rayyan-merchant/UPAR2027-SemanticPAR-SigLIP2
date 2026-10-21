@@ -62,6 +62,7 @@
     "tests/test_dino_v3.py": "597bc19d536105ce88a3ae631915b2c4103b9348ee69acbe8b20785ebeed667f",
     "tests/test_final_a.py": "1bf802677f29f33575fdcce86ea7e0b7eebb689b7e17019dcddec4a45537fe17",
     "tests/test_generalization_analysis.py": "8c50200c43afdcce9fcba48ea1f66522e0e8427bbdb1cebbdc2b07c67bb7dd84",
+    "tests/test_limited_dino.py": "c959dae66ed29c3a92050b6fe41f0cb17b8595640d6abc03b5d0b7a1245413d4",
     "tests/test_lodo.py": "33e0c6152cc4031c6ae2d1c7e29210c5a614aa36b240e8e58b4deb3354afc828",
     "tests/test_resource_policy.py": "e0e1b74afd5174ff013fc5097e08ec0da0fde7468b286278d9ca6e8e3dc62b69",
     "tests/test_robustness.py": "9b37c9711df6947dacfd125d4ef8c6d0f5173585c2d3c2e5f78e22d83be0aea4",
@@ -71,20 +72,22 @@
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
     "dino/experiment.py": "ce55c35e8f192281ddc58977e940e5ba771797e0a4698b965a637c96098a3048",
     "dino/final_a.py": "6a7a5314ddef64bdd45322dfc11d57555cc0e7e6aed2a3e35109ad9704fe4894",
+    "dino/limited_model.py": "3747930fd877645051be395f8b76cf165a6e0c99197a81dea88cb6bd40212bdb",
     "dino/model.py": "12b57901f1b376525ebb8aafb77bfdfdf1388830ac4dd5b86a9c156cdd69c984",
     "dino/reference.py": "51525d9c6590ac37b411d38a7400d6080d77dc9054f9ae8e0038e942d693a9bd",
     "dino/runner.py": "1786e53f5378b287636b77f3a3e166838b143a5c2c78b76d2b183c8c43712182",
     "dino/v3_api.py": "ab50e932b3a17b93d57f129d0b878b0f49f616bc9e9ddaf1f6767a9d582cedb6",
     "dino/v3_experiment.py": "cdfea6ae5ebc04bfac884f20b2342c58ac09de46078917326691b30e08a7a18f",
     "dino/v3_feasibility.py": "ade9a28d0621de03ce476ea913a5910ff11e29d748f594d42a72bedaa6bcf5cb",
+    "dino/v3_finetune.py": "1373b5460e6535f7946f71ef07f1fca4c8265edb3f91c22e7e570d929b54182f",
     "dino/v3_model.py": "f051299143d60bc704a0d5ba0c92ec92c668ac6f905986f9355ef7b4850de34c",
     "dino/v3_runner.py": "612f89c8f9ec1e3b001e8d6337b8256db09ab2c8d38f5ba4f058632479e1ed4a"
   },
-  "script_sha256": "bdd60df8b2ff201d8595949dca22df80e7af72fc4f57123ad5afd94daef45e7d",
+  "script_sha256": "ae5e6f1f5870260a50bdb352ce82fdbc57f4318f827c88534b64a0136b98b117",
   "resource_authorization": {
     "quota_remaining_hours": 10.66,
     "gpu_reserved_hours": 0,
-    "max_session_hours": 3,
+    "max_session_hours": 2.9833333333333334,
     "reserve_final_training_hours": 2,
     "all_three_folds_authorized": true,
     "new_submission_authorized": false,
@@ -96,7 +99,9 @@
     "previous_conservative_projection_hours": 2.629
   },
   "original_model_preprocess_attributes_train_data_unchanged": true,
-  "provider_timeout_seconds": 10800,
+  "provider_timeout_seconds": 10740,
+  "prior_failed_attempt_budget_seconds": 60,
+  "failure_reason": "v1 bootstrap placeholder replaced filename substring; syntax error before execution",
   "original_baseline_commit": "4b60ffc",
   "only_methodological_change": "augmentation policy"
 }
