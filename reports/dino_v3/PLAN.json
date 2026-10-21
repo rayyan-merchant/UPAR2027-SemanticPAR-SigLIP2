@@ -262,7 +262,16 @@
   "targets_previously_inspected_development_only": true,
   "competition_cutoff": "2026-10-22T17:00:00+05:00",
   "preferred_upload": "2026-10-22T13:00:00+05:00",
-  "gpu_benchmark_only_before_full_extraction": true,
+  "gpu_benchmark_only_before_full_extraction": false,
   "v2_gpu_time_spent_approx_hours": 0.12,
-  "remaining_frozen_diagnostic_budget_hours": 1.88
+  "remaining_frozen_diagnostic_budget_hours": 1.86,
+  "new_full_job_provider_timeout_seconds": 6600,
+  "frozen_diagnostic_remaining_internal_seconds": 6300,
+  "gpu_benchmark_reported_before_full_extraction": true,
+  "gpu_quota_remaining_after_gate_displayed_hours": 10.83,
+  "gpu_gate_sha256": {
+    "GATE_FEASIBILITY.json": "b162c4e36f7b17fbb03c348d68c8b2d37ba913d4e9cf04b81a4eab68e4c77424",
+    "GATE_PARITY.json": "7ab2f02f38f18fba716a48d5b7b39dc7ef5f130ffb72a3f6a82fdd6accc9fd4b",
+    "GATE_HARDWARE.json": "c8c913c33eadb6808b50c620244dc26523b2abe9601fa41b23c94e3d3680ffa2"
+  }
 }

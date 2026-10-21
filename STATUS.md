@@ -1,3 +1,7 @@
+> DINOv3 short GPU gate COMPLETE: exact FP32/AMP parity,286/288images/s,0.667GiB/GPU.
+> Reported before full extraction;10.83GPUh remain. Frozen3fold job being prepared.
+> All-domain training/upload remain gated; accepted1003877 preserved.
+
 > Latest steering: supported public timm DINOv3 route verified. Weights SHA matches
 > 1f9ed8a...926332; native/reference CPU real-image parity0.0; Python3.11/torch2.4.1
 > offline native probe passed;19focused tests passed. GPU benchmark pending.

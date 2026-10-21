@@ -1,0 +1,16 @@
+{
+  "images": 2048,
+  "seconds": 7.157501900999989,
+  "images_per_second": 286.1333504799866,
+  "data_wait_seconds": 0.034119254999552595,
+  "peak_GiB": 0.6669735908508301,
+  "batch": 64,
+  "workers": 2,
+  "threads": 2,
+  "device": "Tesla T4",
+  "mode": "decode+aspect_preprocess+native_AMP_forward+6descriptor_pool",
+  "warmed_batches": 2,
+  "unique_source_samples": 256,
+  "full_extraction": false,
+  "training": false
+}

@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "parity_passed": true,
+  "workers": [
+    {
+      "images": 2048,
+      "seconds": 7.157501900999989,
+      "images_per_second": 286.1333504799866,
+      "data_wait_seconds": 0.034119254999552595,
+      "peak_GiB": 0.6669735908508301,
+      "batch": 64,
+      "workers": 2,
+      "threads": 2,
+      "device": "Tesla T4",
+      "mode": "decode+aspect_preprocess+native_AMP_forward+6descriptor_pool",
+      "warmed_batches": 2,
+      "unique_source_samples": 256,
+      "full_extraction": false,
+      "training": false
+    },
+    {
+      "images": 2048,
+      "seconds": 7.103492408000022,
+      "images_per_second": 288.3088884129055,
+      "data_wait_seconds": 0.024280879999821536,
+      "peak_GiB": 0.6669735908508301,
+      "batch": 64,
+      "workers": 2,
+      "threads": 2,
+      "device": "Tesla T4",
+      "mode": "decode+aspect_preprocess+native_AMP_forward+6descriptor_pool",
+      "warmed_batches": 2,
+      "unique_source_samples": 256,
+      "full_extraction": false,
+      "training": false
+    }
+  ],
+  "utilization_samples": [
+    {
+      "elapsed": 0.001641221999989284,
+      "cpu_percent": 56.9,
+      "gpu_csv": "0, 0, 0, 157\n1, 0, 0, 3"
+    },
+    {
+      "elapsed": 1.0499399009999593,
+      "cpu_percent": 52.8,
+      "gpu_csv": "0, 0, 0, 157\n1, 0, 0, 3"
+    },
+    {
+      "elapsed": 2.097616098000003,
+      "cpu_percent": 60.5,
+      "gpu_csv": "0, 10, 0, 641\n1, 0, 0, 487"
+    },
+    {
+      "elapsed": 3.1828026769999838,
+      "cpu_percent": 96.5,
+      "gpu_csv": "0, 0, 0, 887\n1, 5, 1, 731"
+    },
+    {
+      "elapsed": 4.233162206999964,
+      "cpu_percent": 75.8,
+      "gpu_csv": "0, 98, 71, 1277\n1, 99, 69, 1123"
+    },
+    {
+      "elapsed": 5.327713410000001,
+      "cpu_percent": 99.8,
+      "gpu_csv": "0, 96, 70, 1277\n1, 99, 70, 1123"
+    },
+    {
+      "elapsed": 6.421759943999973,
+      "cpu_percent": 100.0,
+      "gpu_csv": "0, 99, 71, 1277\n1, 97, 69, 1123"
+    },
+    {
+      "elapsed": 7.515780307,
+      "cpu_percent": 100.0,
+      "gpu_csv": "0, 99, 70, 1277\n1, 87, 63, 1123"
+    },
+    {
+      "elapsed": 8.621803045999968,
+      "cpu_percent": 100.0,
+      "gpu_csv": "0, 99, 71, 1277\n1, 97, 69, 1123"
+    },
+    {
+      "elapsed": 9.710787300999982,
+      "cpu_percent": 99.8,
+      "gpu_csv": "0, 98, 70, 1277\n1, 92, 66, 1123"
+    },
+    {
+      "elapsed": 10.81581369099996,
+      "cpu_percent": 100.0,
+      "gpu_csv": "0, 96, 69, 1277\n1, 99, 68, 1123"
+    },
+    {
+      "elapsed": 11.883970935999969,
+      "cpu_percent": 33.0,
+      "gpu_csv": "0, 0, 0, 1277\n1, 0, 0, 1123"
+    },
+    {
+      "elapsed": 12.925932052000007,
+      "cpu_percent": 14.2,
+      "gpu_csv": "0, 0, 0, 157\n1, 0, 0, 3"
+    }
+  ],
+  "full_cache_bytes": 1207996416,
+  "single_worker_conservative_full_extract_seconds": 458.0941011598997,
+  "measured_sum_rate_full_extract_projection_seconds": 228.17959948874832,
+  "two_workers_extraction_seconds_with_50percent_margin": 342.2693992331225,
+  "measured_deployment_single_branch_29248_seconds_projection": 102.21807402365609,
+  "not_official_A10_deployment_proof": true,
+  "full_extraction_started": false,
+  "training_started": false
+}
