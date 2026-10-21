@@ -1,3 +1,9 @@
+> ACTIVE: private rayyannmerchant/upar2027-dinov3-frozen-threefold v1 RUNNING.
+> Runtime source8d7a1e7; reported GPU gates passed before launch. No duplicate run.
+> Frozen131076-descriptor cache plus3source-onlyheads/fixedensemble; results pending.
+> Initial post-gate quota10.83h; provider6600s within cumulative2h diagnostic cap.
+> No all-domain training/fine-tuning/upload in this job;1003877 preserved.
+
 > DINOv3 short GPU gate COMPLETE: exact FP32/AMP parity,286/288images/s,0.667GiB/GPU.
 > Reported before full extraction;10.83GPUh remain. Frozen3fold job being prepared.
 > All-domain training/upload remain gated; accepted1003877 preserved.
