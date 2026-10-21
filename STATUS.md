@@ -1,10 +1,17 @@
-> Active work: user authorized one equal-domain sampling threefold comparison
-> against locked baseline4b60ffc. Private kernel v1 RUNNING. Hard3h cap,
-> >=8GPUh reserve, prelaunch quota12.50h. No all-domain retraining or upload.
-> Baseline LODO report/results remain unchanged. See LODO_SAMPLING_COMPARISON.md
-> and reports/lodo/equal_domain for controls, adoption rule and new receipts.
-> Actual kernel: rayyannmerchant/upar2027-lodo-equal-domain-comparison; sourcebe2a8f0.
-> Do not duplicate a queued/running job. GPU gates/epochs/results remain pending.
+# Current status — equal-domain comparison complete, October21,2026
+
+Single controlled threefold comparison v1 COMPLETE; all3six epochs and independent
+metric/calibration/config/split/exposure checks passed. **Retain original sampler.**
+Calibrated macro .797260 -> .796089; worst .777228 -> .776778; no convincing gain.
+PA .797565, PETA .776778, Market .813926. Actual session1.519h;10.97GPUh remain.
+No final all-domain retraining or competition upload launched. Accepted1003877
+and locked baseline4b60ffc remain unchanged. See LODO_SAMPLING_COMPARISON.md and
+reports/lodo/equal_domain/results for the reviewed decision and deadline plan.
+
+The controlled comparison is complete. Academic materials and portal submission
+are not claimed complete; human/team fields and exact cutoffs remain unverified.
+
+## Preserved baseline status and production evidence
 
 # Status — three-domain LODO complete, 2026-10-20
 

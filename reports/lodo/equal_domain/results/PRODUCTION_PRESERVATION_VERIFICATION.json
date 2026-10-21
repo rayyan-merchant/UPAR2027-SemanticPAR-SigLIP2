@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-10-21T01:35:16.415529+00:00",
+  "submission_id": 1003877,
+  "checks": {
+    "submission/UPAR2027_SemanticPAR_SigLIP2.zip": {
+      "bytes": 358029220,
+      "sha256": "76df2273852daa15cf968bcb9384c5e1602ff0bd76dde49adfa879d814f86308",
+      "unchanged": true
+    },
+    "kaggle-v4-artifacts/runs/siglip2/best.pt": {
+      "bytes": 358019343,
+      "sha256": "18a48956eac97d16709e355d57e747a9944c872f844e20645d1dc5aae86ae0d6",
+      "unchanged": true
+    },
+    "kaggle-v4-artifacts/runs/siglip2/last.pt": {
+      "bytes": 972084825,
+      "sha256": "64d23096ce17db94f667055c65dfddbf3861844c4e8867e64186ed2eb9259f74",
+      "unchanged": true
+    },
+    "kaggle-v4-artifacts/runs/siglip2/calibration.json": {
+      "bytes": 4870,
+      "sha256": "84c7a5cd33ca433ceabb9d2014da0b58d85cd5a4c0399bc2b62035cd85c8e12d",
+      "unchanged": true
+    }
+  }
+}

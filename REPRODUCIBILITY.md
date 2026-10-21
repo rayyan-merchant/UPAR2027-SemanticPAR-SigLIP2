@@ -48,3 +48,8 @@ Sources:
 ## Completed archive-based threefold diagnostics
 
 Runtime e994492; private kernel upar2027-threefold-archives-resource-safe v1. See LODO_EVALUATION.md and reports/lodo/THREEFOLD_SUBMISSION_RECEIPT.json. Reproduce independent analysis with `python scripts/summarize_lodo.py --artifacts ../lodo/threefold-v2-results/lodo`, then `python scripts/finalize_lodo_report.py --repo . --artifacts ../lodo/threefold-v2-results/lodo`. The second command applies the reviewed recommendation; neither command trains or accesses competition data. Full private artifacts are required; weights remain server-locked and remote-only.
+
+
+## Controlled equal-domain comparison completed
+
+Runtime be2a8f0, private upar2027-lodo-equal-domain-comparison v1. Run `python scripts/compare_lodo_sampling.py --artifacts ../lodo/equal-domain-v1-results/lodo` with private diagnostic artifacts. It verifies the31file baseline lock, same source frequencies/BCE/config except sampling instrumentation, exact target/source scores and source-only threshold refits, plus measured exposure/unique-image bounds. Aggregate outputs use reports/lodo/equal_domain/results; never run default summarizer paths over locked baseline reports. The reviewed final report includes interpretation and the deadline plan. Retain original sampler; no improved production model or upload resulted.

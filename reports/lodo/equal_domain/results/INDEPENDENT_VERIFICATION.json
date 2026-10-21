@@ -1,0 +1,70 @@
+{
+  "checks": [
+    {
+      "held_out": "PA100k",
+      "metric_reproduction_passed": true,
+      "local_lock_files_checked": [
+        "PA100k\\calibration.json",
+        "PA100k\\FOLD_CONFIG.json",
+        "PA100k\\SOURCE_EVALUATION.json",
+        "PA100k\\splits\\sealed_target_evaluation.csv",
+        "PA100k\\splits\\source_calibration.csv",
+        "PA100k\\splits\\source_selection.csv",
+        "PA100k\\splits\\source_train.csv",
+        "PA100k\\splits\\LODO_SPLIT_RECEIPT.json"
+      ],
+      "checkpoint_lock_verified_by_remote_evaluation_only": [
+        "PA100k/training/best.pt"
+      ],
+      "target_prediction_sha256": "6ce6fc5d234c6be039013859d51890d67141ab286c48a934553ee257884144d3"
+    },
+    {
+      "held_out": "PETA",
+      "metric_reproduction_passed": true,
+      "local_lock_files_checked": [
+        "PETA\\calibration.json",
+        "PETA\\FOLD_CONFIG.json",
+        "PETA\\SOURCE_EVALUATION.json",
+        "PETA\\splits\\sealed_target_evaluation.csv",
+        "PETA\\splits\\source_calibration.csv",
+        "PETA\\splits\\source_selection.csv",
+        "PETA\\splits\\source_train.csv",
+        "PETA\\splits\\LODO_SPLIT_RECEIPT.json"
+      ],
+      "checkpoint_lock_verified_by_remote_evaluation_only": [
+        "PETA/training/best.pt"
+      ],
+      "target_prediction_sha256": "362b158d4f8c70cb3d6dbbf57dd880a3aac895eedcac30ec1bcade19cfa82c8b"
+    },
+    {
+      "held_out": "Market1501",
+      "metric_reproduction_passed": true,
+      "local_lock_files_checked": [
+        "Market1501\\calibration.json",
+        "Market1501\\FOLD_CONFIG.json",
+        "Market1501\\SOURCE_EVALUATION.json",
+        "Market1501\\splits\\sealed_target_evaluation.csv",
+        "Market1501\\splits\\source_calibration.csv",
+        "Market1501\\splits\\source_selection.csv",
+        "Market1501\\splits\\source_train.csv",
+        "Market1501\\splits\\LODO_SPLIT_RECEIPT.json"
+      ],
+      "checkpoint_lock_verified_by_remote_evaluation_only": [
+        "Market1501/training/best.pt"
+      ],
+      "target_prediction_sha256": "64222270c239a7fa5b2827222c4776265a6b8787f9b5c332274ac03659dd505c"
+    }
+  ],
+  "summary": {
+    "target_raw": {
+      "macro": 0.7866937733238458,
+      "worst": 0.7658802233438041,
+      "macro_mean_image_F1_score": 0.7843007805305584
+    },
+    "target_calibrated": {
+      "macro": 0.7960893269758397,
+      "worst": 0.7767775920270255,
+      "macro_mean_image_F1_score": 0.7935419359796736
+    }
+  }
+}
