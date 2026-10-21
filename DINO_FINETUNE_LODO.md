@@ -31,3 +31,7 @@ The suite runner took 4034.03 seconds (1.121 hours), plus the earlier failed boo
 | Market1501 | 0.780793 | 0.870436 | 0.749738 | 0.713047 |
 
 Complete raw/calibrated scores, alternative mean-image-F1 and unsupported-label conventions, group metrics and source exposure curves are retained in reports/competitive_final/candidate_b. The exact organizer scorer remains private. The measured mA gain supports further scientific interest, but does not justify bypassing the declared advancement rule or guarantee an official improvement.
+
+## Subsequent separate exploratory authorization
+
+The negative LODO advancement decision above remains preserved. The user subsequently authorized one final all-domain B run initialized with the verified pretrained backbone and A frozen head. Version1 stopped before training due to the annotation audit bug; version2 with the tested technical fix is RUNNING. See FINAL_B_EXECUTION.md and FINAL_B_RECOVERY.md. This is separate competition development, not a reversal of the research gate.

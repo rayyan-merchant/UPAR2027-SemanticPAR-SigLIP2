@@ -1,3 +1,9 @@
+# Final B v2: running after tested preflight fix
+
+Private rayyannmerchant/upar2027-candidate-b-final-all-domain v2 verified RUNNING at2026-10-21T16:45:15UTC. Sourcef0e13cc, script31dcd2e19803a3451e217b52d62e3d88e2fc217af1a7e70323fac202c7eda572. V1failed before staging/training despite25cloudtests passing: repeated compressed-NPZ label access per annotation row. Fixed by loading members once and vectorizing the same identity checks; full131076-row audit passed locally in28.44s,8focusedtests passed. See FINAL_B_RECOVERY.md. Remainingquota7.61hbeforev2; no artificial trainingwallcap; six reference plus up to two source-only conditional epochs unchanged. V2cloudgate/epochs notyetobserved. Original1003877/A preserved; C stopped. Follow-up updated forv2.
+
+---
+
 # Final B: separately authorized all-domain run submitted
 
 Private rayyannmerchant/upar2027-candidate-b-final-all-domain v1 submitted once; QUEUED at15:44UTC, now verified RUNNING on2026-10-21 after primary-account credential refresh. Runtime source85b2c61; see FINAL_B_EXECUTION.md and FINAL_B_SUBMISSION_RECEIPT.json. Actual cloud backward gate/training not yet observed. Follow-up active. Research promotion gate remains failed; user separately authorizes exploratory final B. Fresh quota7.78h. Six local tests passed; cloud backward gate must pass before training. No arbitrary training wall-time cap. A/original preserved, C stopped. Official B upload remains conditional on deployment gates.

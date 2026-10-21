@@ -1,6 +1,6 @@
 {
   "kernel": "rayyannmerchant/upar2027-candidate-b-final-all-domain",
-  "status": "RUNNING",
+  "status": "ERROR",
   "script_sha256": "1d556df17b058c043a9aeaf5bfc27b39436d7ca9011b9b2ab91797ac2de414ba",
   "source_hashes": {
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
@@ -114,5 +114,8 @@
   "running_observed_at_utc": "2026-10-21T16:33Z",
   "cloud_backward_gate_observed": false,
   "cloud_epoch_completion_observed": false,
-  "primary_account_credential_refresh_succeeded": true
+  "primary_account_credential_refresh_succeeded": true,
+  "terminal_reason": "600-second pretraining watchdog; repeated NPZ decompression in new annotation audit",
+  "training_started": false,
+  "cloud_tests_passed": 25
 }
