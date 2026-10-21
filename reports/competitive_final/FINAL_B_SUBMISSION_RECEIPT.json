@@ -1,6 +1,6 @@
 {
   "kernel": "rayyannmerchant/upar2027-candidate-b-final-all-domain",
-  "status": "QUEUED",
+  "status": "RUNNING",
   "script_sha256": "1d556df17b058c043a9aeaf5bfc27b39436d7ca9011b9b2ab91797ac2de414ba",
   "source_hashes": {
     "dino/__init__.py": "d8fdea14a4dfa72f5bcfd6890b9540205a8b158086ace667d3b53d1215b6a799",
@@ -110,5 +110,9 @@
   "runtime_source_commit": "85b2c61",
   "verified_at_utc": "2026-10-21T15:44:10Z",
   "url": "https://www.kaggle.com/code/rayyannmerchant/upar2027-candidate-b-final-all-domain",
-  "observed_cloud_training_started": false
+  "observed_cloud_training_started": false,
+  "running_observed_at_utc": "2026-10-21T16:33Z",
+  "cloud_backward_gate_observed": false,
+  "cloud_epoch_completion_observed": false,
+  "primary_account_credential_refresh_succeeded": true
 }
