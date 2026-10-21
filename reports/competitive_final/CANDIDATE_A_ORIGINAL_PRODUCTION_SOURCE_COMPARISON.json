@@ -1,0 +1,13 @@
+{
+  "original_production_calibrated_selection": {
+    "Challenge_Avg": 0.8650353025092095,
+    "mA": 0.8557121616922778,
+    "Label_F1": 0.6352624728382202,
+    "Inst_Acc": 0.7897653131875417,
+    "Inst_Prec": 0.8510157622600206,
+    "Inst_Rec": 0.8999321068357075,
+    "Inst_F1": 0.8747208716640268
+  },
+  "original_calibration_sha256": "84c7a5cd33ca433ceabb9d2014da0b58d85cd5a4c0399bc2b62035cd85c8e12d",
+  "caveat": "Original production model/calibration previously used these permitted validation labels; development comparison only"
+}

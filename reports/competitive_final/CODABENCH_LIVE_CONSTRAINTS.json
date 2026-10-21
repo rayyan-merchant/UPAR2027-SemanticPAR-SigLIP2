@@ -1,0 +1,22 @@
+{
+  "competition_id": 18180,
+  "phase_id": 30660,
+  "authenticated_account": "rayyanmerchant",
+  "observed_date_PKT": "2026-10-21",
+  "used_today": 0,
+  "max_per_day": 3,
+  "used_total": 1,
+  "max_total": 50,
+  "deadline_UTC": "2026-10-22T12:00:00Z",
+  "deadline_PKT": "2026-10-22T17:00:00+05:00",
+  "selection_rule": "Force_Last",
+  "organizer_text": "Your latest submission is the one shown on the leaderboard, not your best.",
+  "prior_entry_select_control_observed": false,
+  "preserved_entry_id": 1003877,
+  "preserved_entry_status": "Finished",
+  "new_uploads": 0,
+  "sources": [
+    "https://www.codabench.org/api/competitions/18180/",
+    "https://www.codabench.org/competitions/18180/#/participate-tab"
+  ]
+}

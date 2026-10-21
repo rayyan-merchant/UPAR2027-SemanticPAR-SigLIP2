@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "torch": "2.4.1+cpu",
+  "python": "3.11.16 (main, Aug 25 2026, 13:59:19) [MSC v.1944 64 bit (AMD64)]",
+  "images": 3,
+  "output_shape": [
+    3,
+    40
+  ],
+  "max_probability_abs_vs_saved_AMP": 0.0009067803621292114,
+  "mean_probability_abs_vs_saved_AMP": 8.366636361643032e-05,
+  "comparison_tolerance": 0.03,
+  "elapsed_seconds": 14.141000000061467,
+  "network_disabled": true,
+  "no_external_model_libraries": true,
+  "A10_runtime_verified": false,
+  "purpose": "Exact Python3.11/torch2.4.1 CPU correctness smoke; not GPU parity or deployment speed certificate"
+}

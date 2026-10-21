@@ -3,6 +3,17 @@ import torch
 from torch import nn
 from dino.v3_api import DinoV3Backbone,AttributeHead,pool_descriptors
 
+def choose_foundation_receipt(paths,expected_sha256):
+    """Identical pinned copies in dataset/kernel outputs are not new models."""
+    import json
+    if not paths:raise ValueError('Pinned public timm foundation unavailable')
+    for path in paths:
+        receipt=json.loads(path.read_text())
+        if receipt.get('repo')!='timm/vit_base_patch16_dinov3.lvd1689m' or receipt.get('revision')!='c6a5fb7d12bbd3cf3b0079253141c3332aaed7da' or receipt.get('actual_sha256')!=expected_sha256:
+            raise ValueError('Conflicting pretrained provenance')
+    preferred=[p for p in paths if 'upar2027-private-dinov3-foundation' in p.parts]
+    return sorted(preferred or paths)[0]
+
 def configure_trainable(backbone):
     backbone.requires_grad_(False)
     for block in backbone.blocks[-2:]:block.requires_grad_(True)

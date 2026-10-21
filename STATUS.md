@@ -1,3 +1,8 @@
+# Competitive final push: current status
+
+Candidate A is approved for exploratory official upload, but the upload reset and CodaBench reconnection timed out. No new ID, score or A10 runtime is confirmed. Original 1003877 remains preserved. B and C completed all three folds and independent metric/calibration audits; neither meets its predeclared advancement gate. No final B/C training is launched. See FINAL_CANDIDATES.md, CANDIDATE_A_ACCEPTANCE.md, DINO_FINETUNE_LODO.md and SIGLIP_ROBUSTNESS_ABLATION.md. Last checked Kaggle quota: 7.78 hours remaining.
+
+---
 # Current status: DINOv3 frozen threefold complete and audited
 
 Private upar2027-dinov3-frozen-threefold v2 COMPLETE, runtime source cbe514e.
@@ -247,3 +252,4 @@ Submission ZIP: outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip (same verifi
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`
 preserves the initial failed path audit. `reports/tests.xml` records local checks.
+

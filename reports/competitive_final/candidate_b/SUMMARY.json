@@ -1,0 +1,829 @@
+{
+  "passed_independent_audit": true,
+  "checks": [
+    {
+      "held_out": "PA100k",
+      "passed": true,
+      "available_source_lock_files_rehashed": 8,
+      "checkpoint_payload_rehashed_locally": false,
+      "source_thresholds_refit": true,
+      "original_sealed_CSV_hashes_verified": true,
+      "target_once": true
+    },
+    {
+      "held_out": "PETA",
+      "passed": true,
+      "available_source_lock_files_rehashed": 8,
+      "checkpoint_payload_rehashed_locally": false,
+      "source_thresholds_refit": true,
+      "original_sealed_CSV_hashes_verified": true,
+      "target_once": true
+    },
+    {
+      "held_out": "Market1501",
+      "passed": true,
+      "available_source_lock_files_rehashed": 8,
+      "checkpoint_payload_rehashed_locally": false,
+      "source_thresholds_refit": true,
+      "original_sealed_CSV_hashes_verified": true,
+      "target_once": true
+    }
+  ],
+  "domains": {
+    "PA100k": {
+      "metrics": {
+        "dino_raw": {
+          "Challenge_Avg": 0.7718216251576985,
+          "mA": 0.7274405199600069,
+          "Inst_F1": 0.8219699665752551,
+          "Inst_Prec": 0.8194347916809364,
+          "Inst_Rec": 0.8245208768466329,
+          "Inst_Acc": 0.7085378020737524,
+          "Label_F1": 0.4975153678366291,
+          "mean_image_F1": 0.8159827315787069,
+          "mean_image_Challenge_Avg": 0.7691719065994808,
+          "all_valid_safe_zero_mA": 0.7274405199600069,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7691719065994808
+        },
+        "dino_calibrated": {
+          "Challenge_Avg": 0.780643028952724,
+          "mA": 0.7501435755867218,
+          "Inst_F1": 0.8137276952785831,
+          "Inst_Prec": 0.7866535088295553,
+          "Inst_Rec": 0.8427319278736263,
+          "Inst_Acc": 0.6957698050553047,
+          "Label_F1": 0.4971414690108956,
+          "mean_image_F1": 0.80745009015315,
+          "mean_image_Challenge_Avg": 0.7777426309031501,
+          "all_valid_safe_zero_mA": 0.7501435755867218,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7777426309031501
+        },
+        "ensemble_raw": {
+          "Challenge_Avg": 0.7892455051012799,
+          "mA": 0.7562913282489582,
+          "Inst_F1": 0.825202369621219,
+          "Inst_Prec": 0.8180684596241375,
+          "Inst_Rec": 0.8324617957203577,
+          "Inst_Acc": 0.7156093322526329,
+          "Label_F1": 0.5353379319964191,
+          "mean_image_F1": 0.8198831097094083,
+          "mean_image_Challenge_Avg": 0.7868043931155206,
+          "all_valid_safe_zero_mA": 0.7562913282489582,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7868043931155206
+        },
+        "ensemble_calibrated": {
+          "Challenge_Avg": 0.8034479707414082,
+          "mA": 0.7903298027141702,
+          "Inst_F1": 0.817008968815729,
+          "Inst_Prec": 0.7870748129410257,
+          "Inst_Rec": 0.8493100658382053,
+          "Inst_Acc": 0.7030815823638276,
+          "Label_F1": 0.5367536080333848,
+          "mean_image_F1": 0.8112672655776074,
+          "mean_image_Challenge_Avg": 0.8006616778292045,
+          "all_valid_safe_zero_mA": 0.7903298027141702,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.8006616778292045
+        }
+      },
+      "groups": {
+        "dino_raw": {
+          "age": {
+            "mA": 0.644972473200891,
+            "label_F1": 0.5427971657831053,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.9064384589363192,
+            "label_F1": 0.8848654851459901,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7840420070885541,
+            "label_F1": 0.6848189132344743,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8910323306415813,
+            "label_F1": 0.8780201735866761,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.7534395817250908,
+            "label_F1": 0.5044549339918742,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.8544707452759166,
+            "label_F1": 0.7052932761087267,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.6593210674388823,
+            "label_F1": 0.3097553901075573,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.8517482334162176,
+            "label_F1": 0.8119647317995358,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7004023131756019,
+            "label_F1": 0.47102683775575666,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "dino_calibrated": {
+          "age": {
+            "mA": 0.686457583837528,
+            "label_F1": 0.5483192522093338,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.9064384589363192,
+            "label_F1": 0.8848654851459901,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7912262465448566,
+            "label_F1": 0.6801640093151886,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8910323306415813,
+            "label_F1": 0.8780201735866761,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.7867866575820054,
+            "label_F1": 0.4918121621137268,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.8654675926735511,
+            "label_F1": 0.713384723195515,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.6843486714971657,
+            "label_F1": 0.31949740135591104,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.8392071101554541,
+            "label_F1": 0.8122916574971369,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7155429961618609,
+            "label_F1": 0.47272810346082983,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "ensemble_raw": {
+          "age": {
+            "mA": 0.6523199168447427,
+            "label_F1": 0.5459278627263617,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.92122585949031,
+            "label_F1": 0.9012594458438287,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7870558500322874,
+            "label_F1": 0.6959461571387622,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8948510884607023,
+            "label_F1": 0.8824211502782932,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.7725294961202108,
+            "label_F1": 0.5249812935335499,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.858075006916355,
+            "label_F1": 0.7073430294430649,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7200971482188786,
+            "label_F1": 0.39680890835001964,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.8676813141726476,
+            "label_F1": 0.8009071189290173,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7224983028091002,
+            "label_F1": 0.5067149868470671,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "ensemble_calibrated": {
+          "age": {
+            "mA": 0.6978038367529714,
+            "label_F1": 0.5520866294219534,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.92122585949031,
+            "label_F1": 0.9012594458438287,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.8051925548699463,
+            "label_F1": 0.6919505893561756,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8948510884607023,
+            "label_F1": 0.8824211502782932,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.8234593334855246,
+            "label_F1": 0.5422156410906711,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.8790243657467129,
+            "label_F1": 0.7234770704996578,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7521028697167292,
+            "label_F1": 0.3863191115436036,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.8775519389032935,
+            "label_F1": 0.7907388159837158,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7494502607533388,
+            "label_F1": 0.5013960669600986,
+            "attributes_with_zero_positive_support": []
+          }
+        }
+      },
+      "best_epoch": 6,
+      "source_selection_score": 0.822168876650575,
+      "runtime_seconds": 947.9577657740001,
+      "updates_attempted": 1752,
+      "updates_successful": 1752,
+      "amp_skips": 0
+    },
+    "PETA": {
+      "metrics": {
+        "dino_raw": {
+          "Challenge_Avg": 0.743944794079408,
+          "mA": 0.7023205025289434,
+          "Inst_F1": 0.7908138005784026,
+          "Inst_Prec": 0.8140089991231739,
+          "Inst_Rec": 0.7689038732662169,
+          "Inst_Acc": 0.6682161651679102,
+          "Label_F1": 0.49601225373706975,
+          "mean_image_F1": 0.7835423919708545,
+          "mean_image_Challenge_Avg": 0.7407115266404894,
+          "all_valid_safe_zero_mA": 0.7023205025289434,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7407115266404894
+        },
+        "dino_calibrated": {
+          "Challenge_Avg": 0.7524571269291189,
+          "mA": 0.7256449658490245,
+          "Inst_F1": 0.7813266956663216,
+          "Inst_Prec": 0.7660659186186976,
+          "Inst_Rec": 0.7972078502345629,
+          "Inst_Acc": 0.6545216848911376,
+          "Label_F1": 0.5036231872165381,
+          "mean_image_F1": 0.7744826424283608,
+          "mean_image_Challenge_Avg": 0.7492688322174683,
+          "all_valid_safe_zero_mA": 0.7256449658490245,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7492688322174683
+        },
+        "ensemble_raw": {
+          "Challenge_Avg": 0.7721232402894542,
+          "mA": 0.7450770874441044,
+          "Inst_F1": 0.8012068941629257,
+          "Inst_Prec": 0.8159838366430353,
+          "Inst_Rec": 0.7869556337673528,
+          "Inst_Acc": 0.6843364890650543,
+          "Label_F1": 0.5516258437150866,
+          "mean_image_F1": 0.7950712340872582,
+          "mean_image_Challenge_Avg": 0.7692627406369719,
+          "all_valid_safe_zero_mA": 0.7450770874441044,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7692627406369719
+        },
+        "ensemble_calibrated": {
+          "Challenge_Avg": 0.7813556540483124,
+          "mA": 0.7703842463471625,
+          "Inst_F1": 0.7926440745278068,
+          "Inst_Prec": 0.7750979098135496,
+          "Inst_Rec": 0.8110030362507742,
+          "Inst_Acc": 0.6714646699782417,
+          "Label_F1": 0.5474137416421874,
+          "mean_image_F1": 0.7865527732522516,
+          "mean_image_Challenge_Avg": 0.7783845560947755,
+          "all_valid_safe_zero_mA": 0.7703842463471625,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7783845560947755
+        }
+      },
+      "groups": {
+        "dino_raw": {
+          "age": {
+            "mA": 0.6327756157372307,
+            "label_F1": 0.47406347351317835,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.8524542553483463,
+            "label_F1": 0.835113484646195,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7739110759521228,
+            "label_F1": 0.6284324849598509,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.9113003449528541,
+            "label_F1": 0.8019689511548656,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.716053688733667,
+            "label_F1": 0.5158685152478518,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.8729294557426523,
+            "label_F1": 0.7344398340248963,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.6604485024275344,
+            "label_F1": 0.36545068503941264,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.6544978814736095,
+            "label_F1": 0.6497193779796695,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.6818107826328375,
+            "label_F1": 0.4572421689662468,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "dino_calibrated": {
+          "age": {
+            "mA": 0.6641422343503922,
+            "label_F1": 0.4780181622514514,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.8569841838818144,
+            "label_F1": 0.8416571147863108,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.8132066822372672,
+            "label_F1": 0.6180733442334209,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.902410037979481,
+            "label_F1": 0.8245398773006135,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.747410908292068,
+            "label_F1": 0.5156549372149563,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.8984037708959689,
+            "label_F1": 0.7224334600760456,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.6813159748088932,
+            "label_F1": 0.37594658969661965,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.656032456893825,
+            "label_F1": 0.6494154848443512,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.6958332760883111,
+            "label_F1": 0.4939946448832643,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "ensemble_raw": {
+          "age": {
+            "mA": 0.6414719355432514,
+            "label_F1": 0.49006574509814466,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.8734550446156418,
+            "label_F1": 0.8595178719866999,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.8034527817927369,
+            "label_F1": 0.6577827881757886,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.9054147926248084,
+            "label_F1": 0.8178913738019169,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.7632520956554552,
+            "label_F1": 0.5972382056755036,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.860685284893934,
+            "label_F1": 0.6907630522088354,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7389757497170821,
+            "label_F1": 0.4467254976923984,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.6795375931419836,
+            "label_F1": 0.6673938584367691,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.6885889785734829,
+            "label_F1": 0.4781927386991705,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "ensemble_calibrated": {
+          "age": {
+            "mA": 0.6839178430320295,
+            "label_F1": 0.5137383786198159,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.8734550446156418,
+            "label_F1": 0.8595178719866999,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.8384813461854296,
+            "label_F1": 0.631615718839975,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8836739649302301,
+            "label_F1": 0.8294402820625827,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.7961595197184378,
+            "label_F1": 0.5912135495545164,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_length": {
+            "mA": 0.8621532898171329,
+            "label_F1": 0.6811023622047244,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7631849373883904,
+            "label_F1": 0.41589156578694525,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_type": {
+            "mA": 0.6795375931419836,
+            "label_F1": 0.6673938584367691,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7115362630610436,
+            "label_F1": 0.5340755512166077,
+            "attributes_with_zero_positive_support": []
+          }
+        }
+      },
+      "best_epoch": 5,
+      "source_selection_score": 0.8416363981019196,
+      "runtime_seconds": 3265.995018737,
+      "updates_attempted": 8346,
+      "updates_successful": 8346,
+      "amp_skips": 0
+    },
+    "Market1501": {
+      "metrics": {
+        "dino_raw": {
+          "Challenge_Avg": 0.8110444115233713,
+          "mA": 0.7806275622653275,
+          "Inst_F1": 0.8439277270761385,
+          "Inst_Prec": 0.8501749116723598,
+          "Inst_Rec": 0.8377716828546212,
+          "Inst_Acc": 0.7411943334746834,
+          "Label_F1": 0.503898396772352,
+          "mean_image_F1": 0.8396798541846336,
+          "mean_image_Challenge_Avg": 0.8090776244073297,
+          "all_valid_safe_zero_mA": 0.7372042870821695,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7851123263680634
+        },
+        "dino_calibrated": {
+          "Challenge_Avg": 0.8173435500317346,
+          "mA": 0.799334923112062,
+          "Inst_F1": 0.8361823311267178,
+          "Inst_Prec": 0.812817870177513,
+          "Inst_Rec": 0.8609297692828499,
+          "Inst_Acc": 0.7284497013329495,
+          "Label_F1": 0.5123275482937938,
+          "mean_image_F1": 0.8317363913942006,
+          "mean_image_Challenge_Avg": 0.8152138273191788,
+          "all_valid_safe_zero_mA": 0.7524113525271339,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7900878003283315
+        },
+        "ensemble_raw": {
+          "Challenge_Avg": 0.8170498623663974,
+          "mA": 0.7896698782639222,
+          "Inst_F1": 0.8463967190069811,
+          "Inst_Prec": 0.8589445046791018,
+          "Inst_Rec": 0.834210260513578,
+          "Inst_Acc": 0.7470531918763782,
+          "Label_F1": 0.5315784585763865,
+          "mean_image_F1": 0.8427880277387015,
+          "mean_image_Challenge_Avg": 0.8153647537489912,
+          "all_valid_safe_zero_mA": 0.7451917807751541,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7909908020736689
+        },
+        "ensemble_calibrated": {
+          "Challenge_Avg": 0.8227196377289393,
+          "mA": 0.8056028389276577,
+          "Inst_F1": 0.8405795943955311,
+          "Inst_Prec": 0.8226373319838504,
+          "Inst_Rec": 0.8593219730068072,
+          "Inst_Acc": 0.7364886500869002,
+          "Label_F1": 0.5326259790234416,
+          "mean_image_F1": 0.8366633676005897,
+          "mean_image_Challenge_Avg": 0.820839376084691,
+          "all_valid_safe_zero_mA": 0.7581355446962378,
+          "all_valid_safe_zero_mean_image_Challenge_Avg": 0.7954661030082313
+        }
+      },
+      "groups": {
+        "dino_raw": {
+          "age": {
+            "mA": 0.7616740666885816,
+            "label_F1": 0.4367726718806713,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.9383435979503096,
+            "label_F1": 0.9304841763592102,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7575379378803179,
+            "label_F1": 0.6123938177529014,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8767205212756279,
+            "label_F1": 0.9681255161023947,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.8374200618806228,
+            "label_F1": 0.5175063756834314,
+            "attributes_with_zero_positive_support": [
+              "UpperBody-Color-Brown",
+              "UpperBody-Color-Orange",
+              "UpperBody-Color-Pink"
+            ]
+          },
+          "lower_length": {
+            "mA": 0.8666239121255743,
+            "label_F1": 0.8534722938809205,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7173375259102579,
+            "label_F1": 0.34703732669575643,
+            "attributes_with_zero_positive_support": [
+              "LowerBody-Color-Orange",
+              "LowerBody-Color-Purple",
+              "LowerBody-Color-Red"
+            ]
+          },
+          "lower_type": {
+            "mA": 0.9307428233318561,
+            "label_F1": 0.8677790069850946,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.689541827036256,
+            "label_F1": 0.42925439462608017,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "dino_calibrated": {
+          "age": {
+            "mA": 0.7674779486403777,
+            "label_F1": 0.4201121100950564,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.9383435979503096,
+            "label_F1": 0.9304841763592102,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7663038264013146,
+            "label_F1": 0.6293894601702988,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.856447303466471,
+            "label_F1": 0.9708412687988441,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.8618252630304799,
+            "label_F1": 0.5277556841664601,
+            "attributes_with_zero_positive_support": [
+              "UpperBody-Color-Brown",
+              "UpperBody-Color-Orange",
+              "UpperBody-Color-Pink"
+            ]
+          },
+          "lower_length": {
+            "mA": 0.9005468300245961,
+            "label_F1": 0.903424356406624,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7531302846191232,
+            "label_F1": 0.3658825881791989,
+            "attributes_with_zero_positive_support": [
+              "LowerBody-Color-Orange",
+              "LowerBody-Color-Purple",
+              "LowerBody-Color-Red"
+            ]
+          },
+          "lower_type": {
+            "mA": 0.9313263286778952,
+            "label_F1": 0.8374621329106419,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.6966903486082872,
+            "label_F1": 0.42825277708436305,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "ensemble_raw": {
+          "age": {
+            "mA": 0.7600829138375801,
+            "label_F1": 0.4846954217958279,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.929356804551994,
+            "label_F1": 0.9206994713298089,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7816792668288879,
+            "label_F1": 0.6578036070037494,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8650543840574847,
+            "label_F1": 0.9605293785122868,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.8555085042411967,
+            "label_F1": 0.5397048355251531,
+            "attributes_with_zero_positive_support": [
+              "UpperBody-Color-Brown",
+              "UpperBody-Color-Orange",
+              "UpperBody-Color-Pink"
+            ]
+          },
+          "lower_length": {
+            "mA": 0.8652935398083001,
+            "label_F1": 0.8527227722772277,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7238985673998928,
+            "label_F1": 0.3698971407010124,
+            "attributes_with_zero_positive_support": [
+              "LowerBody-Color-Orange",
+              "LowerBody-Color-Purple",
+              "LowerBody-Color-Red"
+            ]
+          },
+          "lower_type": {
+            "mA": 0.9146649747330304,
+            "label_F1": 0.8743714921623607,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7039581992640613,
+            "label_F1": 0.48754458709974,
+            "attributes_with_zero_positive_support": []
+          }
+        },
+        "ensemble_calibrated": {
+          "age": {
+            "mA": 0.7807928095131417,
+            "label_F1": 0.47252447447134477,
+            "attributes_with_zero_positive_support": []
+          },
+          "gender": {
+            "mA": 0.9244645875204529,
+            "label_F1": 0.9146495125671463,
+            "attributes_with_zero_positive_support": []
+          },
+          "hair": {
+            "mA": 0.7972921766982409,
+            "label_F1": 0.66843171791142,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_length": {
+            "mA": 0.8461111260251539,
+            "label_F1": 0.9647113194467368,
+            "attributes_with_zero_positive_support": []
+          },
+          "upper_colors": {
+            "mA": 0.8704356599393955,
+            "label_F1": 0.5437625253867545,
+            "attributes_with_zero_positive_support": [
+              "UpperBody-Color-Brown",
+              "UpperBody-Color-Orange",
+              "UpperBody-Color-Pink"
+            ]
+          },
+          "lower_length": {
+            "mA": 0.8928040521297391,
+            "label_F1": 0.8930159043761731,
+            "attributes_with_zero_positive_support": []
+          },
+          "lower_colors": {
+            "mA": 0.7497379692935394,
+            "label_F1": 0.379373074168204,
+            "attributes_with_zero_positive_support": [
+              "LowerBody-Color-Orange",
+              "LowerBody-Color-Purple",
+              "LowerBody-Color-Red"
+            ]
+          },
+          "lower_type": {
+            "mA": 0.9230317992605831,
+            "label_F1": 0.8327058108814274,
+            "attributes_with_zero_positive_support": []
+          },
+          "accessories": {
+            "mA": 0.7130471075226575,
+            "label_F1": 0.4733510061953913,
+            "attributes_with_zero_positive_support": []
+          }
+        }
+      },
+      "best_epoch": 5,
+      "source_selection_score": 0.8369460104675892,
+      "runtime_seconds": 2988.550101815,
+      "updates_attempted": 8220,
+      "updates_successful": 8220,
+      "amp_skips": 0
+    }
+  },
+  "macro": 0.8025077541728867,
+  "worst": 0.7813556540483124,
+  "macro_mA": 0.78877229599633,
+  "delta_macro_vs_frozen": 0.0015439711728866268,
+  "advancement_gate_passed": false,
+  "new_all_domain_training_started": false,
+  "limitation": "Final backbone/checkpoint payloads remain private in Kaggle automatic output ZIP; local source metadata locks and target/source arrays verified, not a fresh local hash of final checkpoint bytes."
+}

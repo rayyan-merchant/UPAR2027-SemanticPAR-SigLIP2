@@ -27,3 +27,9 @@ Independent output namespaces candidate_a, candidate_b, candidate_c. Foundation 
 ## Completion order
 
 Finish A head and exact offline wrapper; run B/C source-only gates; launch bounded diagnostics if projections fit. Review B/C independently, then conditionally train justified final recipes. Verify and hash exact packages before any official entry. Record each score/runtime and preserve an upload slot for original-ZIP restoration when necessary. Academic deadline extension is user-reported; no academic portal submission is claimed.
+
+## Subsequent execution decisions
+
+The user confirmed rayyanmerchant1 is their own locally logged-in Chrome account. It was not allocated compute; both experiments completed on the primary account. Last checked primary quota is 7.78 hours remaining.
+
+The user explicitly directed that the first A10 runtime test occur through official submission and approved the exact Candidate A ZIP (SHA256 a54232287734b7e854ad472f1007c1830c081838121c4cd797bd343a686ac75d). This accepts an exploratory runtime risk; it does not certify the 240/300-second gate. The approved upload reset before an entry appeared, then the connected browser timed out. The original advancement criteria above remain unchanged: B and C did not pass, and no final all-domain B/C training is launched.

@@ -1,0 +1,368 @@
+{
+  "PA100k": [
+    {
+      "epoch": 1,
+      "loss": 0.23265300382123405,
+      "source_selection_score": 0.8026235199937692,
+      "draws": {
+        "PETA": 9085,
+        "Market1501": 9583
+      },
+      "unique_epoch": {
+        "Market1501": 6157,
+        "PETA": 5645
+      },
+      "unique_cumulative": {
+        "Market1501": 6157,
+        "PETA": 5645
+      },
+      "updates": 292,
+      "amp_skips": 0,
+      "epoch_seconds": 135.314480155
+    },
+    {
+      "epoch": 2,
+      "loss": 0.2196124760113216,
+      "source_selection_score": 0.8098172629488178,
+      "draws": {
+        "PETA": 8990,
+        "Market1501": 9678
+      },
+      "unique_epoch": {
+        "Market1501": 6188,
+        "PETA": 5630
+      },
+      "unique_cumulative": {
+        "Market1501": 8554,
+        "PETA": 7616
+      },
+      "updates": 292,
+      "amp_skips": 0,
+      "epoch_seconds": 136.14316279900004
+    },
+    {
+      "epoch": 3,
+      "loss": 0.21132637744876392,
+      "source_selection_score": 0.8129013992516414,
+      "draws": {
+        "PETA": 8930,
+        "Market1501": 9738
+      },
+      "unique_epoch": {
+        "Market1501": 6247,
+        "PETA": 5600
+      },
+      "unique_cumulative": {
+        "Market1501": 9483,
+        "PETA": 8268
+      },
+      "updates": 292,
+      "amp_skips": 0,
+      "epoch_seconds": 136.1349211810001
+    },
+    {
+      "epoch": 4,
+      "loss": 0.20634633205007466,
+      "source_selection_score": 0.8160702942833515,
+      "draws": {
+        "PETA": 9101,
+        "Market1501": 9567
+      },
+      "unique_epoch": {
+        "Market1501": 6114,
+        "PETA": 5678
+      },
+      "unique_cumulative": {
+        "Market1501": 9806,
+        "PETA": 8535
+      },
+      "updates": 292,
+      "amp_skips": 0,
+      "epoch_seconds": 136.501639147
+    },
+    {
+      "epoch": 5,
+      "loss": 0.20132663943697063,
+      "source_selection_score": 0.8187563006318449,
+      "draws": {
+        "Market1501": 9608,
+        "PETA": 9060
+      },
+      "unique_epoch": {
+        "Market1501": 6156,
+        "PETA": 5621
+      },
+      "unique_cumulative": {
+        "Market1501": 9923,
+        "PETA": 8621
+      },
+      "updates": 292,
+      "amp_skips": 0,
+      "epoch_seconds": 135.8690379379999
+    },
+    {
+      "epoch": 6,
+      "loss": 0.196768081854732,
+      "source_selection_score": 0.822168876650575,
+      "draws": {
+        "Market1501": 9621,
+        "PETA": 9047
+      },
+      "unique_epoch": {
+        "Market1501": 6202,
+        "PETA": 5661
+      },
+      "unique_cumulative": {
+        "Market1501": 9972,
+        "PETA": 8652
+      },
+      "updates": 292,
+      "amp_skips": 0,
+      "epoch_seconds": 135.89490415700016
+    }
+  ],
+  "PETA": [
+    {
+      "epoch": 1,
+      "loss": 0.18857446139463735,
+      "source_selection_score": 0.8306240557209467,
+      "draws": {
+        "PA100k": 65591,
+        "Market1501": 23410
+      },
+      "unique_epoch": {
+        "Market1501": 9031,
+        "PA100k": 44658
+      },
+      "unique_cumulative": {
+        "Market1501": 9031,
+        "PA100k": 44658
+      },
+      "updates": 1391,
+      "amp_skips": 0,
+      "epoch_seconds": 519.459131396
+    },
+    {
+      "epoch": 2,
+      "loss": 0.17500115845987912,
+      "source_selection_score": 0.8345842968025299,
+      "draws": {
+        "PA100k": 65917,
+        "Market1501": 23084
+      },
+      "unique_epoch": {
+        "Market1501": 9004,
+        "PA100k": 44527
+      },
+      "unique_cumulative": {
+        "Market1501": 9884,
+        "PA100k": 63960
+      },
+      "updates": 1391,
+      "amp_skips": 0,
+      "epoch_seconds": 523.015940975
+    },
+    {
+      "epoch": 3,
+      "loss": 0.16789001477746662,
+      "source_selection_score": 0.8378824805737847,
+      "draws": {
+        "Market1501": 23386,
+        "PA100k": 65615
+      },
+      "unique_epoch": {
+        "Market1501": 9044,
+        "PA100k": 44499
+      },
+      "unique_cumulative": {
+        "Market1501": 9987,
+        "PA100k": 72398
+      },
+      "updates": 1391,
+      "amp_skips": 0,
+      "epoch_seconds": 520.511706124
+    },
+    {
+      "epoch": 4,
+      "loss": 0.16070086576624482,
+      "source_selection_score": 0.838936769359136,
+      "draws": {
+        "PA100k": 65496,
+        "Market1501": 23505
+      },
+      "unique_epoch": {
+        "Market1501": 9082,
+        "PA100k": 44441
+      },
+      "unique_cumulative": {
+        "Market1501": 9998,
+        "PA100k": 76113
+      },
+      "updates": 1391,
+      "amp_skips": 0,
+      "epoch_seconds": 520.401591693
+    },
+    {
+      "epoch": 5,
+      "loss": 0.1556271204181483,
+      "source_selection_score": 0.8416363981019196,
+      "draws": {
+        "PA100k": 65455,
+        "Market1501": 23546
+      },
+      "unique_epoch": {
+        "Market1501": 9023,
+        "PA100k": 44459
+      },
+      "unique_cumulative": {
+        "Market1501": 10000,
+        "PA100k": 77735
+      },
+      "updates": 1391,
+      "amp_skips": 0,
+      "epoch_seconds": 520.614765966
+    },
+    {
+      "epoch": 6,
+      "loss": 0.15203857761390044,
+      "source_selection_score": 0.8402244172408095,
+      "draws": {
+        "PA100k": 65411,
+        "Market1501": 23590
+      },
+      "unique_epoch": {
+        "Market1501": 9049,
+        "PA100k": 44585
+      },
+      "unique_cumulative": {
+        "Market1501": 10000,
+        "PA100k": 78457
+      },
+      "updates": 1391,
+      "amp_skips": 0,
+      "epoch_seconds": 520.4635015819999
+    }
+  ],
+  "Market1501": [
+    {
+      "epoch": 1,
+      "loss": 0.19763959116390803,
+      "source_selection_score": 0.8188392098612105,
+      "draws": {
+        "PA100k": 65810,
+        "PETA": 21859
+      },
+      "unique_epoch": {
+        "PA100k": 44710,
+        "PETA": 7993
+      },
+      "unique_cumulative": {
+        "PA100k": 44710,
+        "PETA": 7993
+      },
+      "updates": 1370,
+      "amp_skips": 0,
+      "epoch_seconds": 476.977828671
+    },
+    {
+      "epoch": 2,
+      "loss": 0.18325551488321193,
+      "source_selection_score": 0.8245318727277413,
+      "draws": {
+        "PA100k": 65556,
+        "PETA": 22113
+      },
+      "unique_epoch": {
+        "PA100k": 44527,
+        "PETA": 7984
+      },
+      "unique_cumulative": {
+        "PA100k": 64088,
+        "PETA": 8609
+      },
+      "updates": 1370,
+      "amp_skips": 0,
+      "epoch_seconds": 476.28558993199977
+    },
+    {
+      "epoch": 3,
+      "loss": 0.17560992557691396,
+      "source_selection_score": 0.8308694941195436,
+      "draws": {
+        "PETA": 21644,
+        "PA100k": 66025
+      },
+      "unique_epoch": {
+        "PA100k": 44763,
+        "PETA": 7930
+      },
+      "unique_cumulative": {
+        "PA100k": 72505,
+        "PETA": 8668
+      },
+      "updates": 1370,
+      "amp_skips": 0,
+      "epoch_seconds": 476.393741891
+    },
+    {
+      "epoch": 4,
+      "loss": 0.16808936677492448,
+      "source_selection_score": 0.834330356162372,
+      "draws": {
+        "PA100k": 65922,
+        "PETA": 21747
+      },
+      "unique_epoch": {
+        "PA100k": 44662,
+        "PETA": 7964
+      },
+      "unique_cumulative": {
+        "PA100k": 76151,
+        "PETA": 8668
+      },
+      "updates": 1370,
+      "amp_skips": 0,
+      "epoch_seconds": 476.34524843200006
+    },
+    {
+      "epoch": 5,
+      "loss": 0.16319468855028496,
+      "source_selection_score": 0.8369460104675892,
+      "draws": {
+        "PETA": 21806,
+        "PA100k": 65863
+      },
+      "unique_epoch": {
+        "PA100k": 44611,
+        "PETA": 7993
+      },
+      "unique_cumulative": {
+        "PA100k": 77776,
+        "PETA": 8668
+      },
+      "updates": 1370,
+      "amp_skips": 0,
+      "epoch_seconds": 476.87651934899986
+    },
+    {
+      "epoch": 6,
+      "loss": 0.15882185612037017,
+      "source_selection_score": 0.8362515257640768,
+      "draws": {
+        "PA100k": 65847,
+        "PETA": 21822
+      },
+      "unique_epoch": {
+        "PA100k": 44626,
+        "PETA": 7967
+      },
+      "unique_cumulative": {
+        "PA100k": 78447,
+        "PETA": 8668
+      },
+      "updates": 1370,
+      "amp_skips": 0,
+      "epoch_seconds": 469.39046142100005
+    }
+  ]
+}

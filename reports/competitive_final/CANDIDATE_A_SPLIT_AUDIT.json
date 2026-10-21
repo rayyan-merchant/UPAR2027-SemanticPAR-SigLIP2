@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "original_annotation_sha256": {
+    "train": "e42084aa43b31d4074624265b8239437afc6e47a359a8c0129fae4513a77d424",
+    "val": "783be600e359052c9dafe856cbfa2aee45bbd4e3eac10309394e2388bcf7c2bc"
+  },
+  "partition_npz_sha256": "505abd0df1f62c222da7ae5b1f051a12f79fcdc57ad76769532180dda2a45d2d",
+  "partition_manifest_sha256": {
+    "source_selection": "8fea50be75aeb441f12344be24f30c58b8a7a770ce16f43dc40d9e7b01a1ca4b",
+    "source_calibration": "53aa464a6848f64632c60f028b3e91aee46338e09d49c42af6be0a6024f78dc8"
+  },
+  "cache_y_and_valid_masks_exact_original_annotations": true,
+  "exact_attribute_order": true,
+  "train_rows": 97669,
+  "original_validation_rows": 33407,
+  "selection_rows": 16744,
+  "calibration_rows": 16661,
+  "excluded_train_validation_pixel_duplicates": 2,
+  "cross_partition_pixel_overlap": 0,
+  "checkpoint_epoch": 30,
+  "checkpoint_sha256": "6c2943f3cff1c0c2840e327ee6feea5aa7a1bf6d2f9ce0bf779e40c5aa5ec4f4",
+  "checkpoint_score_is_maximum_recorded_selection": true,
+  "selection_delta_epoch25_to30": 0.0022683782191830204,
+  "selection_delta_epoch28_to30": 0.00022828531744956138,
+  "recommendation": "Still improving at cap; a predeclared five-epoch source-only extension is scientifically reasonable but not needed to audit this preserved epoch30 candidate. Do not overwrite epoch30 or extend based on official scores. No extension launched."
+}

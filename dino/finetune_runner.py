@@ -88,8 +88,8 @@ def main():
         write(BASE/'source_hashes.json',{str(p.relative_to(CODE)):digest(p) for folder in ['dino','upar','scripts','kaggle'] for p in (CODE/folder).glob('*.py')})
         WEIGHTS.mkdir(exist_ok=True)
         model_files=[p for p in find(inputs,'RECEIPT.json') if json.loads(p.read_text()).get('repo')=='timm/vit_base_patch16_dinov3.lvd1689m']
-        if len(model_files)!=1:raise ValueError('Require one pinned public timm DINOv3 dataset')
-        source=model_files[0].parent
+        from dino.limited_model import choose_foundation_receipt
+        source=choose_foundation_receipt(model_files,plan['foundation_sha256']).parent
         for name in ['model.safetensors','config.json','DINOV3_LICENSE.txt','TIMM_APACHE_2_0.txt','RECEIPT.json','NATIVE_CPU_PARITY.json','TARGET_RUNTIME_PROBE.json']:
             shutil.copyfile(source/name,WEIGHTS/name)
         if digest(WEIGHTS/'model.safetensors')!=plan['foundation_sha256']:raise ValueError('Official pretrained weights hash changed')
@@ -151,13 +151,13 @@ def main():
             p=plan['expected_splits'][h]['partitions'];train=p['source_train']['rows'];selection=p['source_selection']['rows'];post=p['source_calibration']['rows']+p['sealed_target_evaluation']['rows']
             return (6*train/ips*1.3+(6*selection+post)/(ips*2)+240)/3600
         hours={h:projected(h) for h in FOLDS};projection=max(hours['PETA'],hours['PA100k']+hours['Market1501'])+(time.monotonic()-begin)/3600
-        decision={'source_only':True,'images_per_second_conservative':ips,'projected_fold_hours':hours,'projected_session_hours':projection,'hard_cap_hours':2.25,'reserve_primary_account_hours':2,'frozen_source_heads_only':True,'allowed':projection<2.10,'projection_limits':'Measured concurrent51microbatches;1.3training margin, forward twice training throughput estimate,240s/fold I/O reserve'}
+        decision={'source_only':True,'images_per_second_conservative':ips,'projected_fold_hours':hours,'projected_session_hours':projection,'hard_cap_hours':2.216666666666667,'prior_failed_attempt_budget_seconds':120,'reserve_primary_account_hours':2,'frozen_source_heads_only':True,'allowed':projection<2.066666666666667,'projection_limits':'Measured concurrent51microbatches;1.3training margin, forward twice training throughput estimate,240s/fold I/O reserve'}
         write(SUITE/'RESOURCE_DECISION.json',decision)
-        if not decision['allowed']:raise RuntimeError('RESOURCE_CONFLICT: measured fine-tuning projection exceeds2.10h; no folds started')
+        if not decision['allowed']:raise RuntimeError('RESOURCE_CONFLICT: measured fine-tuning projection exceeds remaining resource cap; no folds started')
         if time.monotonic()-begin>600:raise TimeoutError('Source-only setup exceeded600s')
         write(BASE/'TRAINING_START.json',{'source_backward_feasibility_passed':True,'limited_source_only_training_started':True,'all_domain_training_started':False})
         status('source_only_limited_fine_tuning',training_started=True,all_domain_training_started=False)
-        jobs([('PA100k',['--head','PA100k'],0),('PETA',['--head','PETA'],1)],7800-(time.monotonic()-begin),
+        jobs([('PA100k',['--head','PA100k'],0),('PETA',['--head','PETA'],1)],7680-(time.monotonic()-begin),
              {h:SUITE/h/'PROGRESS.json' for h in FOLDS},{'PA100k':('Market1501',['--head','Market1501'],0)})
         results=[json.loads((SUITE/h/'EVALUATION.json').read_text()) for h in FOLDS]
         summary={}

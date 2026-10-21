@@ -3,6 +3,18 @@ from dino.v3_model import DinoV3Backbone
 from dino.model import AttributeHead
 from dino.limited_model import LimitedDINO
 
+def test_identical_foundation_receipts_are_deduplicated_but_conflicts_fail(tmp_path):
+    import json,pytest
+    from dino.limited_model import choose_foundation_receipt
+    dataset=tmp_path/'upar2027-private-dinov3-foundation';dataset.mkdir()
+    frozen=tmp_path/'frozen_output';frozen.mkdir()
+    receipt={'repo':'timm/vit_base_patch16_dinov3.lvd1689m','revision':'c6a5fb7d12bbd3cf3b0079253141c3332aaed7da','actual_sha256':'pinned'}
+    paths=[frozen/'RECEIPT.json',dataset/'RECEIPT.json']
+    for p in paths:p.write_text(json.dumps(receipt))
+    assert choose_foundation_receipt(paths,'pinned')==dataset/'RECEIPT.json'
+    paths[0].write_text(json.dumps({**receipt,'actual_sha256':'different'}))
+    with pytest.raises(ValueError):choose_foundation_receipt(paths,'pinned')
+
 def test_exact_last_two_blocks_and_norm_gradients():
     torch.set_num_threads(2);torch.manual_seed(2027)
     model=LimitedDINO(DinoV3Backbone(),AttributeHead())

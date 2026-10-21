@@ -1,0 +1,19 @@
+{
+  "candidate": "A",
+  "approved": true,
+  "approved_exact_zip_sha256": "a54232287734b7e854ad472f1007c1830c081838121c4cd797bd343a686ac75d",
+  "zip_bytes": 650810045,
+  "status": "UPLOAD_NOT_CONFIRMED_CONNECTION_TIMEOUT",
+  "submission_id": null,
+  "official_score": null,
+  "official_runtime": null,
+  "observations": [
+    "File upload reached 1 percent then reset to blank filename and 0 percent.",
+    "Last authenticated table showed only original 1003877 Finished; counters 0/3 daily and 1/50 total.",
+    "Reload failed with ERR_CONNECTION_TIMED_OUT. Browser console reported repeated WebSocket errors."
+  ],
+  "original_submission_preserved": 1003877,
+  "selection_policy": "Force_Last",
+  "deadline_utc": "2026-10-22T12:00:00Z",
+  "approval_persists_for_same_artifact": true
+}
