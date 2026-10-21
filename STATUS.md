@@ -1,3 +1,9 @@
+# Final B: separately authorized all-domain run prepared
+
+See FINAL_B_EXECUTION.md. Research promotion gate remains failed; user separately authorizes exploratory final B. Fresh quota7.78h. Six local tests passed; cloud backward gate must pass before training. No arbitrary training wall-time cap. A/original preserved, C stopped. Official B upload remains conditional on deployment gates.
+
+---
+
 # Competitive final push: current status
 
 Candidate A is approved for exploratory official upload, but the upload reset and CodaBench reconnection timed out. No new ID, score or A10 runtime is confirmed. Original 1003877 remains preserved. B and C completed all three folds and independent metric/calibration audits; neither meets its predeclared advancement gate. No final B/C training is launched. See FINAL_CANDIDATES.md, CANDIDATE_A_ACCEPTANCE.md, DINO_FINETUNE_LODO.md and SIGLIP_ROBUSTNESS_ABLATION.md. Last checked Kaggle quota: 7.78 hours remaining.
@@ -252,4 +258,5 @@ Submission ZIP: outputs/submission/UPAR2027_SemanticPAR_SigLIP2.zip (same verifi
 
 `reports/data_mapped/DATA_AUDIT.md` is the canonical data report; `reports/data/`
 preserves the initial failed path audit. `reports/tests.xml` records local checks.
+
 
