@@ -1,3 +1,9 @@
+> ACTIVE: DINOv3 frozen-threefold v2 RUNNING,sourcecbe514e.
+> Infrastructure-only retry restores original HF4.57.1 reference pin;all19tests required.
+> V1 ERROR before staging/training;failurelogs/XML preserved,no targetresults exist.
+> Quota10.81h atretrylaunch;provider6500/internal6200within original cumulative2hcap.
+> No model/preprocess/test/tolerance changes;no all-domaintraining or upload.
+
 > DINOv3 frozen v1 ERROR before staging/training:18tests passed,inheritedSigLIPHFparity failed.
 > Restore original Transformers4.57.1 reference pin;no model/test/tolerance changes.
 > Retry prepared under reduced cumulative cap;10.81GPUh remain. See reports/dino_v3/FAILED_V1_RECOVERY.md.
