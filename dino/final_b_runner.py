@@ -10,6 +10,18 @@ from dino.final_a import INDEX_SHA,LABEL_SHA,split_validation
 CODE=Path(__file__).resolve().parents[1]
 FOLD=SUITE/'all_domain'
 
+def load_label_arrays(path):
+    """NpzFile indexing decompresses whole members; materialize each exactly once."""
+    with np.load(path) as archive:
+        return {name:archive[name] for name in ['y','valid','domains']}
+
+def validate_annotation_alignment(index,labels,parsed,offset):
+    stop=offset+len(parsed)
+    if index['paths'][offset:stop]!=[r[0] for r in parsed]:raise ValueError('Original path alignment differs')
+    if not np.array_equal(labels['y'][offset:stop],np.stack([r[1] for r in parsed]),equal_nan=True):raise ValueError('Original label alignment differs')
+    if not np.array_equal(labels['valid'][offset:stop],np.stack([r[2] for r in parsed])):raise ValueError('Original mask alignment differs')
+    if not np.array_equal(labels['domains'][offset:stop],np.array([r[3] for r in parsed])):raise ValueError('Original domain alignment differs')
+
 def run_worker(probe=False):
     tag='probe' if probe else 'training'
     with (SUITE/(tag+'.log')).open('a',buffering=1) as log:
@@ -67,7 +79,8 @@ def main():
         shutil.copyfile(a/'best.pt',FOLD/'INIT_HEAD.pt')
         for name in ['INDEX.json','labels.npz','PARTITIONS.npz']:
             shutil.copyfile(a/name,SUITE/name)
-        index=json.loads((SUITE/'INDEX.json').read_text());labels=np.load(SUITE/'labels.npz');parts=np.load(SUITE/'PARTITIONS.npz')
+        status('auditing_source_metadata',training_started=False)
+        index=json.loads((SUITE/'INDEX.json').read_text());labels=load_label_arrays(SUITE/'labels.npz');parts=np.load(SUITE/'PARTITIONS.npz')
         if len(index['paths'])!=131076 or len(set(index['paths']))!=131076:raise ValueError('Annotation index identity differs')
         selection,cal=split_validation(index)
         if not np.array_equal(parts['source_train'],np.arange(97669)) or not np.array_equal(parts['source_selection'],selection) or not np.array_equal(parts['source_calibration'],cal):raise ValueError('A source partitions changed')
@@ -80,9 +93,7 @@ def main():
             path=annotations[0].parent/('annotations_'+name+'.csv')
             if digest(path)!=plan['expected_splits']['PA100k']['original_annotation_sha256'][name]:raise ValueError('Official CSV changed')
             parsed=load_rows(path);offset=len(rows)
-            for j,row in enumerate(parsed):
-                k=offset+j
-                if index['paths'][k]!=row[0] or not np.array_equal(labels['y'][k],row[1],equal_nan=True) or not np.array_equal(labels['valid'][k],row[2]) or labels['domains'][k]!=row[3]:raise ValueError('Original label/mask/domain alignment differs')
+            validate_annotation_alignment(index,labels,parsed,offset)
             with path.open(encoding='utf-8-sig',newline='') as f:
                 reader=csv.reader(f);h=next(reader)
                 if header is None:header=h
@@ -110,7 +121,7 @@ def main():
         status('source_backward_feasibility',training_started=False);run_worker(probe=True)
         probe=json.loads((SUITE/'all_domain_PROBE.json').read_text());ips=probe['images_per_second']
         projected=(8*97669/ips*1.35+(8*len(selection)+len(selection)+len(cal))/(ips*2)+600)/3600
-        decision={'measured_backward_images_per_second':ips,'peak_allocated_GiB':probe['peak_allocated_GiB'],'projected_max8_epoch_hours':projected,'quota_remaining_at_launch_hours':7.78,'reserve_hours':2,'artificial_training_wall_time_cap':None,'allowed':projected<5.78,'source_only':True,'extension_rule':'six mandatory; epoch7/8 only if preceding epoch is source best by>=1e-4'}
+        decision={'measured_backward_images_per_second':ips,'peak_allocated_GiB':probe['peak_allocated_GiB'],'projected_max8_epoch_hours':projected,'quota_remaining_at_launch_hours':7.61,'reserve_hours':2,'artificial_training_wall_time_cap':None,'allowed':projected<5.61,'source_only':True,'extension_rule':'six mandatory; epoch7/8 only if preceding epoch is source best by>=1e-4'}
         write(SUITE/'RESOURCE_DECISION.json',decision)
         if not decision['allowed']:raise RuntimeError('Quota reserve conflict; no training launched')
         if time.monotonic()-begin>600:raise TimeoutError('Pretraining setup exceeded600s')

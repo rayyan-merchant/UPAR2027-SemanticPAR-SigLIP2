@@ -25,3 +25,32 @@ def test_final_modules_compile_and_have_no_hidden_target_evaluation():
         source=Path(module.__file__).read_text()
         ast.parse(source)
         assert 'sealed_target_evaluation' not in source
+
+def test_npz_members_are_decompressed_once(monkeypatch):
+    import numpy as np
+    from dino import final_b_runner as runner
+    calls=[]
+    class Archive:
+        def __enter__(self):return self
+        def __exit__(self,*args):pass
+        def __getitem__(self,name):calls.append(name);return np.arange(5)
+    monkeypatch.setattr(runner.np,'load',lambda path:Archive())
+    labels=runner.load_label_arrays('unused.npz')
+    for i in range(100):
+        for name in ['y','valid','domains']:_=labels[name][i%5]
+    assert calls==['y','valid','domains']
+
+def test_vectorized_annotation_audit_keeps_all_identity_checks():
+    import numpy as np
+    from dino.final_b_runner import validate_annotation_alignment
+    labels={'y':np.array([[1.,0.],[0.,float('nan')]]),'valid':np.array([[True,True],[True,False]]),'domains':np.array(['PA100k','PETA'])}
+    index={'paths':['PA100k/a.jpg','PETA/b.jpg']}
+    rows=[(index['paths'][i],labels['y'][i].copy(),labels['valid'][i].copy(),labels['domains'][i]) for i in range(2)]
+    validate_annotation_alignment(index,labels,rows,0)
+    for field in ['y','valid','domains']:
+        bad={k:v.copy() for k,v in labels.items()}
+        if field=='y':bad[field][0,0]=0
+        elif field=='valid':bad[field][0,0]=False
+        else:bad[field][0]='PETA'
+        with pytest.raises(ValueError):validate_annotation_alignment(index,bad,rows,0)
+    with pytest.raises(ValueError):validate_annotation_alignment({'paths':list(reversed(index['paths']))},labels,rows,0)

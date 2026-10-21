@@ -1,0 +1,8 @@
+{
+  "sample_rows": 100,
+  "repeated_npz_decompression_seconds": 26.905667400103994,
+  "load_arrays_once_seconds": 0.2816449999809265,
+  "cached_array_access_seconds": 0.00026950007304549217,
+  "projected_old_131076_rows_seconds": 35266.87260136031,
+  "same_arrays": true
+}

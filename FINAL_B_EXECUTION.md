@@ -30,3 +30,6 @@ Private kernel prepared: rayyannmerchant/upar2027-candidate-b-final-all-domain. 
 
 Private version1 submitted once and verified QUEUED at2026-10-21T15:44UTC. Source85b2c61. No cloud throughput/gate/epoch result is claimed yet. Existing follow-up updated for final B and active; it must stay quiet on unchanged state. Provider timeout override omitted as requested.
 
+
+V1 failed before staging/training after25tests passed. The annotation audit repeatedly decompressed NPZ arrays per row; see FINAL_B_RECOVERY.md. Fixed full131076-row audit passed locally in28.44s;8focusedtests pass. Remainingquota7.61h; planned v2 preserves the method and all original/A artifacts. No training time cap added.
+

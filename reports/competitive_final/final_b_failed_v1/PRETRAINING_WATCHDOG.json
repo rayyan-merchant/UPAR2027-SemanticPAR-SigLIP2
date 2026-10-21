@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "training_started": false,
+  "error": "Pretraining wall-time exceeded; terminating job to release GPU",
+  "elapsed_seconds": 600.3067479650001,
+  "max_seconds": 600.0
+}
