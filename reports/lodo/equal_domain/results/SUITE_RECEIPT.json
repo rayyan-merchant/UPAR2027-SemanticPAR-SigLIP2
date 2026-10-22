@@ -1,9 +1,0 @@
-{
-  "completed_folds": [
-    "PA100k",
-    "PETA",
-    "Market1501"
-  ],
-  "all_folds_complete": true,
-  "submitted": false
-}

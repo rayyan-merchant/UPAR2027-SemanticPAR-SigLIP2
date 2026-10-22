@@ -1,0 +1,129 @@
+{
+  "seed": 2027,
+  "attributes": 40,
+  "data": {
+    "train_rows": 97669,
+    "validation_rows": 33407,
+    "final_selection_rows": 16744,
+    "final_calibration_rows": 16661,
+    "excluded_train_duplicate_validation_rows": 2
+  },
+  "siglip2": {
+    "foundation": "google/siglip2-base-patch16-naflex",
+    "max_patches": 256,
+    "epochs": 12,
+    "selected_epoch": 7,
+    "selected_weights": "EMA",
+    "warmup_epochs": 1,
+    "adapted_upper_blocks": 4,
+    "backbone_lr": 1e-05,
+    "head_lr": 0.0001,
+    "optimizer": "AdamW",
+    "ema_decay": 0.9995,
+    "microbatch": 16,
+    "accumulate": 4,
+    "sampling_alpha": 0.5
+  },
+  "lodo": {
+    "folds": [
+      "PA100k",
+      "PETA",
+      "Market1501"
+    ],
+    "epochs": 6,
+    "selection": "source only",
+    "calibration": "disjoint source only",
+    "initialization": "original foundation, no all-domain PAR weights"
+  },
+  "equal_sampling": {
+    "only_change": "sampling_alpha 0 instead of 0.5",
+    "source_domain_probability": 0.5,
+    "adoption_macro_gain": 0.003,
+    "adoption_worst_gain": 0.003,
+    "adopted": false
+  },
+  "dino_frozen": {
+    "foundation": "timm/vit_base_patch16_dinov3.lvd1689m",
+    "canvas": [
+      320,
+      160
+    ],
+    "registers": 4,
+    "spatial_patches": 200,
+    "descriptors": [
+      "CLS",
+      "spatial mean",
+      "head mean",
+      "upper mean",
+      "lower mean",
+      "spatial max"
+    ],
+    "head_lr": 0.0003,
+    "dropout": 0.2,
+    "batch": 128,
+    "max_epochs": 30,
+    "patience": 5
+  },
+  "ensemble": {
+    "siglip_raw_probability_weight": 0.75,
+    "dino_raw_probability_weight": 0.25,
+    "thresholds": "40 global thresholds fitted only on source calibration"
+  },
+  "dino_partial": {
+    "trainable_backbone": [
+      "blocks.10",
+      "blocks.11",
+      "norm"
+    ],
+    "backbone_lr": 5e-06,
+    "head_lr": 5e-05,
+    "weight_decay": 0.01,
+    "microbatch": 16,
+    "accumulate": 4,
+    "flip_probability": 0.5,
+    "lodo_epochs": 6,
+    "final_epochs": 8,
+    "selected_final_epoch": 8,
+    "advance_gain_over_frozen": 0.002,
+    "advancement_gate_passed": false
+  },
+  "robustness_augmentation": {
+    "down_up": {
+      "p": 0.3,
+      "scale": [
+        0.65,
+        1
+      ]
+    },
+    "gamma": {
+      "p": 0.2,
+      "range": [
+        0.9,
+        1.1
+      ]
+    },
+    "brightness": {
+      "p": 0.5,
+      "range": [
+        0.9,
+        1.1
+      ]
+    },
+    "jpeg": {
+      "p": 0.3,
+      "quality": [
+        60,
+        95
+      ]
+    },
+    "blur": {
+      "p": 0.15,
+      "sigma": [
+        0.2,
+        0.7
+      ]
+    },
+    "adopted": false
+  },
+  "metric_note": "Local Challenge_Avg averages per-domain harmonic mean of mA and instance-F1; primary instance-F1 is harmonic mean of mean-image precision and recall. Exact organizer edge cases remain uncertain."
+}

@@ -1,7 +1,0 @@
-{
-  "torch": "2.11.0+cu128",
-  "cuda": "12.8",
-  "gpu_count": 2,
-  "gpu": "Tesla T4",
-  "vram_bytes": 15636037632
-}

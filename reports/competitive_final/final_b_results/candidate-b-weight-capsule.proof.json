@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "tensor_records": 167,
-  "deployed_bytes": 342857059,
-  "deployed_sha256": "9752b481f4033fad78fd1c1e84163de6423d72730d3afcac5ebd38042b4b6873",
-  "capsule_bytes": 65134
-}

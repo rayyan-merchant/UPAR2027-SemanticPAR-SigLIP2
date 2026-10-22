@@ -1,7 +1,0 @@
-{
-  "candidate": "B final exploratory",
-  "phase": "failed",
-  "elapsed_seconds": 39.517740979999985,
-  "new_competition_submissions": 0,
-  "error": "ValueError: Pinned original SigLIP raw source predictions missing"
-}

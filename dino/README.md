@@ -1,6 +1,6 @@
 # DINOv3 complementary branch
 
-This directory contains the complementary visual representation, its regional attribute head, strict source-only experiments and separate A/B deployment wrappers. It is not an officially scored replacement for submission 1003877. [Architecture](../DINO_ARCHITECTURE.md) · [Frozen results](../DINO_LODO_RESULTS.md) · [B LODO](../DINO_FINETUNE_LODO.md)
+This directory contains the complementary visual representation, its regional attribute head, strict source-only experiments and separate A/B deployment wrappers. It is not an officially scored replacement for submission 1003877. [Methods and results](../assignment/EXPERIMENTS_AND_DECISIONS.md) · [Experiment settings](../configs/experiments.json)
 
 | Code | Responsibility |
 |---|---|
@@ -20,4 +20,4 @@ The canvas is 320x160. CLS plus four registers precede 200 spatial tokens. The h
 
 The earlier official DINOv2 fallback was cancelled when the legitimate timm DINOv3 route passed access and correctness gates. It has no completed comparative score. Its code/notices remain for provenance. Do not confuse the fallback implementation with the active DINOv3 backbone.
 
-Both A/B wrappers blend raw branch probabilities before source-only ensemble calibration. They do not blend thresholded or individually calibrated outputs. A/B trained weights remain private and are not included here. See [final B acceptance](../CANDIDATE_B_ACCEPTANCE.md) for its correctness pass and unresolved runtime gate.
+Both A/B wrappers blend raw branch probabilities before source-only ensemble calibration. They do not blend thresholded or individually calibrated outputs. A/B trained weights remain private and are not included here. Scientific comparisons and final model selection are described in the report. Internal acceptance records are retained privately.

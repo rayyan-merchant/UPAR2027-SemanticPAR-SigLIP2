@@ -1,33 +1,35 @@
-# Reproducing code checks and experimental results
+# Setup and reproduction
 
-## Reproduce the included results table
+## Review without data or a GPU
 
-From the repository root, run `python scripts/verify_assignment_results.py`. It reads official receipts and aggregate fold evaluations, checks numeric values and failed decision gates, and reproduces `assignment/RESULTS.csv`. This needs only Python's standard library, no models/data/network. It validates the transcription and arithmetic of retained reports, not raw image inference. `assignment/RESULTS.json` identifies the source evidence for each record.
+From the repository root, run:
 
-## Run CPU correctness checks
+```bash
+python scripts/verify_assignment_results.py
+```
 
-Install Python 3.11/3.12, torch 2.4.1 CPU and `requirements-dino.txt`, then `python -m pytest -q tests`. These are code/contract checks, not a claim of retrained accuracy or A10 timing. GPU/reference parity and environment receipts from actual jobs are retained in reports. To put pytest temporary files outside a full system drive, append `--basetemp <writable-path>`.
+This standard-library-only check validates the 73 published CSV rows, official score, fold macro/worst arithmetic and decision margins. It does not re-score raw private predictions. The scientific methods and measured values are summarized in the report, results table and `configs/experiments.json`.
 
-## Reproduce training with authorized private inputs
+## CPU correctness tests
 
-1. Obtain official UPAR Track 1 annotations/images and the official PETA mapping. Keep originals read-only. Run `python -m upar.inspect_data --help` and use the data-audit example in `docs/ORIGINAL_IMPLEMENTATION.md`.
-2. Obtain Google SigLIP2-Base-NaFlex and the maintainer-supported timm DINOv3 ViT-B/16 foundation under their original terms. The DINO safetensors SHA256 is `1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332`. Preserve provenance; do not substitute PAR-fine-tuned weights.
-3. Execute the native/reference preprocessing and model parity checks. Training CLI: `python -m upar.train --help`. Required data/parity/feasibility reports are intentional gates; a code-test pass does not bypass them. The original executed recipe is `reports/kaggle_v4/training/training_config.json`.
-4. For LODO, `scripts/prepare_lodo_diagnosis.py` builds disjoint source-training/selection/calibration and sealed-target manifests. `reports/lodo/EXPECTED_SPLITS.json` and later three-fold receipts identify the locked partitions. Do not use target labels for selection or thresholds. Full private split CSVs and sample-level arrays are not publicly distributed; recreating exact bytes requires the authorized annotations and recorded configuration/hash checks.
-5. Stage verified domain archives once with `scripts/build_private_archives.py` and `kaggle/archive_stage.py`; use private cloud inputs. Do not restore the old per-image mounted-copy loop. Staging, I/O and pretraining watchdogs remain mandatory.
-6. Baseline jobs are orchestrated by `kaggle/lodo_threefold_runner.py`. Frozen descriptors/heads use `dino/v3_runner.py` and `dino/v3_experiment.py`; B LODO uses `dino/finetune_runner.py` / `dino/v3_finetune.py`; C uses `kaggle/candidate_c_runner.py`. Their recorded plans/configurations and hashes, not generic CLI defaults, define the executed experiments. Re-running requires private input mounts, explicit quota/deadline review and a separately prepared cloud job.
-7. Final A and B code is in `dino/final_a.py` and `dino/final_b.py` / `final_b_runner.py`. B LODO must start from each source-only frozen head; only the separately authorized all-domain final run starts from A's all-domain head. Final B completed eight epochs with source-only extensions; no further extension was run.
+Use Python 3.12, torch 2.4.1 CPU and torchvision 0.19.1, then install `requirements-dino.txt` and run `python -m pytest -q tests`. The root README has complete installation commands. Tests use generated fixtures and small tensors; no cloud job or competition entry is created. `assignment/LOCAL_VERIFICATION.json` records the latest verified run.
 
-## Independently audit private prediction artifacts
+## Training with authorized inputs
 
-The retained audit scripts include `scripts/summarize_lodo.py`, `scripts/compare_lodo_sampling.py`, `scripts/analyze_dinov3_frozen.py` and generalization analysis. They need the corresponding private NPZ/CSV/checkpoint artifacts, which are deliberately absent from this public source bundle. Some historical scripts use recorded workspace paths or write default report directories. Run them in a copy with explicit output paths; never overwrite locked baseline reports. Read the script arguments before execution. Public independent-verification receipts state which locks/checkpoint bytes were checked locally and which were verified only by the remote evaluator.
+Obtain official UPAR Track 1 images/annotations and the official PETA filename mapping under their original terms. Keep originals read-only. `python -m upar.inspect_data --help` shows the data-audit arguments; `python -m upar.train --help` shows training arguments and required data/parity/feasibility gates. Settings used by the research are in `configs/experiments.json` and `configs/training.json`.
 
-## Reproduce offline inference and benchmark
+Use `scripts/prepare_lodo_diagnosis.py` to prepare source-training, source-selection, source-calibration and held-out partitions. It requires the authorized annotations and audited pixel manifest. The target domain must not enter training, source class frequencies, selection or calibration. Never initialize a LODO fold from an all-domain PAR checkpoint.
 
-Original SigLIP packaging is `python -m upar.package --help`. A uses `dino/ensemble_submission.py`; B uses `dino/ensemble_finetuned_submission.py` because B's fine-tuned descriptor path preserves FP32 rather than A's cached-feature FP16 round-trip. Copy the chosen wrapper as root `run.py`, include the original metadata and matching private model/calibration assets, then block network and optional model-library imports during verification. This repository does not include deployable trained weights, so it cannot produce the measured score from code alone.
+The original model is in `upar/model.py`; its masked balanced loss and square-root sampler are in `upar/train.py` and `upar/data.py`. DINOv3 and the six-descriptor head are in `dino/v3_model.py` and `dino/model.py`. Frozen heads use `dino/v3_experiment.py`; partial adaptation uses `dino/v3_finetune.py`. Final all-domain recipes are in `dino/final_a.py` and `dino/final_b.py`. Candidate C's fixed augmentation is in `upar/robustness.py`.
 
-`scripts/benchmark_offline_ensemble.py` measures a cold-process representative workload using explicit permitted source image paths, without labels. The executed B probe added progress and disk-serialization instrumentation; its failed timeout and exact-payload receipt are retained in `reports/competitive_final/final_b_results/runtime_v1`. It processed 26,624 images by 296.717 seconds before a 300-second timeout. There is no completed B full-workload runtime or A10 certificate. The official original submission's 109.91-second recorded inference is separate evidence. Never promote a T4 projection to an official A10 pass.
+For repeated folds, stage verified archives once using `kaggle/archive_stage.py`. Dataset-specific cloud runners require matching private input mounts, prepared experiment plans and hash-pinned source artifacts. Those operational inputs are intentionally not published; the runners are execution source, not a one-command recreation of the authors' private workspace. Internal launch/build/account helpers are excluded. CPU tests and the published metric table can be reviewed without them.
 
-## Evidence boundaries and privacy
+## Foundations and inference
 
-One seed and repeatedly inspected development targets limit generalization claims. Both local F1 conventions and unsupported-label sensitivities remain available. Missing private weights/data is an intentional licensing/privacy boundary, not an implicit claim that reproduction is turnkey. No tests, results verifier or document builder launches cloud training or submits to CodaBench.
+Use the official Google SigLIP2-Base-NaFlex foundation and the maintainer-supported timm DINOv3 ViT-B/16 checkpoint, not PAR-fine-tuned substitutes. The DINOv3 safetensors SHA256 is `1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332`. Follow original licenses and perform reference/native checks before optimization.
+
+The original inference API is `submission_template/run.py`; A uses `dino/ensemble_submission.py`, and B uses `dino/ensemble_finetuned_submission.py`. Both ensembles blend raw probabilities before a new source-only threshold vector. B preserves its fine-tuning FP32 descriptor path rather than A's frozen-cache FP16 round-trip. Actual trained checkpoints/calibration are not redistributed, so image-level prediction requires the matching authorized model artifacts.
+
+## Rebuild the report
+
+Install `requirements-report.txt`, then run `python scripts/build_assignment_report.py`. The editable source is `assignment/report_content.json`; the report must remain three pages. Internal lab notes, detailed execution logs and cloud receipts are retained outside the submitted repository.

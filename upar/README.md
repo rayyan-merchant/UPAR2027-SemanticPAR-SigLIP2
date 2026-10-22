@@ -1,6 +1,6 @@
 # SigLIP2 implementation guide
 
-This is the original officially evaluated branch. The model uses SigLIP2-Base-NaFlex, semantic attribute queries and masked attention over image patches, with a global residual. Original accepted submission: **1003877**, Challenge_Avg **0.770450**. [Task](../assignment/TASK_AND_APPROACH.md) · [Results](../TRAINING_RESULTS.md)
+This is the original officially evaluated branch. The model uses SigLIP2-Base-NaFlex, semantic attribute queries and masked attention over image patches, with a global residual. Original accepted submission: **1003877**, Challenge_Avg **0.770450**. [Task](../assignment/TASK_AND_APPROACH.md) · [Results](../assignment/RESULTS.csv)
 
 | Code | Responsibility |
 |---|---|
@@ -18,4 +18,4 @@ This is the original officially evaluated branch. The model uses SigLIP2-Base-Na
 | [package.py](package.py) | Minimal offline competition archive assembly |
 | [../submission_template/run.py](../submission_template/run.py) | Official inference API wrapper using the original metadata contract |
 
-From the repository root, `python -m upar.train --help` shows required private inputs and gate reports. CPU tests run without training data; reproducing measured accuracy requires authorized images and the hash-matching trained weights. Read [REPRODUCING.md](../docs/REPRODUCING.md) before running training. Generic CLI defaults do not supersede the [executed original configuration](../reports/kaggle_v4/training/training_config.json).
+From the repository root, `python -m upar.train --help` shows required private inputs and gate reports. CPU tests run without training data; reproducing measured accuracy requires authorized images and the hash-matching trained weights. Read [REPRODUCING.md](../docs/REPRODUCING.md) before running training. Generic CLI defaults do not supersede the [experiment settings](../configs/experiments.json).

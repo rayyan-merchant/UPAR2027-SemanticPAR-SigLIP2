@@ -32,7 +32,7 @@ def build(output):
                 story += [table,Paragraph('Local Challenge_Avg is the per-domain harmonic mean of mA (label-balanced accuracy) and instance-F1, then averaged equally over domains. Local F1 uses harmonic mean of mean-image precision/recall; exact organizer edge cases remain unresolved. These are not official hidden-test scores.',caption)]
         if idx<2:story.append(PageBreak())
         else:
-            story.append(Paragraph('Evidence and references: repository assignment/EXPERIMENTS_AND_DECISIONS.md and RESULTS.csv; official task github.com/speckean/UPAR-Challenge-2027; competition codabench.org/competitions/18180; foundations Google SigLIP2-Base-NaFlex and timm DINOv3 ViT-B/16 LVD-1689M. Full source links and per-claim receipts are in the repository.',caption))
+            story.append(Paragraph('Evidence and references: repository assignment/EXPERIMENTS_AND_DECISIONS.md and RESULTS.csv; official task github.com/speckean/UPAR-Challenge-2027; competition codabench.org/competitions/18180; foundations Google SigLIP2-Base-NaFlex and timm DINOv3 ViT-B/16 LVD-1689M. Source links and method descriptions are included in the report text.',caption))
     def footer(canvas,doc):
         canvas.saveState();canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#555555'))
         canvas.drawString(46,25,'UPAR 2027 Track 1  |  Assignment report')

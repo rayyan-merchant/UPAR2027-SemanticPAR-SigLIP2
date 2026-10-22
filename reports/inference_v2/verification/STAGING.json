@@ -1,9 +1,0 @@
-{
-  "images": 2100,
-  "bytes": 19513905,
-  "seconds": 194.272412288,
-  "source": "private official Kaggle input mount",
-  "destination": "derived local working copies",
-  "staging_excluded_from_api_timing": true,
-  "limitation": "Storage staging is measured separately; this does not certify A10 wall time."
-}

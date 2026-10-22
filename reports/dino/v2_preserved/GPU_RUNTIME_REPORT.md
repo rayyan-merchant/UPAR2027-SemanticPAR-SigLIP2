@@ -1,9 +1,0 @@
-> Private frozen diagnostic v1 RUNNING: rayyannmerchant/upar2027-dino-frozen-complementarity. Source0b22a50; hard7200s. GPU gates and target scores pending saved evidence. No all-domain training or upload.
-
-# DINO runtime and resource gates — pending GPU evidence
-
-Prelaunch quota10.97GPU-sessionh. Initial frozen diagnostic hard cap2h/provider7200s, including setup/retries; preserve at least8.97h if cap used. Short GPU native/HF FP32 and AMP parity plus real decoded source-image forward/pooling benchmark must pass before full extraction or any head training. Predeclared parity: FP32max_abs<=5e-4,relL2<=1e-5;AMPmax_abs<=.05,relL2<=.005. No tolerance changes after observing outcomes.
-
-Reuse four existing private opaque archives once; SHA/CRC/path-set checks,120s staging and30s I/O stall limits. No mounted per-image copy/hash/decode loop. Full extraction necessarily decodes allowed images once, from local storage. Two independent T4 processes write non-overlapping FP16 cache ranges. Cache shape131076x6x768,1,207,996,416payload bytes plus header, far smaller than patch-token caching. Working-space gate8GiB. Preserve INDEX/labels/cacheSHA/model+code hashes privately. No full-cache GPU allocation before measured throughput>=75images/s and conservative projected extraction<=1800s. Whole pretraining setup600s; loader timeout30s; worker first-progress120s and ongoing180s progress guards.
-
-After extraction, GPU0PA/GPU1PETA head processes;Market starts onGPU0 whenPAfinishes. Independent parameters/optimizer/scaler/RNG/checkpoints and source-only early stopping. No additional model architecture or hyperparameter search. No final model in this job. Final deployment must benchmark the exact trained offline API, decoding/preprocessing/both branches if ensembled/serialization/loading, targeting<=240s for29248images. T4 projections do not certify official A10 runtime. Deployment benchmark/packaging are pending promotion evidence.

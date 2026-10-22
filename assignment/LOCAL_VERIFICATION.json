@@ -15,10 +15,11 @@
   },
   "test_command": "python -B -X utf8 -m pytest -q -p no:cacheprovider --basetemp <external-writable-scratch> tests",
   "tests_passed": 71,
-  "test_seconds": 98.13,
+  "test_seconds": 122.53,
   "assignment_aggregate_records_verified": 73,
-  "baseline_files_hash_verified": 31,
-  "official_runtime_certified": false,
   "new_training_started": false,
-  "new_upload_performed": false
+  "new_upload_performed": false,
+  "verification_scope": "CPU tests and published aggregate-table consistency; internal execution evidence retained privately",
+  "clean_submitted_tree_tested": true,
+  "submitted_files": 100
 }

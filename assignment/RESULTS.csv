@@ -1,74 +1,74 @@
-experiment,evaluation,setting,domain,Challenge_Avg,mA,instance_F1,precision,recall,official_score,decision,evidence
-Original SigLIP2,OFFICIAL,production calibrated,OFFICIAL,0.77045,0.773647,0.767279,0.741799,0.807915,True,Evaluated fallback,reports/CODABENCH_SUBMISSION_RECEIPT.json
-SigLIP2 baseline,LODO,raw,PA100k,0.7861283745917453,0.7594610322688281,0.8147366374119996,0.8007479771824855,0.8292227372289461,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,raw,PETA,0.7693420363672717,0.7462144074628003,0.7939491203927713,0.8020226111673763,0.7860365518917867,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,raw,Market1501,0.8133433556327672,0.7886807743520695,0.8395981579389404,0.8502319363101354,0.8292270854474646,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,raw,MACRO,0.789604588863928,0.764785404694566,0.8160946385812372,0.817667508219999,0.8148287915227325,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,raw,WORST,0.7693420363672717,,,,,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,calibrated,PA100k,0.7971043553042242,0.7863338056060162,0.8081740546589377,0.7723565303001514,0.8474751556941623,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,calibrated,PETA,0.7772283701198576,0.7697189556909771,0.7848857525339494,0.7674335940600482,0.8031501386736198,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,calibrated,Market1501,0.817447759296592,0.8009696053691956,0.8346181567311824,0.8212210358537373,0.8484596389217243,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,calibrated,MACRO,0.7972601615735578,0.7856741222220629,0.8092259879746898,0.7870037200713123,0.8330283110965021,False,Locked baseline,reports/lodo/results
-SigLIP2 baseline,LODO,calibrated,WORST,0.7772283701198576,,,,,False,Locked baseline,reports/lodo/results
-Equal-domain sampling,LODO,raw,PA100k,0.7855341194911177,0.7566611949397661,0.8166979459601469,0.8027387765671362,0.8311511910325249,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,raw,PETA,0.7658802233438041,0.7427416076250468,0.7905068693887335,0.8003378712340367,0.7809144563129914,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,raw,Market1501,0.8086669771366153,0.7818477217418702,0.8373915182046501,0.8474031936117244,0.8276136471041685,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,raw,MACRO,0.7866937733238458,0.7604168414355611,0.8148654445178435,0.8168266138042991,0.8132264314832284,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,raw,WORST,0.7658802233438041,,,,,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,calibrated,PA100k,0.7975646532595337,0.7850978985829155,0.8104337214421317,0.7825280895529243,0.8404032311903331,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,calibrated,PETA,0.7767775920270255,0.7715860289709489,0.7820394904734629,0.760357019749523,0.8049948615222203,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,calibrated,Market1501,0.81392573564096,0.7950265145519669,0.8337453741944054,0.8191738831913823,0.8488446497332753,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,calibrated,MACRO,0.7960893269758397,0.7839034807019437,0.8087395287033333,0.7873529974979432,0.8314142474819429,False,Rejected,reports/lodo/equal_domain/results
-Equal-domain sampling,LODO,calibrated,WORST,0.7767775920270255,,,,,False,Rejected,reports/lodo/equal_domain/results
-Candidate C augmentation,LODO,raw,PA100k,0.7870386095950506,0.7611029381024522,0.814804229417296,0.801880280300068,0.8281515947723638,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,raw,PETA,0.7680172255576995,0.7446919283482067,0.7928509637358362,0.8021614453971198,0.7837541310397838,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,raw,Market1501,0.8138453646133365,0.7893266167225024,0.8399361909898498,0.8490718514415196,0.8309950296324704,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,raw,MACRO,0.7896337332553621,0.7650404943910538,0.8158637947143274,0.8177045257129025,0.8143002518148726,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,raw,WORST,0.7680172255576995,,,,,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,calibrated,PA100k,0.797196527236668,0.7869767510714956,0.8076852261878351,0.7736025979717147,0.8449094208081791,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,calibrated,PETA,0.7764182689918232,0.7706371783432493,0.7822867512677233,0.7605534479403501,0.8052986782952315,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,calibrated,Market1501,0.8206131155350135,0.8034342715647604,0.8385426384062876,0.8260872800792597,0.8513793385831302,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,calibrated,MACRO,0.7980759705878349,0.7870160669931684,0.8095048719539486,0.7867477753304414,0.833862479228847,False,Rejected,reports/competitive_final/candidate_c
-Candidate C augmentation,LODO,calibrated,WORST,0.7764182689918232,,,,,False,Rejected,reports/competitive_final/candidate_c
-Frozen DINOv3 standalone,LODO,raw,PA100k,0.7423501739756587,0.6867157458198934,0.8077937646262845,0.8212955460877552,0.79472873133498,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,raw,PETA,0.7144414888435902,0.6714150233970543,0.7633600944489469,0.7864422626378681,0.7415942212797016,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,raw,Market1501,0.7757500903870563,0.7356967097690665,0.8204158153824076,0.8357895250804476,0.8055974655500722,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,raw,MACRO,0.7441805844021018,0.6979424929953381,0.7971898914858797,0.8145091112686903,0.7806401393882513,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,raw,WORST,0.7144414888435902,,,,,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,calibrated,PA100k,0.754206492069069,0.7177106913134029,0.7946127871232572,0.7683034164358017,0.8227878951166554,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,calibrated,PETA,0.7248606841138898,0.7002989803499865,0.751207925875145,0.7240081707999313,0.7805311532261123,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,calibrated,Market1501,0.7830609431009238,0.7604471772150263,0.8070608820705829,0.7742244341041278,0.8428060157325561,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,calibrated,MACRO,0.7540427064279608,0.7261522829594719,0.784293865022995,0.7555120071132869,0.8153750213584413,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Frozen DINOv3 standalone,LODO,calibrated,WORST,0.7248606841138898,,,,,False,Rejected standalone,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,raw,PA100k,0.7874675956446909,0.7534756817536101,0.8246713963401434,0.8199921231715744,0.8294043804182998,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,raw,PETA,0.7705555314732362,0.7430415000942612,0.8001855456923457,0.8155817681130046,0.785359840583882,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,raw,Market1501,0.8146292750974834,0.7859603987522189,0.8454687936500918,0.8598633836694355,0.831548215256746,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,raw,MACRO,0.7908841340718036,0.7608258602000301,0.8234419118941937,0.8318124249846716,0.815437478752976,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,raw,WORST,0.7705555314732362,,,,,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,calibrated,PA100k,0.8023751141616047,0.7870980515606929,0.8182569507840854,0.7873679681135118,0.8516684866749957,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,calibrated,PETA,0.7802854954957493,0.7691708833870722,0.7917260322277213,0.7722458577693391,0.812214427983493,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,calibrated,Market1501,0.8202307381064444,0.8028332561967527,0.8383989319870109,0.8241068318538242,0.8531955033732285,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,calibrated,MACRO,0.8009637825879329,0.7863673970481727,0.8161273049996058,0.7945735525788917,0.8390261393439058,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate A frozen ensemble,LODO,calibrated,WORST,0.7802854954957493,,,,,False,Failed promotion; separate exploratory package,reports/dino_v3/results/SUMMARY.json
-Candidate B standalone,LODO,raw,PA100k,0.7718216251576985,0.7274405199600069,0.8219699665752551,0.8194347916809364,0.8245208768466329,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,raw,PETA,0.743944794079408,0.7023205025289434,0.7908138005784026,0.8140089991231739,0.7689038732662169,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,raw,Market1501,0.8110444115233713,0.7806275622653275,0.8439277270761385,0.8501749116723598,0.8377716828546212,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,raw,MACRO,0.7756036102534926,0.7367961949180927,0.8189038314099321,0.82787290082549,0.810398810989157,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,raw,WORST,0.743944794079408,,,,,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,calibrated,PA100k,0.780643028952724,0.7501435755867218,0.8137276952785831,0.7866535088295553,0.8427319278736263,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,calibrated,PETA,0.7524571269291189,0.7256449658490245,0.7813266956663216,0.7660659186186976,0.7972078502345629,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,calibrated,Market1501,0.8173435500317346,0.799334923112062,0.8361823311267178,0.812817870177513,0.8609297692828499,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,calibrated,MACRO,0.7834812353045258,0.7583744881826028,0.8104122406905409,0.7885124325419218,0.8336231824636796,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B standalone,LODO,calibrated,WORST,0.7524571269291189,,,,,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,raw,PA100k,0.7892455051012799,0.7562913282489582,0.825202369621219,0.8180684596241375,0.8324617957203577,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,raw,PETA,0.7721232402894542,0.7450770874441044,0.8012068941629257,0.8159838366430353,0.7869556337673528,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,raw,Market1501,0.8170498623663974,0.7896698782639222,0.8463967190069811,0.8589445046791018,0.834210260513578,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,raw,MACRO,0.7928062025857106,0.763679431318995,0.8242686609303753,0.8309989336487581,0.8178758966670961,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,raw,WORST,0.7721232402894542,,,,,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,calibrated,PA100k,0.8034479707414082,0.7903298027141702,0.817008968815729,0.7870748129410257,0.8493100658382053,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,calibrated,PETA,0.7813556540483124,0.7703842463471625,0.7926440745278068,0.7750979098135496,0.8110030362507742,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,calibrated,Market1501,0.8227196377289393,0.8056028389276577,0.8405795943955311,0.8226373319838504,0.8593219730068072,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,calibrated,MACRO,0.8025077541728867,0.78877229599633,0.816744212579689,0.7949366849128086,0.8398783583652621,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Candidate B adapted ensemble,LODO,calibrated,WORST,0.7813556540483124,,,,,False,Failed advancement; separate exploratory final run,reports/competitive_final/candidate_b/SUMMARY.json
-Final Candidate A,SOURCE_SELECTION,calibrated ensemble,SOURCE_SELECTION,0.8678064169737559,0.8599546480376316,0.8759698746060657,0.8508522420251875,0.9027295377049511,False,Packaged; upload not confirmed,reports/competitive_final/CANDIDATE_A_INDEPENDENT_VERIFICATION.json
-Final Candidate B,SOURCE_SELECTION,calibrated ensemble,SOURCE_SELECTION,0.8693052410852999,0.8606916983650308,0.8782152002009234,0.8533422723198298,0.9047289410749415,False,Prepared; official evaluation incomplete,reports/competitive_final/final_b_results/INDEPENDENT_VERIFICATION.json
+experiment,evaluation,setting,domain,Challenge_Avg,mA,instance_F1,precision,recall,official_score,decision,submission_id
+Original SigLIP2,OFFICIAL,production calibrated,OFFICIAL,0.77045,0.773647,0.767279,0.741799,0.807915,True,Evaluated fallback,1003877
+SigLIP2 baseline,LODO,raw,PA100k,0.7861283745917453,0.7594610322688281,0.8147366374119996,0.8007479771824855,0.8292227372289461,False,Locked baseline,
+SigLIP2 baseline,LODO,raw,PETA,0.7693420363672717,0.7462144074628003,0.7939491203927713,0.8020226111673763,0.7860365518917867,False,Locked baseline,
+SigLIP2 baseline,LODO,raw,Market1501,0.8133433556327672,0.7886807743520695,0.8395981579389404,0.8502319363101354,0.8292270854474646,False,Locked baseline,
+SigLIP2 baseline,LODO,raw,MACRO,0.789604588863928,0.764785404694566,0.8160946385812372,0.817667508219999,0.8148287915227325,False,Locked baseline,
+SigLIP2 baseline,LODO,raw,WORST,0.7693420363672717,,,,,False,Locked baseline,
+SigLIP2 baseline,LODO,calibrated,PA100k,0.7971043553042242,0.7863338056060162,0.8081740546589377,0.7723565303001514,0.8474751556941623,False,Locked baseline,
+SigLIP2 baseline,LODO,calibrated,PETA,0.7772283701198576,0.7697189556909771,0.7848857525339494,0.7674335940600482,0.8031501386736198,False,Locked baseline,
+SigLIP2 baseline,LODO,calibrated,Market1501,0.817447759296592,0.8009696053691956,0.8346181567311824,0.8212210358537373,0.8484596389217243,False,Locked baseline,
+SigLIP2 baseline,LODO,calibrated,MACRO,0.7972601615735578,0.7856741222220629,0.8092259879746898,0.7870037200713123,0.8330283110965021,False,Locked baseline,
+SigLIP2 baseline,LODO,calibrated,WORST,0.7772283701198576,,,,,False,Locked baseline,
+Equal-domain sampling,LODO,raw,PA100k,0.7855341194911177,0.7566611949397661,0.8166979459601469,0.8027387765671362,0.8311511910325249,False,Rejected,
+Equal-domain sampling,LODO,raw,PETA,0.7658802233438041,0.7427416076250468,0.7905068693887335,0.8003378712340367,0.7809144563129914,False,Rejected,
+Equal-domain sampling,LODO,raw,Market1501,0.8086669771366153,0.7818477217418702,0.8373915182046501,0.8474031936117244,0.8276136471041685,False,Rejected,
+Equal-domain sampling,LODO,raw,MACRO,0.7866937733238458,0.7604168414355611,0.8148654445178435,0.8168266138042991,0.8132264314832284,False,Rejected,
+Equal-domain sampling,LODO,raw,WORST,0.7658802233438041,,,,,False,Rejected,
+Equal-domain sampling,LODO,calibrated,PA100k,0.7975646532595337,0.7850978985829155,0.8104337214421317,0.7825280895529243,0.8404032311903331,False,Rejected,
+Equal-domain sampling,LODO,calibrated,PETA,0.7767775920270255,0.7715860289709489,0.7820394904734629,0.760357019749523,0.8049948615222203,False,Rejected,
+Equal-domain sampling,LODO,calibrated,Market1501,0.81392573564096,0.7950265145519669,0.8337453741944054,0.8191738831913823,0.8488446497332753,False,Rejected,
+Equal-domain sampling,LODO,calibrated,MACRO,0.7960893269758397,0.7839034807019437,0.8087395287033333,0.7873529974979432,0.8314142474819429,False,Rejected,
+Equal-domain sampling,LODO,calibrated,WORST,0.7767775920270255,,,,,False,Rejected,
+Candidate C augmentation,LODO,raw,PA100k,0.7870386095950506,0.7611029381024522,0.814804229417296,0.801880280300068,0.8281515947723638,False,Rejected,
+Candidate C augmentation,LODO,raw,PETA,0.7680172255576995,0.7446919283482067,0.7928509637358362,0.8021614453971198,0.7837541310397838,False,Rejected,
+Candidate C augmentation,LODO,raw,Market1501,0.8138453646133365,0.7893266167225024,0.8399361909898498,0.8490718514415196,0.8309950296324704,False,Rejected,
+Candidate C augmentation,LODO,raw,MACRO,0.7896337332553621,0.7650404943910538,0.8158637947143274,0.8177045257129025,0.8143002518148726,False,Rejected,
+Candidate C augmentation,LODO,raw,WORST,0.7680172255576995,,,,,False,Rejected,
+Candidate C augmentation,LODO,calibrated,PA100k,0.797196527236668,0.7869767510714956,0.8076852261878351,0.7736025979717147,0.8449094208081791,False,Rejected,
+Candidate C augmentation,LODO,calibrated,PETA,0.7764182689918232,0.7706371783432493,0.7822867512677233,0.7605534479403501,0.8052986782952315,False,Rejected,
+Candidate C augmentation,LODO,calibrated,Market1501,0.8206131155350135,0.8034342715647604,0.8385426384062876,0.8260872800792597,0.8513793385831302,False,Rejected,
+Candidate C augmentation,LODO,calibrated,MACRO,0.7980759705878349,0.7870160669931684,0.8095048719539486,0.7867477753304414,0.833862479228847,False,Rejected,
+Candidate C augmentation,LODO,calibrated,WORST,0.7764182689918232,,,,,False,Rejected,
+Frozen DINOv3 standalone,LODO,raw,PA100k,0.7423501739756587,0.6867157458198934,0.8077937646262845,0.8212955460877552,0.79472873133498,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,raw,PETA,0.7144414888435902,0.6714150233970543,0.7633600944489469,0.7864422626378681,0.7415942212797016,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,raw,Market1501,0.7757500903870563,0.7356967097690665,0.8204158153824076,0.8357895250804476,0.8055974655500722,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,raw,MACRO,0.7441805844021018,0.6979424929953381,0.7971898914858797,0.8145091112686903,0.7806401393882513,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,raw,WORST,0.7144414888435902,,,,,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,calibrated,PA100k,0.754206492069069,0.7177106913134029,0.7946127871232572,0.7683034164358017,0.8227878951166554,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,calibrated,PETA,0.7248606841138898,0.7002989803499865,0.751207925875145,0.7240081707999313,0.7805311532261123,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,calibrated,Market1501,0.7830609431009238,0.7604471772150263,0.8070608820705829,0.7742244341041278,0.8428060157325561,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,calibrated,MACRO,0.7540427064279608,0.7261522829594719,0.784293865022995,0.7555120071132869,0.8153750213584413,False,Rejected standalone,
+Frozen DINOv3 standalone,LODO,calibrated,WORST,0.7248606841138898,,,,,False,Rejected standalone,
+Candidate A frozen ensemble,LODO,raw,PA100k,0.7874675956446909,0.7534756817536101,0.8246713963401434,0.8199921231715744,0.8294043804182998,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,raw,PETA,0.7705555314732362,0.7430415000942612,0.8001855456923457,0.8155817681130046,0.785359840583882,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,raw,Market1501,0.8146292750974834,0.7859603987522189,0.8454687936500918,0.8598633836694355,0.831548215256746,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,raw,MACRO,0.7908841340718036,0.7608258602000301,0.8234419118941937,0.8318124249846716,0.815437478752976,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,raw,WORST,0.7705555314732362,,,,,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,calibrated,PA100k,0.8023751141616047,0.7870980515606929,0.8182569507840854,0.7873679681135118,0.8516684866749957,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,calibrated,PETA,0.7802854954957493,0.7691708833870722,0.7917260322277213,0.7722458577693391,0.812214427983493,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,calibrated,Market1501,0.8202307381064444,0.8028332561967527,0.8383989319870109,0.8241068318538242,0.8531955033732285,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,calibrated,MACRO,0.8009637825879329,0.7863673970481727,0.8161273049996058,0.7945735525788917,0.8390261393439058,False,Failed promotion; separate exploratory package,
+Candidate A frozen ensemble,LODO,calibrated,WORST,0.7802854954957493,,,,,False,Failed promotion; separate exploratory package,
+Candidate B standalone,LODO,raw,PA100k,0.7718216251576985,0.7274405199600069,0.8219699665752551,0.8194347916809364,0.8245208768466329,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,raw,PETA,0.743944794079408,0.7023205025289434,0.7908138005784026,0.8140089991231739,0.7689038732662169,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,raw,Market1501,0.8110444115233713,0.7806275622653275,0.8439277270761385,0.8501749116723598,0.8377716828546212,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,raw,MACRO,0.7756036102534926,0.7367961949180927,0.8189038314099321,0.82787290082549,0.810398810989157,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,raw,WORST,0.743944794079408,,,,,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,calibrated,PA100k,0.780643028952724,0.7501435755867218,0.8137276952785831,0.7866535088295553,0.8427319278736263,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,calibrated,PETA,0.7524571269291189,0.7256449658490245,0.7813266956663216,0.7660659186186976,0.7972078502345629,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,calibrated,Market1501,0.8173435500317346,0.799334923112062,0.8361823311267178,0.812817870177513,0.8609297692828499,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,calibrated,MACRO,0.7834812353045258,0.7583744881826028,0.8104122406905409,0.7885124325419218,0.8336231824636796,False,Failed advancement; separate exploratory final run,
+Candidate B standalone,LODO,calibrated,WORST,0.7524571269291189,,,,,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,raw,PA100k,0.7892455051012799,0.7562913282489582,0.825202369621219,0.8180684596241375,0.8324617957203577,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,raw,PETA,0.7721232402894542,0.7450770874441044,0.8012068941629257,0.8159838366430353,0.7869556337673528,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,raw,Market1501,0.8170498623663974,0.7896698782639222,0.8463967190069811,0.8589445046791018,0.834210260513578,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,raw,MACRO,0.7928062025857106,0.763679431318995,0.8242686609303753,0.8309989336487581,0.8178758966670961,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,raw,WORST,0.7721232402894542,,,,,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,calibrated,PA100k,0.8034479707414082,0.7903298027141702,0.817008968815729,0.7870748129410257,0.8493100658382053,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,calibrated,PETA,0.7813556540483124,0.7703842463471625,0.7926440745278068,0.7750979098135496,0.8110030362507742,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,calibrated,Market1501,0.8227196377289393,0.8056028389276577,0.8405795943955311,0.8226373319838504,0.8593219730068072,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,calibrated,MACRO,0.8025077541728867,0.78877229599633,0.816744212579689,0.7949366849128086,0.8398783583652621,False,Failed advancement; separate exploratory final run,
+Candidate B adapted ensemble,LODO,calibrated,WORST,0.7813556540483124,,,,,False,Failed advancement; separate exploratory final run,
+Final Candidate A,SOURCE_SELECTION,calibrated ensemble,SOURCE_SELECTION,0.8678064169737559,0.8599546480376316,0.8759698746060657,0.8508522420251875,0.9027295377049511,False,Packaged; upload not confirmed,
+Final Candidate B,SOURCE_SELECTION,calibrated ensemble,SOURCE_SELECTION,0.8693052410852999,0.8606916983650308,0.8782152002009234,0.8533422723198298,0.9047289410749415,False,Prepared; official evaluation incomplete,

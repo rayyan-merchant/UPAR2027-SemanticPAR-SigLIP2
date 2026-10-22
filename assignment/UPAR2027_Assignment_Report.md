@@ -76,4 +76,4 @@ Next steps are repeated-seed and matched-compute comparisons, better rare-attrib
 
 ## References and reproducibility
 
-Official task: https://github.com/speckean/UPAR-Challenge-2027 ; competition: https://www.codabench.org/competitions/18180/ ; foundations: https://huggingface.co/google/siglip2-base-patch16-naflex and https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m . Detailed evidence is in assignment/EXPERIMENTS_AND_DECISIONS.md, assignment/RESULTS.csv and docs/EXPERIMENT_INDEX.md.
+Official task: https://github.com/speckean/UPAR-Challenge-2027 ; competition: https://www.codabench.org/competitions/18180/ ; foundations: https://huggingface.co/google/siglip2-base-patch16-naflex and https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m . Detailed evidence is in assignment/EXPERIMENTS_AND_DECISIONS.md, assignment/RESULTS.csv and docs/REPRODUCING.md.

@@ -1,8 +1,0 @@
-{
-  "CUDA_VISIBLE_DEVICES": "0",
-  "visible_gpu_count": 1,
-  "visible_gpu_name": "Tesla T4",
-  "seed": 2027,
-  "workers": 2,
-  "torch_threads": 2
-}
