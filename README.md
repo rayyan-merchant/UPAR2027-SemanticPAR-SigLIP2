@@ -2,6 +2,14 @@
 
 **Assignment code and results** · Track 1 · SigLIP2 and complementary DINOv3
 
+## Group members
+
+| Name | Roll number |
+|---|---|
+| Rayyan | 23K-0073 |
+| Riya Bhart | 23K-0063 |
+| Syeda Rija Ali | 23K-0057 |
+
 We predict 40 pedestrian attributes across PA100K, PETA and Market1501, and test transfer to datasets excluded from training. The project starts with a semantic SigLIP2 classifier, investigates sampling and domain shift, then evaluates complementary DINOv3 features and a controlled robustness policy.
 
 **Official submission:** 1003877, Challenge_Avg **0.770450**. The later ensembles improve local held-out performance, but have no confirmed official scores after the interrupted follow-up evaluation during the reported site outage.
