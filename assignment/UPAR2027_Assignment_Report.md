@@ -1,5 +1,13 @@
 # Pedestrian attribute recognition under domain shift
 
+## Group members
+
+| Name | Roll number |
+|---|---|
+| Rayyan | 23K-0073 |
+| Riya Bhart | 23K-0063 |
+| Syeda Rija Ali | 23K-0057 |
+
 UPAR 2027 Track 1 · Methodology, controlled experiments and final decisions · 22 October 2026
 
 ## 1. From recognition to transfer

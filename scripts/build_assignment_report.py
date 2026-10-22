@@ -43,6 +43,8 @@ def plain_math(text):
 
 def markdown(content):
     parts=['# '+content['title'],content['subtitle']]
+    if content.get('group_members'):
+        parts.append('Group members: '+ '; '.join(x['name']+' ('+x['roll_number']+')' for x in content['group_members']))
     for section in content['pages']:
         parts += ['## '+section['title']]
         for b in section['blocks']:
@@ -75,6 +77,8 @@ def build(output):
     }
     width=A4[0]-100
     story=[Paragraph(escape(content['title']),styles['title']),Paragraph(escape(content['subtitle']),styles['subtitle'])]
+    if content.get('group_members'):
+        story.append(Paragraph('<br/>'.join(escape(x['name']+' | '+x['roll_number']) for x in content['group_members']),styles['subtitle']))
     for section in content['pages']:
         story += [Paragraph(escape(section['title']),styles['chapter']),Paragraph(escape(section['kicker']),styles['kicker'])]
         for block in section['blocks']:
