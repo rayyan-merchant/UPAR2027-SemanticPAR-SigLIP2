@@ -11,7 +11,7 @@ We predict 40 pedestrian attributes across PA100K, PETA and Market1501, and test
 | Required item | Open here |
 |---|---|
 | Brief task description and approach | [Task and approach](assignment/TASK_AND_APPROACH.md) |
-| Short methodology and evaluation report | [Three-page PDF](assignment/UPAR2027_Assignment_Report.pdf) · [Text version](assignment/UPAR2027_Assignment_Report.md) |
+| Short methodology and evaluation report | [Methodology and results PDF](assignment/UPAR2027_Assignment_Report.pdf) · [Text version](assignment/UPAR2027_Assignment_Report.md) |
 | Working code | [SigLIP2](upar/) · [DINOv3](dino/) · [Tests](tests/) |
 | Experimental results | [Results table](assignment/RESULTS.csv) · [Experiments and decisions](assignment/EXPERIMENTS_AND_DECISIONS.md) |
 | Setup and reproduction | [Reproduction guide](docs/REPRODUCING.md) · [Reviewer guide](docs/REVIEWER_GUIDE.md) |

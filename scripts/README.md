@@ -4,7 +4,7 @@
 |---|---|
 | [verify_assignment_results.py](verify_assignment_results.py) | Validate the published result table and comparison decisions without ML dependencies |
 | [check_assignment_release.py](check_assignment_release.py) | Check the tracked hand-in files and local documentation links |
-| [build_assignment_report.py](build_assignment_report.py) | Rebuild the three-page PDF from its editable source |
+| [build_assignment_report.py](build_assignment_report.py) | Rebuild the formatted PDF from its editable source |
 | [prepare_lodo_diagnosis.py](prepare_lodo_diagnosis.py) | Prepare isolated source/held-out folds from authorized inputs |
 | [generalization_analysis.py](generalization_analysis.py) | Metric and calibration helpers used by evaluation and tests |
 | [summarize_lodo.py](summarize_lodo.py) | Aggregate LODO private prediction artifacts |

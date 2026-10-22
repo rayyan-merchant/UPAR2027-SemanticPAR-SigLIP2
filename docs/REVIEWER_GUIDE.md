@@ -1,6 +1,6 @@
 # Reviewer guide
 
-1. Read the [task description](../assignment/TASK_AND_APPROACH.md) and [three-page report](../assignment/UPAR2027_Assignment_Report.pdf).
+1. Read the [task description](../assignment/TASK_AND_APPROACH.md) and [methodology and results report](../assignment/UPAR2027_Assignment_Report.pdf).
 2. Browse the [compact results CSV](../assignment/RESULTS.csv) and [scientific decision record](../assignment/EXPERIMENTS_AND_DECISIONS.md).
 3. Inspect [SigLIP2](../upar/), [DINOv3](../dino/) and the [tests](../tests/README.md).
 4. Run `python scripts/verify_assignment_results.py` from the repository root for aggregate-table checks, or follow the [reproduction guide](REPRODUCING.md) for CPU tests and authorized-input training.

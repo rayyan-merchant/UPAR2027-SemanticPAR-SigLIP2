@@ -32,4 +32,6 @@ The original inference API is `submission_template/run.py`; A uses `dino/ensembl
 
 ## Rebuild the report
 
-Install `requirements-report.txt`, then run `python scripts/build_assignment_report.py`. The editable source is `assignment/report_content.json`; the report must remain three pages. Internal lab notes, detailed execution logs and cloud receipts are retained outside the submitted repository.
+Install `requirements-report.txt`, then run `python scripts/build_assignment_report.py`. The editable source is `assignment/report_content.json`; the report uses a flexible page count so equations, tables and interpretations remain readable. Internal lab notes, detailed execution logs and cloud receipts are retained outside the submitted repository.
+
+The PDF builder embeds a Unicode font. It uses Segoe UI on Windows or DejaVu Sans on Linux; installing the optional `matplotlib` package also supplies DejaVu Sans. The PDF and matching Markdown are generated from the same structured source.

@@ -1,6 +1,6 @@
 # Experiments and decisions
 
-This supplement records the scientific methods, intuition and conclusions behind the three-page report. Internal job receipts, debugging logs, account helpers and execution plans are not part of the assignment hand-in. Measured local values are published in `RESULTS.csv`; only original submission 1003877 has a confirmed official score.
+This supplement records the scientific methods, intuition and conclusions behind the methodology and results report. Internal job receipts, debugging logs, account helpers and execution plans are not part of the assignment hand-in. Measured local values are published in `RESULTS.csv`; only original submission 1003877 has a confirmed official score.
 
 ## 1 Task and original model
 
