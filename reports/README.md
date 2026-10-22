@@ -12,7 +12,7 @@ This directory retains aggregate results, source curves, support/error tables, e
 | Frozen DINOv3, fixed blend and independent checks | [dino_v3/results/](dino_v3/results/) |
 | B partial fine-tuning LODO | [competitive_final/candidate_b/](competitive_final/candidate_b/) |
 | C augmentation LODO | [competitive_final/candidate_c/](competitive_final/candidate_c/) |
-| Final B source evaluation, checkpoint checks, parity and failed runtime probe | [competitive_final/final_b_results/](competitive_final/final_b_results/) |
+| Final B source evaluation, checkpoint checks, and implementation parity | [competitive_final/final_b_results/](competitive_final/final_b_results/) |
 | Failed A upload without a new submission ID | [competitive_final/CANDIDATE_A_UPLOAD_RECEIPT.json](competitive_final/CANDIDATE_A_UPLOAD_RECEIPT.json) |
 
 Evidence is stage-specific. A historical plan or pending receipt is not a completed result; final state is recorded in [STATUS.md](../STATUS.md) and the [reviewer guide](../docs/REVIEWER_GUIDE.md). Read scorer convention and unsupported-label caveats before comparing metrics. Baseline locked files are preserved byte-for-byte; `python scripts/verify_assignment_results.py` checks them from the repository root.

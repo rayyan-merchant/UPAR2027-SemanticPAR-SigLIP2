@@ -39,7 +39,7 @@ def build():
     add('Final Candidate A','SOURCE_SELECTION','calibrated ensemble',{'SOURCE_SELECTION':a['known_source_metrics']['ensemble_calibrated']['selection']},'reports/competitive_final/CANDIDATE_A_INDEPENDENT_VERIFICATION.json','Packaged; upload not confirmed')
     final=read('reports/competitive_final/final_b_results/INDEPENDENT_VERIFICATION.json')
     require(final['independent_audit_passed'] and final['epochs_completed']==8 and final['best_epoch']==8,'Final B training/audit incomplete')
-    add('Final Candidate B','SOURCE_SELECTION','calibrated ensemble',{'SOURCE_SELECTION':final['metrics']['selection']['ensemble_calibrated']['macro']},'reports/competitive_final/final_b_results/INDEPENDENT_VERIFICATION.json','Packaged; runtime gate unresolved')
+    add('Final Candidate B','SOURCE_SELECTION','calibrated ensemble',{'SOURCE_SELECTION':final['metrics']['selection']['ensemble_calibrated']['macro']},'reports/competitive_final/final_b_results/INDEPENDENT_VERIFICATION.json','Prepared; official evaluation incomplete')
     require(not frozen['promoted'] and not b['advancement_gate_passed'],'Historical negative gates changed')
     equal=read('reports/lodo/equal_domain/results/COMPARISON.json')
     require(not equal['predeclared_criteria_met'],'Equal sampling decision changed')

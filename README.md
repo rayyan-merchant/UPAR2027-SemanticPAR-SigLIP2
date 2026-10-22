@@ -4,7 +4,7 @@
 
 We predict 40 pedestrian attributes across PA100K, PETA and Market1501, then test how well the models transfer to a dataset excluded from training. The project combines a semantic SigLIP2 classifier, strict leave-one-domain-out evaluation and controlled sampling, representation and augmentation experiments.
 
-**Final official result:** submission **1003877**, Challenge_Avg **0.770450**. It is the only confirmed officially scored entry. The strongest local transfer candidate reached **0.802508** LODO macro, but has no official score. The report explains the failed Candidate A upload, Candidate B's runtime limitation and every retained negative decision.
+**Final official result:** submission **1003877**, Challenge_Avg **0.770450**. It is the only confirmed officially scored entry. The strongest local transfer candidate reached **0.802508** LODO macro, but has no official score. The report explains the methods, intuition, local improvements, negative decisions and interrupted follow-up evaluation during the reported site outage.
 
 [Read the three-page report](assignment/UPAR2027_Assignment_Report.pdf) · [Read it as text](assignment/UPAR2027_Assignment_Report.md) · [Explore the experiments](assignment/EXPERIMENTS_AND_DECISIONS.md) · [Reproduce the checks](docs/REPRODUCING.md)
 
@@ -47,11 +47,11 @@ Unknown labels are masked. Every LODO fold excludes its target domain from train
 
 ### Official evaluation
 
-| Submission | Challenge_Avg | mA | Instance-F1 | Recorded inference |
-|---|---:|---:|---:|---:|
-| **1003877 — original SigLIP2** | **0.770450** | 0.773647 | 0.767279 | 109.91 seconds / 29,248 images |
+| Submission | Challenge_Avg | mA | Instance-F1 |
+|---|---:|---:|---:|
+| **1003877 — original SigLIP2** | **0.770450** | 0.773647 | 0.767279 |
 
-Evidence: [official submission receipt](reports/CODABENCH_SUBMISSION_RECEIPT.json). The official timing is separate from later cold-process surrogate benchmarks.
+Evidence: [official submission receipt](reports/CODABENCH_SUBMISSION_RECEIPT.json).
 
 ### Controlled local transfer experiments
 
@@ -74,10 +74,10 @@ All values below are **calibrated LODO Challenge_Avg**, using the same primary l
 |---|---|---|
 | Original SigLIP2 | Twelve epochs completed; epoch-7 EMA selected | **Finished: 1003877, 0.770450** |
 | A frozen ensemble | All-domain frozen head selected at epoch 30; offline package preserved | Upload reset during reported site outage; no confirmed ID or score |
-| B adapted ensemble | Eight all-domain epochs completed; epoch 8 selected; offline/reference correctness passed | Not uploaded; complete-workload T4 probe timed out at 300 seconds; A10 timing unknown |
+| B adapted ensemble | Eight all-domain epochs completed; epoch 8 selected; offline/reference correctness passed | No confirmed follow-up official evaluation |
 | C robustness branch | Three LODO folds completed; rejected | No all-domain C training or submission |
 
-We cannot infer what A or B would have scored officially. The original source/official gap shows why local gains must not be added to the official score. [Final B acceptance](CANDIDATE_B_ACCEPTANCE.md) · [Official submission log](OFFICIAL_SUBMISSION_LOG.md)
+A and B improved every local held-out domain, so we expected these complementary ensembles to generalize better than the original recipe. B improved local macro by 0.005248 and worst domain by 0.004127 over baseline. The competition-site outage interrupted our attempted follow-up evaluation; exact official gains remain unmeasured and cannot be obtained by adding local gains to the original official score. [Complete research record](assignment/EXPERIMENTS_AND_DECISIONS.md) · [Official submission log](OFFICIAL_SUBMISSION_LOG.md)
 
 ## Verify results without datasets or a GPU
 
@@ -91,7 +91,7 @@ Authenticate with an evaluator account that has repository access. This command 
 
 ## Run the code checks
 
-Use Python 3.12 to match the recorded local environment. Native deployment was also checked separately on Python 3.11 / torch 2.4.1.
+Use Python 3.12 to match the recorded local environment. Model loading was also checked separately on Python 3.11 / torch 2.4.1.
 
 ```bash
 python -m venv .venv
@@ -102,7 +102,7 @@ python -m pip install -r requirements-dino.txt
 python -m pytest -q tests
 ```
 
-The recorded full local suite passed **71 tests**. These cover model shapes, masking, ordering, samplers, source-only controls, archive staging/watchdogs and offline ensemble behavior; they are not an A10 speed or accuracy certificate. [Test map](tests/README.md) · [Recorded environment](assignment/LOCAL_VERIFICATION.json)
+The recorded full local suite passed **71 tests**. These cover model shapes, masking, ordering, samplers, source-only controls, archive staging/watchdogs and offline ensemble behavior; they do not constitute a new official accuracy evaluation. [Test map](tests/README.md) · [Recorded environment](assignment/LOCAL_VERIFICATION.json)
 
 ## Find the implementation
 
@@ -128,7 +128,7 @@ General-purpose foundations: [Google SigLIP2](https://huggingface.co/google/sigl
 <details>
 <summary>Detailed historical reports and evidence boundaries</summary>
 
-The [evidence index](docs/EXPERIMENT_INDEX.md) links the full training, LODO, sampling, DINO, augmentation, staging and runtime reports. Some root reports were written at earlier stages and retain historical pending statements; [STATUS.md](STATUS.md), final receipts and the assignment decision record give the final state. Baseline hash-bound records and negative results are retained rather than deleted. [Repository cleanup record](docs/REPOSITORY_CLEANUP.md)
+The [evidence index](docs/EXPERIMENT_INDEX.md) links the full training, LODO, sampling, DINO, augmentation, staging and implementation reports. Some root reports were written at earlier stages and retain historical pending statements; [STATUS.md](STATUS.md), final receipts and the assignment decision record give the final state. Baseline hash-bound records and negative results are retained rather than deleted. [Repository cleanup record](docs/REPOSITORY_CLEANUP.md)
 
 One seed, unequal source sizes/update counts, repeated inspection of development targets and unresolved organizer scorer edge cases limit causal and generalization claims. No hidden-score mixing-weight or threshold search was performed. The repository does not claim successful official A/B evaluation or a guaranteed score improvement.
 

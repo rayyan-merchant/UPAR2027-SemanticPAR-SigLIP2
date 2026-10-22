@@ -15,7 +15,7 @@ Start with [the three-page assignment report](../assignment/UPAR2027_Assignment_
 | B limited fine-tuning and failed advancement margin | [B LODO](../DINO_FINETUNE_LODO.md) |
 | C negative augmentation ablation | [C ablation](../SIGLIP_ROBUSTNESS_ABLATION.md) |
 | Final exploratory B training and recoveries | [Final training](../FINAL_B_TRAINING_REPORT.md), [recovery](../FINAL_B_RECOVERY.md) |
-| Exact package and unresolved runtime | [B acceptance](../CANDIDATE_B_ACCEPTANCE.md), [runtime evidence](../reports/competitive_final/final_b_results/runtime_v1) |
+| Final implementation and model correctness | [B acceptance](../CANDIDATE_B_ACCEPTANCE.md), [implementation evidence](../reports/competitive_final/final_b_results) |
 | What actually reached CodaBench | [Submission log](../OFFICIAL_SUBMISSION_LOG.md), [A unsuccessful upload receipt](../reports/competitive_final/CANDIDATE_A_UPLOAD_RECEIPT.json) |
 
 Older reports are stage-specific records and can contain historical pending statements. Use the assignment decision record and current STATUS for final state. Do not rerun old builder scripts or overwrite locked baseline reports while reading them.

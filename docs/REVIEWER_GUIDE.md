@@ -5,7 +5,7 @@ This repository is the assignment's code and results submission. The evaluator n
 ## Five minute reading path
 
 1. Read the [brief task and approach](../assignment/TASK_AND_APPROACH.md).
-2. Open the [three-page report](../assignment/UPAR2027_Assignment_Report.pdf), or its [GitHub-readable text](../assignment/UPAR2027_Assignment_Report.md). It tells the story from initial submission through transfer diagnostics and final deployment limits.
+2. Open the [three-page report](../assignment/UPAR2027_Assignment_Report.pdf), or its [GitHub-readable text](../assignment/UPAR2027_Assignment_Report.md). It tells the story from initial submission through transfer diagnostics, local model improvements and final research conclusions.
 3. Inspect the [official receipt for 1003877](../reports/CODABENCH_SUBMISSION_RECEIPT.json) and the [complete result table](../assignment/RESULTS.csv). Official, local LODO and source-selection records are explicitly distinguished.
 4. Browse the [SigLIP2 code guide](../upar/README.md), [DINOv3 code guide](../dino/README.md) and [tests](../tests/README.md).
 5. Use the [complete experiment record](../assignment/EXPERIMENTS_AND_DECISIONS.md) and [evidence index](EXPERIMENT_INDEX.md) to trace any decision or number.
@@ -36,7 +36,7 @@ This is a standard-library check of saved aggregate evidence, transcription and 
 
 The original SigLIP2 system is the only confirmed official evaluation, Challenge_Avg 0.770450. Its accepted entry, checkpoints and calibration were preserved. Equal-domain sampling and Candidate C were rejected. Candidate A's frozen ensemble and Candidate B's adapted ensemble improved local transfer but missed their respective declared advancement margins. Separate exploratory authorizations led to final all-domain A/B training and packages; they did not change the negative research gates.
 
-A's upload reset during the reported site outage, yielding no confirmed ID. B passed source/correctness checks but its T4 workload timed out at 300 seconds; official A10 timing is unknown and no B upload is claimed. B's local LODO macro 0.802508 is not an official or predicted hidden score. These limitations are part of the final report, not omitted experiments.
+The original SigLIP2 model was submitted successfully. A later upload reset during the reported site outage, yielding no confirmed ID, and further planned official evaluation was not completed. A and B improved every local held-out domain, supporting an expectation of better generalization. B's local LODO macro 0.802508 remains a local result, however, and cannot be presented as its unobserved official score.
 
 ## Submission and access checklist
 

@@ -1020,7 +1020,7 @@
       "precision": 0.8533422723198298,
       "recall": 0.9047289410749415,
       "official_score": false,
-      "decision": "Packaged; runtime gate unresolved",
+      "decision": "Prepared; official evaluation incomplete",
       "evidence": "reports/competitive_final/final_b_results/INDEPENDENT_VERIFICATION.json"
     }
   ]
