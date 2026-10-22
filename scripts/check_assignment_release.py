@@ -13,7 +13,7 @@ def main():
         if path.name in {'kaggle.json','credentials.json','.env'}:problems.append('Credential file in release: '+str(path.relative_to(ROOT)))
         if path.stat().st_size>2*1024*1024:problems.append('Unexpected large source artifact: '+str(path.relative_to(ROOT)))
     links=0
-    for path in [ROOT/'README.md',ROOT/'STATUS.md',*(ROOT/'docs').glob('*.md'),*(ROOT/'assignment').glob('*.md')]:
+    for path in [ROOT/'README.md',ROOT/'STATUS.md',*(ROOT/'docs').glob('*.md'),*(ROOT/'assignment').glob('*.md'),*[ROOT/d/'README.md' for d in ['upar','dino','tests','scripts','reports']]]:
         for target in re.findall(r'\]\(([^)]+)\)',path.read_text(encoding='utf-8')):
             if '://' in target or target.startswith('#') or target.startswith('mailto:'):continue
             target=unquote(target.split('#',1)[0])
