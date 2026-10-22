@@ -1,106 +1,63 @@
-# UPAR2027 SemanticPAR — SigLIP2 NaFlex
+# UPAR 2027 pedestrian attribute recognition
 
-Single selected architecture: SigLIP2-Base-NaFlex visual backbone, 40 pretrained
-text-initialized attribute queries, masked patch cross-attention and a global
-visual residual. Text inference and Hugging Face imports are preparation-only.
+This assignment implements and evaluates 40-attribute pedestrian recognition with a semantic SigLIP2 model, strict leave-one-domain-out diagnostics and complementary DINOv3 regional attention. **The only confirmed official submission is 1003877: Challenge_Avg 0.770450.** Later candidates are locally evaluated or packaged, not officially scored. The failed Candidate A upload and Candidate B runtime gate are documented, not hidden.
 
-**See [STATUS.md](STATUS.md) for actual execution evidence.** A code/test pass is
-not a pretrained-parity pass, a trained model, an A10 timing result or a valid
-CodaBench submission. No target leaderboard score is guaranteed.
+## Assignment deliverables
 
-## Audited inputs
+1. **Task and approach:** [brief description](assignment/TASK_AND_APPROACH.md) and the opening of the [three-page report](assignment/UPAR2027_Assignment_Report.pdf); [editable report](assignment/UPAR2027_Assignment_Report.md).
+2. **Working code and experimental results:** `upar/`, `dino/`, `kaggle/`, `scripts/`, `tests/`, [RESULTS.csv](assignment/RESULTS.csv) and retained aggregate `reports/` evidence.
+3. **Methodology, evaluation, challenges and improvements:** the report, plus the [complete experiment and decision record](assignment/EXPERIMENTS_AND_DECISIONS.md) for the details that cannot fit into three pages.
 
-Original files remain read-only under `D:/UPAR2027/official/data`.
-97,669 official training and 33,407 validation records use the same ordered 40
-attributes. All 131,076 annotated images were decoded and hashed. The official
-PETA mapping resolves 15,631 missing canonical paths without moving originals.
-One exact-pixel group spans train and two validation rows; official splits remain
-unchanged, a sensitivity result excludes those validation rows, and calibration
-does not use them. Near duplicates/shared identities are not fully assessed.
+## Results and final selection
 
-- [Implementation audit](IMPLEMENTATION_AUDIT.md)
-- [Data audit](reports/data_mapped/DATA_AUDIT.md)
-- [Kaggle CLI workflow](KAGGLE_CLI.md)
-- [Reproducibility record](REPRODUCIBILITY.md)
-- [Recipe](configs/training.json)
+| Experiment | Evaluation | Challenge_Avg | Worst domain | Decision |
+|---|---|---:|---:|---|
+| Original SigLIP2 | Official submission 1003877 | **0.770450** | Not comparable to LODO | Official evaluated fallback |
+| Original SigLIP2 | Three-fold calibrated LODO | 0.797260 | 0.777228 | Locked baseline |
+| Equal-domain sampling | Same LODO protocol | 0.796089 | 0.776778 | Reject; retain square-root sampler |
+| Frozen DINOv3 standalone | Same LODO partitions | 0.754043 | 0.724861 | Reject standalone |
+| Candidate A frozen 75/25 ensemble | Same LODO partitions | 0.800964 | 0.780285 | Useful; missed 0.8023 gate; exploratory package |
+| Candidate B adapted 75/25 ensemble | Same LODO partitions | 0.802508 | 0.781356 | Best local transfer; missed +0.002 advance margin; separately authorized final run |
+| Candidate C augmentation | Same LODO protocol | 0.798076 | 0.776418 | Reject worst-domain regression |
 
-## Execute on Kaggle
+No local score is a hypothetical official result. B completed eight all-domain epochs, selected epoch 8 and passed source/checkpoint/reference checks. Its T4 complete-workload probe timed out at 300 seconds after last saved progress 26,624/29,248 images; actual A10 timing remains unknown. A's upload produced no confirmed ID during the reported site outage. Original 1003877 and its assets remain preserved.
 
-The user selected Kaggle CLI. The pipeline copies only official annotated data
-to a **private** Kaggle source, re-audits it, runs tests, checks real pretrained
-FP32/AMP parity, and benchmarks forward/backward batches before full training.
-It keeps this architecture and effective batch size 64, reducing microbatch only
-if needed for memory. See KAGGLE_CLI.md for data preparation and resume details.
+## Repository map
 
-```powershell
-kaggle quota
-python scripts/build_kaggle_kernel.py --owner rayyannmerchant --output C:/absolute/kernel
-kaggle kernels push -p C:/absolute/kernel --accelerator NvidiaTeslaT4 -t 43200
-kaggle kernels status rayyannmerchant/upar2027-siglip2-semanticpar
-kaggle kernels output rayyannmerchant/upar2027-siglip2-semanticpar -p C:/absolute/run-output
-```
+| Directory | Purpose |
+|---|---|
+| `assignment/` | Three-page PDF, editable narrative, full decision record and reproducible result table |
+| `upar/` | SigLIP2 architecture, masked loss, sampling, metrics, calibration, training and offline submission API |
+| `dino/` | Native DINOv3, six-descriptor regional head, frozen/limited training and separate A/B inference wrappers |
+| `kaggle/` | Archive staging, watchdogs, source-only gates and independent fold scheduling |
+| `configs/` | Recorded recipe; executed configurations remain in reports |
+| `scripts/` | Preparation, audits, packaging, result verification and independent metric reproduction |
+| `tests/` | CPU correctness and isolation/contract checks; no cloud training is started by pytest |
+| `reports/` | Aggregate metrics, controls, hashes and receipts; no image pixels or private prediction arrays |
+| `docs/` | Evidence index and reproduction guide; root research reports retain historical decisions |
+| `submission_template/` | Original required inference metadata and starter contract |
 
-The checked-in Kaggle runner executes one recipe: masked exponential-weighted
-BCE, training-only prevalence, per-image `N_domain^-0.5` sampling, mild
-augmentation, head-only warmup then upper four vision blocks, AdamW with layer
-decay, warmup/cosine, AMP, clipping, accumulation and EMA. Raw and EMA checkpoints
-are compared on validation. `last.pt` saves complete epoch-boundary training state;
-`best.pt` is independently retained.
+## Quick start without datasets or GPUs
 
-## Local verification
+Use Python 3.12 to match the recorded local checks; deployment was also checked separately on Python 3.11. The tested local environment used torch 2.4.1 CPU, Transformers 4.57.1 and timm 1.0.24. Kaggle cloud jobs recorded their actual environments separately. The official runtime is Python 3.11 / torch 2.4.1; a current Kaggle container is not an equivalent timing environment.
 
-```powershell
-python -m pip install -r requirements-training.txt
+```bash
+python -m venv .venv
+# Activate .venv using the command appropriate for your shell.
+python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.4.1 torchvision==0.19.1
+python -m pip install -r requirements-dino.txt
 python -m pytest -q tests
-python -m upar.inspect_data --train-csv D:/UPAR2027/official/data/annotations/task1/train/gt.csv --val-csv D:/UPAR2027/official/data/annotations/task1/val/gt.csv --data-root D:/UPAR2027/official/data --peta-mapping D:/UPAR2027/official/peta_file_mapping.txt --output reports/data_mapped
+python scripts/verify_assignment_results.py
 ```
 
-`upar.parity` accepts repeated `--image` arguments (at least three distinct real
-aspect ratios). It compares installed HF preprocessing, embeddings, every visual
-block, final features and text initialization. It reports maximum/mean absolute
-and relative L2 error, and exports a hash-bound native foundation checkpoint only
-after success. Full training also requires successful GPU AMP and feasibility
-reports. The local helper `scripts/run_local_parity.py` uses this host's audited
-images and performs CPU FP32 parity only.
+The last command is standard-library-only: it reconstructs the assignment result table from checked-in aggregate evidence and checks the stated decisions. It does **not** re-evaluate private predictions or train models. Full raw-prediction audits were executed previously; their receipts and scripts are retained. See [reproduction instructions](docs/REPRODUCING.md) for those data/weight-dependent steps and the [evidence index](docs/EXPERIMENT_INDEX.md) for each claim.
 
-## Evaluate, calibrate and package actual trained weights
+## Data and weight access
 
-```powershell
-python -m upar.calibrate --predictions runs/siglip2/best_val_predictions.npz --output runs/siglip2/calibration.json
-python -m upar.package --checkpoint runs/siglip2/best.pt --calibration runs/siglip2/calibration.json --output submission_candidate.zip
-python -m upar.benchmark --submission-dir C:/absolute/unpacked-candidate --images-dir D:/UPAR2027/official/data/PA100k --n 2000 --batch-size 32
-```
+Training requires authorized official UPAR data and verified general-purpose foundation weights. Obtain data through the [official challenge repository](https://github.com/speckean/UPAR-Challenge-2027), retaining each original dataset's terms. Restricted images, annotations containing sample identities, cached features, private predictions, trained weights and credentials are intentionally not distributed in this source repository or assignment ZIP. Model and submission SHA256 values are retained in the reports. The approximately 651 MB A/B competition ZIPs remain separate private artifacts, not part of the assignment code ZIP.
 
-Global threshold offsets are subtracted from logits, making the evaluator's strict
-0.5 cutoff implement calibrated decisions. Calibration estimates are in-sample,
-not unbiased held-out results. No path/domain-specific threshold is used.
+Do not automatically run cloud builders from this README: they allocate paid/quota-limited compute when pushed. Do not use an all-domain PAR checkpoint to initialize a LODO fold. Do not fit calibration on a target domain. Do not tune weights or thresholds with hidden scores.
 
-The inference ZIP contains root `run.py`, original `metadata.yaml`, native modules,
-weights and calibration. Runtime uses torch, NumPy and Pillow only; no downloads,
-Transformers, timm or text encoder. Both single-image and chunked batch APIs are
-tested with network and optional model-library imports blocked.
+## Deployment and licensing
 
-## Evidence boundaries
-
-CodaBench public rules specify Python 3.11/torch 2.4.1/CUDA 12.1, A10 24GB,
-300 seconds total, 40 finite ordered probabilities, and equal per-dataset averaging.
-The latest valid submission counts. Organizer scorer downloads are disabled:
-published formulas are verified, but exact invalid/empty-class implementation
-equivalence remains unresolved. Local metrics remain provisional.
-
-The benchmark includes decode, preprocessing, model execution and JSON output,
-and accounts for cold-start/warmup overhead. Any hypothetical workload projection
-is explicitly labeled; Kaggle timing does not establish official A10 acceptance.
-
-## Sources and data terms
-
-- [Official challenge](https://www.codabench.org/competitions/18180/)
-- [Official data and starter](https://github.com/speckean/UPAR-Challenge-2027)
-- [Google SigLIP2 model](https://huggingface.co/google/siglip2-base-patch16-naflex)
-- [SigLIP2 paper](https://arxiv.org/abs/2502.14786)
-
-Use only official data for PAR optimization. General foundation pretraining is
-permitted. Do not use hidden test images or metadata for training, adaptation,
-selection or thresholds. Keep original dataset licences and citations: UPAR,
-PA100K (HydraPlus-Net), Market1501 and PETA. Source annotations are CC BY-NC-SA 3.0;
-image sources retain their own terms. Restricted images are never committed here.
+Inference uses native torch, NumPy and Pillow with no downloads, Transformers, timm, safetensors or text encoder at runtime. A/B blend 75% raw SigLIP probabilities with 25% raw DINO probabilities, then apply a separate source-fitted calibration. Required 40-attribute order and original metadata are preserved. DINOv3 Meta and timm notices are in `dino/licenses/`; source data retains its own restrictions. See [third-party notices](THIRD_PARTY_NOTICES.md). Do not interpret repository visibility as permission to redistribute dataset images or model weights.

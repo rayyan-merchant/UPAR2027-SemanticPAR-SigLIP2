@@ -1,0 +1,5 @@
+# Assignment hand-in guide
+
+Submit `UPAR2027_Assignment_Report.pdf` as the required three-page report, and the clean repository source ZIP or GitHub repository as working code and results. The report has no separate cover page. `UPAR2027_Assignment_Report.md` is its editable text. `EXPERIMENTS_AND_DECISIONS.md` is a separate detailed supplement so every major experiment, failure, selection criterion and outcome is preserved without inflating the short report. `RESULTS.csv` / `RESULTS.json` provide audited aggregate values and evidence paths.
+
+The assignment repository intentionally excludes licensed image data, private annotations/identities, feature caches, sample prediction arrays, model weights and credentials. The original and A/B competition inference ZIPs are separate private artifacts, not included in the source bundle. Only original submission 1003877 has a confirmed official score. The site outage and B's independent runtime limitation are both explained. No hypothetical official scores are presented as measurements.

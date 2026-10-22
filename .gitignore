@@ -12,3 +12,52 @@ reports/foundation_native.pt
 reports/data/data_audit.json
 
 pytest-of-*/
+
+
+# Local runtimes, editor files and generated test scratch
+.venv/
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+/tmp*/
+/test-tmp/
+/assignment-render/
+
+# Secrets and local account configuration
+.env
+.env.*
+!.env.example
+kaggle.json
+credentials.json
+*token*.secret
+
+# Private data, features, weights and cloud staging containers
+*.npy
+*.npz
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.upar
+*.tar
+*.tar.gz
+*.7z
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.webp
+features/
+private_artifacts/
+archive_cache/
+staged_data/
+
+# Source bundles are generated from the tracked release manifest
+*.log

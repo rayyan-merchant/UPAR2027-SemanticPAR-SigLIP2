@@ -2,4 +2,41 @@
 *.md text eol=lf
 *.json text eol=lf
 *.txt text eol=lf
-submission_template/metadata.yaml -text
+submission_template/metadata.yaml -text whitespace=cr-at-eol
+
+# Preserve historical hash-locked evidence bytes across clones.
+/LODO_EVALUATION.md -text whitespace=cr-at-eol
+/reports/lodo/THREEFOLD_SUBMISSION_RECEIPT.json -text whitespace=cr-at-eol
+/reports/lodo/EXPECTED_SPLITS.json -text whitespace=cr-at-eol
+/reports/lodo/THREEFOLD_ARCHIVES.json -text whitespace=cr-at-eol
+/reports/lodo/results/GROUP_REPETITION.json -text whitespace=cr-at-eol
+/reports/lodo/results/GROUP_SOURCE_TARGET_COMPARISON.csv -text whitespace=cr-at-eol
+/reports/lodo/results/INDEPENDENT_VERIFICATION.json -text whitespace=cr-at-eol
+/reports/lodo/results/INITIALIZATION_RECEIPT.json -text whitespace=cr-at-eol
+/reports/lodo/results/Market1501_EVALUATION.json -text whitespace=cr-at-eol
+/reports/lodo/results/PA100k_EVALUATION.json -text whitespace=cr-at-eol
+/reports/lodo/results/PER_ATTRIBUTE_TARGET_ERRORS.csv -text whitespace=cr-at-eol
+/reports/lodo/results/PETA_EVALUATION.json -text whitespace=cr-at-eol
+/reports/lodo/results/PRODUCTION_PRESERVATION_VERIFICATION.json -text whitespace=cr-at-eol
+/reports/lodo/results/RESOURCE_DECISION.json -text whitespace=cr-at-eol
+/reports/lodo/results/SOURCE_INDEPENDENT_VERIFICATION.json -text whitespace=cr-at-eol
+/reports/lodo/results/STAGING.json -text whitespace=cr-at-eol
+/reports/lodo/results/SUITE_RECEIPT.json -text whitespace=cr-at-eol
+/reports/lodo/results/tests.xml -text whitespace=cr-at-eol
+/reports/lodo/results/TRAINING_CURVES.csv -text whitespace=cr-at-eol
+/reports/lodo/results/Market1501/AFFINITY.json -text whitespace=cr-at-eol
+/reports/lodo/results/Market1501/FOLD_CONFIG.json -text whitespace=cr-at-eol
+/reports/lodo/results/Market1501/history.jsonl -text whitespace=cr-at-eol
+/reports/lodo/results/Market1501/SOURCE_SUPERVISION.json -text whitespace=cr-at-eol
+/reports/lodo/results/PA100k/AFFINITY.json -text whitespace=cr-at-eol
+/reports/lodo/results/PA100k/FOLD_CONFIG.json -text whitespace=cr-at-eol
+/reports/lodo/results/PA100k/history.jsonl -text whitespace=cr-at-eol
+/reports/lodo/results/PA100k/SOURCE_SUPERVISION.json -text whitespace=cr-at-eol
+/reports/lodo/results/PETA/AFFINITY.json -text whitespace=cr-at-eol
+/reports/lodo/results/PETA/FOLD_CONFIG.json -text whitespace=cr-at-eol
+/reports/lodo/results/PETA/history.jsonl -text whitespace=cr-at-eol
+/reports/lodo/results/PETA/SOURCE_SUPERVISION.json -text whitespace=cr-at-eol
+
+# Keep formatted hand-in documents byte-exact.
+*.pdf binary
+*.docx binary
